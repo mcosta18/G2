@@ -1,0 +1,145 @@
+%!TEX encoding = UTF-8 Unicode
+
+\ProvidesPackage{macros}
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs} % \mathscr
+\RequirePackage{mathtools}
+\RequirePackage{stmaryrd} % \lightning
+\RequirePackage{chemarrow} % \chemarrow
+
+%%% MISCELLANEOUS %%%
+\newcommand*\inv[1]{\frac{1}{#1}} % \inv{x} = 1/x
+\newcommand*\abs[1]{|{#1}|} % absolute value
+\newcommand*\Abs[1]{\left|{#1}\right|} % absolute value (with big bars)
+\newcommand*\avg[1]{\langle{#1}\rangle} % average
+
+\newcommand*\conj[1]{\overline{#1}} % conjugate
+\DeclareMathOperator\ddom{dom} % domain of a function
+\DeclareMathOperator\card{\#} % cardinality
+
+\newcommand*\nan{\mathtt{NaN}} % not-a-number
+\newcommand*\Ell{\mathscr{L}}
+
+\newcommand*\inters\bigcap
+\newcommand*\union\bigcup
+\newcommand*\set[1]{\{{#1}\}}
+\newcommand*\setdef[2][x]{\{{#1}\,|\,{#2}\}}
+\newcommand*\Setdef[2][x]{\left\{{#1}\vphantom{#2}\right.\left|\,{#2}\vphantom{#1}\right\}}
+\newcommand*\pset{\mathscr{P}} % power set
+\newcommand*\funarrow{\,\chemarrow\,}
+\newcommand*\fundef[3][f]{{#1}:{#2}\funarrow{#3}}
+
+\DeclareMathOperator\id{id} % identity
+
+\newcommand*\R{\mathbb{R}} % set/field of real numbers
+\newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
+\newcommand*\N{\mathbb{N}} % set of natural numbers
+
+\newcommand*\wlg{\;\mathtt{WLOG}\;} % without loss of generality
+
+%%% CALCULUS %%%
+\newcommand*\dd{\mathrm{d}} % d
+\newcommand*\deriv[2][x]{\frac{\dd{#2}}{\dd{#1}}} % \dderiv[x]{y} = dy/dx
+\newcommand*\derivn[3][x]{\frac{\dd^{#2}{#3}}{\dd{#1}^{#2}}} % \dderivn[x]{2}{y} = d^2y/dx^2
+\newcommand*\pardv[2][x]{\frac{\partial{#2}}{\partial{#1}}} % \pardv[x]{y} = ∂y/∂x
+\newcommand*\pardvm[2][x]{\left|\pardv[#1]{#2}\right|} % \pardvm[x]{y} = |∂y/∂x|
+\newcommand*\pardvn[3][x]{\frac{\partial^{#2}{#3}}{\partial{#1}^{#2}}} % \pardvn[x]{2}{y} = ∂^2y/∂x^2
+\newcommand*\integ[2][x]{\int #2\,\dd #1} % \integ[x]{f} = ∫fdx
+\newcommand*\invinteg[2][x]{\int\frac{\dd{#1}}{#2}} % \invinteg[x]{f} = ∫dx/f
+\newcommand*\dinteg[4][x]{\int_{#2}^{#3}{#4}\,\dd{#1}} % \ddinteg[x]{a}{b}{f} = ∫_a^b fdx
+\newcommand*\del{\vec{\nabla}} % gradient, divergence, curl
+\newcommand*\lo[2][x]{\operatorname{o}({#1}^{#2})} % small o
+\newcommand*\LO[2][x]{\operatorname{O}({#1}^{#2})} % big O
+
+%%% TRIGONOMETRIC FUNCTIONS %%%
+\renewcommand*\arcsin{\operatorname{asin}} % C-like variants of inverse trigonometric functions
+\renewcommand*\arccos{\operatorname{acos}}
+\renewcommand*\arctan{\operatorname{atan}}
+\DeclareMathOperator\arccot{acot} % arc cotangent
+\DeclareMathOperator\arsinh{asinh} % area hyperbolic sine
+\DeclareMathOperator\arcosh{acosh} % area hyperbolic cosine
+\DeclareMathOperator\artanh{atanh} % area hyperbolic tangent
+\DeclareMathOperator\arcoth{acoth} % area hyperbolic cotangent
+
+%%% LINEAR ALGEBRA %%%
+\DeclareMathOperator\im{Im} % image of a function
+\DeclareMathOperator\rk{rk} % rank of a matrix or linear application
+\DeclareMathOperator\linspace{\Ell} % space of linear functions
+\DeclareMathOperator\Span{Span} % span of vectors (space of linear combinations of given vectors)
+\DeclareMathOperator\comp{\mathscr C} % complementary of set
+\DeclareMathOperator\tr{tr} % sum of diagonal elements
+\DeclareMathOperator\algmul{\mu_\text a} % algebraic multiplicity
+\DeclareMathOperator\geomul{\mu_\text g} % geometric multiplicity
+\DeclareMathOperator\pr{pr} % orthogonal projection
+%\DeclareMathOperator\gl{GL} % linear group
+%\DeclareMathOperator\go{O} % orthogonal group
+%\DeclareMathOperator\gu{U} % unitary group
+\newcommand*\gl[1][n]{\operatorname{GL}_{#1}} % linear group
+\newcommand*\go[1][n]{\operatorname{O}_{#1}} % orthogonal group
+\newcommand*\gu[1][n]{\operatorname{U}_{#1}} % unitary group
+\newcommand*\transp[1]{{#1}^{\text T}} % transpose
+\newcommand*\ctransp[1]{{#1}^*} % conjugate transpose
+\newcommand*\ortc[1]{{#1}^\bot} % orthogonal complement
+\newcommand*\dotp[2]{\langle{#1},{#2}\rangle} % scalar product
+\newcommand*\Dotp[2]{\left\langle{#1},{#2}\right\rangle} % scalar product (with big brackets)
+\newcommand*\scp[2]{\langle{#1}|{#2}\rangle} % scalar product
+\newcommand*\Scp[2]{\left\langle\vphantom{#2}{#1}\right.\hspace{-0.2em}\left|\vphantom{#1}{#2}\right\rangle} % scalar product (with big brackets)
+\newcommand*\norm[1]{\|{#1}\|} % norm
+\newcommand*\Norm[1]{\left\|{#1}\right\|} % norm (with big bars)
+\newcommand*\polys[2][\mathbb K]{{#1}[{#2}]} % space of polynomials over field
+\newcommand*\Polys[2][\mathbb K]{{#1}\left[{#2}\right]} % space of polynomials over field (with big brackets)
+\newcommand*\matrs[3][\mathbb K]{\mathscr M_{{#2},{#3}}({#1})} % space of matrices over a field
+\newcommand*\matqs[2][\mathbb K]{\mathscr M_{#2}({#1})} % space of square matrices
+
+%%% TOPOLOGY %%%
+\DeclareMathOperator*\maxlim{max\,lim}
+\DeclareMathOperator*\minlim{min\,lim}
+
+\DeclareMathOperator\supp{supp} % support
+\DeclareMathOperator\diam{diam} % diameter
+
+\newcommand*\clos[1]{\overline{#1}} % closure
+\newcommand*\inter[1]{\mathring{#1}} % interior
+\DeclareMathOperator\bound{\mathscr F} % boundary
+\DeclareMathOperator\derived{\mathscr D} % derived set
+
+\DeclareMathOperator\dis{\mathrm{d}} % distance
+\newcommand*\ball[2][r]{\operatorname{B}_{#1}(#2)} % open ball
+
+\newcommand*\convarrow{\rightarrowtriangle} % arrow meaning convergence
+
+%%% LOGIC %%%
+\newcommand*\et{\wedge} % \et = ∧
+\newcommand*\vel{\vee} % \vel = ∨
+
+\newcommand*\then{\ \Rightarrow\ }
+\newcommand*\so{\rightarrow\,}
+\newcommand*\os{\leftarrow\,}
+
+\newcommand*\is{:=}
+\newcommand*\means{:\leftrightarrow}
+
+\newcommand*\absurd{\,\lightning}
+
+%%% PROBABILITY & STATISTICS %%%
+\newcommand*\fwhm{\text{FWHM}} % full width at half maximum
+\newcommand*\hwhm{\text{HWHM}} % half width at half maximum
+\newcommand*\E[1][x]{E\left[{#1}\right]} % expected value, \E[x] = E[x]
+\newcommand*\parsq[1]{\left({#1}\right)^2} % \parsq{x} = (x)^2
+
+%%% PHYSICS %%%
+\newcommand*\dotvec[1]{\dot{\vec{#1}}} % derivative of vector
+\newcommand*\ddotvec[1]{\ddot{\vec{#1}}} % second derivative of vector
+\newcommand*\lagr{\mathcal L} % lagrangian symbol
+\newcommand*\hami{\mathcal H} % hamiltonian symbol
+\newcommand*\poisson[2]{\{{#1},{#2}\}} % poisson bracket
+\newcommand*\Poisson[2]{\left\{{#1},{#2}\right\}} % poisson bracket (with big brackets)
+\newcommand*\curlvec[1]{\del\times\vec{#1}} % curl of vector
+\newcommand*\divvec[1]{\del\vec{#1}} % divergence of vector
+\newcommand*\lapl{\nabla^2} % laplacian
+\newcommand*\tens[1]{\mathbf{#1}} % tensor notation
+
+\endinput

@@ -2,4 +2,5 @@
 *.pdf
 *.aux
 *.toc
-
+*.synctex.gz
+.DS_Store

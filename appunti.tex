@@ -1,18 +1,63 @@
-\documentclass[a4paper,12pt]{amsbook}
-\usepackage[utf8]{inputenc}
-\usepackage[italian]{babel}
+%!TEX encoding = UTF-8 Unicode
+%!TEX TS-program = pdflatex
 
-\title{Appunti di G2}
-\author{Marco Costa}
-\date{Anno 2015/2016}
+%%% --- PREAMBLE --- %%%
+
+% versione A4
+\documentclass[a4paper]{article}
+
+% versione A5 (dovrebbe risultare la stessa larghezza effettiva della versione A4 così non c'è da risistemare niente)
+%\documentclass[a5paper]{article}
+%\usepackage[margin=1cm,bottom=2.1cm]{geometry}
+
+% versione libro
+%\documentclass[a4paper]{book}
+
+% versione compatta A4 (c'è qualcosa da risistemare)
+%\documentclass[a4paper,twocolumn,twoside]{article}
+%\usepackage[margin=1cm,bottom=2.1cm,inner=1.8cm]{geometry}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{macros}
+\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione}
+
+\theoremstyle{plain}
+\newtheorem{teo}{Teorema}
+\newtheorem{lemma}[teo]{Lemma}
+\newtheorem{prop}[teo]{Proposizione}
+
+\theoremstyle{remark}
+\newtheorem{es}{Esempio}
+\newtheorem{oss}{Osservazione}
+
+\newenvironment{lesson}[3]{%
+\section{Lezione #1-#2-#3}}{%
+}
+\newcommand*\titlet[1]{\subsection*{#1}}
+
+\newcommand\includelesson[3]{%
+\begin{lesson}{#1}{#2}{#3}
+\input{lez-#1-#2-#3}
+\end{lesson}}
+
+%%% --- DOCUMENT --- %%%
+
+\title{Appunti di Geometria 2, corso di fisica}
+\author{Marco Costa et al.}
+\date{Anno accademico 2015-2016}
 
 \begin{document}
+
 \maketitle
+
 \tableofcontents
-\chapter{Spazi topologici}
 
-\section{Spazio topologici}
-
-Ciao
+\includelesson{2016}{02}{17}
+\includelesson{2016}{02}{18}
 
 \end{document}

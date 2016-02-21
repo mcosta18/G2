@@ -1,0 +1,161 @@
+\begin{prop}
+$A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
+\end{prop}
+
+\begin{defn}
+\[\text{chiusura di }Y\is\clos Y\is\inters_{\substack{C\text{ chiuso}\\C\supseteq Y}}C\]
+\end{defn}
+
+\begin{prop}
+$Y\subseteq C\subseteq\clos Y\et C\text{ chiuso}\then C=\clos Y$
+\end{prop}
+
+\begin{defn}
+\[\text{parte interna di }Y\is\inter Y\is\union_{\substack{A\text{ aperto}\\A\subseteq Y}}A\]
+\end{defn}
+
+\begin{prop}
+$\inter Y\subseteq A\subseteq Y\et A\text{ aperto}\then A=\inter Y$
+\end{prop}
+
+\begin{defn}
+$x\text{ interno a }Y\means x\in\inter Y$
+\end{defn}
+
+\begin{defn}
+$x\text{ accumulazione per }Y\means\forall U(x):(U\setminus\set{x})\cap Y\neq\emptyset$
+\end{defn}
+
+\begin{defn}
+$x\text{ isolato in }Y\means x\in Y\et\neg(x\text{ accumulazione per }Y)$
+\end{defn}
+
+\begin{prop}
+$x\text{ isolato in }Y\iff\exists U(x):U\cap Y=\emptyset$
+\end{prop}
+
+\begin{lemma}
+$\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}$
+\end{lemma}
+\begin{proof}
+Mostriamo che $y\in\clos Y\setminus Y\then y\text{ accumulazione per }Y$. Per assurdo:
+\begin{align*}
+&y\text{ isolato}\so\\
+\so&\exists A\text{ aperto}:y\in A\et A\cap Y=\emptyset\so\\
+\so&\comp A\text{ chiuso}\et y\not\in\comp A\et Y\subseteq\comp A\so\\
+\so&y\not\in\clos Y\absurd
+\end{align*}
+Mostriamo che $y\not\in Y\et y\text{ accumulazione per }Y\then y\in\clos Y$. Per assurdo:
+\begin{align*}
+&y\not\in\clos Y\so\\
+\so&\comp\clos Y\text{ aperto}\et y\in\comp\clos Y\et\comp\clos Y\cap Y=\emptyset\so\\
+\so&y\text{ isolato}\absurd
+\end{align*}
+\end{proof}
+
+\begin{defn}
+$\text{frontiera di }Y\is\bound Y\is\clos Y\setminus\inter Y$
+\end{defn}
+
+\begin{prop}
+$\bound Y=\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ accumulazione per }Y}\setminus\inter Y$
+\end{prop}
+
+\begin{oss}
+$x\text{ interno a }Y\then x\text{ accumulazione per }Y$
+\end{oss}
+
+\begin{prop}
+$\bound Y=\bound\comp Y$
+\end{prop}
+
+\titlet{Morfismi degli spazi topologici}
+
+$X$, $Y$ spazi topologici; $\fundef XY$
+
+\begin{defn}[Continuità]
+$f\text{ continua}\means\forall A\subseteq Y,\,A\text{ aperto}:f^{-1}(A)\text{ aperto}$
+\end{defn}
+
+\begin{defn}[Continuità locale]
+$f\text{ continua in }x\means\forall U_Y(f(x))\,\exists U_X(x):f(U_X)\subseteq U_Y$
+\end{defn}
+
+\begin{prop}
+$f\text{ continua}\iff\forall x\in X:f\text{ continua in }x$
+\end{prop}
+
+\begin{defn}
+$f\text{ omeomorfismo}\means f\text{ isomorfismo topologico}\means f\text{ bigettiva }\et f, f^{-1}\text{ continue}$
+\end{defn}
+
+\begin{es}
+Consideriamo due spazi topologici sullo stesso insieme $(X,\tau_1)$, $(X,\tau_2)$. Sia $\tau_1$ più fine di $\tau_2$, cioè $\tau_1\supset\tau_2$. Sia $\fundef[\id]XX$ l'identità. $\id$ è invertibile e continua rispetto a $\tau_1\funarrow\tau_2$, ma non continua rispetto a $\tau_2\funarrow\tau_1$.
+\end{es}
+
+\begin{defn}[Proprietà di separazione]
+$X\text{ di Hausdorff}\means X\text{ è }T_2\means\forall x\neq y\,\exists U(x),U(y):U(x)\cap U(y)=\emptyset$
+\end{defn}
+
+\begin{prop}
+$X\text{ metrizzabile}\then X\text{ è }T_2$
+\end{prop}
+\begin{proof}
+$x\neq y\so r\is\dis(x,y)\neq 0\so\ball[r/3]x\cap\ball[r/3]y=\emptyset$
+\end{proof}
+
+\begin{prop}
+$X\text{ è }T_2\then\forall x\in X:\set{x}\text{ chiuso}$
+\end{prop}
+\begin{proof}
+$(\forall y\in\comp\set{x}\,\exists U(y),U(x):U(y)\cap U(x)=\emptyset\so U(y)\subseteq\comp\set{x})\so\comp\set{x}\text{ aperto}$
+\end{proof}
+
+\begin{es}[Topologia Zariski]
+Sia $\tau_z$ una topologia su $\R$:
+\[\tau_z\is\setdef[A\subset\R]{A=\emptyset\vel(A=\comp V\et\card V\in\N)}\]
+Allora $\forall A_1,A_2\in\tau_z:A_1\cap A_2\neq\emptyset\so(\R,\tau_z)\text{ non è }T_2$. Però i singoletti sono chiusi.
+\end{es}
+
+\begin{oss}
+La topologia euclidea è più fine di $\tau_z$.
+\end{oss}
+
+\begin{prop}
+La proprietà $T_2$ passa ai sottospazi.
+\end{prop}
+
+\begin{prop}
+La proprietà $T_2$ è invariante per omeomorfismo.
+\end{prop}
+\begin{proof}
+Sia $\fundef XY$ un omeomorfismo. Mostriamo che $X\text{ è }T_2\then Y\text{ è }T_2$:
+\begin{align*}
+&\forall x_1\neq x_2\in X:\\
+&y_i\is f(x_i),\,i=1,2\\
+f\text{ iniettiva}\so&y_1\neq y_2\\
+Y\text{ è }T_2\so&\exists U_Y^i(y_i)\text{ aperti}:U_Y^1\cap U_Y^2=\emptyset\\
+f\text{ continua}\so&U_X^i\is f(U_Y^i)\text{ sono aperti}\et U_X^1\cap U_X^2=\emptyset
+\end{align*}
+Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $Y\text{ è }T_2\then X\text{ è }T_2$.
+\end{proof}
+
+\begin{es}
+Sia $\fundef[\id]\R\R$ e $\tau_E$ la topologia euclidea. $\id$ è continua rispetto a $\tau_E\funarrow\tau_z$ perché $\tau_z\subseteq\tau_E$, però non nell'altro verso. Infatti $(\R,\tau_E)$ è $T_2$ ma $(\R,\tau_z)$ no, quindi non sono omeomorfi.
+\end{es}
+
+\begin{defn}[Numerabilità]
+$X\text{ numerabile}\means\card X\leq\card\N$
+\end{defn}
+
+\begin{defn}[Proprietà di numerabilità]
+$X$ 1-numerabile $\means\forall x\in X\,\exists$ base di intorni di $x$ numerabile
+\end{defn}
+
+\begin{prop}
+$X$ metrizzabile $\then X$ 1-numerabile
+\end{prop}
+
+\begin{defn}[Proprietà di numerabilità]
+$X$ 2-numerabile $\means\exists$ base di aperti di $X$ numerabile
+\end{defn}
