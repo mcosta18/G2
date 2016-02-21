@@ -1,0 +1,11 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]
+\author{Marco Costa}
+\date{Anno 2015/2016}
+\begin{document}
+\maketitle %
+\tableofcontents %
+\section{Spazi topologici}
+
+
+\end{document}
