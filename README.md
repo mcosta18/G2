@@ -1,5 +1,22 @@
 # G2
 
+## Struttura del documento
+
+Il file principale (quello da compilare) è `appunti.tex`, che importa:
+
+* `macros.sty` dove vengono definite le macro per formule matematiche
+* `lez-YYYY-MM-DD.tex` che contiene la lezione alla data specificata
+
+Ogni file lezione è strutturato principalmente come sequenza di ambienti `teo`, `lemma`, `prop`, `defn`, `oss`, `es`, `proof`, dal significato intuitivo. Il comando `\titlet{}` serve per scrivere un titoletto.
+
+### Aggiungere una lezione
+
+Per aggiungere una lezione:
+
+1. creare il file `lez-YYYY-MM-DD.tex` e trascrivere la lezione prendendo a esempio i file precedenti
+2. mettere eventuali nuove macro in `macros.sty` (*in modo ordinato!*)
+3. aggiungere `\includelesson{YYYY}{MM}{DD}` in fondo all'elenco in `appunti.tex`
+
 ## GIT
 repo git = una collezione di stati di alcuni file presenti in una cartella, cioè mantiene la storia
 
