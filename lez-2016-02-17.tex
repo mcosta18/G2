@@ -1,3 +1,5 @@
+% trascrizione: Petrillo
+
 \begin{prop}
 $A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
 \end{prop}
@@ -29,10 +31,6 @@ $x\text{ accumulazione per }Y\means\forall U(x):(U\setminus\set{x})\cap Y\neq\em
 \begin{defn}
 $x\text{ isolato in }Y\means x\in Y\et\neg(x\text{ accumulazione per }Y)$
 \end{defn}
-
-\begin{prop}
-$x\text{ isolato in }Y\iff\exists U(x):U\cap Y=\emptyset$
-\end{prop}
 
 \begin{lemma}
 $\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}$
@@ -129,7 +127,7 @@ La proprietà $T_2$ passa ai sottospazi.
 La proprietà $T_2$ è invariante per omeomorfismo.
 \end{prop}
 \begin{proof}
-Sia $\fundef XY$ un omeomorfismo. Mostriamo che $X\text{ è }T_2\then Y\text{ è }T_2$:
+Sia $\fundef XY$ un omeomorfismo. Mostriamo che $Y\text{ è }T_2\then X\text{ è }T_2$:
 \begin{align*}
 &\forall x_1\neq x_2\in X:\\
 &y_i\is f(x_i),\,i=1,2\\
@@ -137,7 +135,7 @@ f\text{ iniettiva}\so&y_1\neq y_2\\
 Y\text{ è }T_2\so&\exists U_Y^i(y_i)\text{ aperti}:U_Y^1\cap U_Y^2=\emptyset\\
 f\text{ continua}\so&U_X^i\is f(U_Y^i)\text{ sono aperti}\et U_X^1\cap U_X^2=\emptyset
 \end{align*}
-Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $Y\text{ è }T_2\then X\text{ è }T_2$.
+Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $X\text{ è }T_2\then Y\text{ è }T_2$.
 \end{proof}
 
 \begin{es}

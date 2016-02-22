@@ -14,8 +14,9 @@ Ogni file lezione è strutturato principalmente come sequenza di ambienti `teo`,
 Per aggiungere una lezione:
 
 1. creare il file `lez-YYYY-MM-DD.tex` e trascrivere la lezione prendendo a esempio i file precedenti
-2. mettere eventuali nuove macro in `macros.sty` (*in modo ordinato!*)
-3. aggiungere `\includelesson{YYYY}{MM}{DD}` in fondo all'elenco in `appunti.tex`
+2. mettere in un commento all'inizio del file il proprio nome
+3. mettere eventuali nuove macro in `macros.sty` (**in modo ordinato!**)
+4. aggiungere `\includelesson{YYYY}{MM}{DD}` in fondo all'elenco in `appunti.tex`
 
 ## GIT
 repo git = una collezione di stati di alcuni file presenti in una cartella, cioè mantiene la storia
