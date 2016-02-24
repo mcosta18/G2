@@ -22,6 +22,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{macros}
 \usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+\usepackage{hyperref}
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definizione}
@@ -39,7 +40,7 @@
 \newenvironment{lesson}[3]{%
 \section{Lezione #1-#2-#3}}{%
 }
-\newcommand*\titlet[1]{\subsection*{#1}}
+\newcommand*\titlet[1]{\subsection{#1}}
 
 \newcommand\includelesson[3]{%
 \begin{lesson}{#1}{#2}{#3}

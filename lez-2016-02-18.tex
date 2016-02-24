@@ -56,7 +56,7 @@ $(\R,\tau_s)$ non è 2-numerabile
 &\forall\mathcal B\text{ base di aperti},x\in\R:\\
 &\exists B_x\in\mathcal B:x\in B_x\et B_x\subseteq [x;\infty)\\
 &\forall y\neq x:B_y\neq B_x\so\\
-\so&\fundef[(x\mapsto B_x)]\R{\mathcal B}\text{ è iniettiva}\so\card B\geq\card\R
+\so&\fundef[(x\mapsto B_x)]\R{\mathcal B}\text{ è iniettiva}\so\card B\geq\card\R \qedhere
 \end{align*}
 \end{proof}
 
@@ -84,9 +84,11 @@ Mostriamo l'implicazione verso destra:
 \begin{align*}
 x\text{ accumulazione per }Y\so&\forall U(x):(U\setminus\set x)\cap Y\neq\emptyset\\
 X\text{ 1-numerabile}\so&\exists\setdef[U_n(x)]{n\in\N}\text{ base di intorni di }x\text{ numerabile}\\
-\so&\forall n\in\N\,\exists a_n\in(U_n\setminus\set x)\cap Y
+\so&\forall n\in\N\,\exists a_n\in(U_n\setminus\set x)\cap Y \qedhere
 \end{align*}
 \end{proof}
+
+\titlet{Connessione}
 
 \begin{defn}[Connessione]
 $X$ sconnesso $\means\neg(X\text{ connesso})\means\exists A,B\text{ aperti}:X=A\cup B\et A\cap B=\emptyset\et A,B\neq\emptyset$
@@ -113,6 +115,6 @@ Mostriamo l'implicazione verso destra; per assurdo:
 \begin{align*}
 &Y\text{ non è un intervallo}\so\\
 \so&\exists x_0\in(\inf Y;\sup Y):x_0\not\in Y\so\\
-\so&Y=(Y\cap(-\infty;x_0))\cup(Y\cap(x_0;\infty))\absurd
+\so&Y=(Y\cap(-\infty;x_0))\cup(Y\cap(x_0;\infty))\absurd \qedhere
 \end{align*}
 \end{proof}
