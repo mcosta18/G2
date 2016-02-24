@@ -4,6 +4,8 @@
 $A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
 \end{prop}
 
+\titlet{Chiusura, parte interna, frontiera}
+
 \begin{defn}
 \[\text{chiusura di }Y\is\clos Y\is\inters_{\substack{C\text{ chiuso}\\C\supseteq Y}}C\]
 \end{defn}
@@ -59,9 +61,10 @@ $\text{frontiera di }Y\is\bound Y\is\clos Y\setminus\inter Y$
 $\bound Y=\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ accumulazione per }Y}\setminus\inter Y$
 \end{prop}
 
-\begin{oss}
-$x\text{ interno a }Y\then x\text{ accumulazione per }Y$
-\end{oss}
+% questa cosa l'aveva detta ma poi ha detto che è sbagliata il 24 febbraio
+%\begin{oss}
+%$x\text{ interno a }Y\then x\text{ accumulazione per }Y$
+%\end{oss}
 
 \begin{prop}
 $\bound Y=\bound\comp Y$
@@ -90,6 +93,8 @@ $f\text{ omeomorfismo}\means f\text{ isomorfismo topologico}\means f\text{ biget
 \begin{es}
 Consideriamo due spazi topologici sullo stesso insieme $(X,\tau_1)$, $(X,\tau_2)$. Sia $\tau_1$ più fine di $\tau_2$, cioè $\tau_1\supset\tau_2$. Sia $\fundef[\id]XX$ l'identità. $\id$ è invertibile e continua rispetto a $\tau_1\funarrow\tau_2$, ma non continua rispetto a $\tau_2\funarrow\tau_1$.
 \end{es}
+
+\titlet{Separazione e numerabilità}
 
 \begin{defn}[Proprietà di separazione]
 $X\text{ di Hausdorff}\means X\text{ è }T_2\means\forall x\neq y\,\exists U(x),U(y):U(x)\cap U(y)=\emptyset$
