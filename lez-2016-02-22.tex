@@ -1,0 +1,101 @@
+\begin{teo}
+ $f:X \rightarrow Y$ continua, $X$ connesso $\then f(X)$ connesso 
+\end{teo}
+\begin{proof}
+  Non è restrittivo supporre $f(X)=Y$: infatti $f:X \rightarrow Y$ continua $\Leftrightarrow f:X\rightarrow f(X)$ continua
+ Per assurdo supponiamo $Y = B_1 \cup B_2, B_1,B_2$ aperti disgiunti non vuoti.
+ $A_1:=f^{-1}(B_1), A_2:=f^{-1}(B_2)$ aperti per continuità di $f$
+ Inoltre sono non vuoti, disgiunti e $X=A_1\cup A_2$, assurdo.
+\end{proof}
+\begin{cor}
+ La connessione è invariante per omeomorfismo. 
+\end{cor}
+\begin{oss}
+ La connessione non passa ai sottospazi.
+\end{oss}
+\begin{defn}[Arco]
+ Un arco in $X$ è una applicazione continua $\gamma:[0,1]\rightarrow X$
+\end{defn}
+\begin{defn}[Connessione per archi]
+ $X$ connesso per archi$\means \forall x_0, x_1 \in X \exists \gamma :[0,1]\rightarrow X,\quad \gamma(0)=x_0,\quad \gamma(1)=x_1$
+\end{defn}
+\begin{prop}
+ $X$ connesso per archi $\then X$ connesso
+\end{prop}
+\begin{proof}
+ Supponiamo per assurdo $X=A_0\cup A_1$ aperti non vuoti disgiunti.
+ $\exists \gamma :[0,1]\rightarrow X,\quad \gamma(0)=x_0,\quad \gamma(1)=x_1\\$
+ $[0,1]$ connesso $\then \gamma([0,1])$ connesso per continuità di $\gamma\\$
+ $\gamma([0,1])=(A_0\cap \gamma([0,1])) \cup (A_1\cap(\gamma([0,1]))$ che è sconnesso. Assurdo
+\end{proof}
+\begin{es}
+ Non è vero il viceversa!
+ $Y_1\is\setdef[(0,y)]{-1\le y \le x}\\$
+ $Y_2\is\setdef[(x,\sin (\frac{1}{x})]{x\in \mathbb R}\\$
+ $Y=Y_1\cup Y_2$ è il controesempio 
+ %scrivere la dim
+\end{es}
+\begin{prop}
+ Sia $A\subseteq (\mathbb R^n, \tau _E)$ aperto.
+ $A$ connesso $\Leftrightarrow A$ connesso per archi
+\end{prop}
+\begin{proof}
+ La freccia verso sinistra è ovvia. Dimostriamo l'altra.
+ Introduciamo la seguente relazione di equivalenza:
+ $x\sim y \means \exists \gamma:[0,1]\rightarrow X,\quad \gamma(0)=X,\quad \gamma(1)=y$ continua. 
+ (E'facile verificare che è una relazione di equivalenza)$\\$
+ %fatti dare la dimostrazione a modino
+ Andiamo a mostrare che, fissato $x\in A$, la sua classe di equivalenza $\left [x\right ]$ è un insieme sia aperto che chiuso.$\\$
+ Sia $y\in A,\quad y\sim x$. Per ipotesi esiste una palla aperta $B(y,r)\subseteq A$. Ogni $z\in B(y, r)$ può essere collegata a $y$ tramite arco radiale.$\\$
+ Dunque $\left[x\right]$ è aperto (considero $B(y,r/2)\subseteq \left[x\right]$)$\\$
+ Per mostrare che l'insieme è chiuso basta vedere che il complementare è aperto. Ma se un punto $y$ non è collegato a $x$, allora quelli nella palletta intorno a lui non possono essere collegati a $x$:
+ altrimenti potrei collegare $y$ a $x$ tramite il punto nella palletta (come sopra).
+\end{proof}
+\begin{defn}[Componenti connesse per archi]
+ Su uno spazio topologico $X$ arbitrario, le classi di equivalenza per la relazione sopra definita sono dette componenti connesse per archi di X.
+\end{defn}
+\begin{defn}[Compattezza per ricoprimenti]
+ $X$ compatto $\means \forall$ ricoprimento di aperti di $X$ $\exists$ un sottoricoprimento finito.
+\end{defn}
+\begin{oss}
+ Quando parliamo di compattezza, ci riferiamo sempre a spazi T2
+\end{oss}
+\begin{defn}[Compattezza per successioni]
+ $X$ compatto per successioni $\means \forall a: \mathbb N \rightarrow X \exists$ sottosuccesione $a_{n_j}\rightarrow x_0\in X$
+\end{defn}
+\begin{prop}
+ $X$ compatto, $Y\subseteq X,\quad Y$ compatto $\iff Y$ chiuso
+\end{prop}
+\begin{proof}
+ $\\$
+ $\Leftarrow\\$
+ Sia $\left \{ A_j \right \}$ famigla di aperti di $X$ tale che $Y\subseteq \bigcup_{j\in J}A_j\\$
+ Allora $\left \{ A_j \right \} \cup (X\setminus Y)$ è ricoprimento di tutto $X$.
+ Per compattezza posso estrarre ricoprimento finito che ricopre $X$, e quindi $Y$. (Si osservi che non abiamo usato l'essere T2).$\\$
+ $\Rightarrow\\$
+ Voglio mostrare che $X\setminus Y$ è aperto sfruttando la definizione.
+ Fisso $y\in X\setminus Y$.Per T2, $\forall x\in Y\quad \exists U_x, W_x$ aperti disgiunti, $x\in U_x$, $y\in W_x.\\$ 
+ Si osservi che $\bigcup_{x\in Y}U_x$ è ricoprimento di $Y$. Per compattezza, posso estrarre un sottoricoprimento finito $U_1,...U_n$
+ Allora considero i rispettivi insiemi aperti $W_1,...W_n$ che assieme agli $U_i$ separavano i punti.$\\$ 
+ Ma $W:= \bigcap_{i=1}^nW_i$ è aperto non vuoto, che contiene solo punti di $X\setminus Y$ e tale che $y\in W$, da cui la tesi  
+ \end{proof}
+\begin{prop}
+ $X$ T2, 2-numerabile, $\quad X$ compatto $\iff X$ compatto per successioni
+\end{prop}
+ \begin{lemma}
+  $X$ compatto, $Y\subseteq X, Y$ infinito. Allora esistono punti di accumulazione per $Y$ in $X$.
+ \end{lemma}
+ \begin{proof}
+  Supponiamo per assurdo che tutti gli $x\in X$ non siano di accumulazione per $Y$. Abbiamo due casi:$\\$
+  1)$x\in X\setminus Y\then \exists$ intorno $U_x$ tale che $U_x\cap Y = \varnothing \\$
+  2)$x\in Y\then \exists$ intorno aperto $U_x$ di $x$ tale che $U_x\cap Y = \left \{ x\right \} \\$
+  Considero un ricoprimento di $X	\left \{ U_x\right \}$. Per compattezza $\exists U_1,...U_n$ sottoricoprimento finito.$\\$
+  Allora $Y\subseteq \bigcup_{i=1}^nU_i\then Y\subseteq \left \{ x_1,...,x_n\right \}$ che è finito, assurdo.$\\$
+ \end{proof}
+
+
+
+
+
+
+
