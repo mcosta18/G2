@@ -9,16 +9,13 @@
  $A_1\is f^{-1}(B_1), A_2\is f^{-1}(B_2)$ aperti per continuità di $f$.
  Inoltre sono non vuoti, disgiunti e $X=A_1\cup A_2$, assurdo.
 \end{proof}
-\begin{cor}
- La connessione è invariante per omeomorfismo. 
-\end{cor}
 \begin{oss}
- La connessione non passa ai sottospazi.
+ La connessione è invariante per omeomorfismo. La connessione non passa ai sottospazi. 
 \end{oss}
 \begin{defn}[Arco]
  Un arco in $X$ è una applicazione continua $\fundef[\gamma]{[0,1]}{X}$
 \end{defn}
-\begin{defn}[Connessione per archi]
+\begin{defn}[Connessione per archi]$\\$
  $X$ connesso per archi $\means \forall x_0, x_1 \in X \,\exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=x_0,\quad \gamma(1)=x_1$
 \end{defn}
 \begin{prop}
@@ -31,7 +28,7 @@
  $\gamma([0,1])=(A_0\cap \gamma([0,1])) \cup (A_1\cap(\gamma([0,1]))$ che è sconnesso. Assurdo
 \end{proof}
 \begin{es}
- Non è vero il viceversa!
+ Non è vero il viceversa!$\\$
  $Y_1\is\setdef[(0,y)]{-1\le y \le x}\\$
  $Y_2\is\Setdef[\left(x,\sin\left(\frac{1}{x}\right)\right)]{x\in \mathbb R}\\$
  $Y=Y_1\cup Y_2$ è il controesempio 
@@ -43,8 +40,8 @@
 \end{prop}
 \begin{proof}
  La freccia verso sinistra è ovvia. Dimostriamo l'altra.
- Introduciamo la seguente relazione di equivalenza:
- $x\sim y \means \exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=X,\quad \gamma(1)=y$ continua. 
+ Introduciamo la seguente relazione di equivalenza:$\\$
+ $x\sim y \means \exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=X,\quad \gamma(1)=y$ continua.$\\$ 
  (È facile verificare che è una relazione di equivalenza)
  
  %fatti dare la dimostrazione a modino
@@ -60,13 +57,13 @@
 \begin{defn}[Componenti connesse per archi]
  Su uno spazio topologico $X$ arbitrario, le classi di equivalenza per la relazione sopra definita sono dette componenti connesse per archi di X.
 \end{defn}
-\begin{defn}[Compattezza per ricoprimenti]
+\begin{defn}[Compattezza per ricoprimenti]$\\$
  $X$ compatto $\means \forall$ ricoprimento di aperti di $X$ $\exists$ un sottoricoprimento finito.
 \end{defn}
 \begin{oss}
  Quando parliamo di compattezza, ci riferiamo sempre a spazi T2
 \end{oss}
-\begin{defn}[Compattezza per successioni]
+\begin{defn}[Compattezza per successioni]$\\$
  $X$ compatto per successioni $\means \forall \fundef[a]{\N}{X} \, \exists$ sottosuccessione $a_{n_j}\convarrow x_0\in X$
 \end{defn}
 \begin{prop}
@@ -87,17 +84,17 @@
  Ma $W\is \inters_{i=1}^nW_i$ è aperto non vuoto, che contiene solo punti di $X\setminus Y$ e tale che $y\in W$, da cui la tesi  
  \end{proof}
 \begin{prop}
- $X$ T2, 2-numerabile, $\quad X$ compatto $\iff X$ compatto per successioni
+ $X$ T2, 2-numerabile, $ X$ compatto $\iff X$ compatto per successioni
 \end{prop}
  \begin{lemma}
   $X$ compatto, $Y\subseteq X, Y$ infinito. Allora esistono punti di accumulazione per $Y$ in $X$.
  \end{lemma}
  \begin{proof}
   Supponiamo per assurdo che tutti gli $x\in X$ non siano di accumulazione per $Y$. Abbiamo due casi:
-	\begin{enumerate}
+	\begin{itemize}
 	 \item $x\in X\setminus Y\then \exists$ intorno $U_x$ tale che $U_x\cap Y = \emptyset$
 	 \item $x\in Y\then \exists$ intorno aperto $U_x$ di $x$ tale che $U_x\cap Y = \{ x \}$
-	\end{enumerate}
+	\end{itemize}
   Considero un ricoprimento di $X$ $\{ U_x \}$. Per compattezza $\exists U_1,\dots U_n$ sottoricoprimento finito.
   
   Allora $Y\subseteq \union_{i=1}^nU_i\then Y\subseteq \left \{ x_1,\dots,x_n\right \}$ che è finito, assurdo.
