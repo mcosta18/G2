@@ -1,7 +1,7 @@
 % autore: Costa
 
 \begin{teo}
- $\fundef[f]{X}{Y}$ continua, $X$ connesso $\then f(X)$ connesso 
+ $\fundef[f]{X}{Y}$ continua, $X$ connesso $\implies f(X)$ connesso 
 \end{teo}
 \begin{proof}
   Non è restrittivo supporre $f(X)=Y$: infatti $\fundef[f]{X}{Y}$ continua $\Leftrightarrow \fundef[f]{X}{f(X)}$ continua.
@@ -19,12 +19,12 @@
  $X$ connesso per archi $\means \forall x_0, x_1 \in X \,\exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=x_0,\quad \gamma(1)=x_1$
 \end{defn}
 \begin{prop}
- $X$ connesso per archi $\then X$ connesso
+ $X$ connesso per archi $\implies X$ connesso
 \end{prop}
 \begin{proof}
  Supponiamo per assurdo $X=A_0\cup A_1$ aperti non vuoti disgiunti.
  $\exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=x_0,\quad \gamma(1)=x_1\\$
- $[0,1]$ connesso $\then \gamma([0,1])$ connesso per continuità di $\gamma\\$
+ $[0,1]$ connesso $\implies \gamma([0,1])$ connesso per continuità di $\gamma\\$
  $\gamma([0,1])=(A_0\cap \gamma([0,1])) \cup (A_1\cap(\gamma([0,1]))$ che è sconnesso. Assurdo
 \end{proof}
 \begin{es}
@@ -92,12 +92,12 @@
  \begin{proof}
   Supponiamo per assurdo che tutti gli $x\in X$ non siano di accumulazione per $Y$. Abbiamo due casi:
 	\begin{itemize}
-	 \item $x\in X\setminus Y\then \exists$ intorno $U_x$ tale che $U_x\cap Y = \emptyset$
-	 \item $x\in Y\then \exists$ intorno aperto $U_x$ di $x$ tale che $U_x\cap Y = \{ x \}$
+	 \item $x\in X\setminus Y\implies \exists$ intorno $U_x$ tale che $U_x\cap Y = \emptyset$
+	 \item $x\in Y\implies \exists$ intorno aperto $U_x$ di $x$ tale che $U_x\cap Y = \{ x \}$
 	\end{itemize}
   Considero un ricoprimento di $X$ $\{ U_x \}$. Per compattezza $\exists U_1,\dots U_n$ sottoricoprimento finito.
   
-  Allora $Y\subseteq \union_{i=1}^nU_i\then Y\subseteq \left \{ x_1,\dots,x_n\right \}$ che è finito, assurdo.
+  Allora $Y\subseteq \union_{i=1}^nU_i\implies Y\subseteq \left \{ x_1,\dots,x_n\right \}$ che è finito, assurdo.
  \end{proof}
 
 
