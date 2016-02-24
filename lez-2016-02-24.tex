@@ -1,3 +1,66 @@
 % trascrizione: Candido
 
-ho creato il file della lezione di domani, per ora è solo una prova per vedere se funziona git
+% lo scrivo in formato lezione, andrà fatto il merge nella stesura finale
+% forse sono stupido io, ma bisognerebbe avere delle reference a lemmi, proposizioni e teoremi
+
+\begin{oss}
+Sia $X$ l'insieme ambiente e $Y\subseteq X$, $x\in Y$.\\
+Si ha che $x$ è interno a $Y \centernot\implies x$ è di acc. per $Y$, ad esempio per $(X, \tau _{disc})$ preso $Y\is\Setdef{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma ${x}\setminus {x} = \varnothing$ quindi non è di acc.
+\end{oss}
+
+\begin{prop}
+$X 1$-numerabile e compatto \then $X$ è compatto per successioni
+\end{prop}
+\begin{proof}
+Sia $(a_n)_{n\in\N}$ una successione a valori in $X$. Si hanno allora due casi:
+\begin{itemize}
+\item se assume un numero finito di valori ne assumerà uno di questi infinite volte, quindi posso estrarre una sottosuccessione costante;
+\item se assume un numero infinito di valori distinti allora per il lemma dimostrato si ha che $\exists x\in X$ di accumulazione per $\Setdef{a_n}$.
+\end{itemize}
+Nel secondo caso la successione si costruisce per $1$-numerabilità, infatti, presa una base di intorni $\Setdef{U_n}$ di $x$ \wlg annidati, costruisco la sottosuccessione prendendo come $n_0$ il minimo per cui $a_{n_0}\in U_0$ e $n_1 > n_0$ e che sia il minimo $t.c. a_{n_1}\in U_1$, \dots . Questa sottosuccessione ovviamente converge a $x$ come da definizione.
+\end{proof}
+
+\begin{oss}
+Se un punto è di accumulazione per un dato insieme in uno spazio $T_2$ si ha che ogni suo intorno del punto interseca l'insieme in infiniti punti, infatti se così non fosse, usando il fatto che i punti sono chiusi in uno spazio $T_2$, potrei avere un intorno con intersezione finita. Posso sottrarre questi punti all'intorno, che continua a contenere il punto e ad essere aperto per intersezione finita, ma esso non interseca più l'insieme, assurdo
+\end{oss}
+
+\begin{prop}
+$X 2$-numerabile e compatto per successioni $\then$ X è compatto
+\end{prop}
+\begin{proof}
+Sia dunque $R$ un ricoprimento di $X$, da esso ne voglio estrarre uno finito.\\
+Si ottiene prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile. In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.\\
+Sia dunque $B$ una base numerabile di $X$. Si ha allora che $\forall x\in X \exists R_x \in R t.c x\in R_x$. Per definizione di base ho anche che $\exists B_x \in B t.c. B_x \subseteq R_x \et x\in B_x$. Da cui il primo risultato, poiché l'insieme dei $B_x$ è numerabile, essendo una sottofamiglia della famiglia numerabile $B$.\\
+Il secondo parziale è estrarre da un ricoprimento numerabile un ricoprimento finito.\\
+Per fare ciò si procede per assurdo: se $(R_n)_{n\in \N}$ non ammettesse un sottoricoprimento finito posso costruire la mia successione in modo che $a_0 \not \in R_0$ e $a_1 \not \in R_1 \cup R_2$, \dots . Risulta che da questa successione è impossibile estrarre una sottosuccessione convergente, infatti se convergesse a un punto dell'insieme starebbe definitivamente dentro l'aperto che lo contiene, da cui l'assurdo.
+\end{proof}
+
+\begin{cor}
+In uno spazio $2$-numerabile si ha che: compatto \iff compatto per successioni
+\end{cor}
+
+\titlet{Compattezza in spazi metrizzabili}
+Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguenze "importanti" su ogni spazio metrico che induce quella topologia.
+
+\begin{defn}
+Sia $(X,d)$ uno spazio metrico. Esso si dice \emph{totalmente limitato} se $\forall \varepsilon > 0 X$ è ricoperto da un numero finito di palle di raggio $\varepsilon$.
+\end{defn}
+
+\begin{prop}
+Sia $(X,\tau _d)$ compatto per successioni, allora $(X,d)$, metrica inducente, è totalmente limitato
+\end{prop}
+\begin{proof}
+Per assurdo: $\exists \varepsilon > 0 t.c. X$ non è ricoperto da un numero finito di palle di raggio $\varepsilon$.\\
+Allora dato $x_0 \in X$ si ha che $\exists x_1 \in X t.c. x_1 \not \in B_\varepsilon (x_0)$ e $\exists x_2 \in X t.c. x_2 \not \in B_\varepsilon (x_0) \cup B_\varepsilon (x_1)$, \dots .\\
+Dunque per induzione costruisco una successione $x_n$ che non ammette nessuna sottosuccessione convergente, infatti i punti distano fra loro almeno $\varepsilon$, da cui l'assurdo.
+\end{proof}
+
+\begin{prop}
+$(X,\tau _d)$ compatto per successioni \implies $X$ 2-numerabile
+\end{prop}
+\begin{proof}
+\end{proof}
+
+\begin{cor}
+$(X,\tau _d)$ metrizzabile \implies (compatto \iff compatto per successioni)
+\end{cor}

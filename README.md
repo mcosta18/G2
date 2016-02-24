@@ -1,5 +1,16 @@
 # G2
 
+## Turni
+
+* Bob
+* Jack
+* Marco Costa
+* Ale
+* Andre
+* Albe
+
+Se convincete altra gente potete sempre aggiungerla in coda
+
 ## Struttura del documento
 
 Il file principale (quello da compilare) è `appunti.tex`, che importa:
@@ -67,3 +78,6 @@ per sapere la storia del repo
 
 $ git log
 
+
+### Makefile:
+è mio, lasciatelo pure perdere (AleCandido)
