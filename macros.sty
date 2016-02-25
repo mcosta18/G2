@@ -9,6 +9,7 @@
 \RequirePackage{mathtools}
 \RequirePackage{stmaryrd} % \lightning
 \RequirePackage{chemarrow} % \chemarrow
+\RequirePackage{fixltx2e} % \TextOrMath
 
 %%% MISCELLANEOUS %%%
 
@@ -25,7 +26,7 @@
 
 %%% PROOFS %%%
 
-\newcommand*\wlg{\;\mathtt{WLOG}\;} % without loss of generality
+\newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % without loss of generality
 
 \newcommand*\proofleftarrow{\\\Leftarrow\\}
 \newcommand*\proofrightarrow{\\\Rightarrow\\}
@@ -33,7 +34,6 @@
 \newcommand*\et{\wedge} % \et = ∧
 \newcommand*\vel{\vee} % \vel = ∨
 
-\newcommand*\then{\ \Rightarrow\ }
 \newcommand*\so{\rightarrow\,}
 \newcommand*\os{\leftarrow\,}
 
