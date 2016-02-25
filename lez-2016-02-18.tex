@@ -8,7 +8,7 @@ Sia $\mathcal B$ una base di aperti di $X$ numerabile. $\forall x\in X$ sia $\ma
 \end{proof}
 
 \begin{defn}[Densità]
-$Y$ denso in $X\means Y\subseteq X\et\forall A\text{ aperto}:A\cap Y\neq\emptyset$
+$Y$ denso in $X\means Y\subseteq X\et\forall A\text{ aperto}:A\cap Y\neq\nullset$
 \end{defn}
 
 \begin{lemma}
@@ -82,7 +82,7 @@ $X\text{ 1-numerabile }\et Y\subseteq X\et x\in X\implies(x\text{ accumulazione 
 \begin{proof}
 Mostriamo l'implicazione verso destra:
 \begin{align*}
-x\text{ accumulazione per }Y\so&\forall U(x):(U\setminus\set x)\cap Y\neq\emptyset\\
+x\text{ accumulazione per }Y\so&\forall U(x):(U\setminus\set x)\cap Y\neq\nullset\\
 X\text{ 1-numerabile}\so&\exists\setdef[U_n(x)]{n\in\N}\text{ base di intorni di }x\text{ numerabile}\\
 \so&\forall n\in\N\,\exists a_n\in(U_n\setminus\set x)\cap Y \qedhere
 \end{align*}
@@ -91,11 +91,11 @@ X\text{ 1-numerabile}\so&\exists\setdef[U_n(x)]{n\in\N}\text{ base di intorni di
 \titlet{Connessione}
 
 \begin{defn}[Connessione]
-$X$ sconnesso $\means\neg(X\text{ connesso})\means\exists A,B\text{ aperti}:X=A\cup B\et A\cap B=\emptyset\et A,B\neq\emptyset$
+$X$ sconnesso $\means\neg(X\text{ connesso})\means\exists A,B\text{ aperti}:X=A\cup B\et A\cap B=\nullset\et A,B\neq\nullset$
 \end{defn}
 
 \begin{prop}
-$X\text{ connesso}\et A\subseteq X\et A\text{ aperto e chiuso}\implies A=X\vel A=\emptyset$
+$X\text{ connesso}\et A\subseteq X\et A\text{ aperto e chiuso}\implies A=X\vel A=\nullset$
 \end{prop}
 
 \begin{prop}

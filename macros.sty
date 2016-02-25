@@ -10,6 +10,7 @@
 \RequirePackage{stmaryrd} % \lightning
 \RequirePackage{chemarrow} % \chemarrow
 \RequirePackage{fixltx2e} % \TextOrMath
+\RequirePackage{centernot} % \centernot
 
 %%% MISCELLANEOUS %%%
 
@@ -28,27 +29,28 @@
 
 \newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % without loss of generality
 
-\newcommand*\proofleftarrow{\\\Leftarrow\\}
-\newcommand*\proofrightarrow{\\\Rightarrow\\}
+\newcommand*\proofleftarrow{\impliedby}
+\newcommand*\proofrightarrow{\implies}
 
 \newcommand*\et{\wedge} % \et = ∧
 \newcommand*\vel{\vee} % \vel = ∨
 
+\newcommand*\notimplies{\centernot\implies}
 \newcommand*\so{\rightarrow\,}
 \newcommand*\os{\leftarrow\,}
 
-\newcommand*\is{:=}
-\newcommand*\means{:\leftrightarrow}
+\newcommand*\is{:=} % equal by definition
+\newcommand*\means{:\leftrightarrow} % logically equivalent by definition
 
-\newcommand*\absurd{\,\lightning}
+\newcommand*\absurd{\,\lightning} % used to end a reductio ad absurdum
 
 %%% SETS %%%
 
-\renewcommand*\emptyset\varnothing % the empty set
+\newcommand*\nullset\varnothing % the empty set
 \DeclareMathOperator\card{\#} % cardinality
 
-\newcommand*\inters\bigcap
-\newcommand*\union\bigcup
+\newcommand*\inters\bigcap % ``intersectory''
+\newcommand*\union\bigcup % ``unitory''
 
 \newcommand*\set[1]{\left\{{#1}\right\}} % \set{x} = \left \{ x \right \}
 \newcommand*\setdef[2][x]{\{{#1}\,|\,{#2}\}} % set definition
@@ -67,8 +69,10 @@
 
 \DeclareMathOperator\dis{\mathrm{d}} % distance
 
-\newcommand*\ball[2][r]{\operatorname{B}({#2},{#1})} % open ball
-\newcommand*\Ball[2][r]{\operatorname{B}\left({#2},{#1}\right)} % open ball (with big parentheses)
+%\newcommand*\ball[2][r]{\operatorname{B}({#2},{#1})} % open ball
+%\newcommand*\Ball[2][r]{\operatorname{B}\left({#2},{#1}\right)} % open ball (with big parentheses)
+\newcommand*\ball[2][r]{\operatorname{B}_{#1}({#2})} % open ball
+\newcommand*\Ball[2][r]{\operatorname{B}_{#1}\left({#2}\right)} % open ball (with big parentheses)
 
 \newcommand*\convarrow{\rightarrowtriangle} % arrow meaning convergence
 
