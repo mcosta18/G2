@@ -70,12 +70,12 @@
  $X$ compatto, $Y\subseteq X,\quad Y$ compatto $\iff Y$ chiuso
 \end{prop}
 \begin{proof}
- $\proofleftarrow$
+ $\\\proofleftarrow$\\
  Sia $ \{ A_j  \}$ famigla di aperti di $X$ tale che $Y\subseteq \union_{j\in J}A_j$
  
  Allora $ \{ A_j  \} \cup (X\setminus Y)$ è ricoprimento di tutto $X$.
  Per compattezza posso estrarre ricoprimento finito che ricopre $X$, e quindi $Y$. (Si osservi che non abbiamo usato l'essere T2).
- $\proofrightarrow$
+ $\\\proofrightarrow$\\
  Voglio mostrare che $X\setminus Y$ è aperto sfruttando la definizione.
  Fisso $y\in X\setminus Y$.Per T2, $\forall x\in Y\quad \exists U_x, W_x$ aperti disgiunti, $x\in U_x$, $y\in W_x.\\$ 
  Si osservi che $\union_{x\in Y}U_x$ è ricoprimento di $Y$. Per compattezza, posso estrarre un sottoricoprimento finito $U_1,\dots U_n$
@@ -92,7 +92,7 @@
  \begin{proof}
   Supponiamo per assurdo che tutti gli $x\in X$ non siano di accumulazione per $Y$. Abbiamo due casi:
 	\begin{itemize}
-	 \item $x\in X\setminus Y\implies \exists$ intorno $U_x$ tale che $U_x\cap Y = \emptyset$
+	 \item $x\in X\setminus Y\implies \exists$ intorno $U_x$ tale che $U_x\cap Y = \nullset$
 	 \item $x\in Y\implies \exists$ intorno aperto $U_x$ di $x$ tale che $U_x\cap Y = \{ x \}$
 	\end{itemize}
   Considero un ricoprimento di $X$ $\{ U_x \}$. Per compattezza $\exists U_1,\dots U_n$ sottoricoprimento finito.

@@ -27,7 +27,7 @@ $x\text{ interno a }Y\means x\in\inter Y$
 \end{defn}
 
 \begin{defn}
-$x\text{ accumulazione per }Y\means\forall U(x):(U\setminus\set{x})\cap Y\neq\emptyset$
+$x\text{ accumulazione per }Y\means\forall U(x):(U\setminus\set{x})\cap Y\neq\nullset$
 \end{defn}
 
 \begin{defn}
@@ -41,14 +41,14 @@ $\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}$
 Mostriamo che $y\in\clos Y\setminus Y\implies y\text{ accumulazione per }Y$. Per assurdo:
 \begin{align*}
 &y\text{ isolato}\so\\
-\so&\exists A\text{ aperto}:y\in A\et A\cap Y=\emptyset\so\\
+\so&\exists A\text{ aperto}:y\in A\et A\cap Y=\nullset\so\\
 \so&\comp A\text{ chiuso}\et y\not\in\comp A\et Y\subseteq\comp A\so\\
 \so&y\not\in\clos Y\absurd
 \end{align*}
 Mostriamo che $y\not\in Y\et y\text{ accumulazione per }Y\implies y\in\clos Y$. Per assurdo:
 \begin{align*}
 &y\not\in\clos Y\so\\
-\so&\comp\clos Y\text{ aperto}\et y\in\comp\clos Y\et\comp\clos Y\cap Y=\emptyset\so\\
+\so&\comp\clos Y\text{ aperto}\et y\in\comp\clos Y\et\comp\clos Y\cap Y=\nullset\so\\
 \so&y\text{ isolato}\absurd \qedhere
 \end{align*}
 \end{proof}
@@ -97,27 +97,27 @@ Consideriamo due spazi topologici sullo stesso insieme $(X,\tau_1)$, $(X,\tau_2)
 \titlet{Separazione e numerabilità}
 
 \begin{defn}[Proprietà di separazione]
-$X\text{ di Hausdorff}\means X\text{ è }T_2\means\forall x\neq y\,\exists U(x),U(y):U(x)\cap U(y)=\emptyset$
+$X\text{ di Hausdorff}\means X\text{ è }T_2\means\forall x\neq y\,\exists U(x),U(y):U(x)\cap U(y)=\nullset$
 \end{defn}
 
 \begin{prop}
 $X\text{ metrizzabile}\implies X\text{ è }T_2$
 \end{prop}
 \begin{proof}
-$x\neq y\so r\is\dis(x,y)\neq 0\so\ball[r/3]x\cap\ball[r/3]y=\emptyset$
+$x\neq y\so r\is\dis(x,y)\neq 0\so\ball[r/3]x\cap\ball[r/3]y=\nullset$
 \end{proof}
 
 \begin{prop}
 $X\text{ è }T_2\implies\forall x\in X:\set{x}\text{ chiuso}$
 \end{prop}
 \begin{proof}
-$(\forall y\in\comp\set{x}\,\exists U(y),U(x):U(y)\cap U(x)=\emptyset\so U(y)\subseteq\comp\set{x})\so\comp\set{x}\text{ aperto}$
+$(\forall y\in\comp\set{x}\,\exists U(y),U(x):U(y)\cap U(x)=\nullset\so U(y)\subseteq\comp\set{x})\so\comp\set{x}\text{ aperto}$
 \end{proof}
 
 \begin{es}[Topologia Zariski]
 Sia $\tau_z$ una topologia su $\R$:
-\[\tau_z\is\setdef[A\subset\R]{A=\emptyset\vel(A=\comp V\et\card V\in\N)}\]
-Allora $\forall A_1,A_2\in\tau_z:A_1\cap A_2\neq\emptyset\so(\R,\tau_z)\text{ non è }T_2$. Però i singoletti sono chiusi.
+\[\tau_z\is\setdef[A\subset\R]{A=\nullset\vel(A=\comp V\et\card V\in\N)}\]
+Allora $\forall A_1,A_2\in\tau_z:A_1\cap A_2\neq\nullset\so(\R,\tau_z)\text{ non è }T_2$. Però i singoletti sono chiusi.
 \end{es}
 
 \begin{oss}
@@ -137,8 +137,8 @@ Sia $\fundef XY$ un omeomorfismo. Mostriamo che $Y\text{ è }T_2\implies X\text{
 &\forall x_1\neq x_2\in X:\\
 &y_i\is f(x_i),\,i=1,2\\
 f\text{ iniettiva}\so&y_1\neq y_2\\
-Y\text{ è }T_2\so&\exists U_Y^i(y_i)\text{ aperti}:U_Y^1\cap U_Y^2=\emptyset\\
-f\text{ continua}\so&U_X^i\is f(U_Y^i)\text{ sono aperti}\et U_X^1\cap U_X^2=\emptyset
+Y\text{ è }T_2\so&\exists U_Y^i(y_i)\text{ aperti}:U_Y^1\cap U_Y^2=\nullset\\
+f\text{ continua}\so&U_X^i\is f(U_Y^i)\text{ sono aperti}\et U_X^1\cap U_X^2=\nullset
 \end{align*}
 Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $X\text{ è }T_2\implies Y\text{ è }T_2$.
 \end{proof}
