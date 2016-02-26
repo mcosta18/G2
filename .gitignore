@@ -5,4 +5,4 @@
 *.out
 *.synctex.gz
 .DS_Store
-*.gz(busy)
+*.*(busy)
