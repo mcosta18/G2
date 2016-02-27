@@ -18,11 +18,19 @@
 %\usepackage[margin=1cm,bottom=2.1cm,inner=1.8cm]{geometry}
 
 \usepackage[italian]{babel}
+%% font 1
+\usepackage{cmbright} % puro sans serif
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
 \usepackage{macros}
-\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+%% font 2 (già in uso)
+%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
 \usepackage{hyperref}
+
+%%font 3
+%\usepackage[sfdefault]{AlegreyaSans} % quest'altro font mi sembra più semplice e elegante, ma forse è puramente una questione di gusti
+%\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}} % l'altro è sicuramente molto pulito e standard
+
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definizione}
