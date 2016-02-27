@@ -4,33 +4,19 @@
 
 \begin{oss}
 Sia $X$ l'insieme ambiente e $Y\subseteq X$, $x\in Y$.\\
-<<<<<<< HEAD
-Si ha che $x$ è interno a $Y \centernot\proofrightarrow x$ è di acc. per $Y$, ad esempio per $(X, \tau _{disc})$ preso $Y\is \set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus \set{x} = \varnothing$ quindi non è di acc.
+Si ha che $x$ è interno a $Y \not\implies x$ è di acc. per $Y$, ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di acc.
 \end{oss}
 
 \begin{prop}
-$X$ $1$-numerabile e compatto $\proofrightarrow X$ è compatto per successioni
-=======
-Si ha che $x$ è interno a $Y \not\proofrightarrow x$ è di acc. per $Y$, ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di acc.
-\end{oss}
-
-\begin{prop}
-$X 1$-numerabile e compatto $\proofrightarrow X$ è compatto per successioni
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
+$X 1$-numerabile e compatto $\implies X$ è compatto per successioni
 \end{prop}
 \begin{proof}
 Sia $(a_n)_{n\in\N}$ una successione a valori in $X$. Si hanno allora due casi:
 \begin{itemize}
 \item se assume un numero finito di valori ne assumerà uno di questi infinite volte, quindi posso estrarre una sottosuccessione costante;
-<<<<<<< HEAD
-\item se assume un numero infinito di valori distinti allora per il lemma dimostrato si ha che $\exists$ $x\in X$ di accumulazione per $\set{a_n}$.
-\end{itemize}
-Nel secondo caso la successione si costruisce per $1$-numerabilità, infatti, presa una base di intorni $\set{U_n}$ di $x$ \wlg annidati, costruisco la sottosuccessione prendendo come $n_0$ il minimo per cui $a_{n_0}\in U_0$ e $n_1 > n_0$ e che sia il minimo $t.c.$ $a_{n_1}\in U_1$, \dots . Questa sottosuccessione ovviamente converge a $x$ come da definizione.
-=======
 \item se assume un numero infinito di valori distinti allora per il lemma dimostrato si ha che $\exists x\in X$ di accumulazione per $\set{a_n}$.
 \end{itemize}
 Nel secondo caso la successione si costruisce per $1$-numerabilità, infatti, presa una base di intorni $\set{U_n}$ di $x$ \wlg annidati, costruisco la sottosuccessione prendendo come $n_0$ il minimo per cui $a_{n_0}\in U_0$ e $n_1 > n_0$ e che sia il minimo t.c. $a_{n_1}\in U_1$, \dots . Questa sottosuccessione ovviamente converge a $x$ come da definizione.
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{proof}
 
 \begin{oss}
@@ -38,16 +24,12 @@ Se un punto è di accumulazione per un dato insieme in uno spazio $T_2$ si ha ch
 \end{oss}
 
 \begin{prop}
-$X$ $2$-numerabile e compatto per successioni $\proofrightarrow$ X è compatto
+$X 2$-numerabile e compatto per successioni $\implies$ X è compatto
 \end{prop}
 \begin{proof}
 Sia dunque $R$ un ricoprimento di $X$, da esso ne voglio estrarre uno finito.\\
 Si ottiene prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile. In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.\\
-<<<<<<< HEAD
-Sia dunque $B$ una base numerabile di $X$. Si ha allora che $\forall x\in X$ $\exists$ $R_x \in R t.c$ $x\in R_x$. Per definizione di base ho anche che $\exists$ $B_x \in B t.c. B_x \subseteq R_x \et x\in B_x$. Da cui il primo risultato, poiché l'insieme dei $B_x$ è numerabile, essendo una sottofamiglia della famiglia numerabile $B$.\\
-=======
 Sia dunque $B$ una base numerabile di $X$. Si ha allora che $\forall x\in X \exists R_x \in R \text{ t.c } x\in R_x$. Per definizione di base ho anche che $\exists B_x \in B \text{ t.c. } B_x \subseteq R_x \et x\in B_x$. Da cui il primo risultato, poiché l'insieme dei $B_x$ è numerabile, essendo una sottofamiglia della famiglia numerabile $B$.\\
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 Il secondo parziale è estrarre da un ricoprimento numerabile un ricoprimento finito.\\
 Per fare ciò si procede per assurdo: se $(R_n)_{n\in \N}$ non ammettesse un sottoricoprimento finito posso costruire la mia successione in modo che $a_0 \not \in R_0$ e $a_1 \not \in R_1 \cup R_2$, \dots . Risulta che da questa successione è impossibile estrarre una sottosuccessione convergente, infatti se convergesse a un punto dell'insieme starebbe definitivamente dentro l'aperto che lo contiene, da cui l'assurdo.
 \end{proof}
@@ -60,80 +42,47 @@ In uno spazio $2$-numerabile si ha che: compatto $\iff$ compatto per successioni
 Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguenze ``importanti'' su ogni spazio metrico che induce quella topologia.
 
 \begin{defn}
-<<<<<<< HEAD
-Sia $(X,d)$ uno spazio metrico. Esso si dice \emph{totalmente limitato} se $\forall$ $\varepsilon > 0$ $X$ è ricoperto da un numero finito di palle di raggio $\varepsilon$.
-=======
 Sia $(X,d)$ uno spazio metrico. Esso si dice \emph{totalmente limitato} se $\forall \varepsilon > 0:X$ è ricoperto da un numero finito di palle di raggio $\varepsilon$.
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{defn}
 
 \begin{prop}
 Sia $(X,\tau _d)$ compatto per successioni, allora $(X,d)$, una metrica inducente, è totalmente limitato
 \end{prop}
 \begin{proof}
-<<<<<<< HEAD
-Per assurdo: $\exists$ $\varepsilon > 0$ $t.c.$ $X$ non è ricoperto da un numero finito di palle di raggio $\varepsilon$.\\
-Allora dato $x_0 \in X$ si ha che $\exists$ $x_1 \in X$ $t.c.$ $x_1 \not \in B_\varepsilon (x_0)$ e $\exists$ $x_2 \in X$ $t.c.$ $x_2 \not \in B_\varepsilon (x_0) \cup B_\varepsilon (x_1)$, \dots .\\
-=======
 Per assurdo: $\exists \varepsilon > 0 \text{ t.c. } X$ non è ricoperto da un numero finito di palle di raggio $\varepsilon$.\\
 Allora dato $x_0 \in X$ si ha che $\exists x_1 \in X \text{ t.c. } x_1 \not \in \ball[\varepsilon]{x_0}$ e $\exists x_2 \in X \text{ t.c. } x_2 \not \in \ball[\varepsilon]{x_0} \cup \ball[\varepsilon]{x_1}$, \dots .\\
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 Dunque per induzione costruisco una successione $x_n$ che non ammette nessuna sottosuccessione convergente, infatti i punti distano fra loro almeno $\varepsilon$, da cui l'assurdo.
 \end{proof}
 
 \begin{prop}
-<<<<<<< HEAD
-$(X, \tau _d)$ compatto per successioni $\proofrightarrow$ $X$ $2$-numerabile
-\end{prop}
-\begin{proof}
-$\forall n \in \N$ esiste una famiglia finita $\mathcal{F}_n$ di palle aperte di raggio $2^{-n}$ che ricopre $X$, per totale limitatezza.\\
-Sia allora $\mathcal{B} \is \cup _{n \in \N} \mathcal{F}_n$. Si ha che $\mathcal{B}$ è sicuramente una famiglia numerabile, per verificare che è anche una base di $\tau _d$ si verificano i seguenti due punti:
-\begin{itemize}
-\item Se $\mathcal{A}$ è un ricoprimento di $X \proofrightarrow \exists$ $\bar{n}$ $t.c.$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
-\item Si applica il punto precedente $\forall$ $A \in \tau _d , \forall$ $x \in A$, considerando come ricoprimento $\mathcal{A} \is \set{A, X\setminus \set{x}}$
-=======
-$(X, \tau _d)$ compatto per successioni $\proofrightarrow X$ 2-numerabile
+$(X, \tau _d)$ compatto per successioni $\implies X$ 2-numerabile
 \end{prop}
 \begin{proof}
 $\forall n \in \N$ esiste una famiglia finita $\mathcal{F}_n$ di palle aperte di raggio $2^{-n}$ che ricopre $X$, per totale limitatezza.\\
 Sia allora $\mathcal{B} \is \union _{n \in \N} \mathcal F_n$. Si ha che $\mathcal{B}$ è sicuramente una famiglia numerabile, per verificare che è anche una base di $\tau _d$ si verificano i seguenti due punti:
 \begin{itemize}
-\item Se $\mathcal{A}$ è un ricoprimento di $X \proofrightarrow \exists \bar{n} \text{ t.c. }$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
+\item Se $\mathcal{A}$ è un ricoprimento di $X \implies \exists \bar{n} \text{ t.c. }$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
 \item Si applica il punto precedente $\forall A \in \tau _d , \forall x \in A$, considerando come ricoprimento $\mathcal{A} \is \left\{ {A, X\setminus \left\{ {x}\right\}}\right\}$
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{itemize}
 \end{proof}
 
 \begin{cor}
-$(X,\tau _d)$ metrizzabile $\proofrightarrow$ (compatto $\iff$ compatto per successioni)
+$(X,\tau _d)$ metrizzabile $\implies$ (compatto $\iff$ compatto per successioni)
 \end{cor}
 
 \begin{prop}
-<<<<<<< HEAD
-$(\R^n, \tau _E), K\subset \R^n$ compatto $\iff$ chiuso e limitato
-=======
 $(\R^n, \tau _E), K\subset \R^n\text{ compatto} \iff\text{chiuso e limitato}$
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{prop}
 \begin{proof}
 Data l'equivalenza data dal corollario precedente si dimostrano le due implicazioni nel caso di compatto per successioni:
 \begin{itemize}
-<<<<<<< HEAD
 \item $\proofrightarrow$, per assurdo posso supporre che l'insieme sia illimitato, ma prendendo una sottosuccessione che tende a $\infty$ si ha che nessuna sottosuccessione estratta può convergere, perché anch'essa tende a $\infty$, mentre negando la chiusura posso costruire una successione che tenda a un punto di accumulazione che non appartiene all'insieme, e per stabilità del limite nel passaggio a sottosuccessioni si ha che nessuna sottosuccessione può convergere a un punto dell'insieme;
 \item $\proofleftarrow$, si ottiene eseguendo estrazioni successive mediante il teorema di Bolzano-Weierstrass (compattezza per i chiusi e limitati di $\R$), il che è reso possibile dalla stabilità del limite nel passaggio a sottosuccessioni e dalla dimensione finita di $\R^n$
-=======
-\item $\proofrightarrow$, per assurdo posso supporre che l'insieme sia illimitato, ma prendendo una sottosuccessione che tende a $\infty$ si ha che nessuna sottosuccessione estratta può convergere, perché anch'essa tende a $\infty$, mentre negando la chiusura posso costruire una successione che tenda a un punto di accumulazione che non appartiene all'insieme, e per stabilità del limite nel passaggio a sottosuccessioni si ha che nessuna sottosuccessione può convergere a un punto dell'insieme;
-\item $\proofleftarrow$, si ottiene eseguendo estrazioni successive mediante il teorema di Bolzano-Weierstrass (compattezza per i chiusi e limitati di $\R$), il che è reso possibile dalla stabilità del limite nel passaggio a sottosuccessioni e dalla dimensione finita di $\R^n$
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{itemize}
 \end{proof}
 
 \begin{teo}
-<<<<<<< HEAD
-Sia $(X,\tau _d)$ compatto per successioni, e $(X,d)$ una metrica inducente, allora ($(X,\tau _d)$ compatto $\iff$ $(X,d)$ è totalmente limitato e completo)
-=======
 Sia $(X,\tau _d)$ compatto per successioni, e $(X,d)$ una metrica inducente, allora ($(X,\tau _d)$ compatto $\iff (X,d)$ è totalmente limitato e completo)
->>>>>>> 7b9dd73f7e9e80a165cb13dd12f1a99bd47beac6
 \end{teo}
 \begin{proof}
 La dimostrazione è lasciata per esercizio al lettore, ma non è richiesta nel corso

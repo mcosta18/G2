@@ -8,6 +8,8 @@
 * Ale
 * Andre
 * Albe
+* Valerio
+* Federico
 
 Se convincete altra gente potete sempre aggiungerla in coda
 
@@ -18,7 +20,7 @@ Il file principale (quello da compilare) è `appunti.tex`, che importa:
 * `macros.sty` dove vengono definite le macro per formule matematiche
 * `lez-YYYY-MM-DD.tex` che contiene la lezione alla data specificata
 
-Ogni file lezione è strutturato principalmente come sequenza di ambienti `teo`, `lemma`, `prop`, `defn`, `oss`, `es`, `proof`, dal significato intuitivo. Il comando `\titlet{}` serve per scrivere un titoletto.
+Ogni file lezione è strutturato principalmente come sequenza di ambienti `teo`, `lemma`, `prop`, `cor`, `defn`, `oss`, `es`, `proof`, dal significato intuitivo. Il comando `\titlet{}` serve per scrivere un titoletto.
 
 ### Aggiungere una lezione
 
