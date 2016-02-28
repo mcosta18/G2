@@ -1,0 +1,150 @@
+% trascrizione Bob
+
+%gnegne
+
+\titlet{Definizioni di base}
+
+\begin{defn}[Topologia]
+Sia dato un insieme $X$ e una famiglia $\tau$ di sottoinsiemi di $X$. $\tau$ è detta \textit{topologia} se soddisfa le seguenti proprietà:
+\begin{itemize}
+\item $\nullset,X\in\tau$ 
+\item$\tau$ è chiusa per intersezioni finite, ovvero: $\forall A_1, A_2 \in \tau \implies A_1 \cap A_2 \in \tau$
+\item $\tau$ è chiusa per unioni arbitrarie, ovvero: $\forall \mathcal B \subseteq \tau \implies \bigcup_{A\in\mathcal B} A \in \tau$.
+\end{itemize}
+Gli elementi di $\tau$ sono detti \textit{aperti} per la topologia $\tau$.
+\end{defn}
+
+\begin{defn}[Spazio topologico]
+Sia $X \neq \nullset$ un insime munito di una topologia $\tau$. La coppia $(X,\tau)$ è detta \textit{spazio topologico}.
+\end{defn}
+\begin{defn}[Chiuso]
+Un sottoieniseme $Y \subseteq X$ è detto \textit{chiuso} se $\comp Y$ è aperto
+\end{defn}
+
+\begin{oss}
+$\nullset$ e $X$ sono sia aperti che chiusi.
+\end{oss}
+
+\begin{prop}
+Sia $F_\tau$ la famiglia dei sottoinsimi chiusi di $X$. Questa gode delle seguenti proprietà:
+\begin{itemize}
+\item $\nullset ,X \in F_\tau$ 
+\item $F_\tau$ è chiusa pe unioni finite
+\item $F_\tau$ è chiusa per intersezionii arbitrarie.
+\end{itemize}
+\end{prop}
+
+\begin{oss}
+Un insieme $X\neq\nullset$ ammette sempre due topologie degeneri:
+\begin{itemize}
+\item $\tau_B = \{\nullset,X\}$ detta topologia banale
+\item $\tau_D = \mathcal P(x)$ detta topologia discreta
+\end{itemize}
+\end{oss}
+
+\begin{defn}
+Date due topologie $\tau$ e $\tau'$ su $X$, si dice che $\tau$ è \textit{più fine} di $\tau'$ se $\tau'\subset\tau$, ovvero tutti gli aperti di $\tau'$ sono anche aperti di $\tau$, ma esistono aperti in $\tau$ non presenti in $\tau'$.
+\end{defn}
+
+\titlet{Spazi metrici e metrizzabili}
+
+\begin{defn}[Spazio metrico]
+Sia dato un insieme $X\neq\nullset$ e una funzione $d: X \times X \funarrow \mathbb{R}$ tale che:
+\begin{itemize}
+\item $\forall x,y \in X,  d(x,y)\ge0 \et (d(x,y)=0 \iff x=y)$
+\item $d(x,y) = d(y,x)$
+\item $d(x,z) \le d(x,y) + d(y,z)$
+\end{itemize}
+La funzione $d$ è detta \textit{distanza} e la coppia $(X,d)$ è detta \textit{spazio metrico}.
+\end{defn}
+
+\begin{es}
+Esempi di spazi metrici sono:
+\begin{itemize}
+\item  $\mathbb(R)^n$ munito della distanza euclidea $\tau_E$
+%$\tau_E \is \sqrt { \sum_i { ( x_ i - y_i )^2 } = \sqrt { \left \langle x-y,x-y \right \rangle } $
+\item Un insieme $X$ qualsiasi munito della distanza discreta $d_D= \begin{cases} 0 & x=y \\ 1 & x \neq y \end{cases}$
+\end{itemize}
+\end{es}
+
+\begin{defn}[Palla aperta]
+Sia $(X,d)$ uno spazio metrico, sia $B_r(x) \is \{y \in X | d(x,y) < r\}$. $B_r(x)$ è detto \textit{palla aperta}
+\end{defn}
+
+\begin{prop}[Topologia indotta]
+Sia $X \neq \nullset$ un insieme e $\tau_d$ una famiglia di sottoinsiemi così definita: $\tau_d \is \{ A \subseteq  X | A = \nullset \lor \forall x \in A \;\exists B_r(x) \subseteq A \}$.\\
+Affermo che $\tau_d$ è una topologia su $X$. (La chiamerò \textit{topologia indotta})
+\end{prop}
+
+\begin{proof}
+Verifico che si tratti di una topologia:
+\begin{itemize}
+\item $\nullset \in \tau_d$ per definizione, $X \in \tau_d$ perchè $\forall x \in X \; \exists B_r(x) \subseteq X$
+\item Siano $A_1,...,A_n$ sottoinsiemi di $X$. Considero l'intersezione $\cup A_k$ di tutti gli insiemi A. Per ogni punto $x$ nell'intersezione considero gli tutti gli $A_n$ tali che $x \in A_n$. Prendo quindi una palla aperta $B_n(x)$ per ognuno di questi (posso farlo per definizione di $\tau_d$).//
+Tra queste prendo quella con raggio minore: questa è contenuta in $\cup A_k$, segue che $\tau_d$ è chiuso per intersezioni arbitrarie.
+\item se $x \in \cap A_j$ allora $x$ appartiene almeno ad uno degli $A_k$. Poichè questi sono aperti segue che  $\exists B_{\tilde r} (x) \subseteq A_j \subseteq \cap A_k$.
+\end{itemize}
+\end{proof}
+
+\begin{defn}
+Uno spazio topologico $(X,\tau)$ si dice \textit{metrizzabile} se esiste una distanza $d$ tale che $\tau=\tau_d$, ovvero la topologia sia uguale alla topologia indotta dalla distanza $d$.
+\end{defn}
+
+\begin{es}
+Esempi di topologie indotte sono:
+\begin{itemize}
+\item $(\mathbb(R)^n,d_E)$  induce $(\mathbb(R)^n,\tau_E$)
+\item Lo spazio topologico indotto da $(X,d_D)$ (dove $d_D$ è la distanza discreta nell'esempio precedente) è $\tau_D$ (la topologia discreta). Infatti $B_{1/2}(x) = \{x\}$, quindi ogni punto è un aperto.
+\end{itemize}
+\end{es}
+
+\begin{prop}
+Sia $(X,d)$ uno spazio metrico e $(X,\tau_d)$ lo spazio topologico indotto. Si  verifica che:
+\begin{itemize}
+\item le apelle aperte sono aperti per la topologia indotta
+\item ogni $A \in \tau_d$ è unione di palle aperte.
+\end{itemize}
+\end{prop}
+
+\begin{proof}\noindent
+\begin{itemize}
+\item Sia $y \in B_r(x)$, devo trovare un $r'$ tale che $B_r'(y) \subseteq B_r(x)$. Prendo $r' < r-d(x,y)$. Segue dalla tirangolare:\\ $\forall z \in B_r'(y)\; d(x,z) < d(x,y) + d(y,z) < d(x,y)  + r - d(x,y) < r$
+\item Sia $A$ un qualsiasi aperto per la topologia indotta. $A$ è unione dei suoi punti e per ogni punto $x$ ho una palla aperta centrata in $x$ e contenuta in $A$. Segue che $A$ è unione di palle aperte.
+\end{itemize}
+\end{proof}
+
+\begin{defn}
+$(X,d)$ e $(X,d')$ si dicono \textit{topologicamente equivalenti} se le topologie indotte coincidono.
+\end{defn}
+
+\begin{oss}
+È chiaro che uno spazio metrico ha una "struttura" più rigida di uno spazio topologico e conseguentemente spazi metrici diversi possono indurre la stessa topologia.
+\end{oss}
+
+\begin{teo}
+Tutte le distanze indotte da un prodotto scalare sono topologicamente equivalenti.
+\end{teo}
+
+\begin{proof}
+to do
+\end{proof}
+
+\begin{es}
+to do
+\end{es}
+
+\begin{defn}[Intorno]
+Dato $x \in (X,\tau)$, si dice \textit{intorno} di $x$ (rispetto a $\tau$) un insieme $U_x$ tale che $x \in U$  e esiste un aperto $A$ tale che $x \in A \subseteq U_x$.
+\end{defn}
+
+\begin{defn}[Base di aperti]
+Dato uno spazio topologico $(X,\tau)$ si dice \textit{base di aperti} una famiglia di aperti $\mathcal B$ tale che ogni elemento di $\tau$ è ottenibile come unione di elementi di $\mathcal B$
+\end{defn}
+
+\begin{defn}[Base di intorni]
+Una \textit{base di intorni} è un insieme di intorni di un punto $x$ tale che qualsiasi intorno aperto di $x$ contenga almeno uno degli elemento della base.
+\end{defn}
+
+\begin{oss}
+Le palle aperte sono una base di intorni per una topologia indotta.
+\end{oss}
