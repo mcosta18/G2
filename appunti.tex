@@ -23,11 +23,12 @@
 	%% font 1 (sans serif più leggero)
 	%\usepackage{cmbright} 
 \usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8x]{inputenc} % si possono usare caratteri accentati direttamente
 \usepackage{macros}
 	%% font 2 (già in uso)
 	%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
 \usepackage{hyperref}
+\usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
 
 
 \theoremstyle{definition}
@@ -43,8 +44,9 @@
 \newtheorem{es}{Esempio}
 \newtheorem{oss}{Osservazione}
 
+\DTMlangsetup{showyear=false}
 \newenvironment{lesson}[3]{%
-\section{Lezione #1-#2-#3}}{%
+\section{Lezione \DTMdisplaydate{#1}{#2}{#3}{-1}}}{%
 }
 \newcommand*\titlet[1]{\subsection{#1}}
 
@@ -64,7 +66,9 @@
 \maketitle
 
 \tableofcontents
+\clearpage
 
+\includelesson{2016}{02}{15}
 \includelesson{2016}{02}{17}
 \includelesson{2016}{02}{18}
 \includelesson{2016}{02}{22}
