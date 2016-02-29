@@ -15,7 +15,7 @@ cleanout :
 	rm -f $(output)
 
 view:
-	okular appunti.pdf
+	evince appunti.pdf
 
 pdf: appunti.tex cleanout
-	pdflatex -interaction nonstopmode appunti.tex
+	pdflatex -synctex=1 -interaction nonstopmode appunti.tex
