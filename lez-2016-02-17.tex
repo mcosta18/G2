@@ -1,25 +1,79 @@
 % trascrizione: Petrillo
 
-\begin{prop}
-$A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
+\titlet{Sottospazi}
+
+Si può definire una topologia sui sottoinsiemi di uno spazio topologico: \marginpar{non mi sembra lo facesse in questa lezione, ma vabbé}
+
+\begin{prop}[Topologia dei sottospazi]
+	Sia $(X,\tau)$ spazio topologico e $\chi\subseteq X$, l'insieme
+	$\tau_\chi\is\setdef[A\cap\chi]{A\in\tau}$
+	è una topologia su $\chi$.
 \end{prop}
+
+\begin{proof}
+	Verifichiamo le tre proprietà della topologia:
+	\begin{itemize}
+		\item Il vuoto c'è perché $\nullset\cap\chi=\nullset$;
+		$\chi$ c'è perché $X\cap\chi=\chi$.
+		\item Siano $a_1,\ldots,a_n\in\tau_\chi$.
+		Allora $\forall k\,\exists A_k\in\tau:a_k=A_k\cap\chi$.
+		Quindi:
+		\[\inters a_k=\inters(A_k\cap\chi)=\left(\inters A_k\right)\cap\chi\]
+		Ma $\inters A_k$ è aperto in $(X,\tau)$.
+		\item Sia $\set{a_k}_{k\in I}\subseteq\tau_\chi$.
+		Definiti come sopra gli $A_k$, abbiamo:
+		\[\union a_k=\union(A_k\cap\chi)=\left(\union A_k\right)\cap\chi \qedhere\]
+	\end{itemize}
+\end{proof}
+
+\begin{defn}[Sottospazio]
+	Chiamiamo $(\chi,\tau_\chi)$ \emph{sottospazio} di $(X,\tau)$.
+\end{defn}
+
+È interessante che la topologia dello spazio di partenza si colleghi direttamente alla topologia di sottospazio di ogni aperto:
+
+\begin{prop}
+	$A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
+\end{prop}
+
+\begin{proof}
+	Mostriamo le due implicazioni:
+	\begin{description}
+		\item[$\proofrightarrow$]
+		Infatti ogni aperto in $A$ è intersezione di due aperti.
+		\item[$\proofleftarrow$]
+		Infatti $A$ è aperto in $A$. \qedhere
+	\end{description}
+\end{proof}
 
 \titlet{Chiusura, parte interna, frontiera}
 
-\begin{defn}
-\[\text{chiusura di }Y\is\clos Y\is\inters_{\substack{C\text{ chiuso}\\C\supseteq Y}}C\]
+In generale i sottoinsiemi di uno spazio topologico non sono né aperti né chiusi. Tuttavia possiamo associare a ognuno in modo naturale un aperto e un chiuso.
+
+\begin{defn}[Chiusura]
+	La \emph{chiusura} di un insieme $Y$ è l'intersezione di tutti i chiusi che lo contengono:
+	\[\clos Y\is\inters_{\substack{C\text{ chiuso}\\C\supseteq Y}}C\]
 \end{defn}
 
 \begin{prop}
-$Y\subseteq C\subseteq\clos Y\et C\text{ chiuso}\implies C=\clos Y$
+	La chiusura di $Y$ è il più piccolo chiuso che contiene $Y$, cioè:
+	\[\begin{rcases}
+		Y\subseteq C\subseteq\clos Y\\
+		C\text{ chiuso}
+	\end{rcases}\implies C=\clos Y\]
 \end{prop}
 
-\begin{defn}
-\[\text{parte interna di }Y\is\inter Y\is\union_{\substack{A\text{ aperto}\\A\subseteq Y}}A\]
+\begin{defn}[Parte interna]
+	La \emph{parte interna} di un insieme $Y$ è l'unione di tutti gli aperti contenuti in $Y$:
+	\[\inter Y\is\union_{\substack{A\text{ aperto}\\A\subseteq Y}}A\]
 \end{defn}
 
 \begin{prop}
-$\inter Y\subseteq A\subseteq Y\et A\text{ aperto}\implies A=\inter Y$
+	La parte interna di $Y$ è il più grande aperto contenuto in $Y$, cioè:
+	\[\begin{rcases}
+		\inter Y\subseteq A\subseteq Y\\
+		A\text{ aperto}
+	\end{rcases}\implies A=\inter Y\]
 \end{prop}
 
 \begin{defn}
