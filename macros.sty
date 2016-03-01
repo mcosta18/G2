@@ -13,8 +13,13 @@
 \RequirePackage{fixltx2e} % \TextOrMath
 \RequirePackage{centernot} % \centernot
 % \RequirePackage{xfrac} % \sfrac
+\RequirePackage{tikz}
 
 %%% MISCELLANEOUS %%%
+
+\newcommand*\circled[1]{%
+	\tikz[baseline=(char.base)]{%
+  	\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 \newcommand*\inv[1]{\frac{1}{#1}} % \inv{x} = 1/x
 \newcommand*\abs[1]{|{#1}|} % absolute value
@@ -33,14 +38,16 @@
 
 \newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % without loss of generality
 
-\newcommand*\proofleftarrow{\impliedby} % simbolo per dire che dimostri la freccia verso sinistra
-\newcommand*\proofrightarrow{\implies} % simbolo per dire che dimostri la freccia verso destra
+\newcommand*\proofleftarrow{\circled{\ensuremath{\Leftarrow}}} % simbolo per dire che dimostri la freccia verso sinistra
+\newcommand*\proofrightarrow{\circled{\ensuremath{\Rightarrow}}} % simbolo per dire che dimostri la freccia verso destra
+\newcommand*\proofsupseteq{\circled{\ensuremath{\supseteq}}}
+\newcommand*\proofsubseteq{\circled{\ensuremath{\subseteq}}}
 
 \newcommand*\et{\wedge} % \et = ∧
 \newcommand*\vel{\vee} % \vel = ∨
 
 \newcommand*\notimplies{\centernot\implies}
-\newcommand*\so{\rightarrow\,}
+\newcommand*\so{\;\rightarrow\,\:}
 \newcommand*\os{\leftarrow\,}
 
 \newcommand*\is{:=} % equal by definition
