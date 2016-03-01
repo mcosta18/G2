@@ -63,6 +63,10 @@ In generale i sottoinsiemi di uno spazio topologico non sono né aperti né chiu
 	\end{rcases}\implies C=\clos Y\]
 \end{prop}
 
+\begin{proof}
+	Infatti dalla definizione di $\clos Y$ segue $\clos Y=\clos Y\cap C$.
+\end{proof}
+
 \begin{defn}[Parte interna]
 	La \emph{parte interna} di un insieme $Y$ è l'unione di tutti gli aperti contenuti in $Y$:
 	\[\inter Y\is\union_{\substack{A\text{ aperto}\\A\subseteq Y}}A\]
@@ -76,43 +80,73 @@ In generale i sottoinsiemi di uno spazio topologico non sono né aperti né chiu
 	\end{rcases}\implies A=\inter Y\]
 \end{prop}
 
-\begin{defn}
-$x\text{ interno a }Y\means x\in\inter Y$
+\begin{proof}
+	Infatti dalla definizione di $\inter Y$ segue $\inter Y=\inter Y\cup A$.
+\end{proof}
+
+\begin{oss}
+	La parte interna e la chiusura sono rispettivamente aperta e chiusa.
+\end{oss}
+
+Definiamo ora alcune proprietà che collegano singoli punti di un insieme alle nozioni di chiusura e parte interna.
+
+\begin{defn}[Punto interno]
+	Gli elementi della parte interna di $Y$ si chiamano \emph{punti interni di $Y$}:
+	\[x\text{ interno a }Y\means x\in\inter Y\]
 \end{defn}
 
-\begin{defn}
-$x\text{ accumulazione per }Y\means\forall U(x):(U\setminus\set{x})\cap Y\neq\nullset$
+\begin{defn}[Punto di accumulazione]
+	Un elemento $x$ (non necessariamente in $Y$) è \emph{punto di accumulazione per $Y$} se ogni intorno di $x$ contiene punti di $Y$ diversi da $x$:
+	\[x\text{ accumulazione per }Y\means\forall\,U_x:(U\setminus\set{x})\cap Y\neq\nullset\]
 \end{defn}
 
-\begin{defn}
-$x\text{ isolato in }Y\means x\in Y\et\neg(x\text{ accumulazione per }Y)$
+\begin{defn}[Punto isolato]
+	I punti di $Y$ non di accumulazione sono \emph{isolati}:
+	\[x\text{ isolato in }Y\means
+	\begin{cases}
+		x\in Y\\
+		\neg(x\text{ accumulazione per }Y)
+	\end{cases}\]
 \end{defn}
 
 \begin{lemma}
-$\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}$
+	La chiusura di un insieme è l'insieme stesso unito ai suoi punti di accumulazione:
+	\[\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}\]
 \end{lemma}
+
 \begin{proof}
-Mostriamo che $y\in\clos Y\setminus Y\implies y\text{ accumulazione per }Y$. Per assurdo:
-\begin{align*}
-&y\text{ isolato}\so\\
-\so&\exists A\text{ aperto}:y\in A\et A\cap Y=\nullset\so\\
-\so&\comp A\text{ chiuso}\et y\not\in\comp A\et Y\subseteq\comp A\so\\
-\so&y\not\in\clos Y\absurd
-\end{align*}
-Mostriamo che $y\not\in Y\et y\text{ accumulazione per }Y\implies y\in\clos Y$. Per assurdo:
-\begin{align*}
-&y\not\in\clos Y\so\\
-\so&\comp\clos Y\text{ aperto}\et y\in\comp\clos Y\et\comp\clos Y\cap Y=\nullset\so\\
-\so&y\text{ isolato}\absurd \qedhere
-\end{align*}
+	Mostriamo le due inclusioni:
+	\begin{description}
+		\item[\proofsubseteq]
+		Ci basta verificare che $y\in\clos Y\setminus Y\implies y\text{ accumulazione per }Y$.
+		Per assurdo:
+		\[y\text{ non di accumulazione}\so
+		\exists A\text{ aperto}:
+		\begin{cases}
+			y\in A\\
+			A\cap Y=\nullset
+		\end{cases}\text{cioè }
+		\begin{cases}
+			y\not\in\comp A\\
+			Y\subseteq\comp A
+		\end{cases}\]
+		Ma $\comp A$ è chiuso, quindi avremmo $y\not\in\clos Y\absurd$.
+		\item[\proofsupseteq]
+		Ci basta verificare che $y\not\in Y\et\, y\text{ accumulazione per }Y\implies y\in\clos Y$.
+		Per assurdo, $y\not\in\clos Y\so y\in\comp{\clos Y}$. Ma $\comp{\clos Y}$ è aperto, quindi $\comp{\clos Y}$ sarebbe un intorno di $y$ disgiunto da $Y\absurd$. \qedhere
+	\end{description}
 \end{proof}
 
-\begin{defn}
-$\text{frontiera di }Y\is\bound Y\is\clos Y\setminus\inter Y$
+Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famiglia dei punti che lo ``separa'' dal suo complementare. Diamo questa definizione:
+
+\begin{defn}[Frontiera]
+	La famiglia dei punti della chiusura di $Y$ esterni a $Y$ è la \emph{frontiera} di $Y$:
+	\[\bound Y\is\clos Y\setminus\inter Y\]
 \end{defn}
 
 \begin{prop}
-$\bound Y=\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ accumulazione per }Y}\setminus\inter Y$
+	La frontiera consta dei punti isolati e dei punti esterni di accumulazione:
+	\[\bound Y=\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ accumulazione per }Y}\setminus\inter Y\]
 \end{prop}
 
 % questa cosa l'aveva detta ma poi ha detto che è sbagliata il 24 febbraio
