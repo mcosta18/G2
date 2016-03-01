@@ -42,14 +42,14 @@ Un insieme $X\neq\nullset$ ammette sempre due topologie degeneri:
 \end{itemize}
 \end{oss}
 
-\begin{defn}
+\begin{defn}[Finezza]
 Date due topologie $\tau$ e $\tau'$ su $X$, si dice che $\tau$ è \emph{più fine} di $\tau'$ se $\tau'\subset\tau$, ovvero tutti gli aperti di $\tau'$ sono anche aperti di $\tau$, ma esistono aperti in $\tau$ non presenti in $\tau'$.
 \end{defn}
 
 \titlet{Spazi metrici e metrizzabili}
 
 \begin{defn}[Spazio metrico]
-Sia dato un insieme $X\neq\nullset$ e una funzione $d: X \times X \funarrow \R$ tale che:
+Sia dato un insieme $X\neq\nullset$ e una funzione $\fundef[d]{X \times X}\R$ tale che:
 \begin{itemize}
 \item $\forall x,y \in X:  d(x,y)\ge0 \et (d(x,y)=0 \iff x=y)$
 \item $d(x,y) = d(y,x)$
@@ -73,17 +73,18 @@ Sia $(X,d)$ uno spazio metrico, definiamo la \emph{palla aperta centrata in $x$ 
 \end{defn}
 
 \begin{prop}[Topologia indotta]
-Sia $(X, d)$ uno spazio metrico e $\tau_d$ una famiglia di sottoinsiemi così definita: $\tau_d \is \setdef[A \subseteq  X]{\forall x \in A \;\exists \ball[r]x \subseteq A}$.\\
-Affermo che $\tau_d$ è una topologia su $X$. (La chiamerò \textit{topologia indotta})
+Sia $(X, d)$ uno spazio metrico e $\tau_d$ una famiglia di sottoinsiemi così definita:
+\[\tau_d \is \setdef[A \subseteq  X]{\forall x \in A \;\exists \ball[r]x \subseteq A}\]
+Affermo che $\tau_d$ è una topologia su $X$ (la chiamerò \emph{topologia indotta}).
 \end{prop}
 
 \begin{proof}
 Verifico che si tratti di una topologia:
 \begin{itemize}
 \item $\nullset \in \tau_d$ per definizione, $X \in \tau_d$ perchè $\forall x \in X \; \exists \ball[r]x \subseteq X$
-\item Siano $A_1,\ldots,A_n$ sottoinsiemi di $X$. Considero l'intersezione $\inters A_k$ di tutti gli insiemi A. Per ogni punto $x$ nell'intersezione considero gli tutti gli $A_n$ tali che $x \in A_n$. Prendo quindi una palla aperta $\ball[n]x$ per ognuno di questi (posso farlo per definizione di $\tau_d$).
-Tra queste prendo quella con raggio minore: questa è contenuta in $\inters A_k$, segue che $\tau_d$ è chiuso per intersezioni arbitrarie.
-\item se $x \in \union A_j$ allora $x$ appartiene almeno ad uno degli $A_k$. Poichè questi sono aperti segue che  $\exists \ball[\tilde r]x \subseteq A_j \subseteq \union A_k$.
+\item Siano $A_1,\ldots,A_n$ sottoinsiemi di $X$. Considero l'intersezione $\inters A_k$ di tutti gli insiemi $A$. Per ogni punto $x$ nell'intersezione considero tutti gli $A_n$ tali che $x \in A_n$. Prendo quindi una palla aperta $B^n(x)$ per ognuno di questi (posso farlo per definizione di $\tau_d$).
+Tra queste prendo quella con raggio minore: questa è contenuta in $\inters A_k$, segue che $\tau_d$ è chiuso per intersezioni finite.
+\item se $x \in \union A_j$ allora $x$ appartiene almeno ad uno degli $A_k$. Poichè questi sono aperti segue che  $\exists \ball[\tilde r]x \subseteq A_k \subseteq \union A_j$. \qedhere
 \end{itemize}
 \end{proof}
 
@@ -110,7 +111,7 @@ Sia $(X,d)$ uno spazio metrico e $(X,\tau_d)$ lo spazio topologico indotto. Si  
 \begin{proof}\noindent
 \begin{itemize}
 \item Sia $y \in \ball[r]x$, devo trovare un $r'$ tale che $\ball[r']x \subseteq \ball[r]x$. Prendo $r' < r-d(x,y)$. Segue:
-\[\forall z \in \ball[r']y\; d(x,z) < d(x,y) + d(y,z) < d(x,y)  + r - d(x,y) < r\]
+\[\forall z \in \ball[r']y: d(x,z) \le d(x,y) + d(y,z) < d(x,y)  + r - d(x,y) < r\]
 \item Sia $A$ un qualsiasi aperto per la topologia indotta. $A$ è unione dei suoi punti e per ogni punto $x$ ho una palla aperta centrata in $x$ e contenuta in $A$. Segue che $A$ è unione di palle aperte.
 \end{itemize}
 \end{proof}
@@ -127,7 +128,7 @@ $(X,d)$ e $(X,d')$ si dicono \emph{topologicamente equivalenti} se le topologie 
 Tutte le distanze indotte da un prodotto scalare sono topologicamente equivalenti.
 \end{teo}
 
-\begin{proof}
+\begin{proof} \marginpar{DA FARE}
 to do
 \end{proof}
 
@@ -136,7 +137,7 @@ to do
 \end{es}
 
 \begin{defn}[Intorno]
-Dato $x \in (X,\tau)$, si dice \emph{intorno} di $x$ (rispetto a $\tau$) un insieme $U_x$ tale che $x \in U$  e esiste un aperto $A$ tale che $x \in A \subseteq U_x$.
+Dato $x \in (X,\tau)$, si dice \emph{intorno} di $x$ (rispetto a $\tau$) un insieme $U_x$ tale che $x \in U_x$ ed esiste un aperto $A$ tale che $x \in A \subseteq U_x$.
 \end{defn}
 
 \begin{defn}[Base di aperti]
