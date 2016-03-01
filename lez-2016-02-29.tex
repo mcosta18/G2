@@ -1,0 +1,77 @@
+%questo documento è in ogni sua parte opera originale del sottoscritto
+%Alberto Bordin
+
+\marginpar{questo diventerà il titolo del capitolo quando spariranno le lezioni dall'indice}
+\titlet{Varietà topologiche}
+
+\titlet{Definizioni di base}
+
+\begin{defn}[n-euclideo]
+$X$ s.t. è detto \emph{n-euclideo} se $\forall x \in X$ esiste un intorno aperto $U$ di $x$ e un omeomorfismo $\fundef UW \subseteq (\R^n, \tau _E)$ con $W$ aperto.
+\end{defn}
+
+\begin{defn}[varietà] $\\$
+Una \emph{n-varietà topologica} è uno s.t. n-localmente euclideo, $T_2$ e 2-numerabile
+\end{defn}
+
+\begin{defn} $\\$
+$(U,f)$ è detta \emph{carta locale} di $X$ intorno a $x$ \\
+$\fundef [f^{-1}] WU$ è detta \emph{parametrizzazione locale} di $X$ intorno a $x$ \\
+Un' unione di tutte le carte locali è detto \emph{atlante (completo)}
+\end{defn}
+
+\begin{prop}
+localmente euclideo $\notimplies$ 2-numerabile
+\end{prop}
+\begin{proof} \marginpar{creare una macro per i controesempi}
+Si consideri $X = (\R^n, \tau _E) \times (\R, \tau _D)$. \marginpar{inserire figura} Tale spazio è localmente n-euclideo, ma non 2-numerabile. \\
+Un controesempio minimale è $(X, \tau _D)$ con X non numerabile, questi è 0-localmente euclideo, ma non 2-numerabile.
+\end{proof}
+
+\begin{prop}
+localmente euclideo $\notimplies T_2$
+\end{prop}
+\begin{proof}
+Prese 2 copie di $(\R^n, \tau _E)$ sia $(x,0) \in (\R^n_0, \tau _0)$  e $(x,1) \in (\R^n_1, \tau _1)$, e sia $X = (\R^n_0 \cup \R^n_1, \tau _0 \cup \tau _1)$. Si consideri la relazione di equivalenza $(x,0)\sim(x,1)$ se $x>0$ mentre gli altri elementi fanno classe a sé. Si consideri l'insieme quoziente $\quoset X\sim$ \marginpar{inserire figura} e la funzione $\fundef{(-\varepsilon,\varepsilon)}{\quoset X\sim}$ che manda $t \funarrow [(t,0)]$. Si verifica che $f$ è un omeomorfismo (esercizio) che rende $\quoset X\sim$ localmente 1-euclideo. Tuttavia $\quoset X\sim$ non è $T_2$ in quanto non è possibile separare i punti $[(0,0)]$ e $[(0,1)].$
+\end{proof}
+
+\titlet{Esempi di varietà}
+
+\begin{itemize}
+\item $(\R^n, \tau_E)$
+\item Ogni aperto di $\R^n$
+\item Le n-sfere: \, $S^n \subseteq (\R^{n+1}, \tau _E) \qquad S^n=\setdef[x\in \R^{n+1}]{x^2 _1 + x^2 _2 + ... + x^2 _{n+1} = 1}$
+
+\begin{oss}
+$S^n$ è compatto, $T_2$ e 2-numerabile
+
+Dobbiamo esibire un atlante $\mathcal{A}$.
+
+Siano \marginpar{creare una macro per i vettori colonna} 
+\, \( N =  \left( \begin{array}{c}
+0\\
+0\\
+...\\
+1\end{array} \right) \;$e$ \;\; S =  \left( \begin{array}{c}
+0\\
+0\\
+...\\
+-1\end{array} \right)\)
+il polo Nord e il polo Sud.
+
+$\mathcal{A} = \set{\, (S^n \setminus \set N, f_N),\, (S^n \setminus \set S, f_S)\,}$ \\
+Dove $f_N$ e $f_S$ sono le \emph{proiezioni stereografiche} di centro N ed S così definite: \marginpar{inserire figura}
+\begin{align*}
+&\fundef[f_N]{(S^n \setminus \set N)\,}{\R^n}\\
+&\;\;\;\;\;\; \left( \begin{array}{c}
+x_1\\
+...\\
+x_n\\
+x_{n+1}\end{array} \right)  \funarrow  \left( \begin{array}{c}
+\dfrac{x_1}{1-x_{n+1}}\\
+...\\
+\dfrac{x_n}{1-x_{n+1}}\\
+0\end{array} \right)
+\end{align*}
+\end{oss}
+\end{itemize}

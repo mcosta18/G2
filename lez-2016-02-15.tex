@@ -73,7 +73,7 @@ Sia $(X,d)$ uno spazio metrico, definiamo la \emph{palla aperta centrata in $x$ 
 \end{defn}
 
 \begin{prop}[Topologia indotta]
-Sia $(X, d)$ uno spazio metrico e $\tau_d$ una famiglia di sottoinsiemi così definita: $\tau_d \is \setdef[A \subseteq  X]{A = \nullset \lor \forall x \in A \;\exists \ball[r]x \subseteq A}$. \marginpar{Non è ridondante $A=\nullset$?}\\
+Sia $(X, d)$ uno spazio metrico e $\tau_d$ una famiglia di sottoinsiemi così definita: $\tau_d \is \setdef[A \subseteq  X]{\forall x \in A \;\exists \ball[r]x \subseteq A}$.\\
 Affermo che $\tau_d$ è una topologia su $X$. (La chiamerò \textit{topologia indotta})
 \end{prop}
 
@@ -109,7 +109,7 @@ Sia $(X,d)$ uno spazio metrico e $(X,\tau_d)$ lo spazio topologico indotto. Si  
 
 \begin{proof}\noindent
 \begin{itemize}
-\item Sia $y \in \ball[r]x$, devo trovare un $r'$ tale che $\ball[r']x \subseteq \ball[r]x$. Prendo $r' < r-d(x,y)$. Segue dalla triangolare: \marginpar{cos'è la triangolare?}
+\item Sia $y \in \ball[r]x$, devo trovare un $r'$ tale che $\ball[r']x \subseteq \ball[r]x$. Prendo $r' < r-d(x,y)$. Segue:
 \[\forall z \in \ball[r']y\; d(x,z) < d(x,y) + d(y,z) < d(x,y)  + r - d(x,y) < r\]
 \item Sia $A$ un qualsiasi aperto per la topologia indotta. $A$ è unione dei suoi punti e per ogni punto $x$ ho una palla aperta centrata in $x$ e contenuta in $A$. Segue che $A$ è unione di palle aperte.
 \end{itemize}
@@ -136,7 +136,7 @@ to do
 \end{es}
 
 \begin{defn}[Intorno]
-Dato $x \in (X,\tau)$, si dice \emph{intorno} di $x$ (rispetto a $\tau$) un insieme $U_x$ tale che $x \in U$  e esiste un aperto $A$ tale che $x \in A \subseteq U_x$. \marginpar{usiamo $U_x$ o $U(x)$?}
+Dato $x \in (X,\tau)$, si dice \emph{intorno} di $x$ (rispetto a $\tau$) un insieme $U_x$ tale che $x \in U$  e esiste un aperto $A$ tale che $x \in A \subseteq U_x$.
 \end{defn}
 
 \begin{defn}[Base di aperti]
