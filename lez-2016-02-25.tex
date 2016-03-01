@@ -4,13 +4,13 @@
 %\begin{defn}
 In questa sezione si userà la nozione di immagine e di preimmagine di un sottoinsieme. In generale siano dati $X$ e $Y$ insiemi, $\fundef[f]{X}{Y}$ una funzione fra essi.\\
 Dato un sottoinsieme $X'$ di $X$ definisco immagine di $X'$ secondo $f$: 
-\begin{equation}
+\begin{equation*}
 Img_f(X') = f(X') =\set{y \in Y | \exists x \in X' \wedge f(x) = y} 
-\end{equation}
+\end{equation*}
 Dualmente sia $Y'\subseteq Y$ definisco preimmagine di $Y'$ :
-\begin{equation}
+\begin{equation*}
 Img_f^{-1}(Y')=f^{-1}(Y')=\set{x\in X | f(x)\in Y'}
-\end{equation}
+\end{equation*}
 Si noti che la definizione è coerente anche non chiedendo che $f$ sia invertibile!
 %\end{defn}
 \\
@@ -78,31 +78,23 @@ Definiamo infine $X/_T \sim_f$ lo spazio topologico definito su $X/\sim_f$ dotat
 
 \begin{oss}
 Anche questa volta, se l'esistenza di topologie che rendano continua l'immersione è palese (basti pensare alla topologia banale), non è affatto scontato che esista una "topologia più fine possibile".\\
-L'argomento non è stato ulteriormente sviluppato a lezione.
 \end{oss}
+
+\begin{defn}
+(insieme f-saturo)\\
+Data una funzione $\fundef{X}{Y}$ si dice f-saturo un $X'\subseteq X$ tale che $f^{-1}(f(X'))=X'$.
+\end{defn}
+
+\begin{prop}
+La topologia di $X/\sim_t f$ è data da tutte le immagini attraverso $f$ di aperti f-saturi di $X$.
+\end{prop}
 
 %queste sarebbero da controllare!!!
 \begin{oss}
 Non tutte le proprietà si propagano al quoziente. Fortunatamente si propagano la connessione e la compattezza.
 \end{oss}
 
-Di seguito forse insrirò un personale tentativo di formalizzare le due definizioni precedenti che contenevano il non troppo formale "più fine possibile" e "meno fine possibile". 
-Si fa presente che ci sarà un abbondante uso si supercazzole quali il lemma di Zorn e altre amenità che causano violenta nausea a tutti, quindi forse non lo faccio.
 
-
-\begin{teo}
-Esiste sempre uno spazio prodotto.
-\end{teo}
-\begin{proof}
-todo
-\end{proof}
-
-\begin{teo}
-Esiste sempre uno spazio quoziente.
-\end{teo}
-\begin{proof}
-todo
-\end{proof}
 
 \titlet{Varietà topologiche}
 
