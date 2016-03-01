@@ -31,18 +31,26 @@
 \usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
 
 
-\theoremstyle{definition}
-\newtheorem{defn}{Definizione}
+% \theoremstyle{definition}
+% \newtheorem{defn}{Definizione}
+%
+% \theoremstyle{plain}
+% \newtheorem{teo}{Teorema}
+% \newtheorem{lemma}[teo]{Lemma}
+% \newtheorem{prop}[teo]{Proposizione}
+% \newtheorem{cor}[teo]{Corollario}
+%
+% \theoremstyle{remark}
+% \newtheorem{es}{Esempio}
+% \newtheorem{oss}{Osservazione}
 
-\theoremstyle{plain}
-\newtheorem{teo}{Teorema}
-\newtheorem{lemma}[teo]{Lemma}
-\newtheorem{prop}[teo]{Proposizione}
-\newtheorem{cor}[teo]{Corollario}
-
-\theoremstyle{remark}
-\newtheorem{es}{Esempio}
-\newtheorem{oss}{Osservazione}
+\declaretheorem[style=definition,name=Definizione]{defn}
+\declaretheorem[style=plain,name=Teorema]{teo}
+\declaretheorem[style=plain,name=Lemma,sibling=teo]{lemma}
+\declaretheorem[style=plain,name=Proposizione,sibling=teo]{prop}
+\declaretheorem[style=plain,name=Corollario,sibling=teo]{cor}
+\declaretheorem[style=remark,name=Esempio]{es}
+\declaretheorem[style=remark,name=Osservazione]{oss}
 
 \DTMlangsetup{showyear=false}
 \newenvironment{lesson}[3]{%

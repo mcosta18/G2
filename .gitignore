@@ -10,3 +10,4 @@
 *.watcher_pid
 *.fdb_latexmk
 *.fls
+*.loe
