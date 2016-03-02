@@ -47,7 +47,7 @@ Il modo più semplice per ottenere figure con testo formattato da LaTeX è usare
 \end{figure}
 ```
 
-4. Nel commit, mettere **tutti e tre** i file.
+Nel commit, mettere **tutti e tre** i file.
 
 ## GIT
 repo git = una collezione di stati di alcuni file presenti in una cartella, cioè mantiene la storia
