@@ -202,15 +202,42 @@ Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozio
 \end{prop}
 
 \begin{proof}
-	
+	Mostriamo le due implicazioni:
+	\begin{description}
+		\item[\proofrightarrow]
+			$\forall x\in X\,\forall\,U_{f(x)}$ definiamo $U_x\is f^{-1}(U_{f(x)})$.
+			Poiché $f^{-1}$ manda aperti in aperti, $U_x$ è un intorno di $x$,
+			e ovviamente $f(U_x)=U_{f(x)}$.
+		\item[\proofleftarrow]
+			Sia  $A\subseteq Y$, $A$ aperto.
+			Poiché $A$ è un intorno dei suoi punti, abbiamo che
+			$\forall x\in f^{-1}(A)\,\exists\,U_x\text{ aperto}:f(U_x)\subseteq A$.
+			Definiamo $A'\is\union_{x\in f^{-1}(A)}U_x$.
+			Abbiamo che $A'$ è aperto e $A'\subseteq f^{-1}(A)$.
+			Ma $A'$ contiene tutti i punti di $f^{-1}(A)$, quindi sono uguali.
+			\qedhere
+	\end{description}
 \end{proof}
 
-\begin{defn}
-$f\text{ omeomorfismo}\means f\text{ isomorfismo topologico}\means f\text{ bigettiva }\et f, f^{-1}\text{ continue}$
+Definiamo gli isomorfismi topologici, che chiameremo \emph{omeomorfismi}:
+
+\begin{defn}[Omeomorfismo]
+	$f$ è un \emph{omeomorfismo} se è continua, bigettiva e con inversa continua:
+	\[f\text{ omeomorfismo}\means
+	\begin{cases}
+		f\text{ bigettiva }\\
+		f, f^{-1}\text{ continue}
+	\end{cases}\]
 \end{defn}
 
+È necessario specificare che $f^{-1}$ sia continua perché la continuità di una funzione invertibile non implica la continuità dell'inversa:
+
 \begin{es}
-Consideriamo due spazi topologici sullo stesso insieme $(X,\tau_1)$, $(X,\tau_2)$. Sia $\tau_1$ più fine di $\tau_2$, cioè $\tau_1\supset\tau_2$. Sia $\fundef[\id]XX$ l'identità. $\id$ è invertibile e continua rispetto a $\tau_1\funarrow\tau_2$, ma non continua rispetto a $\tau_2\funarrow\tau_1$.
+	Consideriamo due spazi topologici sullo stesso insieme $(X,\tau_1)$, $(X,\tau_2)$.
+	Sia $\tau_1$ più fine di $\tau_2$, cioè $\tau_1\supset\tau_2$.
+	Sia $\fundef[\id]XX$ l'identità.
+	$\id$ è invertibile e continua rispetto a $\tau_1\funarrow\tau_2$,
+	ma non continua rispetto a $\tau_2\funarrow\tau_1$.
 \end{es}
 
 \titlet{Separazione e numerabilità}

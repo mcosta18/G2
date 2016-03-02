@@ -55,7 +55,7 @@ repo git = una collezione di stati di alcuni file presenti in una cartella, cio√
 ### inizilizzare il repo
 la prima volta per clonare il repository
 
-`$ git clone [https://github.com/mcosta18/G2.git]`
+`$ git clone https://github.com/mcosta18/G2.git`
 
 questo ha creato una cartella G2 che √® il repo.
 
