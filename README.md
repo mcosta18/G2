@@ -39,11 +39,13 @@ Il modo più semplice per ottenere figure con testo formattato da LaTeX è usare
 2. Usare il comando `File->Salva una copia...`, selezionare il formato **PDF** e nella successiva finestra di dialogo selezionare **PDF+LaTeX** e **Usa dimensione oggetto esportato**. Se la vostra figura si chiama `fig.svg` questo genera i file `fig.pdf` e `fig.pdf_tex`.
 3. In LaTeX, usare questo codice:
 
-    \begin{figure}
-    	\centering % per centrare l'immagine
-    	\input{fig.pdf_tex}
-    	\caption{didascalia}
-    \end{figure}
+```latex
+\begin{figure}
+	\centering % per centrare l'immagine
+	\input{fig.pdf_tex}
+	\caption{didascalia}
+\end{figure}
+```
 
 4. Nel commit, mettere **tutti e tre** i file.
 
@@ -53,7 +55,7 @@ repo git = una collezione di stati di alcuni file presenti in una cartella, cio�
 ### inizilizzare il repo
 la prima volta per clonare il repository
 
-`$ git clone https://github.com/mcosta18/G2.git`
+`$ git clone [https://github.com/mcosta18/G2.git]`
 
 questo ha creato una cartella G2 che è il repo.
 
