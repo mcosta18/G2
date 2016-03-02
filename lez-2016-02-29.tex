@@ -42,7 +42,15 @@ Un'unione di tutte le carte locali è detto \emph{atlante (completo)}
 localmente euclideo $\notimplies$ 2-numerabile
 \end{prop}
 \begin{proof} \marginpar{creare una macro per i controesempi}
-Si consideri $X = (\R^n, \tau _E) \times (\R, \tau _D)$. \marginpar{inserire figura} Tale spazio è localmente $n$-euclideo, ma non 2-numerabile. \\
+Si consideri $X = (\R^n, \tau _E) \times (\R, \tau _D)$.
+Tale spazio è localmente $n$-euclideo, ma non 2-numerabile.
+
+\begin{figure}
+	\centering
+	\input{figura1.pdf_tex}
+	\caption{$(\R,\tau_E)\times(\R,\tau_D)$ è localmente 1-euclideo ma non 2-numerabile}
+\end{figure}
+
 Un controesempio minimale è $(X, \tau _D)$ con $X$ non numerabile, questi è 0-localmente euclideo, ma non 2-numerabile.
 \end{proof}
 
@@ -50,7 +58,12 @@ Un controesempio minimale è $(X, \tau _D)$ con $X$ non numerabile, questi è 0-
 localmente euclideo $\notimplies T_2$
 \end{prop}
 \begin{proof}
-Prese 2 copie di $(\R^n, \tau _E)$ sia $(x,0) \in (\R^n_0, \tau _0)$  e $(x,1) \in (\R^n_1, \tau _1)$, e sia $X = (\R^n_0 \cup \R^n_1, \tau _0 \cup \tau _1)$. Si consideri la relazione di equivalenza $(x,0)\sim(x,1)$ se $x>0$ mentre gli altri elementi fanno classe a sé. Si consideri l'insieme quoziente $\quoset X\sim$ \marginpar{inserire figura} e la funzione $\fundef{(-\varepsilon,\varepsilon)}{\quoset X\sim}$ che manda $t \mapsto [(t,0)]$. Si verifica che $f$ è un omeomorfismo (esercizio) che rende $\quoset X\sim$ localmente 1-euclideo. Tuttavia $\quoset X\sim$ non è $T_2$ in quanto non è possibile separare i punti $[(0,0)]$ e $[(0,1)].$
+Prese 2 copie di $(\R^n, \tau _E)$ sia $(x,0) \in (\R^n_0, \tau _0)$  e $(x,1) \in (\R^n_1, \tau _1)$, e sia $X = (\R^n_0 \cup \R^n_1, \tau _0 \cup \tau _1)$. Si consideri la relazione di equivalenza $(x,0)\sim(x,1)$ se $x>0$ mentre gli altri elementi fanno classe a sé. Si consideri l'insieme quoziente $\quoset X\sim$ e la funzione $\fundef{(-\varepsilon,\varepsilon)}{\quoset X\sim}$ che manda $t \mapsto [(t,0)]$. Si verifica che $f$ è un omeomorfismo (esercizio) che rende $\quoset X\sim$ localmente 1-euclideo. Tuttavia $\quoset X\sim$ non è $T_2$ in quanto non è possibile separare i punti $[(0,0)]$ e $[(0,1)].$
+\begin{figure}
+	\centering
+	\input{figura2.pdf_tex}
+	\caption{$\R^n\djcup\R^n$ quozientato in modo che l'unione non sia disgiunta sulla semiretta positiva; i punti nell'origine sono disgiunti ma non separati}
+\end{figure}
 \end{proof}
 
 \titlet{Esempi di varietà}
@@ -78,7 +91,7 @@ Siano
 il polo Nord e il polo Sud.
 
 $\mathcal{A} = \set{\, (S^n \setminus \set N, f_N),\, (S^n \setminus \set S, f_S)\,}$ \\
-Dove $f_N$ e $f_S$ sono le \emph{proiezioni stereografiche} di centro N ed S così definite: \marginpar{inserire figura}
+Dove $f_N$ e $f_S$ sono le \emph{proiezioni stereografiche} di centro N ed S così definite:
 \begin{align*}
 f_N:(S^n \setminus \set N) &\funarrow \R^n \\
 %\fundef[f_N]{(S^n \setminus \set N)}{\R^n} \\
@@ -92,5 +105,12 @@ x_{n+1}\end{pmatrix} &\mapsto \begin{pmatrix}
 \dfrac{x_n}{1-x_{n+1}}\\
 0\end{pmatrix}
 \end{align*}
+
+\begin{figure}
+	\centering
+	\input{figura3.pdf_tex}
+	\caption{la proiezione stereografica $f_N$ di centro $N$}
+\end{figure}
+
 \end{oss}
 \end{itemize}
