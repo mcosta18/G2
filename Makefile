@@ -6,7 +6,7 @@
 
 #file di output
 
-output = *.log appunti.aux appunti.pdf appunti.toc
+output = *.log appunti.aux appunti.pdf
 
 # phony targets
 .PHONY: cleanout, pdf, view

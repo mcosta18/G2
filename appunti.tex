@@ -27,7 +27,8 @@
 \usepackage{macros}
 	%% font 2 (già in uso)
 	%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
-\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}  %colori, prima di hyperref
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=darkgray, citecolor=darkgray, filecolor=darkgray]{hyperref}
 \usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
 
 
@@ -78,12 +79,14 @@ Roberto Ribatti}
 \date{Anno accademico 2015-2016}
 
 \begin{document}
+\frontmatter
 
 \maketitle
 
 \tableofcontents
 \clearpage
 
+\mainmatter
 \chapter{Spazi topologici}
 \includelesson{2016}{02}{15}
 \includelesson{2016}{02}{17}
