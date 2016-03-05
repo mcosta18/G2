@@ -17,34 +17,24 @@
 %\documentclass[a4paper,twocolumn,twoside]{article}
 %\usepackage[margin=1cm,bottom=2.1cm,inner=1.8cm]{geometry}
 
-\usepackage{lmodern}
-\renewcommand*\familydefault{\sfdefault} %se si vuole il carattere serif e non il sans commentare questa linea
 \usepackage[italian]{babel}
-	%% font 1 (sans serif più leggero)
-	%\usepackage{cmbright} 
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc} % si possono usare caratteri accentati direttamente
 \usepackage{macros}
-	%% font 2 (già in uso)
-	%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
-\usepackage[dvipsnames]{xcolor}  %colori, prima di hyperref
+
+% --- FONT ---
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault} %se si vuole il carattere serif e non il sans commentare questa linea
+%% font 1 (sans serif più leggero)
+%\usepackage{cmbright}
+%% font 2 (già in uso)
+%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+% ------------
+
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=darkgray, citecolor=darkgray, filecolor=darkgray]{hyperref}
 \usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
 
-
-% \theoremstyle{definition}
-% \newtheorem{defn}{Definizione}
-%
-% \theoremstyle{plain}
-% \newtheorem{teo}{Teorema}
-% \newtheorem{lemma}[teo]{Lemma}
-% \newtheorem{prop}[teo]{Proposizione}
-% \newtheorem{cor}[teo]{Corollario}
-%
-% \theoremstyle{remark}
-% \newtheorem{es}{Esempio}
-% \newtheorem{oss}{Osservazione}
-
+% --- THEOREMS ---
 \declaretheorem[style=definition,name=Definizione]{defn}
 \declaretheorem[style=plain,name=Teorema]{teo}
 \declaretheorem[style=plain,name=Lemma,sibling=teo]{lemma}
@@ -52,6 +42,7 @@
 \declaretheorem[style=plain,name=Corollario,sibling=teo]{cor}
 \declaretheorem[style=remark,name=Esempio]{es}
 \declaretheorem[style=remark,name=Osservazione]{oss}
+% ----------------
 
 \DTMlangsetup{showyear=false}
 \newenvironment{lesson}[3]{%
@@ -79,14 +70,15 @@ Roberto Ribatti}
 \date{Anno accademico 2015-2016}
 
 \begin{document}
-\frontmatter
+% \frontmatter
 
 \maketitle
 
 \tableofcontents
 \clearpage
 
-\mainmatter
+% \mainmatter
+
 \chapter{Spazi topologici}
 \includelesson{2016}{02}{15}
 \includelesson{2016}{02}{17}
