@@ -1,5 +1,19 @@
 % trascrizione: Petrillo
 
+% questo lemma non lo ricordo ma mi serviva dopo ed è stato usato a lezione
+\begin{lemma}\label{th:apertointorni}
+	Un insieme è aperto se ogni punto ha un intorno contenuto nell'insieme:
+	\[A\text{ aperto}\iff
+	\forall x\in A\,\exists U_x\subseteq A\]
+\end{lemma}
+
+\begin{proof}
+	L'implicazione verso destra è banale perché $A$ è un intorno dei suoi punti\footnote{Se è banale, perché l'abbiamo spiegata?}.
+	Mostriamo l'altra: per definizione di intorno possiamo prendere gli $U_x$ aperti. Sia $A'\is\union_{x\in A}U_x$. $A'$ è aperto perché unione di aperti ed è contenuto in $A$, però contiene tutti i punti di $A$ quindi $A=A'$.
+\end{proof}
+
+% anche questa parte sui sottospazi non la ricordo ma dopo è data per scontata
+% forse è perché quel giorno sono arrivato tardi a lezione
 \titlet{Sottospazi}
 
 Si può definire una topologia sui sottoinsiemi di uno spazio topologico:
@@ -181,7 +195,7 @@ In generale, dati degli spazi con certe proprietà, i \emph{morfismi} sono funzi
 
 In particolare gli \emph{isomorfismi} mettono in corrispondenza due spazi in modo che siano completamente indistinguibili relativamente alle proprietà considerate. Data una famiglia di spazi, si può definire su di essa un'equivalenza per isomorfismo e considerare le sottofamiglie di spazi \emph{isomorfi} come singoli elementi.
 
-Vediamo ora che i naturali morfismi degli spazi topologici sono le funzioni \emph{continue}. Siano da qui in poi $X$, $Y$ spazi topologici e $\fundef XY$.
+Vediamo ora che i naturali morfismi degli spazi topologici sono le funzioni \emph{continue}. Siano da qui in poi $X$, $Y$ spazi topologici\footnote{Identificheremo, quando non ci siano ambiguità, lo spazio topologico $(X,\tau)$ con $X$.} e $\fundef XY$.
 
 \begin{defn}[Continuità]
 	$f$ si dice \emph{continua} se le controimmagini di aperti sono aperte:
@@ -205,16 +219,15 @@ Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozio
 	Mostriamo le due implicazioni:
 	\begin{description}
 		\item[\proofrightarrow]
-			$\forall x\in X\,\forall\,U_{f(x)}$ definiamo $U_x\is f^{-1}(U_{f(x)})$.
+			$\forall x\in X\,\forall U_{f(x)}$ definiamo $U_x\is f^{-1}(U_{f(x)})$.
 			Poiché $f^{-1}$ manda aperti in aperti, $U_x$ è un intorno di $x$,
 			e ovviamente $f(U_x)=U_{f(x)}$.
 		\item[\proofleftarrow]
 			Sia  $A\subseteq Y$, $A$ aperto.
 			Poiché $A$ è un intorno dei suoi punti, abbiamo che
-			$\forall x\in f^{-1}(A)\,\exists\,U_x\text{ aperto}:f(U_x)\subseteq A$.
-			Definiamo $A'\is\union_{x\in f^{-1}(A)}U_x$.
-			Abbiamo che $A'$ è aperto e $A'\subseteq f^{-1}(A)$.
-			Ma $A'$ contiene tutti i punti di $f^{-1}(A)$, quindi sono uguali.
+			$\forall x\in f^{-1}(A)\,\exists U_x:f(U_x)\subseteq A$ cioè
+			$U_x\subseteq f^{-1}(A)$.
+			Il \autoref{th:apertointorni} conclude.
 			\qedhere
 	\end{description}
 \end{proof}
@@ -240,30 +253,43 @@ Definiamo gli isomorfismi topologici, che chiameremo \emph{omeomorfismi}:
 	ma non continua rispetto a $\tau_2\funarrow\tau_1$.
 \end{es}
 
-\titlet{Separazione e numerabilità}
+\titlet{Separazione}
+
+Per adesso gli spazi topologici sono un concetto molto generale. Cominciamo a definire delle proprietà che ci permettano di avere un'idea più intuitiva di come sono fatti certi spazi topologici.
 
 \begin{defn}[Proprietà di separazione]
-$X\text{ di Hausdorff}\means X\text{ è }T_2\means\forall x\neq y\,\exists U(x),U(y):U(x)\cap U(y)=\nullset$
+	Uno spazio topologico si dice \emph{di Hausdorff}\footnote{Preferiremo la notazione $T_2$ perché ci da fastidio dire che uno spazio topologico sia ``di Hausdorff''.} o \emph{separato} o \emph{$T_2$} se per ogni coppia di punti distinti esistono due intorni disgiunti:
+	\[X\text{ è }T_2\means
+	\forall x\neq y\,\exists U_x,U_y:U_x\cap U_y=\nullset\]
 \end{defn}
 
 \begin{prop}
-$X\text{ metrizzabile}\implies X\text{ è }T_2$
+	Gli spazi metrizzabili sono separati:
+	\[X\text{ metrizzabile}\implies X\text{ è }T_2\]
 \end{prop}
+
 \begin{proof}
-$x\neq y\so r\is\dis(x,y)\neq 0\so\ball[r/3]x\cap\ball[r/3]y=\nullset$
+	$x\neq y\so r\is d(x,y)\neq 0\so\ball[r/3]x\cap\ball[r/3]y=\nullset$
 \end{proof}
 
 \begin{prop}
-$X\text{ è }T_2\implies\forall x\in X:\set{x}\text{ chiuso}$
+	Negli spazi separati i singoletti sono chiusi:
+	\[X\text{ è }T_2\implies\forall x\in X:\set{x}\text{ chiuso}\]
 \end{prop}
+
 \begin{proof}
-$(\forall y\in\comp\set{x}\,\exists U(y),U(x):U(y)\cap U(x)=\nullset\so U(y)\subseteq\comp\set{x})\so\comp\set{x}\text{ aperto}$
+	Abbiamo che $\forall y\in\comp{\set{x}}\,\exists U_y,U_x:U_y\cap U_x=\nullset$
+	cioè in particolare $U_y\subseteq\comp{\set x}$.
+	Quindi $\comp{\set x}$ è aperto.
 \end{proof}
 
-\begin{es}[Topologia Zariski]
-Sia $\tau_z$ una topologia su $\R$:
-\[\tau_z\is\setdef[A\subset\R]{A=\nullset\vel(A=\comp V\et\card V\in\N)}\]
-Allora $\forall A_1,A_2\in\tau_z:A_1\cap A_2\neq\nullset\so(\R,\tau_z)\text{ non è }T_2$. Però i singoletti sono chiusi.
+Vediamo che non vale il viceversa:
+
+\begin{es}[Topologia di Zariski]
+	Sia $\tau_z$ una topologia su $\R$ i cui aperti sono i complementari di insiemi finiti:
+	\[\tau_z\is\Setdef[A\subset\R]{A=\nullset\vel(A=\comp F\et\card F\in\N)}\]
+	Gli aperti non vuoti non sono disgiunti, quindi $(\R,\tau_z)$ non è $T_2$.
+	Però i singoletti sono chiusi.
 \end{es}
 
 \begin{oss}
@@ -271,40 +297,70 @@ La topologia euclidea è più fine di $\tau_z$.
 \end{oss}
 
 \begin{prop}
-La proprietà $T_2$ passa ai sottospazi.
+	La proprietà $T_2$ passa ai sottospazi.
 \end{prop}
 
-\begin{prop}
-La proprietà $T_2$ è invariante per omeomorfismo.
-\end{prop}
 \begin{proof}
-Sia $\fundef XY$ un omeomorfismo. Mostriamo che $Y\text{ è }T_2\implies X\text{ è }T_2$:
-\begin{align*}
-&\forall x_1\neq x_2\in X:\\
-&y_i\is f(x_i),\,i=1,2\\
-f\text{ iniettiva}\so&y_1\neq y_2\\
-Y\text{ è }T_2\so&\exists U_Y^i(y_i)\text{ aperti}:U_Y^1\cap U_Y^2=\nullset\\
-f\text{ continua}\so&U_X^i\is f^{-1}(U_Y^i)\text{ sono aperti}\et U_X^1\cap U_X^2=\nullset
-\end{align*}
-Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $X\text{ è }T_2\implies Y\text{ è }T_2$.
+	Sia $\chi\subseteq X$.
+	$\forall x\neq y\in X\,\exists U_x,U_y:U_x\cap U_y=\nullset$,
+	per $x,y\in\chi$ prendiamo come intorni $U_x\cap\chi$ e $U_y\cap\chi$.
 \end{proof}
 
+\begin{prop}
+	La proprietà $T_2$ è invariante per omeomorfismo.
+\end{prop}
+
+\begin{proof}
+	Sia $\fundef XY$ un omeomorfismo. Mostriamo che $Y\text{ è }T_2\implies X\text{ è }T_2$:
+	\begin{align*}
+		&\forall x_1\neq x_2\in X:\\
+		&y_1\is f(x_1),\ y_2\is f(x_2)\\
+		f\text{ iniettiva}\so&y_1\neq y_2\\
+		Y\text{ è }T_2\so&\exists U_{y_1},U_{y_2}\text{ aperti}:U_{y_1}\cap U_{y_2}=\nullset\\
+		&U_{x_1}\is f^{-1}(U_{y_1}),\ U_{x_2}\is f^{-1}(U_{y_2})\\
+		U_{y_1}\cap U_{y_2}=\nullset\so&U_{x_1}\cap U_{x_2}=\nullset\\
+		f\text{ continua}\so&U_{x_1}, U_{x_2}\text{ sono aperti}
+	\end{align*}
+	Applicando lo stesso ragionamento a $f^{-1}$ si mostra che $X\text{ è }T_2\implies Y\text{ è }T_2$.
+\end{proof}
+
+\begin{oss}
+	In generale le proprietà che dipendono solo dalla topologia sono invarianti per omeomorfismo, perché un omeomorfismo induce una bigezione tra le topologie tale che due aperti corrispondenti sono messi in bigezione dall'omeomorfismo.
+\end{oss}
+
 \begin{es}
-Sia $\fundef[\id]\R\R$ e $\tau_E$ la topologia euclidea. $\id$ è continua rispetto a $\tau_E\funarrow\tau_z$ perché $\tau_z\subseteq\tau_E$, però non nell'altro verso. Infatti $(\R,\tau_E)$ è $T_2$ ma $(\R,\tau_z)$ no, quindi non sono omeomorfi.
+	Sia $\fundef[\id]\R\R$ l'identità e $\tau_E$ la topologia euclidea.
+	$\id$ è continua rispetto a $\tau_E\funarrow\tau_z$ perché $\tau_z\subseteq\tau_E$,
+	però non nell'altro verso.
+	Infatti $(\R,\tau_E)$ è $T_2$ ma $(\R,\tau_z)$ no,
+	quindi non possono essere omeomorfi.
 \end{es}
 
+\titlet{Numerabilità}
+
+Di solito con insieme numerabile si intende un insieme con la cardinalità dei numeri naturali. Per brevità di notazione chiameremo numerabili anche gli insiemi finiti:
+
 \begin{defn}[Numerabilità]
-$X\text{ numerabile}\means\card X\leq\card\N$
+	$S\text{ numerabile}\means\card S\leq\card\N$
 \end{defn}
 
 \begin{defn}[Proprietà di numerabilità]
-$X$ 1-numerabile $\means\forall x\in X\,\exists$ base di intorni di $x$ numerabile
+	Uno spazio topologico è \emph{1-numerabile} se ogni punto ha una base di intorni numerabile:
+	\[X\text{ 1-numerabile}\means
+	\forall x\in X\,\exists\,\text{base di intorni di $x$ numerabile}\]
 \end{defn}
 
 \begin{prop}
-$X$ metrizzabile $\implies X$ 1-numerabile
+	$X$ metrizzabile $\implies X$ 1-numerabile
 \end{prop}
 
+\begin{proof}
+	Avevamo già osservato che le palle aperte centrate in un punto formano una base di intorni per il punto.
+	Ci basta scegliere la sottofamiglia numerabile $\setdef[{\ball[1/n]x}]{n\in\N}$,
+	che è ancora una base perché $\forall r\,\exists n:\ball[1/n]x\subseteq\ball x$.
+\end{proof}
+
 \begin{defn}[Proprietà di numerabilità]
-$X$ 2-numerabile $\means\exists$ base di aperti di $X$ numerabile
+	Uno spazio topologico è \emph{2-numerabile} se ha una base di aperti numerabile:
+	\[X\text{ 2-numerabile}\means\exists\,\text{base di aperti di $X$ numerabile}\]
 \end{defn}
