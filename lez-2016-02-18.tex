@@ -153,57 +153,79 @@ Diamo ora una definizione che ci servirà per dimostrare la \autoref{th:1numaccs
 
 \begin{prop}
 	\label{th:1numaccsucc}
-	In uno spazio 1-numerabile, i punti di accumulazione di un insieme sono quelli a cui converge una sottosuccessione a valori nell'insieme:
+	In uno spazio 1-numerabile, ai punti di accumulazione di un insieme convergono sottosuccessioni a valori nell'insieme:
 	\[\begin{rcases}
 		X\text{ 1-numerabile }\\
 		Y\subseteq X\\
-		x\in X
+		x\text{ accumulazione per }Y
 	\end{rcases}\implies
-	\big(x\text{ accumulazione per }Y\iff
-	\exists(a_n)\subseteq Y:a_n\convarrow x\big)\]
+	\exists(a_n)\subseteq Y:a_n\convarrow x\]
+\end{prop}
+
+\begin{proof}
+	Sia $\set{U_n}_{n\in\N}$ una base di intorni annidati di $x$.
+	Poiché $x$ è di accumulazione per $Y$,
+	$\forall n\,\exists a_n\in(U_n\setminus\set x)\cap Y$.
+	La successione $(a_n)$ converge a $x$ perché gli $U_n$ sono annidati.
+\end{proof}
+
+\titlet{Connessione}
+
+Con la proprietà di connessione vogliamo rendere l'idea intuitiva che uno spazio sia ``tutto attaccato''.
+
+\begin{defn}[Connessione]
+	Uno spazio è connesso se non è esprimibile come unione di due aperti disgiunti non vuoti:
+	\[X\text{ sconnesso}\means
+	\exists A,B\text{ aperti}:
+	\begin{cases}
+		X=A\cup B\\
+		A\cap B=\nullset\\
+		A,B\neq\nullset
+	\end{cases}\]
+\end{defn}
+
+\begin{prop}
+	In uno spazio connesso, gli unici insiemi sia aperti che chiusi sono lo spazio stesso e il vuoto:
+	\[\begin{rcases}
+		X\text{ connesso}\\
+		A\subseteq X\\
+		A\text{ aperto e chiuso}
+	\end{rcases}\implies A=X\vel A=\nullset\]
+\end{prop}
+
+\begin{proof}
+	$A$ è chiuso quindi $\comp A$ è aperto,
+	e $X=A\cup\comp A$.
+	Se fosse $A,\comp A\neq\nullset$,
+	$X$ sarebbe sconnesso.
+\end{proof}
+
+\begin{prop}
+	I connessi di $\R$ sono gli intervalli:
+	\[Y\subseteq\R\text{ connesso secondo }\tau_E\iff
+	Y\text{ è un intervallo}\]
 \end{prop}
 
 \begin{proof}
 	Mostriamo le due implicazioni:
 	\begin{description}
 		\item[\proofrightarrow]
-			Sia $\set{U_n}_{n\in\N}$ una base di intorni annidati di $x$.
-			Poiché $x$ è di accumulazione per $Y$,
-			$\forall n\,\exists a_n\in(U_n\setminus\set x)\cap Y$.
-			La successione $(a_n)$ converge a $x$ perché gli $U_n$ sono annidati.
+			Se $Y$ non fosse un intervallo, avremmo
+			$\exists x\in(\inf Y;\sup Y):x\not\in Y$.
+			Ma allora $Y=\big(Y\cap(-\infty;x)\big)\cup\big(Y\cap(x;\infty)\big)\absurd$.
 		\item[\proofleftarrow]
-			Infatti in ogni intorno di $x$ ci saranno infiniti $a_n\in Y$.
-		\qedhere
+			Supponiamo per assurdo che $Y$ sia sconnesso.
+			Allora $Y=A_1\cup A_2$ aperti disgiunti non vuoti.
+			In particolare $\exists x_1\in A_1,x_2\in A_2\wlg x_1<x_2$.
+			Poiché $Y$ è un intervallo, $[x_1;x_2]\subseteq Y$.
+			
+			\begin{align*}
+				Y\text{ sconnesso}\so&Y=A_1\cup A_2\text{ aperti disgiunti}\\
+				&\exists x_i\in A_i\wlg x_1<x_2\\
+				Y\text{ intervallo}\so&[x_1;x_2]\subseteq Y\\
+				&\xi\is\sup(A_1\cap[x_1;x_2])\so\\
+				\so&\xi\in\clos A_1,\clos A_2\os\xi\text{ accumulazione}\\
+				&\text{Ma }\clos A_i=A_i\absurd
+			\end{align*}
 	\end{description}
-\end{proof}
-
-\titlet{Connessione}
-
-\begin{defn}[Connessione]
-$X$ sconnesso $\means\neg(X\text{ connesso})\means\exists A,B\text{ aperti}:X=A\cup B\et A\cap B=\nullset\et A,B\neq\nullset$
-\end{defn}
-
-\begin{prop}
-$X\text{ connesso}\et A\subseteq X\et A\text{ aperto e chiuso}\implies A=X\vel A=\nullset$
-\end{prop}
-
-\begin{prop}
-$Y\subseteq\R$ connesso secondo $\tau_E\iff Y$ è un intervallo
-\end{prop}
-\begin{proof}
-Mostriamo l'implicazione verso sinistra; per assurdo:
-\begin{align*}
-Y\text{ sconnesso}\so&Y=A_1\cup A_2\text{ aperti disgiunti}\\
-&\exists x_i\in A_i\wlg x_1<x_2\\
-Y\text{ intervallo}\so&[x_1;x_2]\subseteq Y\\
-&\xi\is\sup(A_1\cap[x_1;x_2])\so\\
-\so&\xi\in\clos A_1,\clos A_2\os\xi\text{ accumulazione}\\
-&\text{Ma }\clos A_i=A_i\absurd
-\end{align*}
-Mostriamo l'implicazione verso destra; per assurdo:
-\begin{align*}
-&Y\text{ non è un intervallo}\so\\
-\so&\exists x_0\in(\inf Y;\sup Y):x_0\not\in Y\so\\
-\so&Y=(Y\cap(-\infty;x_0))\cup(Y\cap(x_0;\infty))\absurd \qedhere
-\end{align*}
 \end{proof}
