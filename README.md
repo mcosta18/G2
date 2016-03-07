@@ -97,7 +97,7 @@ Per iniziare a lavorare sulla repository bisogna clonarla. Spostarsi nella carte
 
 `git clone https://github.com/mcosta18/G2.git`
 
-questo crea una cartella `G2` nella cartella corrente.
+Questo crea una cartella `G2` nella cartella corrente. Prima di eseguire gli altri comandi, **spostarsi nella cartella `G2`**.
 
 #### Pullare e pushare
 
