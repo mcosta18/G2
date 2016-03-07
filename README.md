@@ -52,9 +52,7 @@ Nel commit, mettere **tutti e tre** i file.
 Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è usare l'estensione **[svg2tikz](https://github.com/kjellmf/svg2tikz)**:
 
 1. Installare l'estensione come descritto nelle [istruzioni](https://github.com/kjellmf/svg2tikz/blob/master/docs/install.rst).
-
 2. Disegnare come sopra.
-
 3. Usare il comando `Estensioni->Esporta->Export to TikZ path...`, le opzioni che vi consiglio sono **Tikzpicture**, **Raw TeX** e **Export to clipboard**. Incollare il testo in un file `fig.tikz`, e importarlo nel documento come sopra:
 
 ```latex
