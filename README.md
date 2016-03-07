@@ -52,64 +52,102 @@ Nel commit, mettere **tutti e tre** i file.
 Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è usare l'estensione **[svg2tikz](https://github.com/kjellmf/svg2tikz)**:
 
 1. Installare l'estensione come descritto nelle [istruzioni](https://github.com/kjellmf/svg2tikz/blob/master/docs/install.rst).
-
 2. Disegnare come sopra.
-
 3. Usare il comando `Estensioni->Esporta->Export to TikZ path...`, le opzioni che vi consiglio sono **Tikzpicture**, **Raw TeX** e **Export to clipboard**. Incollare il testo in un file `fig.tikz`, e importarlo nel documento come sopra:
 
 ```latex
 \input{fig.tikz}
 ```
 
-## GIT
-repo git = una collezione di stati di alcuni file presenti in una cartella, cioè mantiene la storia
+## Git
 
-### inizilizzare il repo
-la prima volta per clonare il repository
+Git è un *version control system*, cioè man mano che lavori su dei file lui salva delle istantanee. È utile per poter tornare indietro in caso di pocci e per lavorare in modo condiviso sui file: le uniche modifiche che si possono condividere sono quelle già catturate in un'instantanea.
 
-`$ git clone https://github.com/mcosta18/G2.git`
+Fare un *commit* significa fare una di queste istantanee. Si suppone che gli utenti facciano il commit solo quando lo stato delle loro modifiche è 'consistente' (es. il codice LaTeX compila senza errori).
 
-questo ha creato una cartella G2 che è il repo.
+L'insieme delle istantanee è la *repository*. Per lavorare in condivisione, la 'versione ufficiale' della repository viene tenuta su un server (in questo caso GitHub). Ogni utente copia (*clona*) tutta la repository sul suo computer per poterci lavorare.
 
-### lavorare sul repo
+### Usare git
 
-Prima di iniziare a lavorare si scaricano gli ultimi aggiornamenti con       
+Il ciclo tipico di utilizzo è:
 
-`$ git pull`
+1. Aggiornare la repository locale (*pullare*).
+2. Modificare i file.
+3. Fare il commit.
+4. Pullare, per gestire eventuali conflitti (se qualcun altro ha modificato gli stessi file).
+5. Eventualmente fare un commit dopo la risoluzione dei conflitti (**importante**).
+6. Aggiornare la repository remota (*pushare*).
 
-Quando un set di modifiche è completo si commita, ossia si consolidano le ultime modifiche fatte (viene richiesto un commento, scriverci le modifiche apportate)
+Per eseguire questi passaggi, si può usare un programma a interfaccia grafica (**consigliato**) oppure direttamente `git` da terminale.
 
-`$ git commit -a` 
+I programmi GUI che consiglio (li ho provati sul Mac, ci sono anche per Windows):
 
-poi si inviano al repo online con
+* [GitHub desktop](https://desktop.github.com) il programma ufficiale di GitHub. Molto semplice da usare.
+* [SourceTree](https://www.sourcetreeapp.com) comunque semplice da usare ma con più funzionalità. Anche lui supporta direttamente gli account GitHub.
 
-`$ git pull`     <-- per scaricare eventuali modifiche fatte da altri nel frattempo
+Altri programmi (anche per Linux) si trovano [sul sito di git](https://git-scm.com/download/gui/linux).
 
-`$ git push`
+Elenchiamo ora gli specifici comandi di `git`. Dovrebbe essere facile trovare i comandi corrispondenti nei programmi a interfaccia grafica.
 
+#### Creare la copia locale
 
+Per iniziare a lavorare sulla repository bisogna clonarla. Spostarsi nella cartella dove si vuole tenere la repository ed eseguire il comando:
 
-### special section:
-per conoscere lo stato del repo
+`git clone https://github.com/mcosta18/G2.git`
 
-`$ git status`
+Questo crea una cartella `G2` nella cartella corrente. Prima di eseguire gli altri comandi, **spostarsi nella cartella `G2`**.
 
-per dire a git di tracciare le modifiche di un nuovo file:
+#### Pullare e pushare
 
-`$ git add file.ext`
+Per aggiornare la copia **locale**:
 
-per rimuovere un file
+`git pull`
 
-`$ git rm file.ext`
+Per aggiornare la copia **remota** da quella locale:
 
-per rinominare un file
+`git push`
 
-`$ git mv file.ext newfile.ext`
+#### Commit
 
-per sapere la storia del repo 
+Per fare un commit, il comando è
 
-`$ git log`
+`git commit`
 
+Tuttavia c'è qualche dettaglio in più da sapere. Se abbiamo creato nuovi file, git non ne tiene traccia se non glielo diciamo esplicitamente con il comando:
 
-### Makefile:
-è mio, lasciatelo pure perdere (AleCandido)
+`git add file.estensione`
+
+Ovviamente c'è anche il comando per rimuovere file:
+
+`git rm file.estensione`
+
+Se volete cambiare nome a un file, anziché [rimuoverlo, rinominarlo, riaggiungerlo] si può usare:
+
+`git mv file.estensione nuovonome.estensione`
+
+Prima di fare il commit, per sapere quali file sono stati modificati rispetto al commit precedente e se ci sono file aggiunti o rimossi, usare:
+
+`git status`
+
+Per vedere gli ultimi commit:
+
+`git log`
+
+##### Messaggio di commit
+
+`git` vi imporrà di scrivere un messaggio di commit. Il messaggio di commit tipico ha questa struttura:
+
+* Una riga corta (≲ 50 caratteri) che riassume le modifiche.
+* Eventualmente tutti i commenti che vi passano per la testa (*dopo* la riga corta).
+
+Quando usate semplicemente `git commit` di solito venite infognati in un editor da terminale. In pratica la cosa più comoda da fare è:
+
+`git commit -a -F -`
+
+Dove `-a` aggiunge in automatico i nuovi file e `-F -` vi fa digitare il messaggio di commit direttamente come da riga di comando (non potete cancellare dopo essere andati a capo, e per terminare il messaggio dovete usare `Ctrl+D`).
+
+Per sapere quali file vanno aggiunti da `-a` e quali non interessano, `git` legge il file `.gitignore`. Dopo averci dato un occhiata, è abbastanza intuitivo come usarlo.
+
+## Makefile:
+
+È mio, lasciatelo pure perdere (AleCandido)
