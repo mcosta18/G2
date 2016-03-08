@@ -36,7 +36,7 @@ Per aggiungere una lezione:
 Il modo più semplice per ottenere figure con testo formattato da LaTeX è usare **Inkscape**:
 
 1. Disegnare l'immagine in Inkscape, scrivendo le caselle di testo come se fossero dentro a LaTeX (cioè ricordarsi i **dollari**). Come pagina di lavoro usare un **A4 verticale** così si ha un'idea delle dimensioni.
-2. Usare il comando `File->Salva una copia...`, selezionare il formato **PDF** e nella successiva finestra di dialogo selezionare **PDF+LaTeX** e **Usa dimensione oggetto esportato**. Se la vostra figura si chiama `fig.svg` questo genera i file `fig.pdf` e `fig.pdf_tex`.
+2. Usare il comando `File->Salva una copia...`, selezionare il formato **PDF** e nella successiva finestra di dialogo selezionare **PDF+LaTeX** e **Usa&nbsp;dimensione&nbsp;oggetto&nbsp;esportato**. Se la vostra figura si chiama `fig.svg` questo genera i file `fig.pdf` e `fig.pdf_tex`.
 3. In LaTeX, usare questo codice:
 
 ```latex
@@ -53,7 +53,7 @@ Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è us
 
 1. Installare l'estensione come descritto nelle [istruzioni](https://github.com/kjellmf/svg2tikz/blob/master/docs/install.rst).
 2. Disegnare come sopra.
-3. Usare il comando `Estensioni->Esporta->Export to TikZ path...`, le opzioni che vi consiglio sono **Tikzpicture**, **Raw TeX** e **Export to clipboard**. Incollare il testo in un file `fig.tikz`, e importarlo nel documento come sopra:
+3. Usare il comando `Estensioni->Esporta->Export to TikZ path...`, le opzioni che vi consiglio sono **Tikzpicture**, **Raw&nbsp;TeX** e **Export&nbsp;to&nbsp;clipboard**. Incollare il testo in un file `fig.tikz`, e importarlo nel documento come sopra:
 
 ```latex
 \input{fig.tikz}
