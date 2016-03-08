@@ -59,6 +59,18 @@ Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è us
 \input{fig.tikz}
 ```
 
+### `figure` VS non-`figure`
+
+Il primo uso dell'ambiente `figure` può essere traumatico perché non posiziona la figura dove la definiamo. In effetti in un libro stampato le figure non sono ficcate in mezzo al testo ma magari di lato, quello che è importante è che testo e figura siano nella stessa coppia di facciate. Per questo è anche importante **usare la caption**.
+
+È futile discutere con il LaTeX per farsi mettere la figura dove volete, perché `figure` non è fatto per questo. Piuttosto usate qualcosa del genere:
+
+```latex
+\begin{center}
+  \input{fig.pdf_tex}
+\end{center}
+```
+
 ## Git
 
 Git è un *version control system*, cioè man mano che lavori su dei file lui salva delle istantanee. È utile per poter tornare indietro in caso di pocci e per lavorare in modo condiviso sui file: le uniche modifiche che si possono condividere sono quelle già catturate in un'instantanea.
