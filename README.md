@@ -11,7 +11,34 @@
 * Valerio
 * Begli
 
-Se convincete altra gente potete sempre aggiungerla in coda
+Se convincete altra gente potete sempre aggiungerla in coda.
+
+## Checklist
+
+Visti i pocci che vengono pushati, ho scritto delle checklist da applicare per controllare le trascrizioni e per caricare le modifiche.
+
+### Checklist prima del push
+
+* *Regola d'oro*: il codice LaTeX compila senza errori.
+* Non ci sono merge incompleti.
+
+### Checklist controllo lezione
+
+Questo è un elenco di critiche/correzioni emerse nella lettura delle lezioni e del loro codice. È bene controllare la propria lezione usando questa checklist.
+
+* Usare notazioni consistenti.
+* Fare un uso equilibrato di formule e testo.
+* Usare le macro in `macros.sty`.
+* Mettere i punti alla fine delle frasi.
+* Controllare le parole in italiano.
+* Usare paragrafi (doppio a capo) anziché `\\`.
+* Usare `\dots`, `\ldots`, `\cdots` anziché `...` o `···`.
+* Usare `\caption` nell'ambiente `figure`.
+* Usare `\setminus` per la differenza insiemistica.
+* Usare `\[...\]` o l'ambiente `equation*` anziché `\\$...$`.
+* Dopo il "per ogni" usare i due punti se opportuno, es.: "∀x:P(x)" e non "∀x,P(x)".
+* Gli intervalli scritti con i puntini devono usare in modo uniforme le virgole, es.: "a,...,z" e non "a,... z".
+* Per le funzioni standard, usare `\operatorname` o `\DeclareMathOperator` anziché scriverle come se fossero variabili in fila.
 
 ## Struttura del documento
 
@@ -35,7 +62,7 @@ Per aggiungere una lezione:
 
 Il modo più semplice per ottenere figure con testo formattato da LaTeX è usare **Inkscape**:
 
-1. Disegnare l'immagine in Inkscape, scrivendo le caselle di testo come se fossero dentro a LaTeX (cioè ricordarsi i **dollari**). Come pagina di lavoro usare un **A4 verticale** così si ha un'idea delle dimensioni.
+1. Disegnare l'immagine in Inkscape (oppure in un altro programma e poi esportarla in SVG), scrivendo le caselle di testo come se fossero dentro a LaTeX (cioè ricordarsi i **dollari**). Come pagina di lavoro usare un **A4 verticale** così si ha un'idea delle dimensioni.
 2. Usare il comando `File->Salva una copia...`, selezionare il formato **PDF** e nella successiva finestra di dialogo selezionare **PDF+LaTeX** e **Usa&nbsp;dimensione&nbsp;oggetto&nbsp;esportato**. Se la vostra figura si chiama `fig.svg` questo genera i file `fig.pdf` e `fig.pdf_tex`.
 3. In LaTeX, usare questo codice:
 
@@ -63,7 +90,7 @@ Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è us
 
 Il primo uso dell'ambiente `figure` può essere traumatico perché non posiziona la figura dove la definiamo. In effetti in un libro stampato le figure non sono ficcate in mezzo al testo ma magari di lato, quello che è importante è che testo e figura siano nella stessa coppia di facciate. Per questo è anche importante **usare la caption**.
 
-È futile discutere con il LaTeX per farsi mettere la figura dove volete, perché `figure` non è fatto per questo. Piuttosto usate qualcosa del genere:
+È futile discutere con il LaTeX per fargli mettere la figura dove volete, perché `figure` non è fatto per questo. Piuttosto usate qualcosa del genere:
 
 ```latex
 \begin{center}
