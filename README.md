@@ -26,6 +26,8 @@ Visti i pocci che vengono pushati, ho scritto delle checklist da applicare per c
 
 Questo è un elenco di critiche/correzioni emerse nella lettura delle lezioni e del loro codice. È bene controllare la propria lezione usando questa checklist.
 
+Per chi ha voglia, consiglio di dare una letta veloce ma completa ai capitoli 2--4 del [wikibook su LaTeX](https://en.wikibooks.org/wiki/LaTeX).
+
 * Usare notazioni consistenti.
 * Fare un uso equilibrato di formule e testo.
 * Usare le macro in `macros.sty`.
