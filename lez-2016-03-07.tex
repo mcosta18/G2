@@ -70,20 +70,19 @@ In pratica restringendo $f$ ad un intorno aperto opportuno di $x$ in $\Omega$, $
 Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U, d_xf$ è surgettivo $\implies$ Esiste una parametrizzazione locale di $U$ intorno a $x$: $\fundef[\phi]{U'\subseteq \R^n}{\phi(U')\subseteq U}$ diffeomorfismo tale che $f \circ \phi = \pi$
 \end{teo}
 
-\begin{figure}
-    \centering
-    \input{figura4.pdf_tex}
-\end{figure}
+\begin{center}
+\hspace{1cm}
+\input{figura4.pdf_tex}
+\end{center}
 
 \begin{teo}[Funzione implicità, v. iniettiva]
 \noindent \\Definisco prima un \emph{modello locale lineare}, ovvero una inclusione $\fundef[j]{\R^n}{\R^m}$ con $n \le m$ tale che $\pi(x_1,\cdots,x_n)=(x_1,\cdots,x_n,0,0,\cdots)$. Noto che $\forall x \in \R^n, d_xj$ è surgettivo (essendo $d_xj=j(x)$ per linearità di $j$).\\
 Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U, d_xf$ è iniettivo $\implies$ Esiste una carta locale di $U$ intorno a $x$: $\fundef[\psi]{U}{U''\subset \R^m}$ diffeomorfismo tale che $\psi \circ f = j$.
 \end{teo}
 
-\begin{figure}
-    \centering
-    \input{figura5.pdf_tex}
-\end{figure}
+\begin{center}
+\input{figura5.pdf_tex}
+\end{center}
 
 \begin{prop}
 Sia $\fundef{\R^n}{\R^n}$ un generico diffeomorfismo. Lla composizione del differenzenziale $\fundef[df]{\R^n}{GL_n(\R)}$, del determinante $\fundef[det]{GL_n(\R)}{\R\textbackslash\{0\}}$ e della funzione segno $\fundef[sgn]{\R\textbackslash\{0\}}{\{\pm1\}}$: $sgn \circ det \circ df$ è una funzione costante che può valere $1$ o $-1$.
