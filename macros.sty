@@ -2,6 +2,8 @@
 
 \ProvidesPackage{macros}
 
+% For macros with first letter uppercase variant: ther uppercase version uses \left and \right
+
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
@@ -14,86 +16,121 @@
 \RequirePackage{centernot} % \centernot
 \RequirePackage{tikz}
 
-%%% MISCELLANEOUS %%%
 
-\newcommand*\circled[1]{%
-	\tikz[baseline=(char.base)]{%
-  	\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% MISCELLANEOUS %%%%%%%%%%%%%%%%%%%%%%%%%%
+% macros that do not have enough siblings to get their own category
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt](char){#1};}} % draws a circle around its argument, the circle is automatically sized
 
 \newcommand*\inv[1]{\frac{1}{#1}} % \inv{x} = 1/x
 \newcommand*\abs[1]{|{#1}|} % absolute value
 \newcommand*\Abs[1]{\left|{#1}\right|} % absolute value (with big bars)
 \newcommand*\avg[1]{\langle{#1}\rangle} % average
 
-\DeclareMathOperator\id{id} % identity
-
-\newcommand*\R{\mathbb{R}} % set/field of real numbers
-\newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
-\newcommand*\N{\mathbb{N}} % set of natural numbers
-
 \newcommand*\dd{\mathrm{d}} % differential "d"
 
-\DeclareMathOperator\Hom{Hom} % space of homomorphisms
 
-%%% PROOFS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % without loss of generality
+\DeclareMathOperator\id{id} % identity
+\DeclareMathOperator\sgn{sgn} % sign
+\DeclareMathOperator\GL{GL} % linear group
 
-\newcommand*\proofleftarrow{\circled{\ensuremath{\Leftarrow}}} % simbolo per dire che dimostri la freccia verso sinistra
-\newcommand*\proofrightarrow{\circled{\ensuremath{\Rightarrow}}} % simbolo per dire che dimostri la freccia verso destra
+\newcommand*\funarrow{\:\chemarrow\,} % arrow used to declare functions
+
+% Function declaration:
+% \fundef[g]XY = g : X → Y
+% Default value of optional argument: f
+% \fundef XY = f : X → Y
+% The motivations behind this macro are the use of a specific arrow and the \nolinebreak.
+\newcommand*\fundef[3][f]{{#1}\nolinebreak:\nolinebreak{#2}\funarrow{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% PROOFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% macros for symbols typically used in proofs
+
+\newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % "without loss of generality", works outside math environments
+
+% Queste quattro macro servono per dire che dimostri la freccia o l'inclusione verso destra/sinistra (i nomi delle macro sono intuitivi). Funzionano anche fuori dagli ambienti matematici. Tipicamente si usano in questo modo:
+% \begin{description}
+% 	\item[\proofrightarrow]
+% 		dimostrazione verso destra...
+% 	\item[\proofleftarrow]
+% 		dimostrazione verso sinistra...
+% \end{description}
+\newcommand*\proofleftarrow{\circled{\ensuremath{\Leftarrow}}}
+\newcommand*\proofrightarrow{\circled{\ensuremath{\Rightarrow}}}
 \newcommand*\proofsupseteq{\circled{\ensuremath{\supseteq}}}
 \newcommand*\proofsubseteq{\circled{\ensuremath{\subseteq}}}
 
+% latin AND, OR
 \newcommand*\et{\wedge} % \et = ∧
 \newcommand*\vel{\vee} % \vel = ∨
 
-\newcommand*\notimplies{\centernot\implies}
-\newcommand*\so{\;\rightarrow\,\:}
-\newcommand*\os{\leftarrow\,}
+\newcommand*\notimplies{\centernot\implies} % arrow to say "do not implies"
+\newcommand*\so{\;\rightarrow\,\:} % arrow for quite material implications
+\newcommand*\os{\leftarrow\,} % opposite direction of \so
 
-\newcommand*\is{:=} % equal by definition
-\newcommand*\means{\;:\leftrightarrow\,\:} % logically equivalent by definition
+\newcommand*\is{:=} % "equal by definition"
+\newcommand*\means{\;:\leftrightarrow\,\:} % "logically equivalent by definition"
 
 \newcommand*\absurd{\,\lightning} % used to end a reductio ad absurdum
 
-%%% SETS %%%
 
-\newcommand*\nullset\varnothing % the empty set
-\DeclareMathOperator\card{\#} % cardinality
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand*\inters\bigcap % ``intersectory''
-\newcommand*\union\bigcup % ``unitory''
-\newcommand*\djunion\bigsqcup % disjoint unitory
+\newcommand*\nullset\varnothing % the empty set (use instead of \emptyset)
 
+% Basic derived sets:
+\newcommand*\pset{\mathscr{P}} % power set (set of subsets)
+\DeclareMathOperator\img{Img} % image of a subset of the domain
+\newcommand*\quoset[2]{{#1}/{#2}} % quotient set
+
+\DeclareMathOperator\card{\#} % cardinality of
+
+% Specific sets:
+\newcommand*\R{\mathbb{R}} % set/field of real numbers
+\newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
+\newcommand*\N{\mathbb{N}} % set of natural numbers
+\DeclareMathOperator\Hom{Hom} % space of homomorphisms
+
+% "Big" union and intersection:
+\newcommand*\inters\bigcap % intersection
+\newcommand*\union\bigcup % union
+\newcommand*\djunion\bigsqcup % disjoint union
+
+% "Small" (binary) union and intersection:
 \newcommand*\djcup\sqcup % disjoint union
 
 \newcommand*\set[1]{\left\{{#1}\right\}} % \set{x} = \left \{ x \right \}
-\newcommand*\setdef[2][x]{\{{#1}\,|\,{#2}\}} % set definition
-\newcommand*\Setdef[2][x]{\left\{{#1}\vphantom{#2}\right.\left|\,{#2}\vphantom{#1}\right\}} % set definition (with big brackets)
-\newcommand*\pset{\mathscr{P}} % power set
 
-\newcommand*\funarrow{\:\chemarrow\,} % arrow used to declare functions
-\newcommand*\fundef[3][f]{{#1}\nolinebreak:\nolinebreak{#2}\funarrow{#3}} % function declaration
-\DeclareMathOperator\img{Img} % image of a subset of the domain
+% Set definition:
+% \setdef[x\in X]{P(x)} = {x ∈ X | P(x)}
+% Default value of optional argument: x
+% \setdef{P(x)} = {x | P(x)}
+% The motivations behind this macro are that the big brackets version is long (as you can see) and that some use ":" instead of "|".
+\newcommand*\setdef[2][x]{\{{#1}\,|\,{#2}\}}
+\newcommand*\Setdef[2][x]{\left\{{#1}\vphantom{#2}\right.\left|\,{#2}\vphantom{#1}\right\}}
 
-\newcommand*\quoset[2]{{#1}/{#2}} % insieme quoziente
 
-%%% TOPOLOGY %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPOLOGY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareMathOperator\comp{\mathscr C} % complementary of set
+\DeclareMathOperator\comp{\mathscr C} % complementary
 \newcommand*\clos[1]{\overline{#1}} % closure
 \newcommand*\inter[1]{\mathring{#1}} % interior
 \DeclareMathOperator\bound{\mathscr F} % boundary
 
 \DeclareMathOperator\dis{\mathrm{d}} % distance
 
-%\newcommand*\ball[2][r]{\operatorname{B}({#2},{#1})} % open ball
-%\newcommand*\Ball[2][r]{\operatorname{B}\left({#2},{#1}\right)} % open ball (with big parentheses)
-\newcommand*\ball[2][r]{\operatorname{B}_{#1}({#2})} % open ball
-\newcommand*\Ball[2][r]{\operatorname{B}_{#1}\left({#2}\right)} % open ball (with big parentheses)
+% Open ball:
+% \ball[R]x = B_R(x)
+% Default value of optional argument: r
+% \ball x = B_r(x)
+\newcommand*\ball[2][r]{\operatorname{B}_{#1}({#2})}
+\newcommand*\Ball[2][r]{\operatorname{B}_{#1}\left({#2}\right)}
 
 \newcommand*\convarrow{\rightarrowtriangle} % arrow meaning convergence
 
-\newcommand*\Tquoset[2]{{#1}/_T{#2}}
+\newcommand*\Tquoset[2]{{#1}/_T{#2}} % topological quotient (maybe this should be merged into an optional argument of \quoset, ex. \quoset[T]...)
 
 \endinput
