@@ -1,0 +1,152 @@
+% trascrizione: Petrillo
+
+MOLTO DA SISTEMARE
+
+\begin{lemma}
+	\label{th:lemprec}
+	Sia $\fundef{\R^n}\R$ liscia con $U\subseteq\R^n$ aperto connesso, $f(\av 0)=0$, $\av 0\in U$.
+	Allora $\exists\fundef[g_i]{\R^n}\R$ liscie tali che $f(\av x)=\sum_ix_ig_i(\av x)$.
+\end{lemma}
+
+\begin{proof}
+	Per il teorema fondamentale del calcolo abbiamo:
+	\[f(\av x)=\int_0^1\deriv{f(t\av x)}t\dd t=
+	\sum_{i=1}^n\left(\int_0^1\pderiv f{x_i}(t\av x)\dd t\right)x_i\]
+	Allora poniamo:
+	\[g_i(\av x)\is\int_0^1\pderiv f{x_i}(t\av x)\dd t
+	\qedhere\]
+\end{proof}
+
+\begin{teo}[Linearizzazione dei diffeomorfismi di $\R^n$ a meno di isotopia]
+	Sia $\fundef{\R^n}{\R^n}$ diffeomorfismo con $\forall \av x\in\R^n:\det(\dd f_{\av x})>0$. Allora $\exists\fundef[F]{\R^n\times[0,1]}{\R^n}$ liscia tale che $\forall t\in[0,1]:f_t$ è un diffeomorfismo di $\R^n$ e $f_0=f$, $f_1=\id$, dove $f_t\is F|_{\R^n\times\set t}$.
+	\marginpar{ridondante, MERGIARE}
+\end{teo}
+
+\begin{proof}
+	$\wlg f(\av 0)=\av 0$. Infatti se $f(\av 0)=\av x_0$, $H(\av x,t)\is f(\av x)-t(\av x_0)$ è un'isotopia tra $f$ e la  $f'$ con $f'(\av 0)=\av 0$.
+	
+	Per definizione, $\dd f_{\av0}(\av x)=\lim_{t\to 0}\frac{f(t\av x)}t$.
+	
+	Poniamo:
+	\[\tilde F(\av x,t)\is
+	\begin{dcases}
+		\frac{f(t\av x)}t & t\in[0,1] \\
+		\dd f_{\av0}(\av x) & t=0
+	\end{dcases}\]
+	
+	\claim $\tilde F$ è liscia. Infatti applicando il \autoref{th:lemprec} abbiamo $\tilde F(\av x,t)=\sum_ix_ig_i(\av x)$.
+	\marginpar{questo non mi torna}
+	
+	Sia $A\is\dd f_{\av0}$, osserviamo che $\det A>0$.
+	Dobbiamo mostrare che $A$ è connessa con l'identità in modo liscio, ovvero se consideriamo $\GL_n^+\is\setdef[M\in\GL_n]{\det M>0}$ aperto di $\GL_n$, dobbiamo mostrare che è connesso per archi.
+	
+	Intanto, il cammino più intuitivo $t\mapsto tA+(1-t)I$ non funziona in generale se $n$ è dispari, perché il determinante si può annullare.
+	
+	Restringiamoci prima al caso semplice $A\in\SO_n$: le $A^i$ sono una base ortonormale rispetto al prodotto scalare canonico. Notiamo che $I\in\SO_n$ e che possiamo connettere $A$ a $I$ attraverso $\SO_n$, il procedimento è geometricamente intuitivo.
+	
+	 Passiamo ora al caso generale $A\in\GL_n^+$. Sia $\scp{}{}_A$ il prodotto scalare definito positivo tale che le $A^i$ sono una base ortonormale; sia $\scp{}{}_I$ quello canonico.
+	 
+	 Osserviamo che $\scp{}{}_t\is t\scp{}{}_A+(1-t)\scp{}{}_I$ ci dà un cammino di prodotti scalari definiti positivi. $\forall t$ applico Gram-Schmidt alle $A^i$ ottenendo una base ortonormale $B_t\is\set{B_t^1,\dots,B_t^n}$. Abbiamo che:
+	 \begin{itemize}
+	 	\item $B_1=A$
+		\item $B_0\in\SO_n$
+		\item le formule G-S per i $B^i$ sono liscie.
+		\item $\det B_t>0$
+	 \end{itemize} 
+	Allora da $B_0$ ci connettiamo all'identità come nel caso $A\in\SO_n$.
+\end{proof}
+
+Sia $\fundef U{\R^n}$ con $f$ liscia, $\av 0\in U\subseteq\R^n$, $U$ aperto, $f(\av0)=\av0$.
+
+Espandiamo in serie la $f$:
+\[f(\av x)=
+\dd f_{\av0}(\av x)+\transp{\av x}(Hf_{\av0})\av x+R
+\quad\text{con}\quad
+\lim_{\av x\to\av0}\frac R{\norm{\av x}^2}=0\]
+Dove $Hf$ è la matrice hessiana:
+\[(Hf_{\av0})_{ij}\is
+\frac{\partial^2f}{\partial x_j\partial x_i}(\av0)\]
+Ricordiamo che l'hessiana è simmetrica per le funzioni liscie.
+
+Se $\dd f_{\av0}\neq\av0$ cioè $\nabla f(\av0)\neq\av0$, siamo nelle ipotesi del \autoref{th:funimpsurg}. Allora $\exists$~parametrizzazione locale $\psi$ tale che $f\circ\psi(\av x)=x_1$.
+
+Supponiamo che $\dd f_{\av0}=\av0$. Allora chiamiamo $\av0$ \emph{punto critico} di $f$. In questo caso $f(\av x)=\transp{\av x}(Hf_{\av0})\av x+R$.
+\marginpar{scrivere definizione per bene}
+
+Supponiamo che sia un punto critico \emph{non degenere}, cioè $\det(Hf_{\av0})\neq0$. Allora applichiamo il teorema di Sylvester alla matrice $Hf$ (che è simmetrica e non degenere), avremo indici di positività e negatività $i_+$ e $i_-=n-i_+$ e:
+\[\exists P\in\GL_n:
+\transp P(Hf_{\av0})P=
+\begin{pmatrix}
+	\begin{matrix}
+		1 & & \\
+		& \dots & \\
+		& & 1 \\
+	\end{matrix} & \Bigg\}i_+ \\
+	i_-\Bigg\{ & \begin{matrix}
+		-1 & & \\
+		& \dots & \\
+		& & -1 \\
+	\end{matrix}
+\end{pmatrix}\si J\]
+\marginpar{sistemare matriciona}
+
+Definiamo le forme quadratiche: $Q_H(\av x)\is\transp{\av x}(Hf_{\av0})\av x$, $Q_J(\av x)=x_1^2+\dots+x_{i_+}^2-(x_{i_++1}^2+\dots+x_n^2)$. Allora $f(\av x)=Q_H(\av x)+R$.
+
+Chiamiamo $i_-$ l'indice del punto critico non degenere.
+\marginpar{scrivere definizione per bene}
+
+\begin{ex}
+	La proprietà di punto critico e il suo indice sono invarianti per riparametrizzazione differenziabile a sinistra.
+\end{ex}
+
+\begin{teo}[Lemma di Morse]
+	Sia $f$ come sopra ma a valori in $\R$, allora esiste una riparametrizzazione locale intorno all'origine che trasforma la $f$ nella forma quadratica canonica del tipo di $Q_J$:
+	\[\begin{rcases}
+		f\in C^\infty(U,\R^n) \\
+		\text{$U$ intorno di $\av0$ in $\R^n$} \\
+		\text{$\av0$ punto critico di indice $\lambda$} \\
+		f(\av 0)=0
+	\end{rcases}\implies
+	\exists\psi,U',U'':\begin{dcases}
+		U''\subseteq\R^n \\
+		U'\subseteq U \\
+		\text{$U'$ intorno di $\av0$} \\
+		\fundef[\psi]{U''}{U'} \\
+		f\circ\psi(\av x)=-\sum_{i=1}^\lambda x_i^2+\sum_{i=\lambda+1}^nx_i^2
+	\end{dcases}\]
+\end{teo}
+
+\begin{proof}
+	\wlg restringiamoci a $U$ convesso.
+	
+	Applichiamo due volte il \autoref{th:lemprec}:
+	\begin{align*}
+		f(\av0)=0 &\so f(\av x)=\sum_ix_ig_i(\av x) \\
+		\dd f_{\av0}\equiv0 &\so f(\av x)=\sum_{ij}b_{ij}(\av x)x_ix_j
+	\end{align*}
+	Dove le $b_{ij}$ sono liscie. \wlg $b_{ij}=b_{ji}$ perché simmetrizzo con $b_{ij}\mapsto\frac{b_{ij}+b_{ji}}2$, che a meno di restringere $U$ non cambia l'indice di $(b_{ij})\si B$ che in effetti è $\lambda$ (a meno di un cambiamento lineare di base, posso suppore $Hf_{\av0}=J$).
+	\marginpar{spiegare per bene}
+	
+	Applichiamo Gram-Schmidt alle $B$:
+	\[\forall\av x\,\exists P(\av x)\in\GL_n:
+	\transp PBP=
+	\begin{pmatrix}
+		\begin{matrix}
+			-1 & & \\
+			& \dots & \\
+			& & -1 \\
+		\end{matrix} & \Bigg\}\lambda \\
+		n-\lambda\Bigg\{ & \begin{matrix}
+			1 & & \\
+			& \dots & \\
+			& & 1 \\
+		\end{matrix}
+	\end{pmatrix}\si J\]
+	Osserviamo che $P(\av0)=I$ e che le $P$ sono liscie.
+	
+	Sia $\fundef[\varphi]U{\R^n}$ con $\varphi(\av x)\is P(\av x)^{-1}$. Osserviamo che $\dd\varphi_{\av0}=\id$.
+	
+	Applichiamo il teorema della funzione inversa: $\varphi$ è un diffeomorfismo se restringiamo il codominio all'immagine.
+	
+	Abbiamo finalmente $f=\transp\varphi(\transp PBP)\varphi=\transp\varphi J\varphi$.
+\end{proof}

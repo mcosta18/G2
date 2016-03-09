@@ -29,12 +29,16 @@
 
 \newcommand*\dd{\mathrm{d}} % differential "d"
 
+\newcommand*\av[1]{\underline{#1}} % algebraic vector
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \DeclareMathOperator\id{id} % identity
 \DeclareMathOperator\sgn{sgn} % sign
-\DeclareMathOperator\GL{GL} % linear group
+\newcommand*\scp[2]{\langle{#1},{#2}\rangle} % scalar product
+\newcommand*\transp[1]{{#1}^{\text T}} % transpose
+\newcommand*\norm[1]{\|{#1}\|} % norm
 
 \newcommand*\funarrow{\:\chemarrow\,} % arrow used to declare functions
 
@@ -45,11 +49,15 @@
 % The motivations behind this macro are the use of a specific arrow and the \nolinebreak.
 \newcommand*\fundef[3][f]{{#1}\nolinebreak:\nolinebreak{#2}\funarrow{#3}}
 
+\newcommand*\deriv[2]{\frac{\dd{#1}}{\dd{#2}}} % derivative
+\newcommand*\pderiv[2]{\frac{\partial{#1}}{\partial{#2}}} % partial derivative
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% PROOFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % macros for symbols typically used in proofs
 
 \newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % "without loss of generality", works outside math environments
+\newcommand*\claim{\TextOrMath{\texttt{CLAIM} }{\mathtt{CLAIM}\;}} % claim
 
 % Queste quattro macro servono per dire che dimostri la freccia o l'inclusione verso destra/sinistra (i nomi delle macro sono intuitivi). Funzionano anche fuori dagli ambienti matematici. Tipicamente si usano in questo modo:
 % \begin{description}
@@ -72,6 +80,7 @@
 \newcommand*\os{\leftarrow\,} % opposite direction of \so
 
 \newcommand*\is{:=} % "equal by definition"
+\newcommand*\si{=:} % "the thing to the right is equal by definition"
 \newcommand*\means{\;:\leftrightarrow\,\:} % "logically equivalent by definition"
 
 \newcommand*\absurd{\,\lightning} % used to end a reductio ad absurdum
@@ -93,6 +102,8 @@
 \newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
 \newcommand*\N{\mathbb{N}} % set of natural numbers
 \DeclareMathOperator\Hom{Hom} % space of homomorphisms
+\DeclareMathOperator\GL{GL} % linear group
+\DeclareMathOperator\SO{SO} % special group
 
 % "Big" union and intersection:
 \newcommand*\inters\bigcap % intersection
