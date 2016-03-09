@@ -41,6 +41,7 @@ Per chi ha voglia, consiglio di dare una letta veloce ma completa ai capitoli 2-
 * Dopo il "per ogni" usare i due punti se opportuno, es.: "∀x:P(x)" e non "∀x,P(x)".
 * Gli intervalli scritti con i puntini devono usare in modo uniforme le virgole, es.: "a,...,z" e non "a,... z".
 * Per le funzioni standard, usare `\operatorname` o `\DeclareMathOperator` anziché scriverle come se fossero variabili in fila.
+* Usare `\text{testo}` per inserire del testo negli ambienti matematici.
 
 ## Struttura del documento
 
