@@ -1,0 +1,21 @@
+% Valerio
+
+%anche come fosse antani scappella per tre
+
+\newcommand*\Ps{\mathbb{P}} % Spazio proiettivo
+\newcommand*\Ro[1][n]{\mathbb{R}_0^{#1}} % set of real number vectors excluding origin
+\newcommand*\tc{\ t.c. \ } % tale che
+
+\titlet{Spazio proiettivo (reale)}
+Sia $\Ro \is \R^n \setminus \set{0}$ (come sottospazio topologico); introduciamo su $\Ro[n+1]$ la relazione $\sim $ (di equivalenza proiettiva): dati $x, y \in \Ro[n+1], \ x \sim y \means  \exists \lambda \! \in \! \R \tc x = \lambda y $; le relative classi di equivalenza sono date da $[x]_\sim = span(x) \setminus \set{0}$. \\
+Inoltre, essendo $S^n \subset \Ro[n+1]$, posso restringere tale relazione di equivalenza a $S^n$, ottenendo $\sim_S$ (rispetto a cui le classi di equivalenza sono date da $[x]_{\sim_S} = \set{x, -x} = [x]_\sim \, \cap \, S^n$).
+Consideriamo ora gli insiemi quoziente $X \is \quoset{\Ro[n+1]}{\sim}$ e $Y \is \quoset{S^n}{\sim_S}$, con le rispettive proiezioni $\fundef[\pi]{\Ro[n+1]}{X}$ e $\fundef[\pi_S]{S^n}{Y}$.
+
+\begin{oss}
+	L'applicazione $[x]_\sim \! \mapsto \! span(x)$ è una biiezione tra $X$ e \break
+	$\setdef[V \subset \R^{n+1}]{V \ è \ SSV \ di \ dimensione \ 1}$.
+\end{oss}
+
+\begin{prop}
+	La biiezione $[x]_{\sim_S} \! \mapsto \! [x]_\sim$ (con inversa $[y]_\sim \! \mapsto \! [y]_\sim \cap S$) è un omeomorfismo tra $X$ e $Y$ (rispetto alle topologie quoziente).
+\end{prop}
