@@ -24,3 +24,18 @@ Consideriamo ora gli insiemi quoziente $X \is \quoset{\Ro[n+1]}{\sim}$ e $Y \is 
 \begin{prop}
 	La biiezione $[x]_{\sim_S} \! \mapsto \! [x]_\sim$ (con inversa $[y]_\sim \! \mapsto \! [y]_\sim \cap S$) è un omeomorfismo tra $X$ e $Y$ (rispetto alle topologie quoziente).
 \end{prop}
+
+Si ricorda che gli aperti della topologia quoziente sono le immagini degli aperti saturi rispetto alla proiezione.
+
+\begin{defn}[Cono]
+	Un sottoinsieme $C\subseteq\Ro$ è un \emph{cono} se $\Span(C)\!\setminus\!\set{0}\subseteq C$ (e dunque, poiché $x\!\in\!\Span(x)$, se $\Span(C)\!\setminus\!\set{0}=C$).
+\end{defn}
+\begin{lemma}
+	 Valgono le seguenti:
+	\begin{itemize}
+		\item $A \subseteq \Ro[n+1]$ è $\pi$-saturo $\leftrightarrow$ $A$ è un cono.
+		\item $A \subseteq S^n$ è $\pi_S$-saturo $\leftrightarrow \, \forall x \!\in\! A \ -\!x \!\in\! A$.
+	\end{itemize}
+\end{lemma}
+
+Pertanto, la biiezione tra $\setdef[A \subseteq {\Ro[n+1]} ]{A \text{ è $\pi$-saturo}}$ e $\setdef[A_S\subseteq S^n]{A_S \text{ è $\pi_S$-saturo}}$ data semplicemente da $A\mapsto A\cap S^n$, $\Span(A_S)\!\setminus\! \set{0} \mapsfrom A_S$ manda aperti in aperti e viceversa, mostrando continuità e apertura di $[x]_{\sim_S} \! \mapsto \! [x]_\sim$, che dunque è realmente un omeomorfismo; $X$ e $Y$ sono dunque topologicamente equivalenti.
