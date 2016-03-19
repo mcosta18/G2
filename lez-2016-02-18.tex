@@ -30,12 +30,31 @@
 \end{lemma}
 
 \begin{proof}
-	\marginpar{FIGURA}
+	\begin{figure}
+		\label{fig:binvny}
+		\centering
+		\begin{tikzpicture}
+			\coordinate (x) at (0,0);
+			\coordinate (y) at (180:0.7);
+			\draw (x) node [right] {$x$};
+			\fill (x) circle [radius=.05];
+			\draw (x) circle [radius=2];
+			\draw (x) circle [radius=.8];
+			\draw (y) node [right] {$y$};
+			\fill (y) circle [radius=.05];
+			\draw (y) circle [radius=1.1];
+			\draw (x)+(45:2) node [above right] {$\ball x$};
+			\draw (x)+(-45:0.7) node [below right] {$\ball[\rho]x$};
+			\draw (y)+(65:1.1) node [above] {$\ball[1/n]y$};
+			\draw (x)+(0:3) node [right] {$\displaystyle\rho\leq\inv n\leq r-\rho$};
+		\end{tikzpicture}
+		\caption{Costruzione di $\ball[1/n]y$ tale che $\ball[1/n]y\subseteq\ball x$ e $x\in\ball[1/n]y$.}
+	\end{figure}
 	Mostriamo che $\setdef[{\ball[1/n]y}]{y\in Y\et n\in\N}$ è una base di aperti di $X$.
 	Ogni aperto $A$ si può scrivere come $A=\union_{x\in A}\ball[r_x]x$.
-	Consideriamo $\ball[r_x/3]x$: è un aperto non vuoto quindi $\exists\,y_x\in Y\cap\ball[r_x/3]x$.
-	Scegliamo $n_x$ tale che $\frac r3\le\inv{n_x}\le\frac{2r}3$
-	e poniamo $A'\is\union_{x\in A}\ball[1/n_x]{y_x}$.
+	Scegliamo $\rho_x<r_x$ abbastanza piccolo tale che $\exists n_x\in\N:\rho_x\leq 1/n_x\leq r_x-\rho_x$ (vedi \autoref{fig:binvny}).
+	Consideriamo $\ball[\rho_x]x$: è un aperto non vuoto quindi $\exists y_x\in Y\cap\ball[\rho_x]x$.
+	Poniamo $A'\is\union_{x\in A}\ball[1/n_x]{y_x}$.
 	Allora $A'\subseteq A$ perché $\ball[1/n_x]{y_x}\subseteq\ball[r_x]x$
 	e $A\subseteq A'$ perché $x\in\ball[1/n_x]{y_x}$,
 	quindi $A=A'$.
