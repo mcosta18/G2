@@ -234,17 +234,14 @@ Con la proprietà di connessione vogliamo rendere l'idea intuitiva che uno spazi
 			Ma allora $Y=\big(Y\cap(-\infty;x)\big)\cup\big(Y\cap(x;\infty)\big)\absurd$.
 		\item[\proofleftarrow]
 			Supponiamo per assurdo che $Y$ sia sconnesso.
-			Allora $Y=A_1\cup A_2$ aperti disgiunti non vuoti.
+			Allora $Y=A_1\cup A_2$ aperti (nella topologia di $Y$) disgiunti non vuoti.
 			In particolare $\exists x_1\in A_1,x_2\in A_2\wlg x_1<x_2$.
 			Poiché $Y$ è un intervallo, $[x_1;x_2]\subseteq Y$.
-			
-			\begin{align*}
-				Y\text{ sconnesso}\so&Y=A_1\cup A_2\text{ aperti disgiunti}\\
-				&\exists x_i\in A_i\wlg x_1<x_2\\
-				Y\text{ intervallo}\so&[x_1;x_2]\subseteq Y\\
-				&\xi\is\sup(A_1\cap[x_1;x_2])\so\\
-				\so&\xi\in\clos A_1,\clos A_2\os\xi\text{ accumulazione}\\
-				&\text{Ma }\clos A_i=A_i\absurd
-			\end{align*}
+			Poniamo:
+			\[\xi\is\sup(A_1\cap[x_1;x_2])=\min(x_2,\sup A_1)\]
+			$\xi$ è di accumulazione per $A_1$ e $A_2$, quindi
+			$\xi\in\clos{A_1}\cap\clos{A_2}$.
+			Ma essendo gli $A_i$ complementari in $Y$, $A_i=\clos{A_i}\absurd$.
+			\qedhere
 	\end{description}
 \end{proof}
