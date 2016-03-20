@@ -21,6 +21,7 @@ Visti i pocci che vengono pushati, ho scritto delle checklist da applicare per c
 
 * *Regola d'oro*: il codice LaTeX compila senza errori.
 * Non ci sono merge incompleti.
+* Avete aggiunto i nuovi file alla repository.
 
 ### Checklist controllo lezione
 
