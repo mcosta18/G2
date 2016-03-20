@@ -30,12 +30,31 @@
 \end{lemma}
 
 \begin{proof}
-	\marginpar{FIGURA}
+	\begin{figure}
+		\label{fig:binvny}
+		\centering
+		\begin{tikzpicture}
+			\coordinate (x) at (0,0);
+			\coordinate (y) at (180:0.7);
+			\draw (x) node [right] {$x$};
+			\fill (x) circle [radius=.05];
+			\draw (x) circle [radius=2];
+			\draw (x) circle [radius=.8];
+			\draw (y) node [right] {$y$};
+			\fill (y) circle [radius=.05];
+			\draw (y) circle [radius=1.1];
+			\draw (x)+(45:2) node [above right] {$\ball x$};
+			\draw (x)+(-45:0.7) node [below right] {$\ball[\rho]x$};
+			\draw (y)+(65:1.1) node [above] {$\ball[1/n]y$};
+			\draw (x)+(0:3) node [right] {$\displaystyle\rho\leq\inv n\leq r-\rho$};
+		\end{tikzpicture}
+		\caption{Costruzione di $\ball[1/n]y$ tale che $\ball[1/n]y\subseteq\ball x$ e $x\in\ball[1/n]y$.}
+	\end{figure}
 	Mostriamo che $\setdef[{\ball[1/n]y}]{y\in Y\et n\in\N}$ è una base di aperti di $X$.
 	Ogni aperto $A$ si può scrivere come $A=\union_{x\in A}\ball[r_x]x$.
-	Consideriamo $\ball[r_x/3]x$: è un aperto non vuoto quindi $\exists\,y_x\in Y\cap\ball[r_x/3]x$.
-	Scegliamo $n_x$ tale che $\frac r3\le\inv{n_x}\le\frac{2r}3$
-	e poniamo $A'\is\union_{x\in A}\ball[1/n_x]{y_x}$.
+	Scegliamo $\rho_x<r_x$ abbastanza piccolo tale che $\exists n_x\in\N:\rho_x\leq 1/n_x\leq r_x-\rho_x$ (vedi \autoref{fig:binvny}).
+	Consideriamo $\ball[\rho_x]x$: è un aperto non vuoto quindi $\exists y_x\in Y\cap\ball[\rho_x]x$.
+	Poniamo $A'\is\union_{x\in A}\ball[1/n_x]{y_x}$.
 	Allora $A'\subseteq A$ perché $\ball[1/n_x]{y_x}\subseteq\ball[r_x]x$
 	e $A\subseteq A'$ perché $x\in\ball[1/n_x]{y_x}$,
 	quindi $A=A'$.
@@ -215,17 +234,14 @@ Con la proprietà di connessione vogliamo rendere l'idea intuitiva che uno spazi
 			Ma allora $Y=\big(Y\cap(-\infty;x)\big)\cup\big(Y\cap(x;\infty)\big)\absurd$.
 		\item[\proofleftarrow]
 			Supponiamo per assurdo che $Y$ sia sconnesso.
-			Allora $Y=A_1\cup A_2$ aperti disgiunti non vuoti.
+			Allora $Y=A_1\cup A_2$ aperti (nella topologia di $Y$) disgiunti non vuoti.
 			In particolare $\exists x_1\in A_1,x_2\in A_2\wlg x_1<x_2$.
 			Poiché $Y$ è un intervallo, $[x_1;x_2]\subseteq Y$.
-			
-			\begin{align*}
-				Y\text{ sconnesso}\so&Y=A_1\cup A_2\text{ aperti disgiunti}\\
-				&\exists x_i\in A_i\wlg x_1<x_2\\
-				Y\text{ intervallo}\so&[x_1;x_2]\subseteq Y\\
-				&\xi\is\sup(A_1\cap[x_1;x_2])\so\\
-				\so&\xi\in\clos A_1,\clos A_2\os\xi\text{ accumulazione}\\
-				&\text{Ma }\clos A_i=A_i\absurd
-			\end{align*}
+			Poniamo:
+			\[\xi\is\sup(A_1\cap[x_1;x_2])=\min(x_2,\sup A_1)\]
+			$\xi$ è di accumulazione per $A_1$ e $A_2$, quindi
+			$\xi\in\clos{A_1}\cap\clos{A_2}$.
+			Ma essendo gli $A_i$ complementari in $Y$, $A_i=\clos{A_i}\absurd$.
+			\qedhere
 	\end{description}
 \end{proof}

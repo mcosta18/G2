@@ -79,7 +79,7 @@ Il modo più semplice per ottenere figure con testo formattato da LaTeX è usare
 
 Nel commit, mettere **tutti e tre** i file.
 
-Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è usare l'estensione **[svg2tikz](https://github.com/kjellmf/svg2tikz)**:
+Un modo leggermente più laborioso, sempre da Inkscape, è usare l'estensione **[svg2tikz](https://github.com/kjellmf/svg2tikz)**:
 
 1. Installare l'estensione come descritto nelle [istruzioni](https://github.com/kjellmf/svg2tikz/blob/master/docs/install.rst).
 2. Disegnare come sopra.
@@ -89,11 +89,13 @@ Un modo leggermente più laborioso ma più flessibile, sempre da Inkscape, è us
 \input{fig.tikz}
 ```
 
+Le figure possono anche essere disegnate direttamente in LaTeX usando **tikz**. Per certi tipi di disegni, è anche più comodo dei programmi a interfaccia grafica, a parità di qualità del risultato. Una guida rapida ai comandi di base si trova sul solito [wikibook](https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ); la documentazione ufficiale del pacchetto è buona e completa ma se vi trovate a doverla leggere, forse facevate prima a usare un programma a interfaccia grafica.
+
 ### `figure` VS non-`figure`
 
 Il primo uso dell'ambiente `figure` può essere traumatico perché non posiziona la figura dove la definiamo. In effetti in un libro stampato le figure non sono ficcate in mezzo al testo ma magari di lato, quello che è importante è che testo e figura siano nella stessa coppia di facciate. Per questo è anche importante **usare la caption**.
 
-È futile discutere con il LaTeX per fargli mettere la figura dove volete, perché `figure` non è fatto per questo. Piuttosto usate qualcosa del genere:
+È futile discutere con il LaTeX per fargli mettere la figura dove volete, perché `figure` non è fatto per questo. Piuttosto usate qualcosa del genere (che comunque sconsiglio):
 
 ```latex
 \begin{center}
@@ -103,7 +105,7 @@ Il primo uso dell'ambiente `figure` può essere traumatico perché non posiziona
 
 ## Git
 
-Git è un *version control system*, cioè man mano che lavori su dei file lui salva delle istantanee. È utile per poter tornare indietro in caso di pocci e per lavorare in modo condiviso sui file: le uniche modifiche che si possono condividere sono quelle già catturate in un'instantanea.
+Git è un *version control system*, cioè man mano che lavori su dei file lui salva delle istantanee. È utile per poter tornare indietro in caso di pocci e per lavorare in modo condiviso sui file: le uniche modifiche che si possono condividere sono quelle già catturate in un'istantanea.
 
 Fare un *commit* significa fare una di queste istantanee. Si suppone che gli utenti facciano il commit solo quando lo stato delle loro modifiche è 'consistente' (es. il codice LaTeX compila senza errori).
 
