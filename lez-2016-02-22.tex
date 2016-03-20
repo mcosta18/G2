@@ -1,39 +1,63 @@
 % autore: Costa
 
 \begin{teo}
- $\fundef[f]{X}{Y}$ continua, $X$ connesso $\implies f(X)$ connesso 
+ L'immagine continua di connessi è connessa:
+ \[\begin{rcases}
+  \fundef[f]{X}{Y}\text{ continua} \\
+  X\text{ connesso}
+ \end{rcases}\implies
+ f(X)\text{ connesso}\] 
 \end{teo}
+
 \begin{proof}
-  Non è restrittivo supporre $f(X)=Y$: infatti $\fundef[f]{X}{Y}$ continua $\Leftrightarrow \fundef[f]{X}{f(X)}$ continua.
- Per assurdo supponiamo $Y = B_1 \cup B_2, B_1,B_2$ aperti disgiunti non vuoti.
+%  Non è restrittivo supporre $f(X)=Y$: infatti $\fundef[f]{X}{Y}$ continua $\Leftrightarrow \fundef[f]{X}{f(X)}$ continua.
+ Per assurdo supponiamo $f(X) = B_1 \cup B_2, B_1,B_2$ aperti disgiunti non vuoti.
  $A_1\is f^{-1}(B_1), A_2\is f^{-1}(B_2)$ aperti per continuità di $f$.
  Inoltre sono non vuoti, disgiunti e $X=A_1\cup A_2$, assurdo.
 \end{proof}
+
 \begin{oss}
- La connessione è invariante per omeomorfismo. La connessione non passa ai sottospazi. 
+ La connessione è invariante per omeomorfismo, ma \emph{non} passa ai sottospazi. 
 \end{oss}
+
 \begin{defn}[Arco]
- Un arco in $X$ è una applicazione continua $\fundef[\gamma]{[0,1]}{X}$
+ Un arco in $X$ è un'applicazione $\fundef[\gamma]{[0,1]}{X}$ continua con topologia euclidea sul dominio.
 \end{defn}
-\begin{defn}[Connessione per archi]$\\$
- $X$ connesso per archi $\means \forall x_0, x_1 \in X \,\exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=x_0,\quad \gamma(1)=x_1$
+
+Diciamo che una arco $\gamma$ \emph{connette} due punti $x_0$, $x_1$ se $\gamma(0)=x_0$ e $\gamma(1)=x_1$.
+
+\begin{defn}[Connessione per archi]
+ Uno spazio topologico è \emph{connesso per archi} se ogni sua coppia di punti è connessa da un arco:
+ \[\text{$X$ connesso per archi}\means
+ \forall x_0, x_1 \in X \,\exists \fundef[\gamma]{[0,1]}{X}:\begin{cases}
+  \text{$\gamma$ continua} \\
+  \gamma(0)=x_0 \\
+  \gamma(1)=x_1
+ \end{cases}\]
 \end{defn}
+
 \begin{prop}
  $X$ connesso per archi $\implies X$ connesso
 \end{prop}
+
 \begin{proof}
  Supponiamo per assurdo $X=A_0\cup A_1$ aperti non vuoti disgiunti.
- $\exists \fundef[\gamma]{[0,1]}{X},\quad \gamma(0)=x_0,\quad \gamma(1)=x_1\\$
- $[0,1]$ connesso $\implies \gamma([0,1])$ connesso per continuità di $\gamma\\$
- $\gamma([0,1])=(A_0\cap \gamma([0,1])) \cup (A_1\cap(\gamma([0,1]))$ che è sconnesso. Assurdo
+ Siano $x_0\in A_0$ e $x_1\in A_1$,
+ e $\gamma$ un arco che li connette.
+ L'intervallo $[0,1]$ è connesso quindi $\gamma([0,1])$ è connesso per continuità di $\gamma$.
+ Ma posso anche scriverlo come
+ $\gamma([0,1])=\big(A_0\cap \gamma([0,1])\big) \cup \big(A_1\cap(\gamma([0,1])\big)$
+ che è sconnesso \absurd.
 \end{proof}
+
 \begin{es}
- Non è vero il viceversa!$\\$
- $Y_1\is\setdef[(0,y)]{-1\le y \le x}\\$
- $Y_2\is\Setdef[\left(x,\sin\left(\frac{1}{x}\right)\right)]{x\in \mathbb R}\\$
- $Y=Y_1\cup Y_2$ è il controesempio 
- %scrivere la dim
+ Non è vero il viceversa! Si prendano gli insiemi in $\R^2$:
+ \[Y_1\is\setdef[(0,y)]{-1\le y \le 1}\qquad
+ Y_2\is\Setdef[\left(x,\sin\frac{1}{x}\right)]{x\in \mathbb R}\]
+ $Y=Y_1\cup Y_2$ è connesso ma non per archi. 
+ \marginpar{dimostrarlo}
 \end{es}
+
 \begin{prop}
  Sia $A\subseteq (\mathbb R^n, \tau _E)$ aperto.
  $A$ connesso $\iff A$ connesso per archi
