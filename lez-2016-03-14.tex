@@ -1,8 +1,7 @@
 % autore: Candido
-% quando si toglierà questa divisione in lezioni alcune sezioni e sottosezioni dovranno cambiare status, scrivo accanto cosa diventeranno
-\titlet{Fibrato tangente} %promozione a section
+\titlet{Fibrato tangente}
 
-\subsubsection{Modello locale} %promozione a subsection~titlet
+\subtitlet{Modello locale}
 
 Si definisce di seguito il fibrato tangente di un aperto di $\R ^n$ e altre nozioni ad esso connesse.
 Queste definizioni non saranno generali, poiché la teoria che si intende affrontare non si limita a varietà immerse, esse però costituiranno il modello locale delle strutture più generali quali le varietà differenziabili, come sono state precedentemente definite.
@@ -47,12 +46,12 @@ Data un'applicazione liscia $\fundef[f]{U~}{W}$ si definisce l'\emph{applicazion
 \end{defn}
 
 \begin{oss}
-L'applicazione tangente manda fibre in fibre in modo lineare, poiché $\forall x\in U~~ \fundef[\dd_xf]{T_x U~}{T_x W}$, e il differenziale è un'applicazione lineare per definizione.
+L'applicazione tangente manda fibre in fibre in modo lineare, poiché $\forall x\in U\ \ \fundef[\dd_xf]{T_x U}{T_x W}$, e il differenziale è un'applicazione lineare per definizione.
 L'applicazione tangente gode inoltre delle seguenti proprietà:
 \begin{itemize}
-\item è un'applicazione liscia in tutte le sue variabili (infatti f è liscia e, $\dd_xf$ è liscia perché lineare)
+\item è un'applicazione liscia in tutte le sue variabili (infatti $f$ è liscia e, $\dd_xf$ è liscia perché lineare)
 \item è functoriale: $h = g\circ f \implies Dh = Dg\circ Df$
-\item $D(id) = id$
+\item $D(\id) = \id$
 \item se $f$ è un diffeomorfismo anche $Df$ è un diffeomorfismo e manda fibra in fibra attraverso isomorfismi lineari
 \end{itemize}
 \end{oss}
@@ -63,16 +62,17 @@ Un applicazione che ha la proprietà di $Df$ di mandare fibra in fibra in modo l
 
 Se $f$ è un diffeomorfismo si ha che $Df$ è quindi un diffeomorfismo fibrato (come si è già enunciato tra le proprietà di $Df$).
 
-\subsubsection{Caratterizzazione differenziale di $T_x U$} %promozione a subsection~titlet
+\subtitlet{Caratterizzazione differenziale di $T_x U$}
 
 Di seguito sarà esposta una caratterizzazione più intrinseca delle definizioni che sono state nella sezione precedente.
 
 \begin{defn}[Spazio dei germi]
 Dato un punto $x\in U$ aperto di $\R ^n$, e un intorno $W$ di $x$ definisce dunque lo spazio dei germi $\Sge_x$ l'insieme quoziente delle funzioni lisce da un aperto di $W$ in $\R$ con la seguente relazione di equivalenza:
 \begin{equation*}
-(W_1, f_1) \approx (W_2, f_2) \iff \exists W_3 \subseteq W_1 \cap W_2~~ t.c.~~ f_1(y)=f_2(y)~~ \forall y\in W_3
+(W_1, f_1) \approx (W_2, f_2) \iff \exists W_3 \subseteq W_1 \cap W_2\ \ \text{t.c.}\ \ f_1(y)=f_2(y)\ \ \forall y\in W_3
 \end{equation*}
 \end{defn}
+\marginpar{di solito usiamo $\sim$ per le equivalenze}
 
 %FIGURA intorni che si intersecano, W_3 annerito
 
@@ -91,9 +91,9 @@ Si ha che lo spazio $\Sge_x$ non dipende dall'aperto $U$, che costituisce in que
 Dato $v\in T_x U$ la derivata direzionale lungo il vettore $v$ nel punto $x$ è un'applicazione lineare sullo spazio dei germi definita nel modo seguente:
 \begin{gather*}
 \fundef[\delta_v]{\Sge_x~}{\R} \\
-\delta_v([f]) \is \sum_j v^j (\pderiv{f}{x^j}(x))
+\delta_v([f]) \is \sum_j v^j \left(\pderiv{f}{x^j}(x)\right)
 \end{gather*}
-Dove i $v^j$ sono le componenti del vettore $v$ nella base canonica di $\R ^n$
+Dove i $v^j$ sono le componenti del vettore $v$ nella base canonica di $\R ^n$.
 \end{defn}
 
 \begin{oss}[Proprietà della derivata direzionale]
@@ -106,10 +106,10 @@ Si verifica facilmente che la derivata direzionale, in un punto $x$ fissato, ha 
 \delta_v(f\circ g) = f(x)\delta_v(g) + g(x)\delta_v(f)
 \end{equation*}
 \end{itemize}
-Che si riassumono dicendo che $\delta_v$ è una \emph{derivazione} su $\Sge_x$ (questa definizione corrisponde agli ultimi due punti)
+Che si riassumono dicendo che $\delta_v$ è una \emph{derivazione} su $\Sge_x$ (questa definizione corrisponde agli ultimi due punti).
 \end{oss}
 
-Si ha inoltre che, sempre fissato il punto $x$, è definita la funzione $\fundef[\delta_v]{T_x U~}{Der(\Sge_x)}$ che ad ogni vettore associa una derivazione su $\Sge_x$.
+Si ha inoltre che, sempre fissato il punto $x$, è definita la funzione $\fundef[\delta_v]{T_x U}{\Der(\Sge_x)}$ che ad ogni vettore associa una derivazione su $\Sge_x$.
 
 \begin{lemma}
 L'applicazione $\delta$ è un isomorfismo di spazi vettoriali
@@ -119,7 +119,7 @@ Si verificano le proprietà di un isomorfismo singolarmente:
 \begin{description}
 \item[Linearità] è evidente dalla definizione
 \item[Iniettività] il nucleo di $\delta$ è evidentemente $\set{0}$, infatti la derivazione nulla è quella in cui $v^j = 0~ \forall j$
-\item[Suriettività] si deve verificare che $\forall d\in Der(\Sge_x)~~ \exists v\in T_x U~ t.c.~ d = \delta_v$. Dato $f\in \Sge_x$ sia $h = f -f(x)$. Poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso. Si applica dunque ad $h$ il lemma di Morse: $h(x) = \sum_j g_j(x)x_j$ con le $g_j$ lisce e $t.c.~ g_j(x) = \pderiv{f}{x^j}(x)$. Allora si ha:
+\item[Suriettività] si deve verificare che $\forall d\in \Der(\Sge_x)\ \ \exists v\in T_x U\ \text{t.c.}\ d = \delta_v$. Dato $f\in \Sge_x$ sia $h = f -f(x)$. Poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso. Si applica dunque ad $h$ il lemma di Morse: $h(x) = \sum_j g_j(x)x_j$ con le $g_j$ lisce e $\text{t.c.}\ g_j(x) = \pderiv{f}{x^j}(x)$. Allora si ha:
 \begin{equation*}
 d(h) = d(f - f(x)) = d(f) - d(f(x)) = d(f) = \sum_jd(x^j)g_j(x) 
 \end{equation*}
@@ -128,13 +128,13 @@ e quindi $v$ è definito per componenti $v^j = d(x^j)$
 \end{proof}
 
 \begin{oss}
-Sia $\fundef[\varphi]{U~}{W}$ un'applicazione liscia, e $\fundef[f]{W~}{\R}$ un'altra applicazione liscia. Allora $\fundef[\delta_v]{\Sge_x~}{\R}$ ha la seguente proprietà:
+Sia $\fundef[\varphi]{U}{W}$ un'applicazione liscia, e $\fundef[f]{W}{\R}$ un'altra applicazione liscia. Allora $\fundef[\delta_v]{\Sge_x}{\R}$ ha la seguente proprietà:
 \begin{equation*}
 \delta_v(f\circ \varphi) = \delta_{d\varphi (v)}(f)
 \end{equation*}
 \end{oss}
 
-\subsubsection{Costruzione del fibrato tangente su varietà differenziabili} %promozione a titlet~subsection
+\subtitlet{Costruzione del fibrato tangente su varietà differenziabili}
 
 Si vogliono ora estendere le definizioni date a generiche varietà differenziabili.
 
@@ -149,7 +149,7 @@ D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto (\varphi _j \circ \varphi _i
 
 Si considerano ora le applicazioni $\mu_{ji}$ definite come segue:
 \begin{gather*}
-\fundef[\mu_{ji}]{U_i\cap U_j~}{\GL(n)}
+\fundef[\mu_{ji}]{U_i\cap U_j}{\GL(n)} \\
 x \mapsto \dd_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
 \end{gather*}
 
@@ -157,11 +157,11 @@ x \mapsto \dd_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
 Si ha che le funzioni ora definite hanno le seguenti proprietà:
 \begin{itemize}
 \item ogni $\mu_{ji}$ è liscia
-\item $\forall i$ si ha che $\fundef[\mu_{ii}]{U_i~}{\GL(n)}$ ha come immagine $\set{id}$
-\item $\mu_{ji} = [$\mu_{ji}$]^{-1}$
-\item $\forall x \in U_i\cap U_j\cap U_k$ si ha che $\mu_{ik}(x)\mu_{kj}(x)\mu_{ji}(x) = id$
+\item $\forall i$ si ha che $\fundef[\mu_{ii}]{U_i}{\GL(n)}$ ha come immagine $\set{\id}$
+\item $\mu_{ji} = [\mu_{ji}]^{-1}$
+\item $\forall x \in U_i\cap U_j\cap U_k$ si ha che $\mu_{ik}(x)\mu_{kj}(x)\mu_{ji}(x) = \id$
 \end{itemize}
-Una famiglia di funzioni che verifica le ultime tre proprietà è detta \emph{cociclo}
+Una famiglia di funzioni che verifica le ultime tre proprietà è detta \emph{cociclo}.
 \end{oss}
 
 %citazione su cociclo: ultima frase su quaderno
