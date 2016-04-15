@@ -2,7 +2,7 @@
 
 \ProvidesPackage{macros}
 
-% For macros with first letter uppercase variant: ther uppercase version uses \left and \right
+% For macros with first letter uppercase variant: tipically the uppercase version uses \left and \right
 
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
@@ -16,7 +16,7 @@
 \RequirePackage{fixltx2e} % \TextOrMath
 \RequirePackage{centernot} % \centernot
 \RequirePackage{tikz}
-
+\RequirePackage{tikz-cd}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% MISCELLANEOUS %%%%%%%%%%%%%%%%%%%%%%%%%%
 % macros that do not have enough siblings to get their own category
@@ -42,14 +42,17 @@
 \newcommand*\transp[1]{{#1}^{\text T}} % transpose
 \newcommand*\norm[1]{\|{#1}\|} % norm
 
-\newcommand*\funarrow{\:\chemarrow\,} % arrow used to declare functions
+\newcommand*\funarrow{\mathrel{\chemarrow}} % arrow used to declare functions
 
 % Function declaration:
-% \fundef[g]XY = g : X → Y
+% \fundef[g]XY = g : X -> Y
+% \Fundef[g]XY = X --g--> Y
 % Default value of optional argument: f
 % \fundef XY = f : X → Y
 % The motivations behind this macro are the use of a specific arrow and the \nolinebreak.
 \newcommand*\fundef[3][f]{{#1}\nolinebreak:\nolinebreak{#2}\funarrow{#3}}
+\newcommand*\Fundef[3][f]{{#2}\nolinebreak\xrightarrow{\ #1\ }\nolinebreak{#3}}
+\newcommand*\Fundefhook[3][f]{{#2}\nolinebreak\xhookrightarrow{\ #1\ }\nolinebreak{#3}}
 
 \newcommand*\deriv[2]{\frac{\dd{#1}}{\dd{#2}}} % derivative
 \newcommand*\pderiv[2]{\frac{\partial{#1}}{\partial{#2}}} % partial derivative
@@ -102,6 +105,7 @@
 % Specific sets:
 \newcommand*\R{\mathbb{R}} % set/field of real numbers
 \newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
+\newcommand*\Z{\mathbb{Z}} % set of integers
 \newcommand*\N{\mathbb{N}} % set of natural numbers
 \DeclareMathOperator\Hom{Hom} % space of homomorphisms
 \DeclareMathOperator\GL{GL} % linear group
@@ -147,5 +151,9 @@
 \newcommand*\convarrow{\rightarrowtriangle} % arrow meaning convergence
 
 \newcommand*\Tquoset[2]{{#1}/_T{#2}} % topological quotient (maybe this should be merged into an optional argument of \quoset, ex. \quoset[T]...)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% MANIFOLDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*\boundary{\partial} % boundary of a manifold
 
 \endinput
