@@ -39,6 +39,7 @@ Si ricorda che gli aperti della topologia quoziente sono le immagini degli apert
 \end{lemma}
 
 Pertanto, la biiezione tra $\setdef[A \subseteq {\Ro[n+1]} ]{A \text{ è $\pi$-saturo}}$ e $\setdef[A_S\subseteq S^n]{A_S \text{ è $\pi_S$-saturo}}$ data semplicemente da $A\mapsto A\cap S^n$, $\Span(A_S)\setminus \set{0} \mapsfrom A_S$ manda aperti in aperti e viceversa, mostrando continuità e apertura di $[x]_{\sim_S}  \mapsto  [x]_\sim$, che dunque è realmente un omeomorfismo; $X$ e $Y$ sono dunque topologicamente equivalenti. Questi quozienti sono dunque identificati sotto il nome di \emph{spazio proiettivo reale di dimensione n}, indicato con $\Ps^n$.
+\marginpar{$n$ NON \emph n}
 
 \begin{prop} $\Ps^n$ è una varietà (compatta). \end{prop}
 È infatti $T_2$, 2-numerabile e localmente omeomorfo a $\R^n$.
@@ -53,11 +54,13 @@ Allora possiamo prendere $U_x, U_{-x}, U_y, U_{-y}$ intorni aperti (rispettivame
 
 Esibiamo ora un atlante: vedendolo come quoziente di $\Ro[n+1]$, sia \[
 \Pi_i = \setdef[(x_1, \dots, x_{n+1})\in {\Ro[n+1]}]{x_i = 1} \]
+\marginpar{\dots sia $\Pi_i$ il piano affine: (a capo)\dots}
 (Si tratta di un piano affine.) Allora la restrizione di $\pi$
 \begin{gather*}
 \fundef[\phi_i]{\Pi_i}{\Ps^n} \\
 \phi_i : x \mapsto [x]
 \end{gather*}
+\marginpar{è in mezzo a una frase, niente maiuscola}
 È iniettiva e continua. Con $U_i \is \phi_i(\Pi_i) \subset \Ps^n$ e $\fundef[\tau_i]{\Pi_i}{\R^n}$ l'isomorfismo banale, ho $\fundef[f_i \is \tau_i \circ \phi_i^{-1}]{U_i}{\R^n}$ biiettiva e continua, dunque se $U_i$ è aperto, $(U_i, f_i)$ è una carta per $\Ps^n$. Ma posto \[
 G_i \is \setdef[(x_1, \dots, x_{n+1})\in {\Ro[n+1]}]{x_i = 0} \]
 Ho $U_i = \pi(\Ro[n+1] \setminus G_i)$ e $\Ro[n+1] \setminus G_i$ è un aperto $\pi$-saturo, ergo $U_i$ è aperto.
@@ -79,6 +82,7 @@ Poiché si ha $\pi^{-1}(\Ps^n \setminus U_i) = G_i$, il quale è chiaramente ide
 \begin{itemize}
 	\item $\Ps^n = U_i \sqcup \Ps^{n-1}$
 	\item $\Ps^n \setminus \Ps^{n-1}$ è omeomorfo a $\R$
+	\marginpar{non è omeomorfo a $\R^n$?}
 \end{itemize}
 
 

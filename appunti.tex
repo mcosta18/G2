@@ -5,6 +5,8 @@
 
 % versione di lavoro
 \documentclass[a4paper]{report}
+\usepackage{layout}
+\setlength{\marginparwidth}{95pt}
 
 % versione A4 verticale
 % \documentclass[a4paper]{book}
@@ -57,6 +59,9 @@
 \begin{lesson}{#1}{#2}{#3}
 \input{lez-#1-#2-#3}
 \end{lesson}}
+
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\oldmarginpar{\scriptsize #1}}
 
 %%% --- DOCUMENT --- %%%
 
