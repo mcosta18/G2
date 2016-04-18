@@ -1,7 +1,20 @@
 %autore: Candido
 
-\begin{oss}
+\begin{oss}[Alcuni $\eta_n(Y)$ e $\Omega_n(Y)$]
+~\\
+Al fine di mostrare che gli spazi in esame non sono tutti banali si esaminano alcuni di questi in particolare.
+Prima di tutto si esamina la struttura di varietà differenziabili in dimensione bassa (in particolare $n = 0, 1$)
+\begin{description}
+\item [n = 0] $X \in \{$0-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = \set{pt.}$, mentre in generale, in mancanza di connessione, si avrà un'unione disgiunta di punti;
 
+$X \in \{$0-varietà compatte orientate connesse$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ $\implies X = \set{pt., \pm}$, dove il segno specifica l'orientazione, e nel caso generale non connesso si ha un'unione disgiunta di punti con segno;
+\item [n = 1] $X \in \{$1-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = [a,b]$ nel caso di varietà con bordo $~\vel~ X = S^1$ nel caso di mancanza di bordo, al solito nel caso generale si ha un'unione disgiunta degli spazi descritti (quest'ultimo fatto è vero, ma la dimostrazione è non banale);
+
+$X \in \{$1-varietà compatte orientate$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ allora $X$ è uno spazio di quelli descritti nel caso non orientato, dove l'orientazione è definita per ogni componente connessa scegliendo il verso orario o antiorario per ogni componente senza bordo (di tipo $S^1$) e positivo o negativo (con riferimento alla struttura ordinata di $\R$) per le componenti con bordo (di tipo intervallo chiuso).\\
+Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente alla convenzione stabilita \emph{"prima la normale uscente"}. Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
+\end{description}
+
+Si passa ora a $\eta_0(Y)$, con $Y$ varietà compatta chiusa (cioè senza bordo).
 \end{oss}
 
 \titlet{Trasversalità}
@@ -23,17 +36,40 @@ Si vuole introdurre un concetto secondo cui ci siano alcuni oggetti siano "speci
 La relazione di essere "non speciale" è aperta, poiché per piccole deviazioni da un elemento generico si continuano ad avere elementi generici, inoltre gli elementi generici sono densi nell'insieme di tutti gli elementi.
 \end{oss}
 
-Ancora nelle precedente osservazione si stava trattando di concetti intuitivi, si da dunque una definizione formale del concetto di "speciale".
+Ancora nelle precedente osservazione si stava trattando con concetti intuitivi, si da dunque ora una definizione formale del concetto di "speciale".
 
 \begin{defn}[Trasversalità]
 Sia $Y$ una varietà e $A\subseteq Y$ una sottovarietà, con $\partial Y = \partial A = \nullset$. Sia $X$ compatta e chiusa ($\partial X = \nullset$), e sia $\fundef[f]{X}{Y}$ liscia.
-Si definisce allora $f$ \emph{trasversa} ad $A$ se: $\forall x \in X~$t.c.$~y = f(x) \in A~$ si ha che $~T_yY = T_yA + D_xf(T_xX)$
+
+Si definisce allora $f$ \emph{trasversa} ad $A$ se: $\forall x \in X~$t.c.$~y = f(x) \in A~$ si ha che $~T_yY = T_yA + D_xf(T_xX)$.
+
+Si scrive inoltre che $f \pitchfork A$.
 \end{defn}
 
 \begin{es}
-%esempio di curve trasverse, punti su cui verificare
+$Y = \R^2$, $\Fundefhook[f]{X}{\R^2}$. I punti su cui verificare la proprietà di trasversalità sono l'intersezione, cioé:
+
+$\forall x \in X \cap A$ allora $T_xA + id(T_xX) = \R^2$ \iff $T_xA \oplus T_xX$, infatti, essendo $f$ un'immersione, allora la sua applicazione tangente coincide con l'identità.
+%FIGURA di curve trasverse, punti su cui verificare
 \end{es}
 
+\begin{defn}[Trasversalità per superfici con bordo]
+Se $\partial X \neq \nullset$ definisco $f$ \emph{trasversa} ad $A$ se si ha $f|_{\partial X} \pitchfork A$ (infatti il bordo di una varietà è senza bordo)
+%FIGURA?
+\end{defn}
+
+\paragraph{Focus}
+Si ha allora che:
+\begin{itemize}
+\item Se $f(X) \cap A = \nullset$ allora $f \pitchfork A$ per vacuità;
+\item $\Fundefhook[i]{X}{A \subseteq Y}$ sottovarietà, allora $i \pitchfork Y \iff X \pitchfork Y$, cioè $\forall x \in X\cap Y: T_xX + T_xA = T_xY$.
+
+Inoltre se dim$X +$ dim$A =$ dim$Y \implies T_xX \oplus T_xA = T_xY$ (cioè $T_xX \cap T_xA = \set{0}$);
+\item Se $A = \set{y_0}$, $f \pitchfork \set{y_0}$:
+
+$\forall x \in X$ t.c. $f(x) = y_0$ allora $T_{y_0}(A) + D_xf(T_xX) = T_{y_0}Y$ \iff $D_xf$ è surgettiva $\forall x \in f^{-1}(y_0)$, poiché $T_{y_0}(A)$
+\end{itemize}
+
 \begin{defn}
-Se $\partial X \neq \nullset$ definisco $f|_{\partial X} \sout{\cap} A$
+Si dice che $y_0 \in Y$ è un \emph{valore regolare} per $f$ se $\forall x \in f^{-1}(y_0)$ si verifica $D_xf$ è surgettiva, mentre $x \in X$ è un \emph{punto critico} per $f$ se $D_xf$ non è surgettiva.
 \end{defn}
