@@ -4,13 +4,23 @@
 Al fine di mostrare che gli spazi in esame non sono tutti banali si esaminano alcuni di questi in particolare.
 Prima di tutto si esamina la struttura di varietà differenziabili in dimensione bassa (in particolare $n = 0, 1$)
 \begin{description}
-\item [n = 0] $X \in \{$0-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = \set{pt.}$, mentre in generale, in mancanza di connessione, si avrà un'unione disgiunta di punti;
+\item [n = 0] $X \in \{$0-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = \set{pt.}$, mentre in generale, in mancanz	a di connessione, si avrà un'unione disgiunta di punti;
 
 $X \in \{$0-varietà compatte orientate connesse$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ $\implies X = \set{pt., \pm}$, dove il segno specifica l'orientazione, e nel caso generale non connesso si ha un'unione disgiunta di punti con segno;
 \item [n = 1] $X \in \{$1-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = [a,b]$ nel caso di varietà con bordo $~\vel~ X = S^1$ nel caso di mancanza di bordo, al solito nel caso generale si ha un'unione disgiunta degli spazi descritti (quest'ultimo fatto è vero, ma la dimostrazione è non banale);
 
 $X \in \{$1-varietà compatte orientate$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ allora $X$ è uno spazio di quelli descritti nel caso non orientato, dove l'orientazione è definita per ogni componente connessa scegliendo il verso orario o antiorario per ogni componente senza bordo (di tipo $S^1$) e positivo o negativo (con riferimento alla struttura ordinata di $\R$) per le componenti con bordo (di tipo intervallo chiuso).\\
-Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente alla convenzione stabilita \emph{"prima la normale uscente"}. Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
+\begin{figure}[h]
+\centering
+\input{figura10.pdf_tex}
+\caption{Orientamenti su $S^1$}
+\end{figure}
+Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente alla convenzione stabilita \emph{"prima la normale uscente"}.
+\begin{wrapfigure}{i!}{0.5\textwidth}
+\input{figura11.pdf_tex}
+\caption{Orientamento indotto sul bordo di un intervallo}
+\end{wrapfigure}
+Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
 \end{description}
 
 \paragraph{Spazio \eta_0}
@@ -18,7 +28,12 @@ Si passa ora a $\eta_0(Y)$, con $Y$ varietà compatta chiusa (cioè senza bordo)
 Si ha che $\eta_0(Y) = \{\fundef[f]{X}{Y}\}$/$\{$cobordismi$\}$ con $X$ 0-varietà compatta, cioè $X = \set{x_1, \dots, x_k}$, e $f(x_i) = y_i$.
 Prese due varietà compatte $X = \set{x_1, \dots, \x_k}, f(x_i) = y_i$ e $Z = \set{z_1, \dots, \z_k}, g(z_j) = y'_j$, allora $X$ cob. $Z \implies \exists W$ t.c. $\partial W = \set{x_1, \dots, \x_k}\sqcup{z_1, \dots, \z_k}$ con dim$W = 1$ e $\fundef[F]{W}{Y}$ che ristretta al bordo torna ad essere $f$ e $g$.
 \begin{es}
-%FIGURA di punti congiunti con archi
+
+\begin{figure}[h]
+\centering
+\input{figura12.pdf_tex}
+\caption{I tratti costituiiscono la transizione $W$}
+\end{figure}
 Da questo si può osservare che riesco sempre a connettere tutti i punti con degli archi, ammesso che il totale sia pari (ogni arco ha un principio e una fine).
 \end{es}
 Perciò una condizione necessaria è che le due varietà abbiano cardinalità con la stessa parità. Inoltre poiché c'è bisogno anche di un diffeomorfismo $F$ su $W$ (che si identifica con l'unione disgiunta degli archi), se si considerano le immagini degli estremi di ogni arco si ha che anch'esse sono connesse da un arco immagine. Perciò, considerando una sola componente connessa di $Y$, la condizione di parità espressa precedentemente sulle intere varietà si deve quindi restringere alle controimmagini delle componenti connesse.
@@ -31,7 +46,11 @@ Si è così ottenuta la struttura dello spazio:
 \end{equation*}
 tanti termini quante sono le componenti connesse di $Y$.
 
-%FIGURA con un generatore dello spazio  
+\begin{figure}[h]
+\centering
+\input{figura13.pdf_tex}
+\caption{Un generatore dello spazio $\eta_0(Y)$}
+\end{figure}
 
 \paragraph{Gruppo \Omega_0}
 Come nel caso non orientato si hanno le stesse condizioni necessarie sugli archi (riguardanti la parità delle controimmagini delle componenti connesse). Si ha in più una condizione sull'orientamento, infatti ogni arco ha due estremi orientati in modo opposto.
@@ -62,8 +81,13 @@ Si vuole introdurre un concetto secondo cui ci siano alcuni oggetti siano "speci
 \item In $\R^2$ quali sono i sottospazi di $dim = 1$ rispetto ad una data retta? Solo se stesso, se come discriminante si considera lo spazio generato dalla retta fissata con l'altra arbitraria. Infatti tutti generano il piano di $dim = 2$, tranne la retta stessa, che con se stessa genera uno spazio di $dim = 1$ (sempre sé);
 \item Per i piani nello spazio relativamente a una retta, o le rette relativamente ai piani, o sottospazi in dimensione più elevata si hanno delle estensioni naturali;
 \item Per le curve in uno spazio di $dim \geq 2$ si ottiene una nozione analoga considerando i punti di intersezione e gli spazi tangenti in tali punti. Cioè sugli spazi tangenti si hanno le stesse relazioni descritte mediante l'algebra lineare.
-%FIGURA con curve intersecanti e spazi tangenti
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\input{figura14.pdf_tex}
+\caption{Due curve trasverse e relativi spazi tangenti nei punti d'interesse}
+\end{figure}
 \end{es}
 
 \begin{oss}

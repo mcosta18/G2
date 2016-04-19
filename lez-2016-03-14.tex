@@ -12,7 +12,7 @@ Si definisce fibrato tangente di un aperto $U$ di $\R ^n$ l'insieme $T(U) = U \t
 
 Si nota che, fissato un $x$ punto di $U$, la traslazione $v \mapsto v + x$~~$\forall v\in \R ^n$  consente di identificare $\R ^n$ con lo spazio dei vettori tangenti a $U$ nel punto $x$.
 
-\begin{figure}
+\begin{figure}[b]
 \centering
 \input{figura6.pdf_tex}
 \caption{Esempio di fibrato tangente}
@@ -46,8 +46,8 @@ Cioè si identifica la fibra come lo spazio tangente del punto $x$, quindi lo sp
 Data un'applicazione liscia $\fundef[f]{U}{W}$ si definisce l'\emph{applicazione tangente} di $f$ la funzione $\fundef[Df]{T(U)}{T(W)}$ che manda $(x,v) \mapsto (f(x), \dd_xf(v))$, cioè quell'applicazione che fa commutare il seguente diagramma:
 \begin{equation*}
 \begin{tikzcd}
-	T(U) \arrow[r, dashrightarrow, "Df"] \arrow[d, "\pi _U"]
-		& T(W) \arrow[d, "\pi _W"] \\
+	T(U) \arrow[r, dashrightarrow, "Df"] \arrow[d, "\pi_U"]
+		& T(W) \arrow[d, "\pi_W"] \\
 	U \arrow[r, "f"]
 		& W
 \end{tikzcd}
@@ -81,9 +81,14 @@ Dato un punto $x\in U$ aperto di $\R ^n$, e un intorno $W$ di $x$ definisce dunq
 (W_1, f_1) \approx (W_2, f_2) \iff \exists W_3 \subseteq W_1 \cap W_2\ \ \text{t.c.}\ \ f_1(y)=f_2(y)\ \ \forall y\in W_3
 \end{equation*}
 \end{defn}
-\marginpar{di solito usiamo $\sim$ per le equivalenze}
+%\marginpar{di solito usiamo $\sim$ per le equivalenze}
+%In letteratura si usa come simbolo di equivalenza un simbolo a mezza altezza e simmetrico, se ne possono trovare varii (tilde, più tilde, trattino e tilde, tilde e punto, etc.) usarne più d'uno non è male, un po' meno di confusione no?
 
-%FIGURA intorni che si intersecano, W_3 annerito
+\begin{figure}[h]
+\centering
+\input{figura8.pdf_tex}
+\caption{Un germe è definito da ciò che accade in un intorno del punto}
+\end{figure}
 
 Lo spazio dei germi $\Sge_x$ ha una  naturale struttura di $\R$-algebra, cioè:
 \begin{itemize}
@@ -148,6 +153,12 @@ Sia $\fundef[\varphi]{U}{W}$ un'applicazione liscia, e $\fundef[f]{W}{\R}$ un'al
 Si vogliono ora estendere le definizioni date a generiche varietà differenziabili.
 
 Sia dunque $M$ una n-varietà liscia e $\mathcal{A} = \set{(U_j, \varphi _j)}_j$ un atlante massimale.
+
+\begin{figure}
+\centering
+\input{figura9.pdf_tex}
+\caption{Cambiamento di carte su cui si definisce il cociclo}
+\end{figure}
 
 \begin{oss}
 Dato un cambiamento di carte $\varphi _j \circ \varphi _i ^{-1}$ si ha che esso è una funzione tra aperti di $\R ^n$ ed è perciò definita l'applicazione tangente:

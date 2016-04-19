@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'figura7.pdf' (pdf, eps, ps)
+%% Accompanies image file 'figura13.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{186.27081209bp}%
+    \setlength{\unitlength}{425.13805343bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,9 +48,8 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.69340486)%
-    \put(0,0){\includegraphics[width=\unitlength]{figura7.pdf}}%
-    \put(0.78337231,0.26423888){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\pi _U$}}}%
-    \put(0.39982871,0.06243015){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.13772757\unitlength}\raggedright $U$\end{minipage}}}%
+  \begin{picture}(1,0.41143627)%
+    \put(0,0){\includegraphics[width=\unitlength]{figura13.pdf}}%
+    \put(0.57274908,0.23044746){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\set{pt.}$}}}%
   \end{picture}%
 \endgroup%
