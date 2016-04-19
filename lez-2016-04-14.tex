@@ -1,7 +1,6 @@
 %autore: Candido
 
-\begin{oss}[Alcuni $\eta_n(Y)$ e $\Omega_n(Y)$]
-~\\
+\subtitlet{Alcuni $\eta_n(Y)$ e $\Omega_n(Y)$}
 Al fine di mostrare che gli spazi in esame non sono tutti banali si esaminano alcuni di questi in particolare.
 Prima di tutto si esamina la struttura di varietà differenziabili in dimensione bassa (in particolare $n = 0, 1$)
 \begin{description}
@@ -14,13 +13,43 @@ $X \in \{$1-varietà compatte orientate$\}$/$\{$diffeomorfismi che preservano l'
 Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente alla convenzione stabilita \emph{"prima la normale uscente"}. Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
 \end{description}
 
+\paragraph{Spazio \eta_0}
 Si passa ora a $\eta_0(Y)$, con $Y$ varietà compatta chiusa (cioè senza bordo). \\
 Si ha che $\eta_0(Y) = \{\fundef[f]{X}{Y}\}$/$\{$cobordismi$\}$ con $X$ 0-varietà compatta, cioè $X = \set{x_1, \dots, x_k}$, e $f(x_i) = y_i$.
 Prese due varietà compatte $X = \set{x_1, \dots, \x_k}, f(x_i) = y_i$ e $Z = \set{z_1, \dots, \z_k}, g(z_j) = y'_j$, allora $X$ cob. $Z \implies \exists W$ t.c. $\partial W = \set{x_1, \dots, \x_k}\sqcup{z_1, \dots, \z_k}$ con dim$W = 1$ e $\fundef[F]{W}{Y}$ che ristretta al bordo torna ad essere $f$ e $g$.
 \begin{es}
 %FIGURA di punti congiunti con archi
+Da questo si può osservare che riesco sempre a connettere tutti i punti con degli archi, ammesso che il totale sia pari (ogni arco ha un principio e una fine).
 \end{es}
-\end{oss}
+Perciò una condizione necessaria è che le due varietà abbiano cardinalità con la stessa parità. Inoltre poiché c'è bisogno anche di un diffeomorfismo $F$ su $W$ (che si identifica con l'unione disgiunta degli archi), se si considerano le immagini degli estremi di ogni arco si ha che anch'esse sono connesse da un arco immagine. Perciò, considerando una sola componente connessa di $Y$, la condizione di parità espressa precedentemente sulle intere varietà si deve quindi restringere alle controimmagini delle componenti connesse.
+
+Si ottiene infine che due varietà sono cobordanti \emph{se e solo se} le controimmagini di una componente connessa in entrambe le varietà hanno la stessa parità.
+
+Si è così ottenuta la struttura dello spazio: 
+\begin{equation*}
+\eta_0(Y) = \Z/2\Z~\times~\Z/2\Z~\times~\dots~\times~\Z/2\Z
+\end{equation*}
+tanti termini quante sono le componenti connesse di $Y$.
+
+%FIGURA con un generatore dello spazio  
+
+\paragraph{Gruppo \Omega_0}
+Come nel caso non orientato si hanno le stesse condizioni necessarie sugli archi (riguardanti la parità delle controimmagini delle componenti connesse). Si ha in più una condizione sull'orientamento, infatti ogni arco ha due estremi orientati in modo opposto.
+Perciò stavolta ciò che identifica la relazione tra le controimmagini delle componenti connesse non è la parità, ma la somma dei segni, che complessivamente deve essere nulla, da cui si ottiene che fissate tali somme in una varietà, l'altra, per essere cobordante, deve avere le stesse con segno opposto, in modo che tutte sommino a 0.
+
+La struttura del gruppo è dunque: 
+\begin{equation*}
+\Omega_0(Y) = \Z~\times~\Z~\times~\dots~\times~\Z
+\end{equation*}
+anche qui il numero di termini è pari al numero di componenti connesse.
+
+%FIGURA ?
+
+\paragraph{Un paio di claim}
+\begin{itemize}
+\item C'è una mappa d'oblio $\fundef{\Omega_n(Y)}{\eta_n{Y}}$, che perde parte delle informazioni, quelle derivanti dall'orientamento;
+\item Si possono classificare le superfici (2-varietà), mediante gli invarianti $\eta_1(Y)$ e $\Omega_1(Y)$, con $Y$ superficie.
+\end{itemize}
 
 \titlet{Trasversalità}
 
