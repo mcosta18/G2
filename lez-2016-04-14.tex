@@ -23,16 +23,16 @@ Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente 
 Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
 \end{description}
 
-\paragraph{Spazio \eta_0}
+\paragraph{Spazio $\eta_0$}
 Si passa ora a $\eta_0(Y)$, con $Y$ varietà compatta chiusa (cioè senza bordo). \\
 Si ha che $\eta_0(Y) = \{\fundef[f]{X}{Y}\}$/$\{$cobordismi$\}$ con $X$ 0-varietà compatta, cioè $X = \set{x_1, \dots, x_k}$, e $f(x_i) = y_i$.
-Prese due varietà compatte $X = \set{x_1, \dots, \x_k}, f(x_i) = y_i$ e $Z = \set{z_1, \dots, \z_k}, g(z_j) = y'_j$, allora $X$ cob. $Z \implies \exists W$ t.c. $\partial W = \set{x_1, \dots, \x_k}\sqcup{z_1, \dots, \z_k}$ con dim$W = 1$ e $\fundef[F]{W}{Y}$ che ristretta al bordo torna ad essere $f$ e $g$.
+Prese due varietà compatte $X = \set{x_1, \dots, x_k}, f(x_i) = y_i$ e $Z = \set{z_1, \dots, z_k}, g(z_j) = y'_j$, allora $X$ cob. $Z \implies \exists W$ t.c. $\partial W = \set{x_1, \dots, x_k}\sqcup\set{z_1, \dots, z_k}$ con dim$W = 1$ e $\fundef[F]{W}{Y}$ che ristretta al bordo torna ad essere $f$ e $g$.
 \begin{es}
 
 \begin{figure}[h]
 \centering
 \input{figura12.pdf_tex}
-\caption{I tratti costituiiscono la transizione $W$}
+\caption{I tratti costituiscono la transizione $W$}
 \end{figure}
 Da questo si può osservare che riesco sempre a connettere tutti i punti con degli archi, ammesso che il totale sia pari (ogni arco ha un principio e una fine).
 \end{es}
@@ -52,7 +52,7 @@ tanti termini quante sono le componenti connesse di $Y$.
 \caption{Un generatore dello spazio $\eta_0(Y)$}
 \end{figure}
 
-\paragraph{Gruppo \Omega_0}
+\paragraph{Gruppo $\Omega_0$}
 Come nel caso non orientato si hanno le stesse condizioni necessarie sugli archi (riguardanti la parità delle controimmagini delle componenti connesse). Si ha in più una condizione sull'orientamento, infatti ogni arco ha due estremi orientati in modo opposto.
 Perciò stavolta ciò che identifica la relazione tra le controimmagini delle componenti connesse non è la parità, ma la somma dei segni, che complessivamente deve essere nulla, da cui si ottiene che fissate tali somme in una varietà, l'altra, per essere cobordante, deve avere le stesse con segno opposto, in modo che tutte sommino a 0.
 
@@ -107,7 +107,7 @@ Si scrive inoltre che $f \pitchfork A$.
 \begin{es}
 $Y = \R^2$, $\Fundefhook[f]{X}{\R^2}$. I punti su cui verificare la proprietà di trasversalità sono l'intersezione, cioé:
 
-$\forall x \in X \cap A$ allora $T_xA + id(T_xX) = \R^2$ \iff $T_xA \oplus T_xX$, infatti, essendo $f$ un'immersione, allora la sua applicazione tangente coincide con l'identità.
+$\forall x \in X \cap A$ allora $T_xA + id(T_xX) = \R^2 \iff T_xA \oplus T_xX$, infatti, essendo $f$ un'immersione, allora la sua applicazione tangente coincide con l'identità.
 %FIGURA di curve trasverse, punti su cui verificare
 \end{es}
 
@@ -125,7 +125,7 @@ Si ha allora che:
 Inoltre se dim$X +$ dim$A =$ dim$Y \implies T_xX \oplus T_xA = T_xY$ (cioè $T_xX \cap T_xA = \set{0}$);
 \item Se $A = \set{y_0}$, $f \pitchfork \set{y_0}$:
 
-$\forall x \in X$ t.c. $f(x) = y_0$ allora $T_{y_0}(A) + D_xf(T_xX) = T_{y_0}Y$ \iff $D_xf$ è surgettiva $\forall x \in f^{-1}(y_0)$, poiché $T_{y_0}(A)$
+$\forall x \in X$ t.c. $f(x) = y_0$ allora $T_{y_0}(A) + D_xf(T_xX) = T_{y_0}Y \iff D_xf$ è surgettiva $\forall x \in f^{-1}(y_0)$, poiché $T_{y_0}(A)$
 \end{itemize}
 
 \begin{defn}
