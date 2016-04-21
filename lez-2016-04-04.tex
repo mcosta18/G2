@@ -3,7 +3,23 @@
 % brematuro solo a destra in ipotesi di gatto
 
 \newcommand*\tc{\ \text{t.c.} \ } % tale che
+\newcommand*\dual{{^\ast}} % dual
+\newcommand*\base[1][B]{\mathcal{#1}} % base
 
 \titlet{Richiami della scorsa lezione}
 
-Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cup U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(m, \R)$ e $F=\R^m$, $m = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
+Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cup U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(n, \R)$ e $F=\R^n$, $n = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
+
+\titlet{Altri fibrati su $M$}
+
+Vogliamo innanzitutto definire i \emph{fibrati tensoriali} su $M$.
+
+Si ricorda dalla scorsa lezione che dato $V$ spazio vettoriale su $\R$ di dimensione $n$, chiamando $V\dual$ il suo duale e identificando $V \dual \dual$ con $V$, i corrispondenti spazi tensoriali sono definiti come: \[
+T_h^k(V) \is V^{\otimes k} \otimes (V \dual)^{\otimes h} \is \Mult( (V\dual)^k \times V^h, \R)  \]
+\begin{oss}
+	$ T_0^0(V) = \R, \ T_1^0(V) = V \dual, \ T_0^1(V) = V \dual \dual = V $
+\end{oss}	
+Inoltre, data $\base \is \set{v_1, \dots, v_n}$ base di $V$, posso costruire $\base_h^k$ base di $T_h^k(V)$: sia innanzitutto $\base \dual = \set{v^i}_{i \leq n}$ la base duale di $\base$. Allora: \[
+\base_h^k = \base ^{\otimes k} \otimes (\base \dual)^{\otimes h} \is
+\set{ v_{i_1} \otimes \dots \otimes v_{i_k} \otimes v^{j_1} \otimes \dots \otimes v^{j_h} } _{i_l, j_m \leq n} \]
+Dunque $\dim T_h^k(V) = n^{k+h}$ e dare una base $\base$ di $V$ stabilisce un isomorfismo (non canonico) tra $T_h^k(V)$ e $T_{h'}^{k'}(V)$ quando $k+h = k'+h'$.
