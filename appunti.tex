@@ -60,6 +60,12 @@
 \input{lez-#1-#2-#3}
 \end{lesson}}
 
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{figure/}}
+\makeatother
+\graphicspath{{figure/}}
+
 \let\oldmarginpar\marginpar
 \renewcommand\marginpar[1]{\oldmarginpar{\scriptsize #1}}
 
