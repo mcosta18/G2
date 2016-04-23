@@ -109,20 +109,20 @@ Esistono due nozioni di compattezza, non sempre equivalenti:
 
 \begin{defn}[Compattezza per ricoprimenti]
  Uno spazio topologico $X$ è \emph{compatto per ricoprimenti}
- se ogni ricoprimento aperto ammette un sottoricoprimento finito:
- \[\text{$X$ compatto}\means
- \forall\mathcal A\text{ ricoprimento aperto }
- \exists\mathcal F\subseteq\mathcal A:\begin{cases}
-  \mathcal F\text{ finito} \\
-  \mathcal F\text{ ricoprimento}
- \end{cases}\]
+ se ogni ricoprimento aperto ammette un sottoricoprimento finito.
+ % \[\text{$X$ compatto}\means
+ % \forall\mathcal A\text{ ricoprimento aperto }
+ % \exists\mathcal F\subseteq\mathcal A:\begin{cases}
+ %  \mathcal F\text{ finito} \\
+ %  \mathcal F\text{ ricoprimento}
+ % \end{cases}\]
 \end{defn}
 
 \begin{defn}[Compattezza per successioni]
  $X$ è \emph{compatto per successioni}
- se ogni successione a valori in $X$ ammette una sottosuccessione convergente in $X$:
- \[\text{$X$ compatto per successioni}\means
- \forall(a_n)\subseteq X\,\exists (a_{n_j}),x\in X:a_{n_j}\convarrow x\]
+ se ogni successione a valori in $X$ ammette una sottosuccessione convergente in $X$.
+ % \[\text{$X$ compatto per successioni}\means
+ % \forall(a_n)\subseteq X\,\exists (a_{n_j}),x\in X:a_{n_j}\convarrow x\]
 \end{defn}
 
 Generalmente quando diciamo solo ``compatto'' intendiamo ``compatto per ricoprimenti''.
@@ -166,6 +166,8 @@ Mostriamo le due implicazioni:
 % \begin{prop}
 %  $X$ $T_2$, 2-numerabile, $ X$ compatto $\iff X$ compatto per successioni
 % \end{prop}
+
+Ci accingiamo ora a mostrare sotto che ipotesi la compattezza per ricoprimenti equivale alla compattezza per successioni.
 
 \begin{lemma}
  \label{th:infcompacc}

@@ -168,11 +168,6 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 	Basta usare il \autoref{th:chiusuraacc} e osservare che $Y\cup\setdef{x\text{ accumulazione}}=\setdef{x\text{ isolato}}\cup\setdef{x\text{ accumulazione}}$.
 \end{proof}
 
-% questa cosa l'aveva detta ma poi ha detto che è sbagliata il 24 febbraio
-%\begin{oss}
-%$x\text{ interno a }Y\implies x\text{ accumulazione per }Y$
-%\end{oss} 
-
 \begin{prop}
 	La frontiera di un insieme è anche frontiera del complementare:
 	\[\bound Y=\bound{\comp Y}\]
@@ -188,6 +183,19 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 	Quindi:
 	\[\bound{\comp Y}=\clos{\comp Y}\setminus\inter{(\comp Y)}=\comp{\inter Y}\setminus\comp{\clos Y}=\clos Y\setminus\inter Y=\bound Y \qedhere\]
 \end{proof}
+
+% questa cosa l'aveva detta ma poi ha detto che è sbagliata il 24 febbraio
+% \begin{oss}
+% 	$x\text{ interno a }Y\implies x\text{ accumulazione per }Y$
+% \end{oss}
+% sposto qui la cosa del 24, con qualche modifica:
+\begin{oss}
+	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
+	Si ha che:
+	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
+	Ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
+	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
+\end{oss}
 
 \titlet{Morfismi degli spazi topologici}
 

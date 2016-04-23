@@ -2,14 +2,15 @@
 
 % lo scrivo in formato lezione, andrà fatto il merge nella stesura finale
 
-\begin{oss}
-	\marginpar{forse questa osservazione va anticipata e convertita in proposizione che dimostra l'implicazione con singoletti non aperti e poi controesempio su $\tau_\text{disc}$}
-	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
-	Si ha che:
-	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
-	Ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
-	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
-\end{oss}
+% spostata nella lezione del 17 febbraio (dove l'aveva detta sbagliata)
+% \begin{oss}
+% 	\marginpar{forse questa osservazione va anticipata e convertita in proposizione che dimostra l'implicazione con singoletti non aperti e poi controesempio su $\tau_\text{disc}$}
+% 	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
+% 	Si ha che:
+% 	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
+% 	Ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
+% 	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
+% \end{oss}
 
 \begin{prop}
 	$X$ 1-numerabile e compatto $\implies X$ compatto per successioni
@@ -42,54 +43,59 @@
 \begin{proof}
 	Dato un ricoprimento $\mathcal R$ di $X$, da esso ne devo estrarre uno finito.
 	
-	Otteniamo prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile. In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.
-	
+	Otteniamo prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile.
+	In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.
 	Sia dunque $\mathcal B$ una base numerabile di aperti di $X$.
-	Allora dalle definizioni di base e ricoprimento abbiamo che:
+	Allora dalle definizioni di ricoprimento e base abbiamo che:
 	\[\forall x\in X \quad
 	\exists R_x \in \mathcal R : x\in R_x \quad
 	\exists B_x \in \mathcal B : x\in B_x \subseteq R_x\]
 	La famiglia dei $B_x$ è numerabile. Se per ogni $B\in\set{B_x}_{x\in X}$ scelgo un solo $R_B\in\setdef[R_x]{B_x=B}$ ho un sottoricoprimento numerabile.
 	
-	Il secondo passaggio è estrarre da un ricoprimento numerabile un ricoprimento finito.
-	
-	Per fare ciò si procede per assurdo: se $(R_n)_{n\in \N}$ non ammettesse un sottoricoprimento finito posso costruire la mia successione in modo che $a_0 \not \in R_0$ e $a_1 \not \in R_1 \cup R_2$, \dots . Risulta che da questa successione è impossibile estrarre una sottosuccessione convergente, infatti se convergesse a un punto dell'insieme starebbe definitivamente dentro l'aperto che lo contiene, da cui l'assurdo.
+	Il secondo passaggio è estrarre da un ricoprimento numerabile un sottoricoprimento finito.
+	Per assurdo, se il ricoprimento $(R_n)_{n\in \N}$ non ammette un sottoricoprimento finito, posso costruire una successione tale che $a_n\notin\union_{i=0}^nR_i$ (altrimenti $\set{R_i}_{i\le n}$ ricopre).
+	Ma una sottosuccessione convergente di $(a_n)$ sarebbe definitivamente contenuta in un $R_i$.
 \end{proof}
 
 \begin{cor}
-In uno spazio $2$-numerabile si ha che: compatto $\iff$ compatto per successioni
+	Per uno spazio 2-numerabile si ha che: compatto $\iff$ compatto per successioni.
 \end{cor}
 
 \titlet{Compattezza in spazi metrizzabili}
-Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguenze ``importanti'' su ogni spazio metrico che induce quella topologia.
+
+Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguenze ``importanti'' su ogni spazio metrico che induce la topologia.
 
 \begin{defn}
-Sia $(X,d)$ uno spazio metrico. Esso si dice \emph{totalmente limitato} se $\forall \varepsilon > 0:X$ è ricoperto da un numero finito di palle di raggio $\varepsilon$.
+	Sia $(X,d)$ uno spazio metrico. Esso si dice \emph{totalmente limitato} se $\forall \varepsilon > 0:X$ è ricoperto da un numero finito di palle di raggio $\varepsilon$.
 \end{defn}
 
 \begin{prop}
-Sia $(X,\tau _d)$ compatto per successioni, allora $(X,d)$, una metrica inducente, è totalmente limitato
+	Sia $(X,\tau _d)$ compatto per successioni, allora ogni metrica inducente $(X,d)$ è totalmente limitata.
 \end{prop}
+
 \begin{proof}
-Per assurdo: $\exists \varepsilon > 0 \text{ t.c. } X$ non è ricoperto da un numero finito di palle di raggio $\varepsilon$.\\
-Allora dato $x_0 \in X$ si ha che $\exists x_1 \in X \text{ t.c. } x_1 \not \in \ball[\varepsilon]{x_0}$ e $\exists x_2 \in X \text{ t.c. } x_2 \not \in \ball[\varepsilon]{x_0} \cup \ball[\varepsilon]{x_1}$, \dots .\\
-Dunque per induzione costruisco una successione $x_n$ che non ammette nessuna sottosuccessione convergente, infatti i punti distano fra loro almeno $\varepsilon$, da cui l'assurdo.
+	Per assurdo, supponiamo $\exists \varepsilon > 0$ tale che $X$ non è ricoperto da un numero finito di palle di raggio $\varepsilon$.
+	Allora dato $x_0 \in X$ esiste una successione $(x_n)$ tale che
+	$x_{n+1}\not\in\union_{i=0}^n\ball[\varepsilon]{x_i}$.
+	Questa successione non ammette una sottosuccessione convergente perché i punti distano fra loro almeno $\varepsilon$, da cui l'assurdo.
 \end{proof}
 
 \begin{prop}
-$(X, \tau _d)$ compatto per successioni $\implies X$ 2-numerabile
+	$(X, \tau _d)$ compatto per successioni $\implies X$ 2-numerabile
 \end{prop}
+
 \begin{proof}
-$\forall n \in \N$ esiste una famiglia finita $\mathcal{F}_n$ di palle aperte di raggio $2^{-n}$ che ricopre $X$, per totale limitatezza.\\
-Sia allora $\mathcal{B} \is \union _{n \in \N} \mathcal F_n$. Si ha che $\mathcal{B}$ è sicuramente una famiglia numerabile, per verificare che è anche una base di $\tau _d$ si verificano i seguenti due punti:
-\begin{itemize}
-\item Se $\mathcal{A}$ è un ricoprimento di $X \implies \exists \bar{n} \text{ t.c. }$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
-\item Si applica il punto precedente $\forall A \in \tau _d , \forall x \in A$, considerando come ricoprimento $\mathcal{A} \is \left\{ {A, X\setminus \left\{ {x}\right\}}\right\}$
-\end{itemize}
+	$\forall n \in \N$ esiste una famiglia finita $\mathcal{F}_n$ di palle aperte di raggio $2^{-n}$ che ricopre $X$, per totale limitatezza.
+	
+	Sia allora $\mathcal{B} \is \union _{n \in \N} \mathcal F_n$. Si ha che $\mathcal{B}$ è sicuramente una famiglia numerabile, per verificare che è anche una base di $\tau _d$ si verificano i seguenti due punti:
+	\begin{itemize}
+		\item Se $\mathcal{A}$ è un ricoprimento di $X \implies \exists \bar{n} \text{ t.c. }$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
+		\item Si applica il punto precedente $\forall A \in \tau _d , \forall x \in A$, considerando come ricoprimento $\mathcal{A} \is \left\{ {A, X\setminus \left\{ {x}\right\}}\right\}$
+	\end{itemize}
 \end{proof}
 
 \begin{cor}
-$(X,\tau _d)$ metrizzabile $\implies$ (compatto $\iff$ compatto per successioni)
+	metrizzabile $\implies$ (compatto $\iff$ compatto per successioni)
 \end{cor}
 
 \begin{prop}
