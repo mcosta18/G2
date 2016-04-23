@@ -3,35 +3,57 @@
 % lo scrivo in formato lezione, andrà fatto il merge nella stesura finale
 
 \begin{oss}
-Sia $X$ l'insieme ambiente e $Y\subseteq X$, $x\in Y$.\\
-Si ha che $x$ è interno a $Y \notimplies x$ è di acc. per $Y$, ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di acc.
+	\marginpar{forse questa osservazione va anticipata e convertita in proposizione che dimostra l'implicazione con singoletti non aperti e poi controesempio su $\tau_\text{disc}$}
+	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
+	Si ha che:
+	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
+	Ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
+	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
 \end{oss}
 
 \begin{prop}
-$X 1$-numerabile e compatto $\implies X$ è compatto per successioni
+	$X$ 1-numerabile e compatto $\implies X$ compatto per successioni
 \end{prop}
+
 \begin{proof}
-Sia $(a_n)_{n\in\N}$ una successione a valori in $X$. Si hanno allora due casi:
-\begin{itemize}
-\item se assume un numero finito di valori ne assumerà uno di questi infinite volte, quindi posso estrarre una sottosuccessione costante;
-\item se assume un numero infinito di valori distinti allora per il lemma dimostrato si ha che $\exists x\in X$ di accumulazione per $\set{a_n}$.
-\end{itemize}
-Nel secondo caso la successione si costruisce per $1$-numerabilità, infatti, presa una base di intorni $\set{U_n}$ di $x$ \wlg annidati, costruisco la sottosuccessione prendendo come $n_0$ il minimo per cui $a_{n_0}\in U_0$ e $n_1 > n_0$ e che sia il minimo t.c. $a_{n_1}\in U_1$, \dots . Questa sottosuccessione ovviamente converge a $x$ come da definizione.
+	Sia $(a_n)_{n\in\N}$ una successione a valori in $X$. Si hanno allora due casi:
+	\begin{itemize}
+		\item se assume un numero finito di valori ne assumerà uno di questi infinite volte, quindi posso estrarre una sottosuccessione costante;
+		\item se assume un numero infinito di valori distinti allora per il \autoref{th:infcompacc} si ha che $\exists x\in X$ di accumulazione per $\set{a_n}$.
+	\end{itemize}
+	Nel secondo caso la sottosuccessione si estrae per $1$-numerabilità, infatti, presa una base di intorni $\set{U_n}$ di $x$ \wlg annidati, costruisco induttivamente la sottosuccessione $(a_{n_k})$ in modo che $a_{n_k}\in U_k$:
+	\begin{align*}
+		n_0 &\is \min\setdef[m\in\N]{a_m\in U_0} \\
+		n_k &\is \min\setdef[m\in\N]{a_m\in U_k\et m>n_{k-1}}
+	\end{align*}
+	Questa è una buona definizione perché gli $n_k$ sono strettamente crescenti e perché $x$ è di accumulazione per $\set{a_n}$.
+	La sottosuccessione converge a $x$ perché abbiamo preso gli intorni annidati.
 \end{proof}
 
 \begin{oss}
-Se un punto è di accumulazione per un dato insieme in uno spazio $T_2$ si ha che ogni suo intorno del punto interseca l'insieme in infiniti punti, infatti se così non fosse, usando il fatto che i punti sono chiusi in uno spazio $T_2$, potrei avere un intorno con intersezione finita. Posso sottrarre questi punti all'intorno, che continua a contenere il punto e ad essere aperto per intersezione finita, ma esso non interseca più l'insieme, assurdo
+	Se un punto $x$ è di accumulazione per un dato insieme in uno spazio $T_2$ si ha che ogni intorno di $x$ interseca l'insieme in infiniti punti.
+	Infatti, supponendo che l'intersezione sia invece finita, sottraggo questi punti (tranne eventualmente $x$) all'intorno, che rimane un intorno di $x$ perché in uno spazio $T_2$ i singoletti sono chiusi e l'intersezione finita di aperti è aperta, ma non ha punti in comune con l'insieme a parte al più $x$, assurdo.
 \end{oss}
 
 \begin{prop}
-$X$ 2-numerabile e compatto per successioni $\implies$ X è compatto
+	$X$ 2-numerabile e compatto per successioni $\implies$ $X$ compatto
 \end{prop}
+
 \begin{proof}
-Sia dunque $R$ un ricoprimento di $X$, da esso ne voglio estrarre uno finito.\\
-Si ottiene prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile. In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.\\
-Sia dunque $B$ una base numerabile di $X$. Si ha allora che $\forall x\in X \exists R_x \in R \text{ t.c } x\in R_x$. Per definizione di base ho anche che $\exists B_x \in B \text{ t.c. } B_x \subseteq R_x \et x\in B_x$. Da cui il primo risultato, poiché l'insieme dei $B_x$ è numerabile, essendo una sottofamiglia della famiglia numerabile $B$.\\
-Il secondo parziale è estrarre da un ricoprimento numerabile un ricoprimento finito.\\
-Per fare ciò si procede per assurdo: se $(R_n)_{n\in \N}$ non ammettesse un sottoricoprimento finito posso costruire la mia successione in modo che $a_0 \not \in R_0$ e $a_1 \not \in R_1 \cup R_2$, \dots . Risulta che da questa successione è impossibile estrarre una sottosuccessione convergente, infatti se convergesse a un punto dell'insieme starebbe definitivamente dentro l'aperto che lo contiene, da cui l'assurdo.
+	Dato un ricoprimento $\mathcal R$ di $X$, da esso ne devo estrarre uno finito.
+	
+	Otteniamo prima un risultato intermedio, cioè l'estrazione di un sottoricoprimento numerabile. In questo primo passaggio non è coinvolta l'ipotesi di compattezza per successioni.
+	
+	Sia dunque $\mathcal B$ una base numerabile di aperti di $X$.
+	Allora dalle definizioni di base e ricoprimento abbiamo che:
+	\[\forall x\in X \quad
+	\exists R_x \in \mathcal R : x\in R_x \quad
+	\exists B_x \in \mathcal B : x\in B_x \subseteq R_x\]
+	La famiglia dei $B_x$ è numerabile. Se per ogni $B\in\set{B_x}_{x\in X}$ scelgo un solo $R_B\in\setdef[R_x]{B_x=B}$ ho un sottoricoprimento numerabile.
+	
+	Il secondo passaggio è estrarre da un ricoprimento numerabile un ricoprimento finito.
+	
+	Per fare ciò si procede per assurdo: se $(R_n)_{n\in \N}$ non ammettesse un sottoricoprimento finito posso costruire la mia successione in modo che $a_0 \not \in R_0$ e $a_1 \not \in R_1 \cup R_2$, \dots . Risulta che da questa successione è impossibile estrarre una sottosuccessione convergente, infatti se convergesse a un punto dell'insieme starebbe definitivamente dentro l'aperto che lo contiene, da cui l'assurdo.
 \end{proof}
 
 \begin{cor}
