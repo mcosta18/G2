@@ -1,55 +1,68 @@
 %autore: Andrea
 
 
-In questa sezione si userà la nozione di immagine e di preimmagine di un sottoinsieme. In generale siano dati $X$ e $Y$ insiemi, $\fundef[f]{X}{Y}$ una funzione fra essi.\\
-Dato un sottoinsieme $X'$ di $X$ definisco immagine di $X'$ secondo $f$: \marginpar{come lo uso qui l'ambiente \texttt{defn}?}
-\begin{equation*}
-\img_f(X') \is f(X') \is \setdef[y \in Y]{\exists x \in X' \et f(x) = y} 
-\end{equation*}
-Dualmente sia $Y'\subseteq Y$ definisco preimmagine di $Y'$ : \marginpar{dovrò ricordarmi di non saltare tra preimmagine e controimmagine}
-\begin{equation*}
-\img_f^{-1}(Y') \is f^{-1}(Y') \is \setdef[x\in X]{f(x)\in Y'}
-\end{equation*}
-Si noti che la definizione è coerente anche non chiedendo che $f$ sia invertibile!
-% \vspace{.8cm} ma non andrebbero messi questi spazi, se ti serve una spaziatura grossa per ragioni logiche forse non stai fittando il contenuto con la struttura titoli-paragrafi-teoremi-formule, ma vabbé non ho voglia di discuterne in realtà
+% questa parte si può anche dare per nota, la commento
+% In questa sezione si userà la nozione di immagine e di preimmagine di un sottoinsieme. In generale siano dati $X$ e $Y$ insiemi, $\fundef[f]{X}{Y}$ una funzione fra essi.\\
+% Dato un sottoinsieme $X'$ di $X$ definisco immagine di $X'$ secondo $f$: \marginpar{come lo uso qui l'ambiente \texttt{defn}?}
+% \begin{equation*}
+% \img_f(X') \is f(X') \is \setdef[y \in Y]{\exists x \in X' \et f(x) = y}
+% \end{equation*}
+% Dualmente sia $Y'\subseteq Y$ definisco preimmagine di $Y'$ : \marginpar{dovrò ricordarmi di non saltare tra preimmagine e controimmagine}
+% \begin{equation*}
+% \img_f^{-1}(Y') \is f^{-1}(Y') \is \setdef[x\in X]{f(x)\in Y'}
+% \end{equation*}
+% Si noti che la definizione è coerente anche non chiedendo che $f$ sia invertibile!
+% % \vspace{.8cm} ma non andrebbero messi questi spazi, se ti serve una spaziatura grossa per ragioni logiche forse non stai fittando il contenuto con la struttura titoli-paragrafi-teoremi-formule, ma vabbé non ho voglia di discuterne in realtà
+
+\subtitlet{Compattezza e funzioni continue}
+
 \begin{lemma}
-Immagine continua di compatti è compatta.
+	L'immagine continua di un compatto è compatta.
 \end{lemma}
 
 \begin{proof}
-Siano $(X, \tau_X)$ e $(Y, \tau_Y)$ spazi topologici, inoltre sia $X$ compatto e sia $\fundef[f]{X}{Y}$ continua. Noi vogliamo dimostrare che $\img(X)$ come spazio topologico è compatto.
+	Sia $X$ compatto e $\fundef XY$ continua. Vogliamo dimostrare che $f(X)$ con la topologia di sottospazio è compatto.
 
-Prendiamo dunque un ricoprimento aperto $A$ di $Y\cap f(X)$. \marginpar{$Y\cap f(X)=f(X)$?}
-Ogni aperto di $A$ deve essere immagine di un aperto di $X$ per definizione di continuità. \marginpar{forse è meglio usare $A$ per gli aperti e $\mathcal A$ per i ricoprimenti}
-Ovviamente l'insieme delle preimmagini di tutti gli aperti di $f(X)$ ricopre $X$, dunque posso estrarne un sottoricoprimento finito. Questo sottoricoprimento copre $X$, inoltre tutte le immagini di elementi di questo sottoricoprimento sono aperti in $Y\cap f(X)$ (sono in $A$). L'insieme delle immagini di queste preimmagini ricoprono inoltre $Y\cap f(X)$ (ricoprendo $X$).
+	Prendiamo dunque un ricoprimento aperto $\mathcal A$ di $f(X)$.
+	Consideriamo $\mathcal A_X\is\setdef[f^{-1}(A)]{A\in\mathcal A}$.
+	Per definizione di continuità, gli elementi di $\mathcal A_X$ sono aperti, mentre per ragioni insiemistiche ricoprono $X$.
+	Allora da $\mathcal A_X$ posso estrarre un sottoricoprimento finito $\mathcal A_X^F$.
+	Tornando indietro, l'insieme $\setdef[f(A)]{A\in\mathcal A_X^F}$ è un sottoricoprimento finito di $\mathcal A$.
 \end{proof}
 
 \begin{lemma}
-Se $X$ è compatto per successioni e $\fundef[F]{X}{Y}$ è una funzione continua, allora $F(X)$ è compatto per successioni.
+	L'immagine continua di un compatto per successioni è compatta per successioni.
 \end{lemma}
+
 \begin{proof}
-Sia $(y_n)_{n\in N}$ una successione in $Y$. Per ognuno degli $y_n$ scelgo un $x_n$ in $X$ fra le sue preimmagini, definendo così una successione in $X$. Estraggo da essa una sottosuccessione convergente (esiste poichè $X$ è compatto per successioni). La mando in $Y$ con $F$. Questa nuova successione è convergente (se $x_n \convarrow x$ allora $f(x_n)\convarrow f(x)$ per continuità di $F$) ed è una estratta di   $(y_n)_{n\in N}$.
+	Siano $X$ compatto per successioni e $\fundef XY$ continua, vogliamo dimostrare che $f(X)$ è compatto per successioni.
+	
+	Sia $(y_n)_{n\in N}$ una successione in $Y$. Per ognuno degli $y_n$ scelgo un $x_n\in f^{-1}(y_n)$, definendo così una successione in $X$.
+	Estraggo da essa una sottosuccessione convergente $(x_{n_k})$ (esiste poiché $X$ è compatto per successioni).
+	Tornando indietro, $(f(x_{n_k}))$ è una sottosuccessione di $(y_n)$ e converge per continuità di $f$.
 \end{proof}
 
 \begin{lemma}
-Se $\fundef[F]{X}\R$ è continua e $X$ è compatto allora $F$ ammette massimo e minimo assoluti.
+	Se $\fundef X\R$ è continua e $X$ è compatto allora $f$ ammette massimo e minimo assoluti.
 \end{lemma}
+
 \begin{proof}
-Immagine continua di compatti è compatta, dunque $F(X)$ è compatto. Ma in $\R$ essere compatti è equivalente a essere chiusi e limitati. Dalla limitatezza segue che esiste, in $\R$, estremo superiore e inferiore, dalla chiusura che essi sono in $F(X)$.
+	L'immagine continua di compatti è compatta, dunque $f(X)$ è compatto. Ma in $\R$ compatto equivale a chiuso e limitato. Dalla limitatezza segue che esiste, in $\R$, estremo superiore e inferiore, dalla chiusura che essi sono in $f(X)$.
 \end{proof}
 
 \begin{lemma}
-Se X è un compatto e  $\fundef[F]{X}{Y}$ una funzione continua e invertibile, allora $F^{-1}$ è continua (è un omeomorfismo).
+	Se $X$ è compatto e  $\fundef XY$ è continua e invertibile, allora $f^{-1}$ è continua (corollario: è un omeomorfismo).
 \end{lemma}
+
 \begin{proof}
-La dimostrazione si spezza in due passi: \marginpar{O cambi paragrafo O fai un elenco O usi simboli e formule NO due punti a capo e cambio frase}
-per prima cosa si dimostra che $F^{-1}$ è continua $\iff F$ è chiusa (i.e. $F$ manda chiusi in chiusi).
+	La dimostrazione si spezza in due passi:
+	per prima cosa si dimostra che $F^{-1}$ è continua $\iff F$ è chiusa (i.e. $F$ manda chiusi in chiusi).
 
-Prendo un aperto $A\subseteq X$. Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $F(\comp A)$ è un chiuso di $Y$. Allora il complementare  $\comp{F(\comp A)}$ è un aperto ma per invertibilità $\comp{F(\comp A)}=F(A)$, dunque controimmagine di aperti di $X$ secondo $F^{-1}$ sono aperti.
+	Prendo un aperto $A\subseteq X$. Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $F(\comp A)$ è un chiuso di $Y$. Allora il complementare  $\comp{F(\comp A)}$ è un aperto ma per invertibilità $\comp{F(\comp A)}=F(A)$, dunque controimmagine di aperti di $X$ secondo $F^{-1}$ sono aperti.
 
-Viceversa preso un chiuso $C \subseteq X$ il suo complementare è aperto, mandato nella controimmagine tramite $F^{-1}$ rimane aperto. Si può dunque passare al complementare e ottenere la tesi.
+	Viceversa preso un chiuso $C \subseteq X$ il suo complementare è aperto, mandato nella controimmagine tramite $F^{-1}$ rimane aperto. Si può dunque passare al complementare e ottenere la tesi.
 
-Ma se $X$ è compatto un chiuso $K\subseteq X$ è compatto. Dato che immagine continua di compatti è compatta $F(K)$ è un compatto di $Y$, dunque è anche un chiuso. \marginpar{dichiarare due passi e il primo passo ha due passi e i passi non sono chiaramente strutturati si chiama poccio} 
+	Ma se $X$ è compatto un chiuso $K\subseteq X$ è compatto. Dato che immagine continua di compatti è compatta $F(K)$ è un compatto di $Y$, dunque è anche un chiuso.
 \end{proof}
 
 \titlet{Topologia prodotto e topologia quoziente}

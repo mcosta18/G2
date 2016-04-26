@@ -7,15 +7,18 @@
 \documentclass[a4paper]{report}
 \usepackage{layout}
 \setlength{\marginparwidth}{95pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand*\familydefault{\sfdefault}
 
-% versione A4 verticale
+% versione stampa A4 verticale
 % \documentclass[a4paper]{book}
 
-% versione A4 orizzontale
+% versione stampa A4 orizzontale
 % \documentclass[a4paper,twocolumn,landscape,openany]{book}
 % \usepackage[inner=1in,outer=1in,top=.7in,bottom=.6in]{geometry}
 
-% versione A5
+% versione stampa A5
 % \documentclass[a5paper,openany]{book}
 % \usepackage[margin=1cm,top=1.5cm,bottom=1.5cm]{geometry}
 
@@ -26,11 +29,10 @@
 
 % --- FONT ---
 \usepackage{lmodern}
-\renewcommand*\familydefault{\sfdefault} %se si vuole il carattere serif e non il sans commentare questa linea
-%% font 1 (sans serif più leggero)
-%\usepackage{cmbright}
-%% font 2 (già in uso)
-%\usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+% font 1 (sans serif più leggero)
+% \usepackage{cmbright}
+% font 2 (già in uso)
+% \usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
 % ------------
 
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=darkgray, citecolor=darkgray, filecolor=darkgray]{hyperref}
