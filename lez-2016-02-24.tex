@@ -86,12 +86,19 @@ Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguen
 
 \begin{proof}
 	$\forall n \in \N$ esiste una famiglia finita $\mathcal{F}_n$ di palle aperte di raggio $2^{-n}$ che ricopre $X$, per totale limitatezza.
+	Sia $\mathcal{B} \is \union _{n \in \N} \mathcal F_n$.
+	Abbiamo che $\mathcal{B}$ è numerabile, per verificare che è anche una base di $\tau _d$ mostriamo prima che se $\mathcal{A}$ è un ricoprimento di $X$ allora esiste un $\bar n$ tale che ogni palla di $\mathcal F_{\bar n}$ è contenuta in uno degli aperti di $\mathcal{A}$.
+	Poniamo:
+	\[\forall x\in X\quad n_x\is\min\setdef[n\in\N]{\exists A\in\mathcal A:\ball[2^{-n}]x\subseteq A}\]
+	È una buona definizione perché le palle $\ball[2^{-n}]x$ sono arbitrariamente piccole.
+	Ora invertiamo $n_x$, cioè per ogni $n\in\set{n_x}_{x\in X}$ scegliamo un $x_n$ tale che $n_{x_n}=n$.
+	Per assurdo, supponiamo che gli $n_x$ non abbiano massimo: allora $(x_n)$ è una successione e ha una sottosuccessione convergente a un punto $\bar x$.
+	Quindi gli $x_n$ sono frequentemente contenuti in $\ball[2^{-(1+n_{\bar x})}]{\bar x}$, e quindi c'è un $m>1+n_{\bar x}$ tale che $n_{x_m}\le 1+n_{\bar x}$ \absurd.
+	Il massimo degli $n_x$ è $\bar n$ che cercavamo.
 	
-	Sia allora $\mathcal{B} \is \union _{n \in \N} \mathcal F_n$. Si ha che $\mathcal{B}$ è sicuramente una famiglia numerabile, per verificare che è anche una base di $\tau _d$ si verificano i seguenti due punti:
-	\begin{itemize}
-		\item Se $\mathcal{A}$ è un ricoprimento di $X \implies \exists \bar{n} \text{ t.c. }$ ogni palla di $\mathcal{F}_n$ è contenuta in uno degli aperti di $\mathcal{A}$;
-		\item Si applica il punto precedente $\forall A \in \tau _d , \forall x \in A$, considerando come ricoprimento $\mathcal{A} \is \left\{ {A, X\setminus \left\{ {x}\right\}}\right\}$
-	\end{itemize}
+	$\forall A \in \tau _d\,\forall x \in A$ consideriamo $\mathcal{A}\is\set{A, X\setminus\set x}$.
+	È un ricoprimento perché in uno spazio metrico i singoletti sono chiusi.
+	Allora $\ball[2^{-\bar n}]x\subseteq A$ e al variare di $x$ queste palle ricoprono $A$.
 \end{proof}
 
 \begin{cor}
@@ -99,21 +106,35 @@ Se uno spazio metrizzabile è compatto questa proprietà risulta avere conseguen
 \end{cor}
 
 \begin{prop}
-$(\R^n, \tau _E), K\subset \R^n\text{ compatto} \iff\text{chiuso e limitato}$
+	Per un insieme in $(\R^n,\tau_E)$ vale che: compatto $\iff$ chiuso e limitato.
 \end{prop}
+
 \begin{proof}
-	Data l'equivalenza data dal corollario precedente si dimostrano le due implicazioni nel caso di compatto per successioni:
+	$(\R^n,\tau_E)$ è metrizzabile quindi compatto equivale a compatto per successioni.
+	Mostriamo le due implicazioni:
 	\begin{description}
 		\item[\proofrightarrow]
-		Per assurdo posso supporre che l'insieme sia illimitato, ma prendendo una sottosuccessione che tende a $\infty$ si ha che nessuna sottosuccessione estratta può convergere, perché anch'essa tende a $\infty$, mentre negando la chiusura posso costruire una successione che tenda a un punto di accumulazione che non appartiene all'insieme, e per stabilità del limite nel passaggio a sottosuccessioni si ha che nessuna sottosuccessione può convergere a un punto dell'insieme.
+			Per assurdo:
+			\begin{description}
+				\item[Limitatezza]
+				Se l'insieme è illimitato allora contiene una successione che tende a~$\infty$.
+				Le sottosuccessioni di questa tendono necessariamente anch'esse a~$\infty$.
+				\item[Chiusura]
+				Se l'insieme non è chiuso allora è più piccolo della sua chiusura, quindi c'è un punto di accumulazione $x$ fuori dall'insieme.
+				Lo spazio è \mbox{1-numerabile} quindi c'è una successione contenuta nell'insieme che tende a $x$.
+				Tutte le sottosuccessioni di questa convergono a $x$.
+			\end{description}
 		\item[\proofleftarrow]
-		Si ottiene eseguendo estrazioni successive mediante il teorema di Bolzano-Weierstrass (compattezza per i chiusi e limitati di $\R$), il che è reso possibile dalla stabilità del limite nel passaggio a sottosuccessioni e dalla dimensione finita di $\R^n$.
+			È sostanzialmente il teorema di Bolzano-Weierstrass.
+			Osserviamo che funziona perché $\R^n$ ha dimensione finita.
+		\qedhere
 	\end{description}
 \end{proof}
 
 \begin{teo}
-Sia $(X,\tau _d)$ compatto per successioni, e $(X,d)$ una metrica inducente, allora ($(X,\tau _d)$ compatto $\iff (X,d)$ è totalmente limitato e completo)
+	$(X,\tau _d)$ compatto $\iff (X,d)$ completo e totalmente limitato
 \end{teo}
+
 \begin{proof}
-La dimostrazione è lasciata per esercizio al lettore, ma non è richiesta nel corso
+	La dimostrazione è lasciata per esercizio al lettore, ma non è richiesta nel corso.
 \end{proof}
