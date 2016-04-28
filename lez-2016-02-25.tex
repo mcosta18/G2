@@ -51,18 +51,20 @@
 \end{proof}
 
 \begin{lemma}
-	Se $X$ è compatto e  $\fundef XY$ è continua e invertibile, allora $f^{-1}$ è continua (corollario: è un omeomorfismo).
+	Se $X$ è compatto e $\fundef XY$ è continua e invertibile, allora $f^{-1}$ è continua (corollario: è un omeomorfismo).
 \end{lemma}
 
 \begin{proof}
-	La dimostrazione si spezza in due passi:
-	per prima cosa si dimostra che $F^{-1}$ è continua $\iff F$ è chiusa (i.e. $F$ manda chiusi in chiusi).
-
-	Prendo un aperto $A\subseteq X$. Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $F(\comp A)$ è un chiuso di $Y$. Allora il complementare  $\comp{F(\comp A)}$ è un aperto ma per invertibilità $\comp{F(\comp A)}=F(A)$, dunque controimmagine di aperti di $X$ secondo $F^{-1}$ sono aperti.
-
-	Viceversa preso un chiuso $C \subseteq X$ il suo complementare è aperto, mandato nella controimmagine tramite $F^{-1}$ rimane aperto. Si può dunque passare al complementare e ottenere la tesi.
-
-	Ma se $X$ è compatto un chiuso $K\subseteq X$ è compatto. Dato che immagine continua di compatti è compatta $F(K)$ è un compatto di $Y$, dunque è anche un chiuso.
+	Per prima cosa mostriamo che $f$ è chiusa (cioè manda chiusi in chiusi).
+	Sia $C\subseteq X$ chiuso.
+	$X$ è compatto quindi $C$ è compatto.
+	L'immagine continua di compatti è compatta quindi $f(C)$ e $Y=f(X)$ sono compatti.
+	$f(C)$ è un sottoinsieme compatto di $Y$ quindi è chiuso.
+	
+	Sia ora $A\subseteq X$ aperto.
+	Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $f(\comp A)$ è un chiuso di $Y$ ovvero $\comp{f(\comp A)}$ è aperto.
+	Per invertibilità, $\comp{f(\comp A)}=f(A)$.
+	Abbiamo quindi che $f^{-1}$ è continua.
 \end{proof}
 
 \titlet{Topologia prodotto e topologia quoziente}
