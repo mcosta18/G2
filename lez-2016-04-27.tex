@@ -1,43 +1,44 @@
 %Federico
 
-\titletit{Fine della lezione sulla trasversalità}
+\titlet{Fine della lezione sulla trasversalità}
 
 Sia $\fundef[f]{X}{Y}$ e $A \in Y$ tale che $f \pitchfork A$, le varietà sono tutte orientate, allora $Z = f^{-1}(A)$ è orientabile, nel seguito daremo una procedura per orientarla.
-Sia $A = \setbox{y_0}$, $y_0$ è un valore regolare per $f$. Localmente ho la situazione linearizzata del teorema della funzione implicita surgettiva.
+Sia $A = \set{y_0}$, $y_0$ è un valore regolare per $f$. Localmente ho la situazione linearizzata del teorema della funzione implicita surgettiva.
 
-%Aggiungere disegno incomprensibile 1
+\marginpar{Aggiungere disegno incomprensibile 1}
 
 Metto come orientazione sulla linea verticale l'unica che mi da l'orientazione dell'ambiente.
 
 Sia $i$ una immersione cioè $X \hookrightarrow Y \supset A i^{-1} (A) = X \pitchfork A$. Si ha anche $T_{x}X + T_{x}A = T_{x}Y$ e $T_{x}(X \cup A) = T_{x}X \cup T_{x}Y$. Ho che $\mathbb{R}^{N}$
+\newcommand*\base{\mathcal B}
 è lo spazio ambiente e vale $V+W = \mathbb{R}^{N}$. Sia $\base$ una base dell'intersezione $V \cup W $. Gli insiemi $(\base, \base_{V})$ e  $(\base, \base_{W})$ sono rispettivamente basi di V e W
-e producono l'orientazione per queste sottovarietà. L'insieme $(\base, \base_V, \base_W)$ è base di $mathbb{R}^{N}$ e produce quindi una orientazione di $mathbb{R}^{N}$.
-L'orientazione della base $\base$ di $V \cup W$ è quella per cui la procedura specificata produce una base per $mathbb{R}^{N}$ che ha la stessa orientazione data in partenza.
+e producono l'orientazione per queste sottovarietà. L'insieme $(\base, \base_V, \base_W)$ è base di $\mathbb{R}^{N}$ e produce quindi una orientazione di $\mathbb{R}^{N}$.
+L'orientazione della base $\base$ di $V \cup W$ è quella per cui la procedura specificata produce una base per $\mathbb{R}^{N}$ che ha la stessa orientazione data in partenza.
 
 \begin{oss}
- Se scambio l'ordine delle varietà ottengo $A \pitchfork X$ e $X \pitchfork A$. Si può verificare che vale la relazione: $ A \pitchfork X = (-1)^{codim(X) \dot codim(Y)} X \pitchfork A$
+ Se scambio l'ordine delle varietà ottengo $A \pitchfork X$ e $X \pitchfork A$. Si può verificare che vale la relazione: $ A \pitchfork X = (-1)^{\codim(X) \cdot \codim(Y)} X \pitchfork A$
  Dove il segno significa semplicemente l'orientazione (stessa orientazione o orientazione opposta).
 \end{oss}
 
-Se è $\fundef[f]{X}{Y}$ con $A \in Y$ generico ci si riconduce al caso in cui $A = {y_{0}}$ e a questo punto si applica il teorema della funzione implicita surgettiva.
+Se è $\fundef[f]{X}{Y}$ con $A \subseteq Y$ generico ci si riconduce al caso in cui $A = \set{y_{0}}$ e a questo punto si applica il teorema della funzione implicita surgettiva.
 
-%Aggiungere disegno incoprensibile 2
+\marginpar{Aggiungere disegno incoprensibile 2}
 
-\begin{def}[Trasversalità di funzioni]
-Siano date $\fundef[f_{1}]{X_{1}}{Y}$ e $\fundef[f_{1}]{X_{2}}{Y}$. Voglio dare un senso alla scrittura $f_{1} \pitchfork f_{2}$.
-Definiamo $X_{1} \times X_{2} \rightarrow Y \times Y$ e $(x_{1}, x_{2}) \rightarrow (f(x_{1}), f(x_{2}))$. Considero l'insieme diagonale $\Delta = {(y_{1}, y_{2}) \in Y \times Y | y_{1} = y_{2}}$
-Diciamo $f_{1} \pitchfork f_{2} \leftrightarrow f_{1} \times f_{2} \pitchfork \Delta$.
-\end{def}
+\begin{defn}[Trasversalità di funzioni]
+Siano date $\fundef[f_{1}]{X_{1}}{Y}$ e $\fundef[f_{2}]{X_{2}}{Y}$. Voglio dare un senso alla scrittura $f_{1} \pitchfork f_{2}$.
+Definiamo $X_{1} \times X_{2} \rightarrow Y \times Y$ e $(x_{1}, x_{2}) \mapsto (f(x_{1}), f(x_{2}))$. Considero l'insieme diagonale $\Delta = \setdef[(y_{1}, y_{2}) \in Y \times Y]{y_{1} = y_{2}}$
+Diciamo $f_{1} \pitchfork f_{2} \means f_{1} \times f_{2} \pitchfork \Delta$.
+\end{defn}
 
 \begin{teo}
-Data $f_{2} \rightarrow Y$, definiamo $\pitchfork(A, f_{2}) = {\fundef[f]{X_{1}}{Y} | f_{1} \pitchfork f_{2}}$ l'insieme così definito è un aperto denso di $\mathcal{E}(x_{1}, Y)$.
+Data $f_{2} \rightarrow Y$, definiamo $\pitchfork(A, f_{2}) \is \setdef[\fundef{X_{1}}{Y}] {f_{1} \pitchfork f_{2}}$ l'insieme così definito è un aperto denso di $\mathcal{E}(x_{1}, Y)$.
 \end{teo}
 
 Abbiamo visto nelle lezioni precedenti:
 
 \begin{itemize}
- \item Non esistono retrazioni $\fundef[r]{X}{\deltaX}$ diffeomorfismi, da cui segue il teorema del punto fisso di Brouer
- \item Vale il teorema di embedding cioè ogni varietà $X^{n}$ di dimensione n si può immergere con un embedding in $\mathbb{R}^{2n+1}$ se non richiedo iniettività della funzione 
+ \item Non esistono retrazioni $\fundef[r]{X}{\boundary X}$ diffeomorfismi, da cui segue il teorema del punto fisso di Brouer
+ \item Vale il teorema di embedding cioè ogni varietà $X^{n}$ di dimensione $n$ si può immergere con un embedding in $\mathbb{R}^{2n+1}$ se non richiedo iniettività della funzione 
  posso comunque trovare un'immersione in $\mathbb{R}^{2n}$. 
 \end{itemize}
 
@@ -50,44 +51,44 @@ $\forall X^{n}$ trovo una immersione $X^{n} \hookrightarrow \mathbb{R}^{2n}$.
 \end{oss}
 
 \begin{oss} %molto a caso
- In tutte le dimensioni ($n \notequal 4$) ogni varietà omeomorfa a $\mathbb{R}^{m}$ è diffeomorfa a  $\mathbb{R}^{m}$. In $\mathbb{R}^{4}$ questo non vale e c'è un continuo di varietà 
+ In tutte le dimensioni ($n \neq 4$) ogni varietà omeomorfa a $\mathbb{R}^{m}$ è diffeomorfa a  $\mathbb{R}^{m}$. In $\mathbb{R}^{4}$ questo non vale e c'è un continuo di varietà 
  non diffeomorfe tra loro.
 \end{oss}
 
-\titletit{Teoria del grado}
-$\fundef[f]{X^{n}}{Y^{n}}$ con $X^{n}$ compatta e chiusa e $Y^{n}$ connessa. Voglio definire il grado della funzione f, dimostreremo che è un invariate per cobordismo.
+\titlet{Teoria del grado}
+$\fundef[f]{X^{n}}{Y^{n}}$ con $X^{n}$ compatta e chiusa e $Y^{n}$ connessa. Voglio definire il grado della funzione $f$, dimostreremo che è un invariate per cobordismo.
 
-\begin{def}[Versione orientata]
+\begin{defn}[Versione orientata]
 
-\end{def}
+\end{defn}
 
-\begin{def}[Versione non orientata]
+\begin{defn}[Versione non orientata]
 Procederemo seguendo una serie di semplici passi:
 \begin{itemize}
  \item Fisso $y_{0} \in Y$.
  \item Prendo $g$ vicina a $f$ nel senso della topologia definita su $\mathcal{E}(X, Y)$ tale che $g \pitchfork {y_{0}}$ si vede che $g$ è 
  omomorfa a $f$ dai teoremi dimostrati nelle lezioni precedenti sulla trasversalità.
- \item $g^{-1}(y_{0}) = {x_{1}, x_{2}, ..., x_{k}}$ è un insieme di cardinalità finita.
- \item Definisco $grad_{2}(f) = |Z| mod 2$
+ \item $g^{-1}(y_{0}) = {x_{1}, x_{2}, \dots, x_{k}}$ è un insieme di cardinalità finita.
+ \item Definisco $\grad_{2}(f) = k \mod 2$
 \end{itemize}
-\end{def}
+\end{defn}
 
-Dunque vediamo che il grado di una funzione tra varietà non orientate è una funzione $ \mathcal{E}(X, Y) \rightarrow \mathbb{Z} / 2 mathbb{Z}$.
+Dunque vediamo che il grado di una funzione tra varietà non orientate è una funzione $ \mathcal{E}(X, Y) \funarrow \quoset\Z{2\Z}$.
 
 \begin{teo}[Buona definizione del grado]
- la quantità così associata a f: $grad_{2}(f)$ è ben definita cioè non dipende né dalla scelta di $y_{0}$ né dalla scelta di $g$. 
+ la quantità così associata a $f$: $\grad_{2}(f)$ è ben definita cioè non dipende né dalla scelta di $y_{0}$ né dalla scelta di $g$. 
 \end{teo}
 
 \begin{teo}
- Se $\fundef[f_{1}]{X_{0}}{Y}$ e $\fundef[f_{2}]{X_{0}}{Y}$ sono cobordanti allora $grad_{2}(f_{1}) = grad_{2}(f_{0})$. In particolare questo vale quando sono omotope,
+ Se $\fundef[f_{1}]{X_{0}}{Y}$ e $\fundef[f_{2}]{X_{0}}{Y}$ sono cobordanti allora $\grad_{2}(f_{1}) = \grad_{2}(f_{0})$. In particolare questo vale quando sono omotope,
  infatti l'omotopia è un particolare cobordismo.
-\end{dim}
+\end{teo}
 
-\begin{dim}
- Dimostreremo che a $y_{0}$ fissato il grado non dipende dalla scelta della $g$. Siano $g_{1}$ e $g_{2}$ tali che $g_1 \pitchfork y_0$ e $g_{2} \pitchfork y_{0}$ allora la $g1$ e la $g2$ 
+\begin{proof}
+ Dimostreremo che a $y_{0}$ fissato il grado non dipende dalla scelta della $g$. Siano $g_{1}$ e $g_{2}$ tali che $g_1 \pitchfork y_0$ e $g_{2} \pitchfork y_{0}$ allora la $g_1$ e la $g_2$ 
  sono tra loro omotope.
  
- %Inserisco il disegnino cancer di g1 e g2 che sono cobordanti e mostro eplicitamente dove stanno gli insiemi di cui sto parlando
+\marginpar{Inserisco il disegnino cancer di g1 e g2 che sono cobordanti e mostro eplicitamente dove stanno gli insiemi di cui sto parlando}
  
  Uso il teorema di alcune lezioni precedenti per cui trasversalità coimplica cobordismo, dunque $g_1 \pitchfork y_0$ implica $g_1$ omotopa a $f_{1}$ e similmente
   $g_2 \pitchfork y_0$ implica $g_2$ omotopa a $f_{2}$. Dunque per ipotesi valeva $f_{1} \sim f_{2}$ dunque vale anche  $g_{1} \sim g_{2}$, poiché il cobordismo è una relazione di equivalenza.
@@ -96,10 +97,10 @@ Dunque vediamo che il grado di una funzione tra varietà non orientate è una fu
  
  %non so se funziona quanetsa notazione per primare le cose
 Ora devo eliminare l'arbitrarietà del punto $y_{0}$. Prendo due punti $x$ e $y$ faremo vedere nella prossima lezione che utilizzando il fatto che $Y$ è connessa per costruire una isotopia
-$\fundef[H]{Y \times [0,1]}{Y}$ tale che posto $H_{t} = H_{Y \times {t}}$ si ha che $H_{0} = Id$. $H_{t}$ è un diffeomorfismo di Y $\forallt \in [0,1]$  e vale $H_{0} = x$ e $H_{1} = y$.
+$\fundef[H]{Y \times [0,1]}{Y}$ tale che posto $H_{t} = H_{Y \times {t}}$ si ha che $H_{0} = \id$. $H_{t}$ è un diffeomorfismo di $Y$ $\forall t \in [0,1]$  e vale $H_{0} = x$ e $H_{1} = y$.
 Comunque prendo due punti esiste un diffeomorfismo che manda un punto nell'altro, in questo senso nessun punto è privilegiato. Questo significa che una varietà è omogenea, cioè a meno di 
 diffeomorfismi ogni punto è equivalente.
-\end{dim}
+\end{proof}
 
 
 
