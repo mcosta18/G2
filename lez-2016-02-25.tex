@@ -59,7 +59,7 @@
 	Sia $C\subseteq X$ chiuso.
 	$X$ è compatto quindi $C$ è compatto.
 	L'immagine continua di compatti è compatta quindi $f(C)$ e $Y=f(X)$ sono compatti.
-	$f(C)$ è un sottoinsieme compatto di $Y$ quindi è chiuso.
+	$f(C)$ è un sottospazio compatto di $Y$ quindi è chiuso.
 	
 	Sia ora $A\subseteq X$ aperto.
 	Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $f(\comp A)$ è un chiuso di $Y$ ovvero $\comp{f(\comp A)}$ è aperto.
@@ -68,62 +68,63 @@
 \end{proof}
 
 \titlet{Topologia prodotto e topologia quoziente}
-Ora si possono definire delle operazioni fra spazi topologici che ci permettano di costruirne altri in maniera ``naturale''.
+
+Definiamo ora delle operazioni fra spazi topologici che ci permettano di costruirne altri in maniera ``naturale''.
 
 \begin{defn}[Topologia prodotto]
-Siano $(X,\tau)$ e $(Y, \sigma)$ spazi topologici. Definiamo il prodotto $X\times_T Y$ lo spazio topologico definito sul prodotto cartesiano $X\times Y$ con la topologia meno fine possibile tale che date $\fundef[p_1]{X\times Y}{X}$ e $\fundef[p_2]{X\times Y}{Y}$ le proiezioni canoniche:
-\begin{equation}
- p_1((x, y))=x \text{  e  } p_2((x, y))=y
-\end{equation} 
-siano continue.
+	Siano $X$, $Y$ spazi topologici.
+	La \emph{topologia prodotto} è la topologia meno fine su $X\times Y$ tale che le proiezioni canoniche $(x,y)\mapsto x$ e $(x, y)\mapsto y$	sono continue.
 \end{defn}
 
 \begin{oss}
-Si vede come la condizione sulle proiezioni non sia impossibile da soddisfare. Infatti la topologia discreta sul prodotto cartesiano soddisfa banalmente.
+	Si vede come la condizione sulle proiezioni non sia impossibile da soddisfare. Infatti la topologia discreta sul prodotto cartesiano soddisfa banalmente.
 
-Non è altrettanto palese che effettivamente esista una topologia minimale rispetto all'inclusione che soddisfi il requisito. Il punto non è stato chiarito a lezione. È chiaro comunque che la topologia di cui stiamo parlando è quella generata dalle preimmagini secondo $p_1$ o $p_2$ di aperti di $X$ o di $Y$.
-\marginpar{non sarebbe male esplicitare che è $\setdef[A_X\times A_Y]{...}$}
+	Non è altrettanto palese che effettivamente esista una topologia minimale rispetto all'inclusione che soddisfi il requisito. Il punto non è stato chiarito a lezione. È chiaro comunque che la topologia di cui stiamo parlando è quella generata dalle preimmagini secondo $p_1$ o $p_2$ di aperti di $X$ o di $Y$.
+	\marginpar{non sarebbe male esplicitare che è $\setdef[A_X\times A_Y]{...}$}
 \end{oss}
 
 \begin{oss}
-Tutte le proprietà comuni ai due spazi di partenza si propagano allo spazio prodotto (fatto non dimostrato in classe), in particolare il prodotto di spazi compatti è compatto, il prodotto di spazi connessi è connesso, il prodotto di spazi $T_2$ è $T_2$.
+	Tutte le proprietà comuni ai due spazi di partenza si propagano allo spazio prodotto\footnote{fatto non dimostrato a lezione}, in particolare il prodotto di spazi compatti è compatto, il prodotto di spazi connessi è connesso, il prodotto di spazi $T_2$ è $T_2$.
+\end{oss}
+
+\begin{oss}
+	Data una funzione surgettiva $\fundef XY$, la relazione $a\sim b\means f(a)=f(b)$ è di equivalenza, e l'insieme quoziente si identifica con $Y$ perché $\quoset X\sim=\setdef[f^{-1}(\set{y})]{y\in Y}$.
+	
+	Viceversa, data una relazione di equivalenza $\sim$ su $X$, l'immersione che manda un elemento nella sua classe di equivalenza
+	\[f\is\fundef[{(x\mapsto [x]_\sim)}]X{\quoset X\sim}\]
+	ha la proprietà che $a\sim b\iff f(a)=f(b)$.
 \end{oss}
 
 \begin{defn}[Topologia quoziente]
-Sia $(X,\tau)$ uno spazio topologico, $Y$ un insieme e $\fundef{X}{Y}$ una funzione surgettiva.
-
-Definiamo la relazione di equivalenza $\sim_f$ come $a\sim_f b \means f(a)=f(b)$ (si verifica che è una relazione di equivalenza) e definiamo $\quoset X{\sim_f}$ l'insieme quoziente rispetto a questa relazione di equivalenza (moralmente questo insieme è proprio $Y$ in quanto preimmagini di singoli elementi in $Y$ sono classi di equivalenza in $X$).
-
-Definiamo infine $\Tquoset X{\sim_f}$ lo spazio topologico definito su $\quoset X{\sim_f}$ dotato della topologia più fine possibile che renda l'immersione $x \mapsto [x]$ (moralmente $f$) continua.
+	Siano $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$.
+	La \emph{topologia quoziente} è la topologia più fine su $\quoset X\sim$ tale che l'immersione $x\mapsto[x]_\sim$ è continua.
 \end{defn}
 
 \begin{oss}
-Anche questa volta, se l'esistenza di topologie che rendano continua l'immersione è palese (basti pensare alla topologia banale), non è affatto scontato che esista una ``topologia più fine possibile''.
+	Anche questa volta, se l'esistenza di topologie che rendano continua l'immersione è palese (basti pensare alla topologia banale), non è affatto scontato che esista una ``topologia più fine possibile''.
 \end{oss}
 
 \begin{defn}[Insieme $f$-saturo]
-Data una funzione $\fundef{X}{Y}$ si dice $f$-saturo un $X'\subseteq X$ tale che $f^{-1}(f(X'))=X'$.
+	Data una funzione $\fundef{X}{Y}$ si dice $f$-saturo un $X'\subseteq X$ tale che $f^{-1}(f(X'))=X'$.
 \end{defn}
 
 \begin{prop}
-La topologia di $\Tquoset X{\sim_f}$ è data da tutte le immagini attraverso $f$ di aperti $f$-saturi di $X$.
+	La topologia quoziente su $\quoset X\sim$ è data dalle immagini attraverso $f\is(x\mapsto[x]_\sim)$ di aperti $f$-saturi di $X$.
 \end{prop}
 
 \begin{oss} \marginpar{queste sarebbero da controllare!!!}
-Non tutte le proprietà si propagano al quoziente. Fortunatamente si propagano la connessione e la compattezza.
+	Non tutte le proprietà si propagano al quoziente. Fortunatamente si propagano la connessione e la compattezza.
 \end{oss}
 
-
-
-\titlet{Varietà topologiche}
-
-
-Ora anticipiamo un po' di quello che faremo la prossima volta (non so, forse lo ha fatto solo per rendere un po' meno organiche queste note!)!!
-
-\marginpar{!!!!!!!!!!!!!!}
-
-\begin{defn}[Varietà topologica $n$-dimensionale]
-Fissato un intero $n$ una varietà topologica $n$-dimensionale è uno spazio topologico $V$ $T_2$ localmente omeomorfo ad aperti di $R^n$.
-
-Più propriamente si definisce varietà topologica la coppia $(V, M)$ dove $V$ è lo spazio topologico e $M$ è l'insieme degli omeomorfismi.
-\end{defn}
+% questa parte è un'anticipazione della lezione successiva
+%
+% \titlet{Varietà topologiche}
+%
+%
+% Ora anticipiamo un po' di quello che faremo la prossima volta (non so, forse lo ha fatto solo per rendere un po' meno organiche queste note!)!!
+%
+% \begin{defn}[Varietà topologica $n$-dimensionale]
+% Fissato un intero $n$ una varietà topologica $n$-dimensionale è uno spazio topologico $V$ $T_2$ localmente omeomorfo ad aperti di $R^n$.
+%
+% Più propriamente si definisce varietà topologica la coppia $(V, M)$ dove $V$ è lo spazio topologico e $M$ è l'insieme degli omeomorfismi.
+% \end{defn}
