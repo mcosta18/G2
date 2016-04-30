@@ -14,12 +14,60 @@ Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$
 
 Vogliamo innanzitutto definire i \emph{fibrati tensoriali} su $M$.
 
-Si ricorda dalla scorsa lezione che dato $V$ spazio vettoriale su $\R$ di dimensione $n$, chiamando $V\dual$ il suo duale e identificando $V \dual \dual$ con $V$, i corrispondenti spazi tensoriali sono definiti come: \[
+Si ricorda dalla scorsa lezione che dato $V$ spazio vettoriale su $\R$ di dimensione $n$, chiamando $V\dual$ il suo duale e identificando $V \dual \dual$ con $V$ (in virtù dell'isomorfismo canonico tra di essi), i corrispondenti spazi tensoriali sono definiti come: \[
 T_h^k(V) \is V^{\otimes k} \otimes (V \dual)^{\otimes h} \is \Mult( (V\dual)^k \times V^h, \R)  \]
 \begin{oss}
 	$ T_0^0(V) = \R, \ T_1^0(V) = V \dual, \ T_0^1(V) = V \dual \dual = V $
 \end{oss}	
 Inoltre, data $\base \is \set{v_1, \dots, v_n}$ base di $V$, posso costruire $\base_h^k$ base di $T_h^k(V)$: sia innanzitutto $\base \dual = \set{v^i}_{i \leq n}$ la base duale di $\base$. Allora: \[
 \base_h^k = \base ^{\otimes k} \otimes (\base \dual)^{\otimes h} \is
-\set{ v_{i_1} \otimes \dots \otimes v_{i_k} \otimes v^{j_1} \otimes \dots \otimes v^{j_h} } _{i_l, j_m \leq n} \]
+\set{v^{j_1 \dots j_h}_{i_1 \dots i_k} \is v_{i_1} \otimes \dots \otimes v_{i_k} \otimes v^{j_1} \otimes \dots \otimes v^{j_h} } _{i_l, j_m \leq n} \]
 Dunque $\dim T_h^k(V) = n^{k+h}$ e dare una base $\base$ di $V$ stabilisce un isomorfismo (non canonico) tra $T_h^k(V)$ e $T_{h'}^{k'}(V)$ quando $k+h = k'+h'$.
+
+Un $t \in T_h^k(V)$ è detto \emph{tensore di tipo $(k, h)$ su $V$} e si esprime in termini di $\base_h^k$ come: \[
+t = t_{j_1 \dots j_h}^{i_1 \dots i_k} \  v^{j_1 \dots j_h}_{i_1 \dots i_k} \]
+Dove gli indici ripetuti si intendono sommati, e i $t_{j_1 \dots j_h}^{i_1 \dots i_k} \in \R$ sono le coordinate di $t$ rispetto a $\base_h^k$. Ha dunque senso chiedersi che forma abbiano i cambi di coordinate in $T^k_h(V)$: siano $\base={v_i}$, $\base'={w_i}$ basi di $V$ (e $\base_h^k$, $\base_h^{\prime k}$ le basi corrispondenti di $T^k_h(V)$), e sia $A$ la matrice di cambio di base (in V) corrispondente, ovvero $A = \mathcal{M}_{\base}^{\base'}(\id_V)$.
+
+Innanzitutto, per quanto riguarda il cambio di base in $V\dual$, abbiamo \[
+\mathcal{M}_{\base' \dual}^{\base \dual}(\id_{V\dual}) = \Big( \mathcal{M}_{\base \dual}^{\base' \dual}(\id_{V\dual}) \Big)^{-1}
+= (A^t)^{-1} \]
+\begin{oss}
+	L'applicazione $A \mapsto (A^t)^{-1}$ è, coefficiente per coefficiente, funzione razionale dei coefficienti. Inoltre, è un automorfismo di $\GL(n, \R)$.
+\end{oss}
+Sia ora $B = (A^t)^{-1}$, e siano i loro coefficienti $A = (a_{si}), \ B = (b^{rj})$, cosicché $v_i = a_{si} w_s$ e $v^j = b^{rj} w^r$. Allora: 
+\begin{gather*}
+t =  t_{j_1 \dots j_h}^{i_1 \dots i_k} \ v^{j_1 \dots j_h}_{i_1 \dots i_k} = t_{j_1 \dots j_h}^{i_1 \dots i_k} \ v_{i_1} \otimes \dots \otimes v_{i_k} \otimes v^{j_1} \otimes \dots \otimes v^{j_h} = \\
+= t_{j_1 \dots j_h}^{i_1 \dots i_k} \ a_{s_1 i_1}w_{s_1} \otimes \dots \otimes a_{s_k i_k}w_{s_k} \otimes b^{r_1 j_1}w^{r_1} \otimes \dots \otimes b^{r_h j_h}w^{r_h} = \\
+= t_{j_1 \dots j_h}^{i_1 \dots i_k} \ a_{s_1 i_1} \dotsm a_{s_k i_k} \ b^{r_1 j_1} \dotsm b^{r_h j_h} \ w_{s_1} \otimes \dots \otimes w_{s_k} \otimes w^{r_1} \otimes \dots \otimes w^{r_h} = \\
+= t_{\ r_1 \dots r_h}^{\prime \ s_1 \dots s_k} \ w^{r_1 \dots r_h}_{s_1 \dots s_k}
+\end{gather*}
+
+Dunque, indicando i prodotti $a_{s_1 i_1} \dotsm a_{s_k i_k}$ e $b^{r_1 j_1} \dotsm b^{r_h j_h}$ con $a_{i_1 \dots i_k}^{s_1 \dots s_k}$ e $b_{r_1 \dots r_h}^{j_1 \dots j_h}$, otteniamo: \[
+t_{\ r_1 \dots r_h}^{\prime \ s_1 \dots s_k} = a_{i_1 \dots i_k}^{s_1 \dots s_k} \ b_{r_1 \dots r_h}^{j_1 \dots j_h} \ t_{j_1 \dots j_h}^{i_1 \dots i_k} \]
+Il cambio di coordinate resta dunque una funzione razionale nei coefficienti di $A$.
+
+Ora, sia $\fundef[\rho_h^k]{\GL(n,\R)}{\GL(T_h^k(\R^n))}$ l'applicazione che manda cambi ci coordinate in cambi di coordinate corrispondenti: $A \mapsto A_h^k$, dove $A_h^k$ è la trasformazione lineare $t_{j_1 \dots j_h}^{i_1 \dots i_k} \mapsto a_{i_1 \dots i_k}^{s_1 \dots s_k} \ b_{r_1 \dots r_h}^{j_1 \dots j_h} \ t_{j_1 \dots j_h}^{i_1 \dots i_k}$, ovvero quella che ha coefficienti $(a_{i_1 \dots i_k}^{s_1 \dots s_k} \ b_{r_1 \dots r_h}^{j_1 \dots j_h})$.
+
+Avendo su $M$ il fibrato tangente $T(M)$ definito dal cociclo $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{\GL(\R^n)} }$, il cociclo $\set{ \fundef[(\mu_h^k)_{ij}]{U_i \cap U_j}{\GL(T_h^k(\R^n))} }$, dove $(\mu_h^k)_{ij} = \rho_h^k \circ \mu_{ij}$, definisce un fibrato $\Fundef[\pi_h^k]{T_h^k(M)}{M}$ di fibra $T_h^k(\R^n)$, e si ha $(\pi_h^k)^{-1}(x) = T_h^k(T_x M)$.
+
+\begin{defn}[Fibrato Tensoriale]
+	$T_h^k(M)$ è detto \emph{fibrato tensoriale} di tipo $(k, h)$ su $M$.
+	
+	In particolare, $T_1^0(M) \si T \dual (M)$ è detto \emph{fibrato cotangente}.
+\end{defn}
+
+\begin{oss}
+	Un fibrato tensoriale di tipo $(k, h)$ è sempre un fibrato vettoriale di rango $n^{k+h}$.
+\end{oss}
+
+Vediamo altri esempi di fibrati, realizzabili a partire dal cociclo $\set{\mu_{ij}}$ del fibrato tangente.
+
+\begin{defn}[Fibrato delle basi]
+	Il fibrato principale $\Fundef[\hat{\pi}]{B}{M}$ di gruppo $\GL(n, \R)$ (ovvero quello che ha per fibra $\GL(n, \R)$ stesso) costruito mediante il cociclo $\set{\mu_{ij}}$ è detto \emph{fibrato delle basi} su $M$.
+	
+	Infatti, $\hat{\pi}^{-1}(x)  \ (\simeq \set{x} \times \GL(n, \R) )$ è l'insieme delle basi di $T_x M \ (\simeq \set{x} \times \R^n)$.
+\end{defn}
+
+\begin{oss} 
+	$ \fundef[\det]{\GL(n, \R)}{\R*} $ è omomorfismo di gruppi.
+\end{oss}
