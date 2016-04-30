@@ -2,6 +2,7 @@
 
 % brematuro solo a destra in ipotesi di gatto
 
+\newcommand*\Ps{\mathbb{P}} % Projective space
 \newcommand*\tc{\ \text{t.c.} \ } % tale che
 \newcommand*\dual{{^\ast}} % dual
 \newcommand*\base[1][B]{\mathcal{#1}} % base
@@ -69,5 +70,32 @@ Vediamo altri esempi di fibrati, realizzabili a partire dal cociclo $\set{\mu_{i
 \end{defn}
 
 \begin{oss} 
-	$ \fundef[\det]{\GL(n, \R)}{\R*} $ è omomorfismo di gruppi.
+	$ \fundef[\det]{\GL(n, \R)}{\R^*} $ e $\fundef[\sgn]{\R^*}{\set{\pm 1}}$ sono omomorfismi di gruppi.
 \end{oss}
+
+\begin{defn}
+	$ \set{  \fundef[\det(\mu_{ij})]{U_i \cap U_j}{\R^*} } $ è un cociclo, detto \emph{cociclo determinante}. Il fibrato risultante di fibra $\R$ è detto \emph{fibrato determinante}.
+\end{defn}
+
+\begin{defn}{Cociclo segno}
+	$ \set{  \fundef[\sgn(\det(\mu_{ij}))]{U_i \cap U_j}{\set{\pm 1}} } $ è detto \emph{cociclo segno} (e naturalmente vi si può costruire il fibrato principale, con fibra $\set{\pm 1}$).
+\end{defn}
+\begin{oss}
+	Per $n$ pari, $\Fundef[\pi]{S^n}{\Ps^n}$ è un caso particolare di quest'ultimo tipo di fibrati.
+\end{oss}
+
+\titlet{Equivalenza tra fibrati}
+Siano $\Fundef[\pi_1]{E_1}{M_1}$ e $\Fundef[\pi_2]{E_2}{M_2}$ fibrati con stessa fibra e stesso gruppo strutturale $G$. Essi sono \emph{isomorfi} se $\exists f, F$ diffeomorfismi tali che il seguente diagramma commuti: \[
+\begin{tikzcd}
+	E_1 \arrow[r, "F"] \arrow[d, "\pi_1"] & E_2 \arrow[d, "\pi_2"] \\
+	M_1 \arrow[r, "f"]  & M_2
+\end{tikzcd} \]
+e valga $\forall x \in M_1: \ F|_{\pi_1^{-1}(x)} \in G$.
+
+Il prototipo di questo tipo di equivalenza si realizza tra fibrati tangenti di varietà diffeomorfe: \[
+\begin{tikzcd}
+T(M_1) \arrow[r, "Df"] \arrow[d, "\pi_1"] & T(M_2) \arrow[d, "\pi_2"] \\
+M_1 \arrow[r, "f"]  & M_2
+\end{tikzcd} \]
+
+Se  $M_1 = M_2 = M$, posso definire una relazione di \emph{equivalenza forte} tra fibrati su $M$ imponendo ulteriormente che sia $f = \id$.
