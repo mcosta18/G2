@@ -2,8 +2,24 @@
 
 % guardi che signora mia qua non si sa mica eh
 
+\newcommand*\tc{\ \text{t.c.} \ } % tale che
+
 \titlet{Immersioni e embedding}
 
 \begin{teo}
-	
+	Una varietà compatta chiusa $X$ di dimensione $n$ ammette embedding $X \hookrightarrow \R^{2n+1}$ e immersione $X \looparrowright \R^{2n}$.
 \end{teo}
+\begin{proof}
+Si è già visto che $\exists N \tc \exists \text{ embedding } X \hookrightarrow \R^N $.
+
+Scomponiamo $\R^N$ in $\R^{N-1} \times \R$. Ora, $\forall v \in \R^N \setminus \R^{N-1}: \ \R^N = \Span(v) \oplus \R^{N-1}$ e ad ogni tale $v$ corrisponde una proiezione $\fundef[\pi_v]{\R^N}{\R^{N-1}}$. Proiettiamo dunque $X$ su $R^{N-1}$ tramite $\pi_v |_X$: vogliamo dunque trovare una condizione su $v$ per cui questa sia un'immersione. Si ha $\ker \pi_v = \Span(v)$, dunque $\pi_v |_X$ è immersione se $\forall x \in X, \forall z \in T_x X: \ z \notin \Span(v)$ (\wlg possiamo supporre $\norm{v} = \norm{z} = 1$, dunque se $z \neq \pm v$).
+
+Sia $\fundef[\nu]{T(X)}{\R}$ l'applicazione $(x,z) \mapsto \norm{z}$ e sia $T_1(X) \is \nu^{-1}(1)$ (ovvero l'unione delle sfere unitarie di ogni $T_x X$). $T_1(X)$ è dunque sottovarietà di $T(X)$ (per teoremi di trasversalità) di dimensione $2n-1$, e si ha $T_1(X) \subseteq X \times S^{N-1}$. sia ora $\fundef[\rho]{T_1(X)}{S^{N-1}}$ la proiezione $(x, v) \mapsto v$; allora $\pi_v |_X$ è immersione $\leftrightarrow v \in S^{N-1} \setminus \im \rho$.
+
+Per i teoremi di trasversalità avevamo visto che se $\dim X < \dim Y$ e $\fundef{X}{Y}$ liscia, $Y \setminus f(X)$ è denso in $Y$. Dunque se $\dim S^{N-1} > \dim T_1(X)$ (ovvero se $N > 2n$) esiste un insieme denso (aperto per compattezza di $X$) di vettori $v$ che danno $\pi_v |_X$ immersione. Dunque se esiste un embedding in dimensione maggiore di $2n$, esiste un'immersione in una dimensione in meno. \\
+
+Per mostrare l'esistenza di un embedding in $\R^{2n+1}$ ragioniamo in modo analogo: a partire da un embedding $X \hookrightarrow \R^N$ cerco $v \tc \fundef[\pi_v |_X]{X}{\R^{N-1}}$ sia un embedding (ovvero, per compattezza di X, un'immersione iniettiva).
+
+Consideriamo $X \times X \setminus \Delta$, con $\Delta \is \setdef[(a,b) \in X \times X]{a=b}$; si tratta di una varietà non compatta di dimensione $2n$.
+
+\end{proof}
