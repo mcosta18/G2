@@ -9,8 +9,6 @@ Facciamo prima una versione non orientata, poi faremo quella orientata.
 	Una tripletta $(W,V_0,V_1)$ è una \emph{triade} se $W$ è una varietà con bordo $\boundary W=V_0\djcup V_1$.
 \end{defn}
 
-\marginpar{FIGURA TRIADE}
-
 Fisicamente potete pensare $W$ come una transizione da $V_0$ a $V_1$.
 
 \begin{oss}
@@ -28,7 +26,9 @@ Fisicamente potete pensare $W$ come una transizione da $V_0$ a $V_1$.
 	\end{cases}\]
 \end{defn}
 
-\marginpar{FIGURA COBORDISMO}
+\begin{center}
+	\input{figura18.pdf_tex}
+\end{center}
 
 Il concetto di cobordismo estende quello di diffeomorfismo:
 
@@ -40,10 +40,13 @@ Il concetto di cobordismo estende quello di diffeomorfismo:
 \begin{proof}
 	Sia $\fundef{X_0}{X_1}$ diffeomorfismo.
 	Poniamo $W\is X_0\times[0,1]$ cilindro di base $X_0$.
-	\marginpar{FIGURA CILINDRO}
 	Allora $(W,X_0\times\set0,X_0\times\set1,\id,f^{-1})$ è il cobordismo cercato.
 \end{proof}
 
+\begin{center}
+	\input{figura19.pdf_tex}
+\end{center}
+	
 \begin{oss}
 	Essere diffeomorfe è una relazione di equivalenza, perché:
 	\begin{itemize}
@@ -62,17 +65,19 @@ Il concetto di cobordismo estende quello di diffeomorfismo:
 	\begin{description}
 		\item[Riflessiva]
 			Per vedere che $X$ è cobordante a se stesso considerare il cilindro $X\times[0,1]$, oppure osservare che $X$ è diffeomorfo a se stesso e usare la \autoref{th:diffcob}.
-		\marginpar{FIGURA AUTOCOBORDISMO}
 		\item[Simmetrica]
 			Basta osservare che se $(W,V_0,V_1)$ è una triade, lo è anche $(W,V_1,V_0)$.
 		\item[Transitiva]
-			Sia $X_0$ cobordante a $X_1$ tramite la triade $(W,V_0,V_1)$ e $X_1$ cobordante a $X_2$ tramite $(W',V_0',V_1')$. 
-			\marginpar{FIGURA TRANSITIVITÀ COBORDISMO}
+			Sia $X_0$ cobordante a $X_1$ tramite la triade $(W,V_0,V_1)$ e $X_1$ cobordante a $X_2$ tramite $(W',V_0',V_1')$.
 			Per la seguente \autoref{th:varglue}, esiste una varietà $\mathcal W$ ``incollaggio'' di $W$ e $W'$ lungo le componenti del bordo diffeomorfe a $X_1$ con, intuitivamente, $\boundary\mathcal W=V_0\djcup V_1'$.
 			Allora $X_0$ è cobordante a $X_2$ tramite $(\mathcal W,V_0,V_1')$.
 			\qedhere
 	\end{description}
 \end{proof}
+
+\begin{center}
+	\input{figura20.pdf_tex}
+\end{center}
 
 \begin{prop}[Incollaggio]
 	\label{th:varglue}
