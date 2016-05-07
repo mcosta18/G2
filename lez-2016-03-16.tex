@@ -1,60 +1,63 @@
 %Andrea (controllare)
 Procediamo ora con la costruzione del fibrato tangente su una varità differenziabile.\\
-Sia $M$ una varità differenziabile con atlante massimale $\{(U_i, \phi_i)_{i\in I}\}$. Definiamo lo spazio topologico $T = M \times \R^n \times I$. Questo è uno spazio topologico in quanto prodotto di spazi topologici (si intenda $I$ con la topologia discreta).\footnote{
-Lo spazio topologico $T$, dato che $M$, $R^n$ e $I$ sono $T_2$ è $T_2$. Non è invecie numerabile (sia 1-numerabile che 2-numerabile) non essendolo $I$.Preso infatti un aperto, possiamo scegliere un punto $x_0$ in questo. Tramite una carta a caso $\phi_i$ rimbalziamo il problema in una nostra copia di $\R^n$. Quì possiamo prendere la famiglia (non numerabile, per esempio una per ogni raggio maggiore di zero) di palle aperte concentriche su $x_0$. Le controimmagini aperti $\phi^{-1}(B_{x_0}(r))$ sono aperti nell'aperto originario e la restrizione di $\phi$ a ogniuno di questi aperti è una leggittimissima carta, dunque stà in  nell'atlante massimale dunque l'insieme degli indici non potrà essere numerabile. Questo non ci spaventa in quanto i trattamenti successivi risolveranno il problema. 
+Sia $M$ una varietà differenziabile con atlante massimale $\{(U_i, \phi_i)\}_{i\in I}$. Definiamo lo spazio topologico $T = M \times \R^n \times I$. Questo è uno spazio topologico in quanto prodotto di spazi topologici (si intenda $I$ con la topologia discreta).\footnote{
+Lo spazio topologico $T$, dato che $M$, $R^n$ e $I$ sono $T_2$ è $T_2$. Non è invece numerabile (sia 1-numerabile che 2-numerabile) non essendolo $I$. Preso infatti un aperto, possiamo scegliere un punto $x_0$ in questo. Tramite una carta a caso $\phi_i$ rimbalziamo il problema in una nostra copia di $\R^n$. Qui possiamo prendere la famiglia (non numerabile, per esempio una per ogni raggio maggiore di zero) di palle aperte concentriche su $x_0$. Le controimmagini $\phi^{-1}(\ball{x_0})$ sono aperti nell'aperto originario e la restrizione di $\phi$ a ognuno di questi aperti è una legittimissima carta, dunque sta nell'atlante massimale dunque l'insieme degli indici non potrà essere numerabile. Questo non ci spaventa in quanto i trattamenti successivi risolveranno il problema. 
 }
-Sia ora $T'\subseteq T | (x, v, i)\in T' \iff x\in U_i$. Si pensi a $T'$ come uno spazio topologico munito della topologia di sottospazio.\\
-Si definisca ora la relazione di equivalenza $\sim$ su  $T'$ tale che: $(x, v, i)\sim(x',v',j)\iff x'=x \land v'=\mu_{jk}(x)v$ (dove $\mu_{\alpha\beta}$ è il cociclo definito un precedenza).\footnote{
+Sia ora $T'\subseteq T : (x, v, i)\in T' \means x\in U_i$. Si pensi a $T'$ come uno spazio topologico munito della topologia di sottospazio.\\
+Si definisca ora la relazione di equivalenza $\sim$ su  $T'$ tale che: $(x, v, i)\sim(x',v',j)\means x'=x \land v'=\mu_{jk}(x)v$ (dove $\mu_{\alpha\beta}$ è il cociclo definito un precedenza).\footnote{
 $\sim$ è effettivamente una relazione di equivalenza grazie alle proprietà del cociclo. In particolare:
 \begin{itemize}
-\item $\mu_{ii}(x)=id_n \implies a\sim a$
-\item $\mu_{ik}(x)\mu_{ki}(x)=id_n \implies (a\sim b \iff b\sim a)$
+\item $\mu_{ii}(x)=\id_n \implies a\sim a$
+\item $\mu_{ik}(x)\mu_{ki}(x)=\id_n \implies (a\sim b \iff b\sim a)$
 \item $\mu_{ij}(x)\mu_{jk}(x)\mu_{ki}(x) \implies ((a\sim b \et b\sim c) \implies a\sim c)$
 \end{itemize}
 }
-Definiamo $T(M)$\footnote{Come spazio topologico} $=T'/\sim$ dotato della topologia quoziente. Chiamiamo $q$ la proiezione di $T'$ su $T(M)$ .\\
-Si dovrebbe ora verificare che $T(M)$ è 2-numerabile e $T_2$. La seconda è banale avendo operato sempre con spazi $T_2$ e passando la proprietà attraverso le operazioni fatte.\\ La prima non la dimostriamo.\\
+\marginpar{nota a piè di pagina terzo punto: manca qualcosa}
+Definiamo $T(M)\footnote{Come spazio topologico}=\quoset{T'}\sim$ dotato della topologia quoziente. Chiamiamo $q$ la proiezione di $T'$ su $T(M)$.
+
+Si dovrebbe ora verificare che $T(M)$ è 2-numerabile e $T_2$. La seconda è banale avendo operato sempre con spazi $T_2$ e passando la proprietà attraverso le operazioni fatte. La prima non la dimostriamo.
+
 Definiamo ora la funzione $\fundef[\pi_M]{T(M)}{M}$ tale che $\pi_M([(x, v, i)])=x$. 
 \begin{oss}
-La mappa $\pi_M$ è continua in quanto se $A\subseteq M$ è un aperto $(\pi_M\circ q)^{-1}(A)$ è l'intersezione di $T'$ con $A\times \R^n \times J$ che è un aperto. Questo, dato che gli aperti in $T'$ erano gli insiemi la cui preimmagine attraverso $q$ è aperta, ci dice che $\pi^{-1}(A)$ è effettivamente aperto in $T'$.
+La mappa $\pi_M$ è continua in quanto se $A\subseteq M$ è un aperto $(\pi_M\circ q)^{-1}(A)$ è l'intersezione di $T'$ con $A\times \R^n \times J$ che è un aperto. Questo, dato che gli aperti in $T'$ erano gli insiemi la cui controimmagine attraverso $q$ è aperta, ci dice che $\pi^{-1}(A)$ è effettivamente aperto in $T'$.
 \end{oss}
 
 
 
-Ora bisogna collegare quanto abbiamo definito con la struttura tangente su $R^n$. 
+Ora bisogna collegare quanto abbiamo definito con la struttura tangente su $\R^n$. 
 \begin{defn}[Banalizzazioni locali]
 Una banalizzazione locale di $T(M)$ è una mappa $\fundef[\Psi_i]{U_i\times\R^n}{T(M)}$ tale che $\Psi_i(x, v)=[(x, v, i)]$ 
 \end{defn}
 \begin{oss}
-Si possono dimostrare i seguenti fatti:\\
+Si possono dimostrare i seguenti fatti:
 \begin{itemize}
-
 \item Le $\Psi_i$ sono funzioni continue
-\item Le $(\pi_M \circ \Psi)(x, v)=x$ per ogni $x\in U_i$
-\item $\Psi_i$ è un omeomorfismo di spazi topologici fra $U_i \times \R^n$ e $\pi_M^{-1}(U_i)$. $\Psi_i$ è surgettiva perchè se $\pi_M([x, v, k])\in U_i$ allora $\Psi_i(x, \mu_{ki}(x)v)=[(x, \mu_{ki}(x)v, i)\sim (x, v, k)]$. $\Psi_i$ è chiaramente iniettiva. E' dunque invertibile. Basta dimostrare che è una mappa aperta ovvero preso $A$ aperto in $U_i\times \R^n$ che $A'=\Psi_i(A)$ è aperto. Data la topologia come quoziente di $T(M)$ basterà dimostrare che $q^{-1}(A')$ è aperto in $T'$. Ma la famiglia di insiemi $\{(U_k\times \R^n\times\{k\})\}$ sono un ricoprimento aperto di $T'$. Basta quindi dimostrare che $q^{-1}(A')\cap (U_k\times \R^n\times\{k\}$ è un apeto. Ma su questa intersezione $q=\Psi_i\circ r $ dove $\fundef[r]{T'}{U\times \R^n}$ t.c. $r(x, v, k)=(x, \mu_{ik}(x)v)$.
+\item $(\pi_M \circ \Psi)(x, v)=x$ per ogni $x\in U_i$
+\item $\Psi_i$ è un omeomorfismo di spazi topologici fra $U_i \times \R^n$ e $\pi_M^{-1}(U_i)$. $\Psi_i$ è surgettiva perchè se $\pi_M([x, v, k])\in U_i$ allora $\Psi_i(x, \mu_{ki}(x)v)=[(x, \mu_{ki}(x)v, i)\sim (x, v, k)]$. $\Psi_i$ è chiaramente iniettiva. E' dunque invertibile. Basta dimostrare che è una mappa aperta ovvero preso $A$ aperto in $U_i\times \R^n$ che $A'=\Psi_i(A)$ è aperto. Data la topologia come quoziente di $T(M)$ basterà dimostrare che $q^{-1}(A')$ è aperto in $T'$. Ma la famiglia di insiemi $\{(U_k\times \R^n\times\{k\})\}$ sono un ricoprimento aperto di $T'$. Basta quindi dimostrare che $q^{-1}(A')\cap (U_k\times \R^n\times\{k\})$ è un aperto. Ma su questa intersezione $q=\Psi_i\circ r $ dove $\fundef[r]{T'}{U\times \R^n}$ t.c. $r(x, v, k)=(x, \mu_{ik}(x)v)$.
 \end{itemize}
 \end{oss}
 Dotiamo ora $T(M)$ di un atlante differenziale.
 \begin{defn}[Carte di $T(M)$]
-$\fundef[\Phi_i]{\Psi(U_i\times \R^n)}{\phi(U_i)\times \R^n} | \Phi_i(\Psi((x, v)))=(\phi_i(x),v)$ è una carta locale di $T(M)$. L'insieme $\{(\Psi(U_i\times\R^n), \Phi_i)_{i\in I}\}$ è un atlante di $T(M)$.
+$\fundef[\Phi_i]{\Psi(U_i\times \R^n)}{\phi(U_i)\times \R^n}$ definita come $\Phi_i(\Psi((x, v)))\is(\phi_i(x),v)$ è una carta locale di $T(M)$. L'insieme $\{(\Psi(U_i\times\R^n), \Phi_i)_{i\in I}\}$ è un atlante di $T(M)$.
 \end{defn}
 
-Componendo tutto a dovere si puo' controllare, che,grazie all'azione dell'cociclo sui vettori, si ottiene che le mappe di transizione:\\
+Componendo tutto a dovere si può controllare che, grazie all'azione dell'cociclo sui vettori, le mappe di transizione:
 \begin{equation*}
-\fundef[K_{ij}]{\Phi_j(\Psi_j(U_j\times\R^n))}{\Phi_i(\Psi_i(U_i\times\R^n))} 
+\fundef[K_{ij}]{\Phi_j\big(\Psi_j(U_j\times\R^n)\big)}{\Phi_i\big(\Psi_i(U_i\times\R^n)\big)} 
 \end{equation*}
-è proprio:
+sono proprio:
 \begin{equation*}
-K_{ij}((x, v))= (\phi_i\circ\phi_j^{-1}(x), \mu_{ij}(\phi_j^{-1}(x))v)=(\phi_i\circ\phi_j^{-1}(x), d(\phi_i\circ\phi_j^{-1})(x)v)
+K_{ij}((x, v))= \big(\phi_i\circ\phi_j^{-1}(x), \mu_{ij}(\phi_j^{-1}(x))v\big)=\big(\phi_i\circ\phi_j^{-1}(x), d(\phi_i\circ\phi_j^{-1})(x)v\big)
 \end{equation*}
-Che è proprio quello che volevamo!\\
-Non rimane ora che sollevare la definizione di applicazione tangente da aperti di $R^n$ al livello delle varietà.
+Che è proprio quello che volevamo!
+
+Non rimane ora che sollevare la definizione di applicazione tangente da aperti di $\R^n$ al livello delle varietà.
 \begin{defn}[funzione tangente]
 La funzione tangente ad $\fundef[f]{U}{W}$ è la $\fundef[Df]{T(U)}{T(W)}$ che fa commutare il seguente diagramma.
 \begin{equation*}
 \begin{tikzcd}
 \R^n \times \R^n  \arrow[rrr, "Df'"]&&&\R^n \times \R^n\\
-{U_i\times \R^n}  \arrow[r, "\Psi_i"] \arrow[u, "{(\phi_i, id_{\R^n})}"] & T(U) \arrow[r, dashrightarrow, "Df"] \arrow[ddd, "\pi _U"] \arrow[lu , "\Phi_i"] & T(W) \arrow[ddd, "\pi _W"]\arrow[ru , "\Phi_j"] &\arrow[l, "\Psi_j"] \arrow[u, "{(\phi_j, id_{\R^n})}"] U_i\times \R^n \\
+{U_i\times \R^n}  \arrow[r, "\Psi_i"] \arrow[u, "{(\phi_i, \id_{\R^n})}"] & T(U) \arrow[r, dashrightarrow, "Df"] \arrow[ddd, "\pi _U"] \arrow[lu , "\Phi_i"] & T(W) \arrow[ddd, "\pi _W"]\arrow[ru , "\Phi_j"] &\arrow[l, "\Psi_j"] \arrow[u, "{(\phi_j, \id_{\R^n})}"] U_i\times \R^n \\
 &&&\\
 &&&\\
 & \arrow[d, "\phi_i"] U \arrow[r, "f"] & W \arrow[d, "\phi_i"]& \\
