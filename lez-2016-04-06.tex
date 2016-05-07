@@ -32,26 +32,27 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
  e definito positivo: $\fundef[R]{X}{{T_{2}}^{0}}$ 
 \end{defn}
 
-\marginpar{Non è a caso come sembra, ma bisognerebbe mettere prima il teorema, poi il suo corollario, se no, il lettore (ma forse anche lo scrittore) non ne capisce più nulla! In particolare quà voleva dire che, esistendo un ebbending, posso vedere la varietà come immersa in un $R^n$ dotato del suo prodotto scalare canonico. Ad ogni punto $x$ prendo dunque come metrica il tensore associato al prodotto canonico ristretto all'immagine del $T_x M$ attraverso l'ebbending}
 
+\marginpar{Ho unificato il teorema e il corollario... }
 
-\begin{cor}
- Ogni $X$ compatta ha una metrica Riemanniana.
-\end{cor}
+\begin{teo}
+ Esistendo un embendding, posso vedere la varietà come immersa in un $R^n$ dotato del suo prodotto scalare canonico. 
+ Ad ogni punto $x$ prendo dunque come metrica il tensore associato al prodotto canonico ristretto all'immagine del $T_x X$ attraverso l'embedding.
+ Dunque ogni $X$ compatta ha una metrica Riemanniana.
+\end{teo}
 
 \begin{teo}[Di embedding elementare di Whitney]
  Se $X$ è una varietà compatta allora esiste un $N$ abbastanza grande tale che $\exists$ un embedding $\fundef[f]{X}{\mathbb{R}^{N}}$
 \end{teo}
 
-\marginpar{Penso che non sia ${\phi_{i}(\ball[1]0)}$ ma ${\phi_{i}^{-1}(\ball[1]0)}$. Inoltre dovrebbe essere $\fundef[\lambda_i]{U_i\subseteq X}{[0,1]}$.}
 
 \begin{proof}
  Poiché $X$ è compatta esiste un atlante finito $\set{(U_i, \phi_i)}$ tale che 
  \begin{itemize}
   \item $\ball[2]0 \subseteq {\phi}_{i}(U_{i})$
-  \item ${\phi_{i}(\ball[1]0)}$ ricopre tutto $X$
+  \item ${\phi_{i}^{-1}(\ball[1]0)}$ ricopre tutto $X$
   \end{itemize}
- Sia $\fundef[\lambda]{\R^N}{[0, 1]}$ la funzione a foruncolo relativa alle palle $B_{1}$ e $B_{2}$. Definisco la funzione $\fundef[\lambda_{i}]{\R^N}{[0, 1]}$
+ Sia $\fundef[\lambda]{\R^N}{[0, 1]}$ la funzione a foruncolo relativa alle palle $B_{1}$ e $B_{2}$. Definisco la funzione $\fundef[\lambda_i]{U_i\subseteq X}{[0,1]}$
  come $\lambda \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$.
  
  ${B_{i}}$ ricopre $X$ e $B_{i} = {\lambda}^{-1} \subseteq U_{i}$. Poiché $\lambda_i$ vale 1 quando sono su ${\phi_{i}}^{-1} (\ball[1]0)$ ho un ricoprimento.
@@ -61,6 +62,8 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
  
  Definisco $\fundef[f]{X}{\R^N}$ come $\lambda_{i} \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$. Considero le funzioni $\fundef[g_{i}]{X}{\mathbb{R}^{N}}$
  definita come $x \mapsto (f_{i}(x), \lambda_{i}(x))$. Definisco ancora la funzione $g$ che: $x \mapsto (g_1, g_2, \dots, g_m)$
+ 
+ \marginpar{da rivedere}
  
  Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $f$ è omomorfismo cioè
  ha funzione inversa continua.
@@ -81,23 +84,27 @@ $(\mathbb{H}^{N}, \boundary \mathbb{H}^{N})$ con $\boundary X = X \cup \boundary
 Inoltre se $x_{1}, x_{2}, x_{3}, \dots, x_{k}$ sono punti della varietà con bordo non nullo si può rafforzare la costruzione in modo che un intorno di $x_{j}$ va in un piano di $\mathbb{R}^{N}$.
 
 
-\marginpar{No, voglio munire $\epsilon$ di una topologia}
-
 \titlet{Spazi di applicazioni lisce}
 \begin{defn}[Topologia sulle applicazioni lisce tra varietà in $\mathbb{R}^{N}$]
-Definisco $\mathcal{E} \is \setdef[\fundef{X}{Y}]{f\text{ liscia}}$, con $X$ e $Y$ varietà lisce. Voglio munire $X$ e $Y$ di una topologia. Se $X \subseteq \mathbb{R}^{N}$ e $Y = \mathbb{R}^{N}$ considero
+Definisco $\mathcal{E} \is \setdef[\fundef{X}{Y}]{f\text{liscia}}$, con $X$ e $Y$ varietà lisce. Voglio munire  $\mathcal{E} =  {\fundef[f]{X}{Y}, f \text{liscia}} $ di una topologia. Se $X \subseteq \mathbb{R}^{N}$ e $Y = \mathbb{R}^{N}$ considero
 la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq X$ e $\epsilon > 0$ è un compatto. Questa base di intorni è definita da 
 \[U_{r, K, \epsilon} \is \Setdef[{\fundef[g]{X}{\mathbb{R}^{N}}}]{\left\|\frac{\partial f}{\partial x_{i_{1}} \dots \partial x_{i_{k}}} - \frac{\partial g}{\partial x_{i_{1}} \dots \partial x_{i_{k}}}\right\| \eqslantless \epsilon}\]
 \end{defn}
 
 \marginpar{perchè ti restringi (solo in arrivo mi sembra di capire) a varietà reali?}
-\marginpar{va bene che è banale, ma per avere una topologia sulle funzioni l'idea è di liberarsi dalla dipendenza dal compatto K preso in considerazione tappezzando la varietà di partenza con un ricoprimento compatto finito ${K_i}$ (che trovo se la varietà X è compatta) e prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$}
+\marginpar{va bene che è banale, ma per avere una 
 
+topologia sulle funzioni l'idea è di liberarsi dalla dipendenza dal compatto K preso in considerazione tappezzando la varietà di partenza con un ricoprimento 
+compatto finito ${K_i}$ (che trovo se la varietà X è compatta) e prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$}
 
 \begin{defn}[Topologia sulle applicazioni lisce tra varietà generiche]
 Per definire una topologia tra varietà generiche mi riduco al caso di varietà reali.
 Definisco una base di intorni $U_{r, K, \epsilon, (U, \phi), (U', \phi')} = \set{\fundef[g]{X}{\mathbb{R}^{N}}}$ tale che $g(U) \subseteq U'$ e valga 
 $\phi \circ g \circ \phi^{-1} \in U_{r, K, \epsilon}(\phi \circ g \circ \phi^{-1})$ cioè che $\phi \circ g \circ \phi^{-1}$ sia intorno di una funzione da $\mathbb{R}^{N}$ a $\mathbb{R}^{N}$.
+Posso considerare un ricoprimento compatto finito,  ${K_i}$ (che trovo se la varietà X è compatta) e posso prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$, in questo modo ottengo
+dei $U_{r, \epsilon, (U, \phi), (U', \phi')}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. 
+Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di intorni per lo spazio delle funzioni lisce $\mathcal{E}$.
+
 \end{defn}
 
 \begin{oss}
