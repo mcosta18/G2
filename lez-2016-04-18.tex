@@ -2,12 +2,12 @@
 
 In questa lezione si svilupperanno tre ``tipi'' di teoremi di trasversalità. Non verrà subito data una dimostrazione degli stessi, ne ora, ne durante il corso, tranne qualche idea riguardo la terza.
 
-\begin{itemize}
-\item Tipo 1 %"Se $f$ è trasversa allora la situazione è "semplice""
+\begin{description}
+\item [Tipo 1] %"Se $f$ è trasversa allora la situazione è "semplice""
 \begin{teo}[Teorema 1]
 Siano $X$ e $Y$ varietà differenziabili, $A\subseteq Y$ e $\fundef[f]{X}{Y}$  tale che $f\pitchfork A$. Allora $f^{-1}(A)$ è una sottovarietà di $X$.
 \end{teo}
-\item Tipo 2 %"le funzioni trasverse sono ovunque..."
+\item [Tipo 2] %"le funzioni trasverse sono ovunque..."
 \begin{teo}[Teorema 2]
 Le funzioni trasverse ad $A\subseteq Y$ sono un aperto denso in $\epsilon(X, Y)$. 
 \marginpar{Non lo chiamavamo $\mathcal E(X,Y)$?}
@@ -15,7 +15,7 @@ Le funzioni trasverse ad $A\subseteq Y$ sono un aperto denso in $\epsilon(X, Y)$
 \begin{teo}[Teorema 2++] %"E ti omotopano la vita"\\
 Sia $f \not\pitchfork A$. Esiste una funzione $g$ arbitrariamente vicina a $f$ tale che $g\pitchfork A$. Se $X$ non è chiusa ed $f|_{B(X)} \pitchfork A$ puoi scegliere $g$ tale che coincida con $f$ in un collare del bordo di $X$. 
 \end{teo}
-\item Tipo 3 %"Siano pure trasverse, ma che siano almeno cobordanti!"
+\item [Tipo 3] %"Siano pure trasverse, ma che siano almeno cobordanti!"
 \begin{teo}[Teorema 3]
 Siano $X_1$ e $X_2$ varietà compatte e senza bordo della stessa dimensione, $Y$ varietà e $A$ sottovarietà di $Y$. Siano inoltre $\fundef[f_1]{X_1}{Y}$ e $\fundef[f_2]{X_2}{Y}$. Se $f_1 \pitchfork A$ e $f_1 \sim_{cob} f_2$ detti $Z_1=f_1^{-1}(A)$ e $Z_2=f_2^{-1}(A)$ si ha che $(Z_1, f_1|_{Z_1}) \sim_{cob} (Z_2,f_2|_{Z_2})$. 
 \end{teo}
@@ -23,7 +23,7 @@ Siano $X_1$ e $X_2$ varietà compatte e senza bordo della stessa dimensione, $Y$
 \begin{proof}
  Diamo un po' di idee per la dimostrazione, dando per noti gli altri teoremi già esposti. Per il teorema~1 $Z_1$ e $Z_2$ sono delle sottovarietà di $X_1$ e di $X_2$. Chiamiamo $W$ la varietà che realizza il cobordismo ($\boundary W = X_1 \sqcup X_2$) ed $F$ la relativa funzione ($F|_{X_1} = f_1$ e $F|_{X_2}=f_2$). Grazie al teorema~2 esiste una funzione $\fundef[G]{W}{Y}$ vicina a piacere ad $F$, che ristretta su $\boundary W$ valga $f_1\sqcup f_2$ (anzi, il teorema ci garantisce che la possiamo scegliere in modo che coincida con $F$ in un collare di $X_1\sqcup X_2$) e che sia trasversa ad $A$. Chiaramente la controimmagine di $G$ in $W$ è una sottovarietà per il teorema~1 e, grazie al fatto che $G$ coincide con $F$ in un collare di $X_1 \sqcup X_2$ ne segue che $G|_{G^{-1}(A)}$ realizza il cobordismo fra $Z_1$ e $Z_2$.
  \end{proof}
-\end{itemize}
+\end{description}
 
 Vediamo ora qualche semplice applicazione della teoria della trasversalità.
 Perdonatemi per quello che sto per fare.
