@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'figura8.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{322.07401773bp}%
+    \setlength{\unitlength}{267.11580718bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,11 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.54243249)%
-    \put(0,0){\includegraphics[width=\unitlength]{figura8.pdf}}%
-    \put(0.32041557,0.14981636){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
-    \put(0.03906141,0.46673882){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_1$}}}%
-    \put(0.37278806,0.23188604){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_3$}}}%
-    \put(0.73860906,0.18025829){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_2$}}}%
+  \begin{picture}(1,0.5944824)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figura8.pdf}}%
+    \put(0.38633008,0.18066409){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figura8.pdf}}%
+    \put(0.04708821,0.56279233){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_1$}}}%
+    \put(0.44947804,0.27961935){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_3$}}}%
+    \put(0.89056553,0.21736935){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_2$}}}%
   \end{picture}%
 \endgroup%

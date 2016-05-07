@@ -20,13 +20,13 @@ Si nota che, fissato un $x$ punto di $U$, la traslazione $v \mapsto v + x$~~$\fo
 
 
 \begin{defn}[Proiezione naturale]
-Si definisce \emph{proiezione naturale} $\fundef[\pi _U]{T(U)~}{U}$ la mappa $(x,v) \mapsto x$
+Si definisce \emph{proiezione naturale} $\fundef[\pi _U]{T(U)~}{U}$ la mappa $(x,v) \mapsto x$.
 \end{defn}
 
 Nella precedente definizione l'aggettivo \emph{naturale} serve solamente a specificare che la mappa cui ci si riferisce è quella indotta dalla definizione come prodotto. In seguito ci si riferirà ad essa anche solo come proiezione.
 
 \begin{defn}[Fibra]
-Si definisce fibra la controimmagine di un punto tramite la proiezione naturale, e si scrive $T_x U = \pi ^{-1} _U (x)$
+Si definisce fibra la controimmagine di un punto tramite la proiezione naturale, e si scrive $T_x U = \pi ^{-1} _U (x)$.
 \end{defn}
 
 Alla luce di quest'ultima definizione si identificano:
@@ -66,7 +66,7 @@ L'applicazione tangente gode inoltre delle seguenti proprietà:
 \end{oss}
 
 \begin{defn}[Applicazioni fibrate]
-Un applicazione che ha la proprietà di $Df$ di mandare fibra in fibra in modo lineare è detta applicazione \emph{fibrata}.
+Un'applicazione che ha la proprietà di $Df$ di mandare fibra in fibra in modo lineare è detta applicazione \emph{fibrata}.
 \end{defn}
 
 Se $f$ è un diffeomorfismo si ha che $Df$ è quindi un diffeomorfismo fibrato (come si è già enunciato tra le proprietà di $Df$).
@@ -78,11 +78,12 @@ Di seguito sarà esposta una caratterizzazione più intrinseca delle definizioni
 \begin{defn}[Spazio dei germi]
 Dato un punto $x\in U$ aperto di $\R ^n$, e un intorno $W$ di $x$ definisce dunque lo spazio dei germi $\Sge_x$ l'insieme quoziente delle funzioni lisce da un aperto di $W$ in $\R$ con la seguente relazione di equivalenza:
 \begin{equation*}
-(W_1, f_1) \approx (W_2, f_2) \iff \exists W_3 \subseteq W_1 \cap W_2\ \ \text{t.c.}\ \ f_1(y)=f_2(y)\ \ \forall y\in W_3
+(W_1, f_1) \approx (W_2, f_2) \means \exists W_3 \subseteq W_1 \cap W_2\ \ \text{t.c.}\ \ f_1(y)=f_2(y)\ \ \forall y\in W_3
 \end{equation*}
 \end{defn}
 %\marginpar{di solito usiamo $\sim$ per le equivalenze}
 %In letteratura si usa come simbolo di equivalenza un simbolo a mezza altezza e simmetrico, se ne possono trovare varii (tilde, più tilde, trattino e tilde, tilde e punto, etc.) usarne più d'uno non è male, un po' meno di confusione no?
+% bah
 
 \begin{figure}[h]
 \centering
@@ -138,6 +139,7 @@ Si verificano le proprietà di un isomorfismo singolarmente:
 d(h) = d(f - f(x)) = d(f) - d(f(x)) = d(f) = \sum_jd(x^j)g_j(x) 
 \end{equation*}
 e quindi $v$ è definito per componenti $v^j = d(x^j)$
+\qedhere
 \end{description}
 \end{proof}
 
@@ -163,22 +165,22 @@ Sia dunque $M$ una n-varietà liscia e $\mathcal{A} = \set{(U_j, \varphi _j)}_j$
 \begin{oss}
 Dato un cambiamento di carte $\varphi _j \circ \varphi _i ^{-1}$ si ha che esso è una funzione tra aperti di $\R ^n$ ed è perciò definita l'applicazione tangente:
 \begin{equation*}
-D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto (\varphi _j \circ \varphi _i ^{-1}(x), \dd_x(\varphi _j \circ \varphi _i ^{-1})(v))
+D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto \big(\varphi _j \circ \varphi _i ^{-1}(x), \dd_x(\varphi _j \circ \varphi _i ^{-1})(v)\big)
 \end{equation*}
 \end{oss}
 
 Si considerano ora le applicazioni $\mu_{ji}$ definite come segue:
-\begin{gather*}
-\fundef[\mu_{ji}]{U_i\cap U_j}{\GL(n)} \\
-x \mapsto \dd_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
-\end{gather*}
+\begin{align*}
+\mu_{ji} : U_i\cap U_j &\funarrow \GL(n) \\
+x &\mapsto \dd_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
+\end{align*}
 
 \begin{oss}[Proprietà delle $\mu_{ji}$]
 Si ha che le funzioni ora definite hanno le seguenti proprietà:
 \begin{itemize}
 \item ogni $\mu_{ji}$ è liscia
 \item $\forall i$ si ha che $\fundef[\mu_{ii}]{U_i}{\GL(n)}$ ha come immagine $\set{\id}$
-\item $\mu_{ji} = [\mu_{ji}]^{-1}$
+\item $\mu_{ji} = [\mu_{ji}]^{-1}$ \marginpar{\normalsize??}
 \item $\forall x \in U_i\cap U_j\cap U_k$ si ha che $\mu_{ik}(x)\mu_{kj}(x)\mu_{ji}(x) = \id$
 \end{itemize}
 Una famiglia di funzioni che verifica le ultime tre proprietà è detta \emph{cociclo}.
