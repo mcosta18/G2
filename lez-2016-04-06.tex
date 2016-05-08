@@ -84,11 +84,16 @@ Ogni $X$ compatta ha una metrica Riemanniana.
 
 \titlet{Topologia sullo spazio delle applicazione lisce tra varietà}
 
+\marginpar{Sii più specifico su come entra in gioco il compatto in questa definizione}
+
 \titlet{Spazi di applicazioni lisce}
 \begin{defn}[Topologia sulle applicazioni lisce tra varietà in $\mathbb{R}^{N}$]
 Definisco $\mathcal{E} \is \setdef[\fundef{X}{Y}]{f\text{liscia}}$, con $X$ e $Y$ varietà lisce. Voglio munire  $\mathcal{E} =  {\fundef[f]{X}{Y}, f \text{liscia}} $ di una topologia. Se $X \subseteq \mathbb{R}^{N}$ e $Y = \mathbb{R}^{N}$ considero
-la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq X$ e $\epsilon > 0$ è un compatto. Questa base di intorni è definita da 
+la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq X$  è un compatto e $\epsilon > 0$. Questa base di intorni è definita da 
 \[U_{r, K, \epsilon} \is \Setdef[{\fundef[g]{X}{\mathbb{R}^{N}}}]{\left\|\frac{\partial f}{\partial x_{i_{1}} \dots \partial x_{i_{k}}} - \frac{\partial g}{\partial x_{i_{1}} \dots \partial x_{i_{k}}}\right\| \eqslantless \epsilon}\]
+Posso considerare un ricoprimento compatto finito,  ${K_i}$ (che trovo se la varietà X è compatta) e posso prendere l'intersezione dei $U_{r,K_i, \epsilon}$, in questo modo ottengo
+dei $U_{r, \epsilon}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. 
+Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di intorni per lo spazio delle funzioni lisce $\mathcal{E}$.
 \end{defn}
 
 \marginpar{perchè ti restringi (solo in arrivo mi sembra di capire) a varietà reali?}
@@ -98,7 +103,8 @@ Per definire una topologia tra varietà generiche mi riduco al caso di varietà 
 Definisco una base di intorni $U_{r, K, \epsilon, (U, \phi), (U', \phi')} = \set{\fundef[g]{X}{\mathbb{R}^{N}}}$ tale che $g(U) \subseteq U'$ e valga 
 $\phi \circ g \circ \phi^{-1} \in U_{r, K, \epsilon}(\phi \circ g \circ \phi^{-1})$ cioè che $\phi \circ g \circ \phi^{-1}$ sia intorno di una funzione da $\mathbb{R}^{N}$ a $\mathbb{R}^{N}$.
 Posso considerare un ricoprimento compatto finito,  ${K_i}$ (che trovo se la varietà X è compatta) e posso prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$, in questo modo ottengo
-dei $U_{r, \epsilon, (U, \phi), (U', \phi')}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. 
+dei $U_{r, \epsilon, (U, \phi), (U', \phi')}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. Si procede similmente a quanto fatto precedentemente 
+per rimuovere la dipendenza dal compatto K.
 Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di intorni per lo spazio delle funzioni lisce $\mathcal{E}$.
 
 \end{defn}
