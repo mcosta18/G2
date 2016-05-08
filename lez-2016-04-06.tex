@@ -7,15 +7,13 @@
 
 \titlet{Bho}
 \begin{defn}[Equivalenza tra fibrati in termini di cocicli]
-Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cup U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(n, \R)$ e $F=\R^n$, $n = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
+Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(n, \R)$ e $F=\R^n$, $n = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
 Siano dati due fibrati su $M$ con lo stesso gruppo di struttura e la stesa fibra: $\fundef[\pi_1]{E_1}{M}$ e  $\fundef[\pi_2]{E_2}{M}$.
-Siano $\set{ \fundef[\mu_{ij}]{U_i \cup U_j}{G} }$ e $\set{ \fundef[\lambda_{ij}]{U_i \cup U_j}{G} }$ rispettivamente coclici di $E_1$ e $E_2$.
+Siano $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{G} }$ e $\set{ \fundef[\lambda_{ij}]{U_i \cap U_j}{G} }$ rispettivamente coclici di $E_1$ e $E_2$.
 $E_1$ ed $E_2$ sono fibrati equivalenti (nel senso dei coclici) se $\exists \fundef[\gamma_{i}]{U_i}{G}$ tale che $\forall x U_i \cup U_j$ dati $\lambda_{ij}$ e $\mu_{ij}$
 sia $\lambda_{ji} = {\gamma_j}^{-1} \times \mu_{ji} \times  {\gamma_i}^{-1}$.  (Quest'ultima è la moltiplicazione tra elementi del gruppo $G$)
 \end{defn}
-\marginpar{
-Mi sa proprio che il cociclo $\mu_{ij}$ et similia si definiscono nell'intersezione, non nell'unione!!
-}
+
 \begin{defn}[Immersione liscia]
 Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}]{T_{x}X}{T_{f(x)} X}$ (restrizione dell'applicazione tangente alla fibra) è iniettiva.
 \end{defn}
