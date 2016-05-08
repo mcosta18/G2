@@ -28,26 +28,18 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
 %Se $X$ è compatta e $f$ è iniettiva e suriettiva allora $f$ è un embedding.
 
 \begin{defn}[Metrica Riemanniana] %a caso
- Una metrica riemanniana su una varietà $X$ è un campo di tensori di tipo (0,2) su $X$ simmetrici e definiti positivi. Cioè è una sezione tale che ogni tensore è simmetrico 
- e definito positivo: $\fundef[R]{X}{{T_{2}}^{0}}$ 
+ Una metrica riemanniana su una varietà $X$ è un campo di tensori di tipo (0,2) su $X$ simmetrici e definiti positivi. Cioè è una sezione del 
+ fibrato tangente tale che ogni tensore associato ad un punto della varietà è simmetrico e definito positivo: $\fundef[R]{TX}{{T_{2}}^{0}}$ 
 \end{defn}
 
 
-\marginpar{Ho unificato il teorema e il corollario... }
-
-\begin{teo}
- Esistendo un embendding, posso vedere la varietà come immersa in un $R^n$ dotato del suo prodotto scalare canonico. 
- Ad ogni punto $x$ prendo dunque come metrica il tensore associato al prodotto canonico ristretto all'immagine del $T_x X$ attraverso l'embedding.
- Dunque ogni $X$ compatta ha una metrica Riemanniana.
-\end{teo}
-
 \begin{teo}[Di embedding elementare di Whitney]
- Se $X$ è una varietà compatta allora esiste un $N$ abbastanza grande tale che $\exists$ un embedding $\fundef[f]{X}{\mathbb{R}^{N}}$
+ Se $X$ è una varietà compatta allora esiste un $N$ abbastanza grande tale che $\exists$ un embedding $\fundef[f]{X}{\mathbb{R}^{n}}$
 \end{teo}
 
 
 \begin{proof}
- Poiché $X$ è compatta esiste un atlante finito $\set{(U_i, \phi_i)}$ tale che 
+ Poiché $X$ è compatta esiste un atlante finito $\set{(U_i, \phi_i)}_{i = 1, ..., m}$ tale che 
  \begin{itemize}
   \item $\ball[2]0 \subseteq {\phi}_{i}(U_{i})$
   \item ${\phi_{i}^{-1}(\ball[1]0)}$ ricopre tutto $X$
@@ -56,25 +48,22 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
  come $\lambda \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$.
  
  ${B_{i}}$ ricopre $X$ e $B_{i} = {\lambda}^{-1} \subseteq U_{i}$. Poiché $\lambda_i$ vale 1 quando sono su ${\phi_{i}}^{-1} (\ball[1]0)$ ho un ricoprimento.
+
  
- 
-\marginpar{definisco ora $f_i$ come prodotto? la composizione non ha più senso con queste definizioni, in particolare dovrebbe essere $f_i:=\lambda \circ \phi_i\circ\phi_i $!}
- 
- Definisco $\fundef[f]{X}{\R^N}$ come $\lambda_{i} \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$. Considero le funzioni $\fundef[g_{i}]{X}{\mathbb{R}^{N}}$
- definita come $x \mapsto (f_{i}(x), \lambda_{i}(x))$. Definisco ancora la funzione $g$ che: $x \mapsto (g_1, g_2, \dots, g_m)$
+ Definisco $\fundef[f]{X}{\R^N}$ come $\lambda_{i}  \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$. Considero le funzioni $\fundef[g_{i}]{X}{\mathbb{R}^{N}}$
+ definita come $x \mapsto (f_{i}(x), \lambda_{i}(x))$. Definisco ancora la funzione $g$ che: $x \mapsto (g_1, g_2, \dots, g_m)$.
  
  \marginpar{da rivedere}
  
  Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $f$ è omomorfismo cioè
  ha funzione inversa continua.
  
- \marginpar{Che le $g_i$ siano immersioni è semplicemente falso, ogni tanto sono la funzione costante nulla!!! Sono immersioni ogniuna nel suo $\psi^{-1}(B_1(0))$}
- 
  \begin {itemize}
   \item è diffeomorfismo per costruzione
-  \item tutte le $g_{i}$ per come son state costruite sono immersioni
+  \item tutte le $g_{i}$ per come son state costruite sono immersioni ogniuna nel suo $\psi^{-1}(B_1(0))$
   \item g è iniettiva: se ho $x \neq y$  ho due possibilità: $x, y \in B_{i}$ allora la $f_i$ coincide con la $\phi_i$ sulla palla $B_{i}$, che è iniettiva sulla palla. 
-  Oppure $x, y$ stanno in due palle diverse in particolare $y \in B_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x)$ 
+  Oppure $x, y$ stanno in due palle diverse in particolare $y \in B_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x) = 0$. Dunque ogni funzione $g_i$ è iniettiva e lo è anche la funzione
+  $g$ sualla
   \qedhere
  \end {itemize}
 \end{proof}
@@ -82,6 +71,17 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
 Se ho una varietà $X$ con bordo $\boundary X \neq 0$ si può rafforzare la costruzione in modo che $(X, \boundary X)$ sia una sottovarietà del semipiano 
 $(\mathbb{H}^{N}, \boundary \mathbb{H}^{N})$ con $\boundary X = X \cup \boundary \mathbb{H}^{N}$ e su $\boundary X$ ho $X \perp \boundary \mathbb{H}^{N}$.
 Inoltre se $x_{1}, x_{2}, x_{3}, \dots, x_{k}$ sono punti della varietà con bordo non nullo si può rafforzare la costruzione in modo che un intorno di $x_{j}$ va in un piano di $\mathbb{R}^{N}$.
+
+
+\begin{teo}
+Ogni $X$ compatta ha una metrica Riemanniana.
+\end{teo}
+
+\begin{dim}
+  Esistendo un embedding, per il teorema sopra, posso vedere la varietà come immersa in un $R^n$ dotato del suo prodotto scalare canonico $g_{0}$. $X \hookrightarrow \mathbb{R}^{n}$.
+  Posso definire la metrica riemanniana sulla varietà $X$ come $g_{x} = g_{0}|_{T_x X}$.
+ Ad ogni punto $x$ prendo dunque come metrica il tensore associato al prodotto canonico ristretto all'immagine del $T_x X$ attraverso l'embedding.
+\end{dim}
 
 
 \titlet{Spazi di applicazioni lisce}
@@ -92,10 +92,6 @@ la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq
 \end{defn}
 
 \marginpar{perchè ti restringi (solo in arrivo mi sembra di capire) a varietà reali?}
-\marginpar{va bene che è banale, ma per avere una 
-
-topologia sulle funzioni l'idea è di liberarsi dalla dipendenza dal compatto K preso in considerazione tappezzando la varietà di partenza con un ricoprimento 
-compatto finito ${K_i}$ (che trovo se la varietà X è compatta) e prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$}
 
 \begin{defn}[Topologia sulle applicazioni lisce tra varietà generiche]
 Per definire una topologia tra varietà generiche mi riduco al caso di varietà reali.
