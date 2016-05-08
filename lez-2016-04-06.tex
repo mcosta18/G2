@@ -5,7 +5,7 @@
 \newcommand*\dual{{^\ast}} % dual
 \newcommand*\base[1][B]{\mathcal{#1}} % base
 
-\titlet{Bho}
+\titlet{Richiami della lezione scorsa}
 \begin{defn}[Equivalenza tra fibrati in termini di cocicli]
 Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(n, \R)$ e $F=\R^n$, $n = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
 Siano dati due fibrati su $M$ con lo stesso gruppo di struttura e la stesa fibra: $\fundef[\pi_1]{E_1}{M}$ e  $\fundef[\pi_2]{E_2}{M}$.
@@ -25,11 +25,7 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
 %Nn mi è chiaro cosa volesse dire con questa frase...
 %Se $X$ è compatta e $f$ è iniettiva e suriettiva allora $f$ è un embedding.
 
-\begin{defn}[Metrica Riemanniana] %a caso
- Una metrica riemanniana su una varietà $X$ è un campo di tensori di tipo (0,2) su $X$ simmetrici e definiti positivi. Cioè è una sezione del 
- fibrato tangente tale che ogni tensore associato ad un punto della varietà è simmetrico e definito positivo: $\fundef[R]{TX}{{T_{2}}^{0}}$ 
-\end{defn}
-
+\titlet{Teorema di Embedding}
 
 \begin{teo}[Di embedding elementare di Whitney]
  Se $X$ è una varietà compatta allora esiste un $N$ abbastanza grande tale che $\exists$ un embedding $\fundef[f]{X}{\mathbb{R}^{n}}$
@@ -53,8 +49,8 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
  
  \marginpar{da rivedere}
  
- Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $f$ è omomorfismo cioè
- ha funzione inversa continua.
+ Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $g$ è omomorfismo nella sua immagine
+ cioè ha funzione inversa continua.
  
  \begin {itemize}
   \item è diffeomorfismo per costruzione
@@ -70,6 +66,10 @@ Se ho una varietà $X$ con bordo $\boundary X \neq 0$ si può rafforzare la cost
 $(\mathbb{H}^{N}, \boundary \mathbb{H}^{N})$ con $\boundary X = X \cup \boundary \mathbb{H}^{N}$ e su $\boundary X$ ho $X \perp \boundary \mathbb{H}^{N}$.
 Inoltre se $x_{1}, x_{2}, x_{3}, \dots, x_{k}$ sono punti della varietà con bordo non nullo si può rafforzare la costruzione in modo che un intorno di $x_{j}$ va in un piano di $\mathbb{R}^{N}$.
 
+\begin{defn}[Metrica Riemanniana] %a caso
+ Una metrica riemanniana su una varietà $X$ è un campo di tensori di tipo (0,2) su $X$ simmetrici e definiti positivi. Cioè è una sezione del 
+ fibrato tangente tale che ogni tensore associato ad un punto della varietà è simmetrico e definito positivo: $\fundef[R]{TX}{{T_{2}}^{0}}$ 
+\end{defn}
 
 \begin{teo}
 Ogni $X$ compatta ha una metrica Riemanniana.
@@ -82,6 +82,8 @@ Ogni $X$ compatta ha una metrica Riemanniana.
 \end{dim}
 
 
+\titlet{Topologia sullo spazio delle applicazione lisce tra varietà}
+
 \titlet{Spazi di applicazioni lisce}
 \begin{defn}[Topologia sulle applicazioni lisce tra varietà in $\mathbb{R}^{N}$]
 Definisco $\mathcal{E} \is \setdef[\fundef{X}{Y}]{f\text{liscia}}$, con $X$ e $Y$ varietà lisce. Voglio munire  $\mathcal{E} =  {\fundef[f]{X}{Y}, f \text{liscia}} $ di una topologia. Se $X \subseteq \mathbb{R}^{N}$ e $Y = \mathbb{R}^{N}$ considero
@@ -91,7 +93,7 @@ la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq
 
 \marginpar{perchè ti restringi (solo in arrivo mi sembra di capire) a varietà reali?}
 
-\begin{defn}[Topologia sulle applicazioni lisce tra varietà generiche]
+\begin{defn}
 Per definire una topologia tra varietà generiche mi riduco al caso di varietà reali.
 Definisco una base di intorni $U_{r, K, \epsilon, (U, \phi), (U', \phi')} = \set{\fundef[g]{X}{\mathbb{R}^{N}}}$ tale che $g(U) \subseteq U'$ e valga 
 $\phi \circ g \circ \phi^{-1} \in U_{r, K, \epsilon}(\phi \circ g \circ \phi^{-1})$ cioè che $\phi \circ g \circ \phi^{-1}$ sia intorno di una funzione da $\mathbb{R}^{N}$ a $\mathbb{R}^{N}$.
