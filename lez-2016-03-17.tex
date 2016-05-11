@@ -8,31 +8,31 @@
 \begin{defn}[gruppo di Lie] 
 Si dice \emph{gruppo di Lie} un gruppo che è anche una varieta liscia 
 e dove sia la moltiplicazione che la funzione cha associa ad 
-ogni elemento il suo inverso sono applicazioni lisce (esempi: $GL(n)$ e $G$ finito con $\tau_D$ sono gluppi di Lie)
+ogni elemento il suo inverso sono applicazioni lisce (esempi: $\GL(n)$ e $G$ finito con $\tau_D$ sono gruppi di Lie).
 \end{defn}
 
 \begin{defn}[automorfismi lisci] Data $F$ una varieta liscia sia
-$Aut(F) := (\setdef[\fundef{F}{F}]{ f  \text{diffeomorfismi}}, \circ)$ il gruppo degli automorfismi lisci di $F$
+$\Aut(F) := (\setdef[\fundef{F}{F}]{ f\text{ diffeomorfismo}}, \circ)$ il gruppo degli automorfismi lisci di $F$.
 \end{defn}
 
-Sia $G \subseteq Aut(F)$ un sottogruppo che agisce su $F$ mediante l'azione
+Sia $G \subseteq \Aut(F)$ un sottogruppo che agisce su $F$ mediante l'azione
 \begin{align*}
 		G \times F &\funarrow F \\
 		(g,f) &\funarrow g(f)
 \end{align*}
 
 \begin{defn}[fibrato]
-Per costruire il \emph{fibrato} ripetiamo parola per parola la costruzione di $T(M)$ sostituendo $F$ a $\R^n$ e $G$ a $GL(n)$ ottenendo un \emph{fibrato} $\fundef[\pi]{E}{M}$ che viene detto di \emph{gruppo strutturale} $G$ e \emph{fibra (tipica)} $F$
+Per costruire il \emph{fibrato} ripetiamo parola per parola la costruzione di $T(M)$ sostituendo $F$ a $\R^n$ e $G$ a $\GL(n)$ ottenendo un \emph{fibrato} $\fundef[\pi]{E}{M}$ che viene detto di \emph{gruppo strutturale} $G$ e \emph{fibra (tipica)} $F$.
 \end{defn}
 
 
 \begin{oss}
-	$E$ è una varietà di dimensione $dim(E) = dim(F) + dim(M)$\\
-	$\pi$ è liscia ed è localmente un prodotto di fibra $F$ \marginpar{che cazzo vuol dire?} grazie alla banalizzazione locale
+	$E$ è una varietà di dimensione $\dim(E) = \dim(F) + \dim(M)$.
+	$\pi$~è liscia ed è localmente un prodotto di fibra $F$ \marginpar{che cazzo vuol dire?} grazie alla banalizzazione locale
 \begin{equation*}
 \begin{tikzcd}
 	\R^n \times F \supseteq (W_i,F) 
-		& \arrow[l, "{(\phi, id)}"] U_i \times F \arrow[r, "\Psi_i"] \arrow[d, "p_i"]
+		& \arrow[l, "{(\phi, \id)}"] U_i \times F \arrow[r, "\Psi_i"] \arrow[d, "p_i"]
 			& \pi^{-1}(U_i) \arrow[d, "\pi"] \\
 		& U_i \arrow[r, hookrightarrow]
 			& M
@@ -40,24 +40,24 @@ Per costruire il \emph{fibrato} ripetiamo parola per parola la costruzione di $T
 \end{equation*}
 \begin{align*}
 	\Psi_j \circ \Psi_i^{-1}  : (U_i \cap U_j) \times F &\funarrow (U_i \cap U_j) \times F \\
-	(x,f) &\mapsto (x,\mu_ji(x)[f])
+	(x,f) &\mapsto (x,\mu_{ji}(x)[f])
 \end{align*}
 \end{oss}
 
 \begin{defn}
-	Se per qualche $k$ ho $G = GL(k,\R)$ e $F = \R^k$ si ottengono i cosiddetti \emph{fibrati vettoriali reali} di rango $k$\\
-	Se invece $F = G$ e ho $R_g$ (la \emph{rappresentazione regolare}, cioè quella definita dall'azione di $G$ su se stesso mediante la moltiplicazione a destra) si ottengono i \emph{fibrati principali} di gruppo strutturale $G$
+	Se per qualche $k$ ho $G = \GL(k,\R)$ e $F = \R^k$ si ottengono i cosiddetti \emph{fibrati vettoriali reali} di rango $k$.\\
+	Se invece $F = G$ e ho $R_g$ (la \emph{rappresentazione regolare}, cioè quella definita dall'azione di $G$ su se stesso mediante la moltiplicazione a destra) si ottengono i \emph{fibrati principali} di gruppo strutturale $G$.
 \end{defn}
 
 \titlet{Fatti di algebra lineare}
 
 Sia $V$ uno spazio vettoriale di dimensione finita $n$. \\
-Sia $V^* := Hom(V,\R)$ lo \emph{spazio duale} di $V$ e $V^{**} :=(V^*)^* = Hom(V^*,\R)$ il \emph{biduale}.\\
+Sia $V^* := \Hom(V,\R)$ lo \emph{spazio duale} di $V$ e $V^{**} :=(V^*)^* = \Hom(V^*,\R)$ il \emph{biduale}.\\
 Sia $\base = \{v_1, \dots, v_n \}$ base di $V$ e $\base = \{ v^1, \dots, v^n \}$ base di $V^*$ dove $v^j(v_i) = \delta^j_{\hphantom{j}i}$.\\
-Poichè esiste un isomorfismo canonico
+Poiché esiste un isomorfismo canonico
 \begin{align*}
-	\varphi: V \funarrow &V^{**} \\
-		     v \funarrow &f_v: V^* \funarrow \R \\
+	\varphi: V \funarrow\  &V^{**} \\
+		     v \mapsto\  &f_v: V^* \funarrow \R \\
 		                 &f_v(\psi) = \psi(v)
 \end{align*}
 d'ora in poi con un piccolo abuso identificheremo $V$ con $V^{**}$.
@@ -66,16 +66,16 @@ d'ora in poi con un piccolo abuso identificheremo $V$ con $V^{**}$.
 	\[ T_h^k(V) \is V^{\otimes k} \otimes (V^*)^{\otimes h} \is \Mult( (V^*)^k \times V^h, \R) \] Un elemento $t \in T_h^k(V)$ è detto \emph{tensore} di tipo $(k,h)$ su $V$.
 \end{defn}
 
-\begin{oss}[esempi]
-	$ T_0^0(V) = \R, \ T_1^0(V) = V^*, \ T_0^1(V) = V^{**} = V $ \\
-	Un prodotto scalare è un $t \in T_2^0(V) = Bil(V \times V, \R)$ con $t$ simmetrico.
-\end{oss}
+\begin{es}
+	$ T_0^0(V) = \R, \ T_1^0(V) = V^*, \ T_0^1(V) = V^{**} = V $. \\
+	Un prodotto scalare è un $t \in T_2^0(V) = \Bil(V \times V, \R)$ con $t$ simmetrico.
+\end{es}
 
 \begin{oss}
 	Esiste un isomorfismo canonico
 \begin{align*}
-	\varphi: End(V) \funarrow &T_1^1(V) = Bil(V^* \times V, \R) \\
-				  f \funarrow &\varphi_f : (\psi,v) \funarrow \psi(f(v))
+	\varphi: \End(V) &\funarrow T_1^1(V) = \Bil(V^* \times V, \R) \\
+				  f &\mapsto \big((\psi,v) \mapsto \psi(f(v))\big)
 \end{align*}
 \end{oss}
 
@@ -84,13 +84,14 @@ d'ora in poi con un piccolo abuso identificheremo $V$ con $V^{**}$.
 Si definisce in modo canonico l'applicazione bilineare
 \begin{align*}
 	\Phi : V^* \times V^*  &\funarrow T_2^0(V) \\
-			   (\phi,\psi) &\funarrow (\phi,\psi)[v,w] = \phi(v)\psi(w)
+			   (\phi,\psi) &\mapsto \big((v,w) \mapsto \phi(v)\psi(w)\big)
 \end{align*}
-Utilizzeremo la notazione $\Phi(\phi,\psi) = \phi \otimes \psi$ e chiameremo gli elementi del tipo $\phi \otimes \psi$ \emph{tensori decomponibili} di $T_2^0(V)$. \\
-Si verifica che la funzione $\Phi$ ha le seguenti proprietà
+Utilizzeremo la notazione $\Phi(\phi,\psi) = \phi \otimes \psi$ e chiameremo gli elementi del tipo $\phi \otimes \psi$ \emph{tensori decomponibili} di $T_2^0(V)$.
+
+\noindent Si verifica che la funzione $\Phi$ ha le seguenti proprietà:
 \begin{itemize}
-\item Data una base e la base duale $\base^* = \{ v^1, \dots, v^n \}$ allora $\base_2^0 = \{ v^i \otimes v^j \}_{i,j = 1, \dots, n}$ è una base di $T_2^0(V)$
+\item Data una base e la base duale $\base^* = \{ v^1, \dots, v^n \}$ allora $\base_2^0 = \{ v^i \otimes v^j \}_{i,j = 1, \dots, n}$ è una base di $T_2^0(V)$.
 \item \emph{(proprietà universale)} Per ogni applicazione bilineare $\fundef[g]{V^* \times V^*}{Z}$ esiste un'unica applicazione lineare $\fundef[G]{T_2^0(V)}{Z}$ tale che $g = G \circ \Phi$. Infatti $G$ è univocamente determinata dalla relazione $G(v^i \otimes v^j) = g(v^i,v^j)$.
 \end{itemize}
-Lo stesso argomento si può ripetere per $T_0^2(V)$ e in generale per $T_h^k(V)$ ottenendo le basi $$ \base_h^k = \{ v_{i_1} \otimes \dots v_{i_k} \otimes v^{j_1} \otimes \dots v^{j_h} \} $$
+Lo stesso argomento si può ripetere per $T_0^2(V)$ e in generale per $T_h^k(V)$ ottenendo le basi \[ \base_h^k = \{ v_{i_1} \otimes \dots \otimes v_{i_k} \otimes v^{j_1} \otimes \dots \otimes v^{j_h} \} \]
 \end{defn}
