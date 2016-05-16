@@ -1,0 +1,93 @@
+% questo documento è in ogni sua parte opera originale del sottoscritto
+% Alberto Bordin
+
+\titlet{Superfici}
+
+In questa sezione $S$ sarà una superficie, cioè una $2$-varietà compatta, chiusa, connessa. L'obiettivo sarà studiare le superfici a meno di diffeomorfismi, come al solito andremo a caccia di invarianti.\\
+\emph{Attenzione:} $S_1, S_2, \dots$ saranno qui superfici, mentre $S^1, S^2, \dots$ saranno circonferenza, sfera, \dots
+
+\begin{es} Seguono alcuni esempi di superfici
+\begin{itemize}
+\item (Sfera) $S^2$
+\item (Toro) $T := T_1 := S^1 \times S^1$
+\item (Tori siamesi) $T_2 := 2$ tori incollati con un tubicino\marginpar{fig1}
+\item (Toro-catena) $T_k := k$ tori incollati con $k-1$ tubicini\marginpar{fig2}
+\end{itemize}
+\end{es}
+
+\begin{oss}
+Gli esempi precedenti non sono tra loro diffeomorfi, infatti sono distinti dalla $\chi$ di Eulero. \\
+$\chi(S^2) = 2$. Per calcolare la $\chi(T_k)$ usiamo la funzione di Morse \emph{"altezza"} definita come in figura. \marginpar{fig3} \\ Notiamo che ci sono $2k + 2$ punti critici di cui\\
+- $1$ massimo: $\lambda = 1$ \\
+- $2k$ punti di sella ($2$ per ogni buco): $\lambda = -1$ \\
+- $1$ minimo: $\lambda = 1$ \\
+Pertanto $\chi(T_k) = 2 - 2k$. Un modo alternativo per calcolarla è mostrare solamente che $\chi(T) = 0$ (notiamo in particolare che è facile trovare per $T$ un campo di vettori mai nullo, ad esempio il campo di vettori tangenti al toro che "girano" in senso antiorario) e poi usare la proprietà di additività della $\chi$.
+\end{oss}
+
+\noindent \textbf{Esercizio.} \marginpar{io farei una macro per gli esercizi} Sia $\mathbb{P}_2^2$ la varietà ottenuta incollando due $\mathbb{P}^2$ analogamente a quanto fatto per i \emph{tori siamesi}. Dimostrare che $\chi(\mathbb{P}_2^2) = 0$.
+
+\noindent \emph{Hint:} usare l'additività di $\chi$.
+
+\begin{oss}
+Notiamo, grazie all'esercizio, che la $\chi$ non distingue tra il toro $T$ e $\mathbb{P}_2^2$, tuttavia osserviamo che queste non sono diffeomorfe perché $\mathbb{P}_2^2$ non è orientabile. \\
+Urge un invariante più fine: la forma di intersezione.
+\end{oss}
+
+\titlet{La forma di intersezione su $\eta_1(S)$}
+
+Ricordiamo che $\eta_1(S) = \quoset{ \{ \fundef{M}{S} \} }{\sim_\text{cob}}$ dove $M = S^1 \sqcup \dots \sqcup S^1$ è una $1$-varietà compatta, chiusa, che $\eta_1(S)$ è uno $\quoset\Z{2\Z}$-spazio vettoriale e che dato un diffeomorfismo $\fundef{S_1}{S_2}$ questo induce un isomorfismo $\fundef[f_*]{\eta_1(S_1)}{\eta_1(S_2)}$ (vedi lezione dell'11 aprile).
+
+\paragraph{Fatto.} \marginpar{io farei una macro per i "fatti" alias "atti di fede" alias "cannoni" e gli darei una numerazione propria} $\dim \eta_1(S)$ è finita (si usa la compattezza di $S$).
+
+\begin{cor}
+	$\dim \eta_1(S)$ è un invariante per diffeomorfismi
+\end{cor}
+
+\begin{defn}[forma di intersezione $\beta$] $\beta$ sarà una \[ \fundef[\beta]{\eta_1(S) \times \eta_1(S)}{\quoset\Z{2\Z}} \] Cerchiamo un modo di definire $\beta([M_1,f_1],[M_2,f_2])$.
+\[ f_1 \times f_2: M_1 \times M_2 \funarrow S \times S \hookleftarrow \Delta \text{ diagonale} \]
+Dai teoremi di trasversalità sappiamo trovare una $\tilde{f_1}$ e una $\tilde{f_2}$ omotope rispettivamente a $f_1$ e $f_2$ e tali che $\tilde{f_1} \pitchfork \tilde{f_2}$ e, sempre per i teoremi di trasversalità, abbiamo che $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ è una sottovarietà di $M_1 \times M_2$, che ha dimensione 2; inoltre $\codim{(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)} = 2$ pertanto $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ ha dimensione $0$, ovvero è un insieme finito di $k$ punti $\{x_1, \dots , x_k \}$. \\
+Ha dunque senso definire \[ \beta([M_1,f_1],[M_2,f_2]) := k \; (\text{mod } 2) \]
+\end{defn}
+
+\begin{oss}
+	$\beta$ è ben definita, bilineare e simmetrica (esercizio).
+\end{oss}
+
+La forma d'intersezione $\beta$ misura la parità del numero di intersezioni tra le immagini di due curve su una superficie. Grazie ai teoremi di trasversalità (grazie anche alla dimensione finita e al teorema di immersione di Whitney) possiamo supporre che le $f_1$ e $f_2$ siano fin da subito immersioni e che i punti in comune alle due immagini su $S$ non siano dei punti di tangenza, ma siano degli incroci "normali", infatti se le $f_1$ e $f_2$ non avessero tali requisiti basterebbe perturbarle un poco per trovare delle $\tilde{f_1}$ e $\tilde{f_2}$, omotope alle precedenti, che abbiano i suddetti requisiti. \\
+
+Cercheremo ora di capire come sono fatte le classi di equivalenza $[M,f]$. Con lo stesso spirito di quando caliamo i cannoni per "perturbare un poco" le funzioni e ricondurci a studiare casi semplici, il nostro intento sarà introdurre alcune "mosse" che pur perturbando una curva non ne cambiano la classe. In questo modo potremo scegliere, senza perdita di generalità, un rappresentante particolarmente semplice: scopriremo che possiamo prendere un rappresentante connesso.
+
+Per quanto già discusso prendiamo una $\fundef{M}{S}$ che sia fin da subito un'immersione\marginpar{fig5}, faremo ora due semplificazioni
+
+\begin{itemize}
+\item[(1)] Eliminare i punti doppi \\
+\marginpar{fig6}
+Notiamo che, non avendo orientazione, la scelta è indifferente. \\
+Quindi da una $\fundef{M}{S}$ abbiamo ottenuto un embedding $\fundef[i]{M'}{S}$ senza punti doppi. \\
+Esercizio: mostrare che $[M,f] = [M',i]$ in $\eta_1(S)$.
+
+\item[(2)] Connettere l'immagine \\
+\marginpar{fig7}
+Dove il cobordismo è "esplicitato" dalla figura seguente: i cerchi interni vanno immaginati come sollevati di qualche centimetro rispetto al piano del foglio e la parte colorata vista come una bolla di sapone.
+\marginpar{fig8}
+\end{itemize}
+
+Pertanto, grazie alla semplificazione ($1$), ogni classe di equivalenza  $\alpha \in \eta_1(S)$ può essere rappresentata per mezzo di una $1$-sottovarietà di $S$ e, grazie alla ($2$), $\alpha$ può essere rappresentata da una curva connessa. D'ora in poi le curve che considereremo saranno belle lisce, iniettive e connesse.
+
+\begin{teo}
+ La forma di intersezione è non degenere
+\end{teo}
+
+\begin{proof}
+Utilizzeremo la notazione $\alpha \cdot \gamma := \beta(\alpha,\gamma)$. \\
+Sia $\alpha \in \eta_1(S)$ tale che $\alpha \cdot \gamma = 0$  $\forall \gamma$, vogliamo mostrare che  $\alpha = 0$. \\
+Supponiamo per assurdo che $\alpha \neq 0$, sia dunque $\alpha = [c]$ con $c$ connessa su $S$. \\
+Mostriamo che $c$ non sconnette $S$. Infatti se $S \backslash c$ fosse sconnesso allora $c$ sarebbe cobordante al vuoto, come si vede dalla figura\marginpar{fig9}, e sarebbe dunque $\alpha = 0$. \\
+Dunque $c$ non sconnette $S$, prendiamo quindi un piccolo arco $\gamma_1$ trasverso a $c$ di estremi $x_1$ e $x_2$. Poiché $c$ non sconnette $S$ allora esiste un arco $\gamma_2$ che collega $x_1$ e $x_2$. Sia $\gamma = \gamma_1 \cup \gamma_2$, abbiamo dunque costruito un $\gamma$ tale che $\alpha \cdot \gamma = 1 \neq 0$ \absurd \marginpar{fig10}.
+\end{proof}
+
+\begin{oss}
+Abbiamo visto che $\beta$ è bilineare, simmetrica e non degenere, dunque $\beta$ è un \emph{prodotto scalare}. \\
+Inoltre $\dim \eta_1(S)$ è finita, allora dato un diffeomorfismo $\fundef{S_1}{S_2}$ questo induce un isomorfismo $\fundef[f_*]{\eta_1(S_1)}{\eta_1(S_2)}$ tale che $\beta_1(\alpha,\gamma) = \beta_2(f_*(\alpha),f_*(\gamma))$ dunque $f_*$ è un'\emph{isometria} tra $(\eta_1(S_1), \beta_1)$ e $(\eta_1(S_2), \beta_2)$. \\
+Abbiamo costruito un nuovo invariante per diffeomorfismi: la classe di isometria di $(\eta_1(S), \beta)$.
+\end{oss}

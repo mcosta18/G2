@@ -1,0 +1,73 @@
+% questo documento è in ogni sua parte opera originale del sottoscritto
+% Alberto Bordin
+
+\titlet{Cenni alle dimostrazioni dei teoremi di trasversalità}
+
+\begin{teo}[Teorema 1 di $\pitchfork$]
+Siano $X$, $Y$ e $A\subseteq Y$ varietà differenziabili, ($X$ compatta, $Y$ e $A$ chiuse) e $\fundef[f]{X}{Y}$  tale che $f\pitchfork A$. Allora $Z := f^{-1}(A)$ è una sottovarietà di $X$ e $\codim_X{Z} = \codim_Y{A}$
+\end{teo}
+
+\begin{proof}
+Per semplicità supponiamo $\boundary X = \nullset$.\\
+\begin{itemize}
+\item Caso particolare: $A = \{ y_0 \}$ è composto da un solo punto. \\
+L'idea è che possiamo "localizzare" il problema per ricondurci al caso in cui $X = U$ aperto di $\R^n$, $Y = \R^m$, $A = \{ 0 \}$ e applicare il teorema della funzione implicita (versione suriettiva). Quindi, poichè $f\pitchfork A \iff y_0$ è un valore regolare per $f$, abbiamo che $\forall x \in f^{-1}(y_0)$  $\fundef[D_xf]{T_xX}{Y}$ è suriettiva.
+\item Riduzione del caso generale al caso particolare.\\
+L'idea è che possiamo localizzare in arrivo: $$(Y,A) = (U \times V, U \times \{ 0 \}) \subseteq (\R^p \times \R^q, \R^p \times \{ 0 \})$$
+e (eventualmente restringendo $\pi$ all'immagine di $f$)
+$$ \Fundef{X}{\Fundef[\pi]{U \times V}{V}}$$ \marginpar{fig1}
+Sia $g = \pi \circ f$, mostrare per esercizio che $f \pitchfork A \iff g \pitchfork \{ 0 \}$.
+\end{itemize}
+\end{proof}
+
+La dimostrazione nel caso $\boundary X \neq \nullset$ è sostanzialmente analoga, con qualche complicazione: l'idea è considerare la varietà \emph{Doppio}
+$$D(X) := \quoset{X \sqcup X}{(\fundef[id]{\boundary X}{\boundary X})}$$ \marginpar{fig2}
+$$\fundef[D(f)]{D(X)}{Y \supseteq A}$$
+Sarà quindi $D(Z) = (D(f))^{-1}(A)$ una sottovarietà di $D(X)$ e allora $Z = f^{-1}(A) = D(Z) \cap X$ sarà una sottovarietà di $X$. Basta verificare che $D(Z) \pitchfork \boundary X$ in $D(X)$.\\
+
+Ora ci prepariamo ad affrontare la dimostrazione del (Teorema 2). Faremo un po' di nomenclatura e poi caleremo dal cielo senza dimostrazione qualche cannone come il teorema di Brown. Infatti se non bariamo un po' non riusciamo ad arrivare in fondo.
+
+\begin{defn} Sia $\fundef{X}{Y}$ una funzione liscia. Ricordiamo che un punto $x \in X$ si dice \emph{critico} per $f$ se $\fundef[D_xf]{T_xX}{T_{f(x)}Y}$ non è suriettiva. Chiameremo $C(f)$ l'insieme dei punti critici di $f$.
+\end{defn}
+
+\begin{oss}
+$Y \backslash f(C(f))$ è l'insieme dei \emph{valori regolari} di $f$.
+\end{oss}
+
+\begin{teo}[Brown]
+$Y \backslash f(C(f))$ è denso in $Y$
+\end{teo}
+
+\begin{proof}
+E' un corollario del Teorema di Morse-Sard\footnote{Baro: \emph{gioca questa carta insieme ad un oggetto, puoi possedere ed usare l'oggetto anche se è contro le regole.}} (cannone di analisi).
+\end{proof}
+
+\begin{teo}[Teorema 1 di $\pitchfork$]
+$\pitchfork(X,Y,A) := \setdef[\fundef{X}{Y}]{f \pitchfork A}$ è un aperto denso in $\mathcal{E}(X,Y)$
+\end{teo}
+
+\begin{proof} $\, \\ $
+\begin{itemize}
+\item Apertura\\
+Idea: l'algebra lineare ci da dei controlli locali (teorema del rango massimo) e la compattezza ci permette di estendere i controlli a livello globale.
+\item Densità\\
+$X$ è compatto $\implies$ $f(X) \subseteq Y$ è compatto, quindi posso ricoprire $f(X)$ con un numero finito di carte locali di $Y$.\\
+Localmente vedo $Y$ come $\R^n$: $Y = U \subseteq \R^p \times \R^q$ e $A = \R^p \times \{ 0 \}$. Per ogni punto prendo una palla aperta $B$ e la sua controimmagine $K := f^{-1}(B) \subseteq X$; poiché i $K$ ricoprono $X$, che è compatta, allora posso estrarre un sottoricoprimento finito.\\
+Sia $\pitchfork_K(X,Y,A) := \setdef[\fundef{X}{Y}]{f \pitchfork A \text{ lungo } K}$. Dimostriamo che $\forall K$ $\pitchfork_K(X,Y,A)$ è (un aperto) denso. \marginpar{fig3} \\
+La condizione di trasversalità si traduce quindi nel richiedere che, dato $f(x) \in A$, $x$ non sia un punto critico per $\pi \circ f$. Per il teorema di Brown esiste $\{ y_n \} \in \R^p \times \R^q$ tale che $y_n \rightarrow 0$ e $(\pi \circ f)(y_n)$ è un valore regolare per $\pi \circ f$. Otteniamo $\{ f_n(x) \} = \{ f(x) - y_n \}$ che è una successione di funzioni trasverse ad $A$ e che converge uniformemente a $f$  in $K$. \\
+Abbiamo ottenuto che $\pitchfork_K(X,Y,A)$ è (un aperto) denso, dobbiamo estendere questa conquista a tutto $X$, ma questo non è difficile perché 
+\begin{itemize}
+\item[1.] per estendere le $f_n$ basta  usare le funzioni a foruncolo
+\item[2.] basta notare che $\pitchfork(X,Y,A) = \union_K \pitchfork_K(X,Y,A)$ e poichè l'intersezione è finita ottengo che anche $\pitchfork(X,Y,A)$ è denso.
+\end{itemize}
+\end{itemize}
+\end{proof}
+
+Per il caso $\boundary X \neq \nullset$ si usa anche qui il trucco del \emph{Doppio}. \\
+
+Fra le potenti applicazioni di questi teoremi di trasversalità c'è il teorema di immersione (vedi lezione successiva).
+
+\paragraph{Cannone buffo:}
+sia $i(n) :=$ min$\setdef[N]{\exists \; X \looparrowright \R^N \; \forall X^n}$ \\
+allora $i(n) =$ $n +$ numero di "$1$" nella scrittura in base $2$ di $n$.\\
+Mentre per gli embedding è ancora un problema aperto.
