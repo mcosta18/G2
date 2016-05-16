@@ -10,14 +10,24 @@ In questa sezione $S$ sarà una superficie, cioè una $2$-varietà compatta, chi
 \begin{itemize}
 \item (Sfera) $S^2$
 \item (Toro) $T := T_1 := S^1 \times S^1$
-\item (Tori siamesi) $T_2 := 2$ tori incollati con un tubicino\marginpar{fig1}
-\item (Toro-catena) $T_k := k$ tori incollati con $k-1$ tubicini\marginpar{fig2}
+\item (Tori siamesi) $T_2 := 2$ tori incollati con un tubicino
+\begin{center}
+  \input{fig21.pdf_tex}
+\end{center}
+\item (Toro-catena) $T_k := k$ tori incollati con $k-1$ tubicini
+\begin{center}
+  \input{fig22.pdf_tex}
+\end{center}
 \end{itemize}
 \end{es}
 
 \begin{oss}
 Gli esempi precedenti non sono tra loro diffeomorfi, infatti sono distinti dalla $\chi$ di Eulero. \\
-$\chi(S^2) = 2$. Per calcolare la $\chi(T_k)$ usiamo la funzione di Morse \emph{"altezza"} definita come in figura. \marginpar{fig3} \\ Notiamo che ci sono $2k + 2$ punti critici di cui\\
+$\chi(S^2) = 2$. Per calcolare la $\chi(T_k)$ usiamo la funzione di Morse \emph{"altezza"} definita come in figura.
+\begin{center}
+  \input{fig23.pdf_tex}
+\end{center}
+Notiamo che ci sono $2k + 2$ punti critici di cui\\
 - $1$ massimo: $\lambda = 1$ \\
 - $2k$ punti di sella ($2$ per ogni buco): $\lambda = -1$ \\
 - $1$ minimo: $\lambda = 1$ \\
@@ -57,19 +67,29 @@ La forma d'intersezione $\beta$ misura la parità del numero di intersezioni tra
 
 Cercheremo ora di capire come sono fatte le classi di equivalenza $[M,f]$. Con lo stesso spirito di quando caliamo i cannoni per "perturbare un poco" le funzioni e ricondurci a studiare casi semplici, il nostro intento sarà introdurre alcune "mosse" che pur perturbando una curva non ne cambiano la classe. In questo modo potremo scegliere, senza perdita di generalità, un rappresentante particolarmente semplice: scopriremo che possiamo prendere un rappresentante connesso.
 
-Per quanto già discusso prendiamo una $\fundef{M}{S}$ che sia fin da subito un'immersione\marginpar{fig5}, faremo ora due semplificazioni
+Per quanto già discusso prendiamo una $\fundef{M}{S}$ che sia fin da subito un'immersione
+\begin{center}
+  \input{fig24.pdf_tex}
+\end{center}
+faremo ora due semplificazioni
 
 \begin{itemize}
-\item[(1)] Eliminare i punti doppi \\
-\marginpar{fig6}
+\item[(1)] Eliminare i punti doppi
+\begin{center}
+  \input{fig25.pdf_tex}
+\end{center}
 Notiamo che, non avendo orientazione, la scelta è indifferente. \\
 Quindi da una $\fundef{M}{S}$ abbiamo ottenuto un embedding $\fundef[i]{M'}{S}$ senza punti doppi. \\
 Esercizio: mostrare che $[M,f] = [M',i]$ in $\eta_1(S)$.
 
-\item[(2)] Connettere l'immagine \\
-\marginpar{fig7}
+\item[(2)] Connettere l'immagine
+\begin{center}
+  \input{fig26.pdf_tex}
+\end{center}
 Dove il cobordismo è "esplicitato" dalla figura seguente: i cerchi interni vanno immaginati come sollevati di qualche centimetro rispetto al piano del foglio e la parte colorata vista come una bolla di sapone.
-\marginpar{fig8}
+\begin{center}
+  \input{fig27.pdf_tex}
+\end{center}
 \end{itemize}
 
 Pertanto, grazie alla semplificazione ($1$), ogni classe di equivalenza  $\alpha \in \eta_1(S)$ può essere rappresentata per mezzo di una $1$-sottovarietà di $S$ e, grazie alla ($2$), $\alpha$ può essere rappresentata da una curva connessa. D'ora in poi le curve che considereremo saranno belle lisce, iniettive e connesse.
@@ -82,9 +102,15 @@ Pertanto, grazie alla semplificazione ($1$), ogni classe di equivalenza  $\alpha
 Utilizzeremo la notazione $\alpha \cdot \gamma := \beta(\alpha,\gamma)$. \\
 Sia $\alpha \in \eta_1(S)$ tale che $\alpha \cdot \gamma = 0$  $\forall \gamma$, vogliamo mostrare che  $\alpha = 0$. \\
 Supponiamo per assurdo che $\alpha \neq 0$, sia dunque $\alpha = [c]$ con $c$ connessa su $S$. \\
-Mostriamo che $c$ non sconnette $S$. Infatti se $S \backslash c$ fosse sconnesso allora $c$ sarebbe cobordante al vuoto, come si vede dalla figura\marginpar{fig9}, e sarebbe dunque $\alpha = 0$. \\
-Dunque $c$ non sconnette $S$, prendiamo quindi un piccolo arco $\gamma_1$ trasverso a $c$ di estremi $x_1$ e $x_2$. Poiché $c$ non sconnette $S$ allora esiste un arco $\gamma_2$ che collega $x_1$ e $x_2$. Sia $\gamma = \gamma_1 \cup \gamma_2$, abbiamo dunque costruito un $\gamma$ tale che $\alpha \cdot \gamma = 1 \neq 0$ \absurd \marginpar{fig10}.
+Mostriamo che $c$ non sconnette $S$. Infatti se $S \backslash c$ fosse sconnesso allora $c$ sarebbe cobordante al vuoto, come si vede dalla figura, e sarebbe dunque $\alpha = 0$.
+\begin{center}
+  \input{fig28.pdf_tex}
+\end{center}
+Dunque $c$ non sconnette $S$, prendiamo quindi un piccolo arco $\gamma_1$ trasverso a $c$ di estremi $x_1$ e $x_2$. Poiché $c$ non sconnette $S$ allora esiste un arco $\gamma_2$ che collega $x_1$ e $x_2$. Sia $\gamma = \gamma_1 \cup \gamma_2$, abbiamo dunque costruito un $\gamma$ tale che $\alpha \cdot \gamma = 1 \neq 0$ \absurd.
 \end{proof}
+\begin{center}
+  \input{fig29.pdf_tex}
+\end{center}
 
 \begin{oss}
 Abbiamo visto che $\beta$ è bilineare, simmetrica e non degenere, dunque $\beta$ è un \emph{prodotto scalare}. \\
