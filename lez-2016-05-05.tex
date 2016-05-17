@@ -1,0 +1,94 @@
+%autore: Alessandro Candido
+
+% non ho inserito una piccola parte sulla caratteristica delle sfere perché di riepilogo, anche se non ancora presente nella lezione precedente
+% in alcuni ambienti (teo,prop,cor,oss,defn) mi piacerebbe che il testo venga scritto sotto il titolo e non a fianco, perciò trovate alcune ~ qua e là che realizzano quanto detto; se non siete d'accordo le togliamo, ma proporrei di inserirle nella definizione dell'ambiente (il che significa toglierle comunque)
+
+\begin{teo}
+$X$ ammette un campo tangente mai nullo $\iff$ $\chi(X) = 0$
+\end{teo}
+
+\begin{proof}
+~
+%questa ~ non rientra in quanto scritto sopra, l'ho inserita solo al fine di evitare in questo caso un mancato allineamento orizzontale di description
+	\begin{description}
+		\item[\proofrightarrow]
+		già visto		
+		\item[\proofleftarrow]
+		ci si appoggia al:
+		\begin{teo}[Teorema di Hopf]
+		$f_0~\text{omotopa}~f_1$ $\iff$ $\grad{f_0} = \grad{f_1}$
+
+		\emph{Caso particolare:} $\fundef[f]{S^n}{S^n}$ è omotopa ad una costante $\iff$ $\grad{f} = 0$
+		\end{teo}
+%devo trovare il modo di allineare il testo seguente all'item e non al teorema
+		Si ha che $\chi(X) = 0$. Sia $s \pitchfork s_0$, con $x_j$ zero isolato di $s$.
+		Applicando il lemma di omogeneità non è restrittivo supporre che $x_1, \dots, x_k \in B$, palla dentro una carta di $X$.
+		Inoltre considerando per ogni $x_j$ una palletta di centro $x_j$ e raggio abbastanza piccolo da non contenere altri $x_i$.
+		Si ha che la figura realizza un cobordismo esplicito.
+		%figura con carta, palla grossa e pallette
+		Perciò la somma dei gradi interni è pari al grado esterno
+		\begin{equation}
+		\sum_{j=1}^k i_s(x_j) = 0
+		\end{equation}
+		Perciò la sezione sulla sfera esterna è omotopa ad una costante, dunque taglio all'interno della palla e sostituisco con il 			vettore costante e in questo modo non  ho più zeri $\so$ $\hat{s}$ si estende ad un applicazione $\fundef[F]{D^{n+1}}{S^n}$, 			sostituisco $\hat{s}$ definito su $D^{n+1}$, con il campo $F$ che estende $\hat{s}|_{S^n}$
+	\end{description}
+\end{proof}
+
+\begin{oss}
+~
+\begin{itemize}
+\item Per semplicità si consideri $X$ connesso, quindi ha 2 orientazioni possibili. $\chi(X) = X \cdot X$ in $TX$, il fibrato tangente, e si ha che non dipende dall'orientazione di $X$ fissata, infatti passando da un orientazione all'altra si ha che cambia anche quella delle fibre, perciò in $TX$ quando si cambia base si ha che nel Jacobiano cambia di segno un blocco di dimensione pari, e perciò il determinante rimane $1$;
+\item Lo stesso ragionamento vale anche se $X$ non è orientabile, ma solo a livello locale, questo però è sufficiente per fae sì che $\chi(X)$ è ben definita anche in questo caso;
+\item Sia $\fundef[f]{X}{Y}$ con entrambe le varietà compatte e connesse, $f$ diffeomorfismo locale, e sia $p=\#f^{-1}(y)$. Si ha che $p$ è costante come funzione di $y$
+\begin{ex}
+allora $\chi(X) = p~\chi(Y)$
+\end{ex}
+\end{itemize}
+\end{oss}
+
+\begin{es}
+L'ultima osservazione ci permette ad esempio di calcolare la caratteristica di Eulero,
+\begin{align*}
+	\chi(\mathbb{P}^n)=\begin{cases}
+		0~~\textrm(n~dispari) \\
+		1~~\textrm(n~pari)
+	\end{cases}
+\end{align*}
+\end{es}
+
+\begin{ex}
+La caratteristica di Eulero è "moltiplicativa" $\chi(X_1\varprod X_2) = \chi(X_1)\chi(X_2)$
+\end{ex}
+
+\titlet{Funzioni di Morse}
+
+Si consideri la triade $(W,V_0,V_1)$
+
+\begin{tikzpicture}[tqft/flow=east]
+\node[tqft/pair of pants, draw] (a) {};
+\end{tikzpicture}
+
+\begin{defn}[Funzioni di Morse]
+~
+Una funzione sulla triade, $\fundef[f]{W}{[0,1]}$ con $f^{-1}(0)=V_0$ e $f^{-1}(1)=V_1$, è detta di Morse se:
+\begin{itemize}
+\item non ci sono punti critici di $f$ in un intorno di $\boundary W = V_0\djunion V_1$
+\item tutti i punti critici sono non degeneri
+\end{itemize}
+\end{defn}
+
+Perciò per una funzione di Morse si ha che $\forall x$ critico per $f~\exists$ una carta locale, in cui (ponendo $\wlg x=0$) la funzione coincide con il modello locale di Morse $f(x) = -(x_1^2 + \dots + x_{\lambda}^2) + (x_{\lambda+1}^2 + \dots + x_n^2)$, dove $n$ è la dimensione di $W$ e $\lambda$ l'indice del punto critico.
+
+%Piccolo intermezzo di algebra lineare: se ho un prodotto scalare identifico canonicamente vettori e funzionali
+
+Si ha che l'applicazione tangente di una funzione $\fundef[f]{W}{\R}$ è dunque un campo di funzionali su $TW$, cioè un elemento di $T*W$, il fibro cotangente.
+Fissiamo su $W$ una metrica Riemanniana $g$, cosicché $\nabla _g f$ è il campo di vettori che rappresenta $Df$ tramite $g$.
+
+Si applica ora quest'ultimo risultato alle funzioni di Morse. Fissiamo dunque una metrica che nelle carte di Morse della funzione in oggetto appaia come la metrica standard di $\R^n$.
+%figura con W chiusa e punti critici
+Sia ora $W$ chiusa, quindi una transizione dal vuoto al vuoto. $\fundef[f]{W}{\R}$, e sia $g$ la metrica scelta. Allora si ha che:
+\begin{equation*}
+\{\text{gli zeri di}~\nabla_g f\} = \{\text{punti critici di}~f\}
+\end{equation*}
+
+In quanto punto critico $x$ ha associato un indice di Morse $\lambda$, mentre come campo di vettori ha associato il segno del Jacobiano, che si legge esplicitamente dal gradiente.
