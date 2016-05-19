@@ -1,0 +1,130 @@
+%Trascrizione Bob
+
+%gnegne
+
+\begin{es}
+Verifichiamo che gli spazi proiettivi $\mathbb{P}^n$ introdotti precedentemente sono esempi di $n$-varietà differenziabili. Per farlo mostriamo che l'atlante topologico $\{(U_1,\phi_1),\dots,(U_{n+1},\phi_{n+1})\}$ fornito precedentemente è in effetti un atlante differenziabile.
+
+Ricordiamo che $U_j$ è l'immagine tramite $\phi_j^{-1}$ del piano $\pi_{j}\is \{x_{j}=1 \}$.
+
+Ricordiamo la definizione di $\fundef[\phi_j]{\mathbb{P}^n}{\R^n}$ e per $x_j \neq 1$ ho:
+\begin{equation*}
+\phi_j([x_1,\dots,x_j,\dots,x_{n+1}])=\left (\frac{x_1}{x_j},\dots,\frac{x_{j-1}}{x_j},\frac{x_{j+1}}{x_j},\dots,\frac{x_{n+1}}{x_j} \right )
+\end{equation*}
+Conseguentemente avrò $\fundef[\phi_i^{-1}]{\R^n}{\mathbb{P}^n}$ e:
+\begin{equation*}
+\phi_i^{-1}(y_1,\dots,y_{i-1},y_{i+1},\dots,y_{n+1})=([y_1,\dots,y_{i-1},1,y_{i+1}\dots,y_{n+1}]).
+\end{equation*}
+Se adesso mi restringo all'intersezione $U_j \cap U_i$ e considero la composizione:
+\begin{equation*}
+\begin{split}
+\phi_j \circ \phi_i^{-1}([\xi_1,\dots,\xi_{i-1},\xi_{i+1},\dots,\xi_n])& =\phi_j(\xi_1,\dots,\xi_{i-1},1,\xi_{i+1}\dots,\xi_j,\dots,\xi_n)=\\
+& =\left (\frac{\xi_1}{\xi_j},\dots,\frac{1}{\xi_j},\dots,\frac{\xi_{j-1}}{\xi_j},\frac{\xi_{j+1}}{\xi_j},\dots,\frac{\xi_n}{\xi_j}\right ).
+\end{split}
+\end{equation*}
+Questa funzione è in effetti un diffeomorfismo (è $C^\infty$, invertibile e con inversa $C^\infty$).
+
+
+Per esercizio si verifichi che anche $S^n$ minuto dell'atlante $\{(U_N,\phi_N),(U_S,\phi_S)\}$, citato precedentemente, è una $n$-varietà differenziabile.
+\end{es}
+
+\begin{defn}[Carte $f$-adattate]
+Siano date $M$ e $N$, due varità differenziabili di dimensione $m$ e $n$ rispettivamente, e una funzione $f$ tra i due spazi.
+
+Siano date anche $(U,\phi)$ e $(W,\psi)$, carte dell'atlante di $M$ e $N$ rispettivamente, queste si diranno \emph{$f$-adattate} se $f(U)\subseteq W.$
+\end{defn}
+
+\begin{defn}[$C^\infty$]
+Con la stessa notazione della definizione precedente, $f$ si dice \emph{$C^\infty$} se
+$\forall \; x \in M \;  \exists (U_x,\phi), (W,\psi)$ $f$-adattate tali che $\psi \circ f \circ \phi^{-1}$ è $C^\infty$.
+
+$\psi \circ f \circ \phi^{-1}$ è detta \emph{rappresentazione locale differenziabile} o \emph{carta locale}.
+\end{defn}
+
+\begin{prop}
+Se $f$ è $C^\infty$ lo sono anche tutte le sue rappresentazioni locali.
+\end{prop}
+
+\begin{oss}
+La struttura di diffeomorfismo è più debole della compatibilità tra atlanti.
+\end{oss}
+
+\begin{es}
+Considero uno spazio topologico $M \is (\R,\tau_E)$ e due funzioni da $M$ a $\R$:
+\begin{equation*}
+\phi_0\is \id ;\hspace{1cm} \phi_1\is\begin{cases}y=x & x\le 0 \\ y=2x & x>0 \end{cases}
+\end{equation*}
+$\{(M,\phi_0)\}$ e $\{(M,\phi_1)\}$ sono due atlanti differenziali (banalmente perchè costituiti da una sola carta), ma i due atlanti non sono compatibili, infatti $\{(M,\phi_0),(M,\phi_1)\}$ NON è un atlante differenziabile poichè $\phi_1 \circ \phi_0^{-1} = \phi_1$ che non è differenziabile in 0.
+Tuttavia le due varietà differenziabili sono diffeomorfe attraverso $\phi_1^{-1}$, infatti $\phi_0 \circ \phi_1^{-1} \circ \phi_1 = \id$, che evidentemente è differenziabile.
+\end{es}
+
+\begin{oss}
+\marginpar{da fare}
+\end{oss}
+
+\begin{teo}[Funzione inversa]
+$\fundef{\Omega \subseteq \R^n}{\R^n}$, $C^\infty$, tale che $\forall x \in \Omega$, $\dd_xf$ è invertibile $\implies \exists U_x, U\subseteq \Omega$ tale che $f(U)$ è aperto e $f$ è un diffeomorfismo.
+\end{teo}
+
+\begin{oss}
+In pratica restringendo $f$ ad un intorno aperto opportuno di $x$ in $\Omega$, $(U,f_|)$ è una carta locale differenziabile di $\Omega$ intorno a $x$.
+
+È interessante notare come questo teorema, a partire da un informazione locale (in un punto), ci restituisce informazioni ``localmente globali''.
+\end{oss}
+
+Definisco prima un \emph{modello locale lineare}, ovvero una proiezione $\fundef[\pi]{\R^n}{\R^m}$ con $n \ge m$ tale che $j(x_1,\dots,x_n)=(x_1,\dots,x_m)$. Noto che $\forall x \in \R^n, \dd_xj$ è iniettivo (essendo $\dd_xj=j(x)$ per linearità di $j$).
+
+\begin{teo}[Funzione implicita, versione surgettiva]
+\label{th:funimpsurg}
+Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\dd_xf$ è surgettivo $\implies$ Esiste una parametrizzazione locale di $U$ intorno a $x$: $\fundef[\phi]{U'\subseteq \R^n}{\phi(U')\subseteq U}$ diffeomorfismo tale che $f \circ \phi = \pi$
+\end{teo}
+
+\begin{center}
+\hspace{1cm}
+\input{figura4.pdf_tex}
+\end{center}
+
+Similmente a prima definisco prima un \emph{modello locale lineare}, stavolta una inclusione $\fundef[j]{\R^n}{\R^m}$ con $n \le m$ tale che $\pi(x_1,\dots,x_n)=(x_1,\dots,x_n,0,0,\dots)$. Noto che $\forall x \in \R^n, \dd_xj$ è surgettivo (essendo $\dd_xj=j(x)$ per linearità di $j$).
+
+\begin{teo}[Funzione implicita, versione iniettiva]
+
+Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\dd_xf$ è iniettivo $\implies$ Esiste una carta locale di $U$ intorno a $x$: $\fundef[\psi]{U}{U''\subset \R^m}$ diffeomorfismo tale che $\psi \circ f = j$.
+\end{teo}
+
+\begin{center}
+\input{figura5.pdf_tex}
+\end{center}
+
+\begin{prop}
+Sia $\fundef{\R^n}{\R^n}$ un generico diffeomorfismo. La composizione del differenziale $\fundef[\dd f]{\R^n}{\GL_n(\R)}$, del determinante $\fundef[\det]{\GL_n(\R)}{\R\setminus\{0\}}$ e della funzione segno $\fundef[\sgn]{\R\setminus\{0\}}{\{\pm1\}}$: $\sgn \circ \det \circ \,\dd f$ è una funzione costante che può valere $1$ o $-1$.
+\end{prop}
+
+\begin{proof}
+$\R^n$ è connesso e $\sgn \circ \det \circ \,\dd f$ è composizione di funzioni continue, quindi continua.
+\end{proof}
+
+\begin{defn}
+Se $\forall x \in \R^n, \det \dd_xf > 0$, si dice che $f$ \emph{preserva l'orientazione}.
+\end{defn}
+
+\begin{oss}
+In pratica basta valutare il segno di $\det (\dd_xf)$ in un punto, per saperne il valore dappertutto per la proposizione precedente.
+
+Inoltre, se $f$ non preserva l'orientazione basterà comporla con
+\begin{equation*}
+\fundef[\tau]{(x_1,\cdots,x_n)}{(x_1,\cdots,-x_n)}
+\end{equation*}
+per ottenere una funzione che la preserva. Ci si potrà quindi restringere allo studio delle funzioni che preservano l'orientazione.
+\end{oss}
+
+\begin{teo}
+Sia $\fundef{\R^n}{\R^n}$ un diffeomorfismo che preserva l'orientazione $\implies$ $f$ è \emph{diff-isotopo}, ovvero:
+$\exists \; \fundef[F]{\R^n \times [0,1]}{\R^n}$ con $f_t = F|_{\R^n \times \{t\}}$, tale che:
+\begin{itemize}
+\item $F$ è differenziabile
+\item $f_0=f$
+\item $f_1 = \id$
+\item $f_t$ è un diffeomorfismo $\forall t \in [0,1]$
+\end{itemize}
+\end{teo}
+

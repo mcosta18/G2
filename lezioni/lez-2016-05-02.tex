@@ -1,0 +1,156 @@
+% trascrizione iniziale: Petrillo
+
+Sia $\fundef{(\R^n,0)}{(\R^{n+1},0)}$ diffeomorfismo con $f(0)=0$.
+Definiamo $\fundef[\hat f]{S^n}{S^n}$ come $\hat f(x)\is\frac{f(x)}{\norm{f(x)}}$.
+Abbiamo che $\grad\hat f=\sgn\det D_0f$.
+Ciò segue dalla linearizzazione a meno di isotopia dei diffeomorfismi $\R^n\funarrow\R^{n+1}$ più il fatto che il grado è invariante di omotopia.
+
+\titlet{Numero d'intersezione}
+
+Sia $Y^n$ la varietà ambiente e $X_1,X_2$ sottovarietà compatte chiuse codimensionali ($\dim X_1+\dim X_2=\dim Y$).
+Siano $\Fundefhook[i_1]{X_1}Y$ e $\Fundefhook[i_2]{X_2}Y$ le inclusioni.
+Diciamo che $X_1 \pitchfork X_2\means i_1\pitchfork i_2$.
+Ricordiamo la definizione di trasversalità per le funzioni: $i_1 \pitchfork i_2 \means\big((x_1,x_2)\mapsto(i_1(x_1),i_2(x_2)\big)\si i_1\times i_2\pitchfork\Delta\is\set{(y,y)\in Y\times Y}$.
+
+Siano $\hat i_1$ e $\hat i_2$ piccole perturbazioni di $i_1$ e $i_2$.
+\marginpar{\normalsize È meglio $\hat i$ o $\hat\imath$?}
+Poiché gli embedding sono aperti, possiamo scegliere $\hat i_1$ e $\hat i_2$ embedding, omotopi a $i_1$ e $i_2$ e $\hat i_1\pitchfork\hat i_2$.
+\begin{figure}
+	\centering
+	\input{figura16.pdf_tex}
+	\caption{Per definire il numero di intersezioni di due varietà, le spostiamo un po' in modo che siano trasverse.}
+	\label{fig:intnum}
+\end{figure}
+Siano $\hat X_1\is\hat i_1(X_1)$ e $\hat X_2$ analogamente (vedi \autoref{fig:intnum}).
+
+\begin{defn}[Numero d'intersezione]
+	Il \emph{numero d'intersezione di $X_1$ e $X_2$} è $\intnum{X_1}{X_2}\is\card(\hat X_1\cap\hat X_2)\mod 2$.
+\end{defn}
+
+\begin{teo}
+	È una buona definizione.
+\end{teo}
+
+\subtitlet{Versione orientata}
+
+Se $Y$, $X_1$, $X_2$ sono orientate, ogni punto di $\hat X_1\cap\hat X_2$ ha un segno.
+Allora abbiamo naturalmente
+
+\begin{defn}[Numero d'intersezione intero]
+	\[\intnum{X_1}{X_2}\is\sum_{x\in\hat X_1\cap\hat X_2}\sgn x\]
+\end{defn}
+
+\begin{teo}
+	È una buona definizione.
+\end{teo}
+
+\begin{oss}
+	Nella versione non orientata $\intnum{X_1}{X_2}=\intnum{X_2}{X_1}$, mentre in quella orientata $\intnum{X_1}{X_2}=(-1)^{\codim X_1\codim X_2}\intnum{X_2}{X_1}$.
+\end{oss}
+
+\begin{oss}
+	Poiché $X_1$ e $X_2$ sono codimensionali, $\codim X_1\codim X_2=\dim X_1\dim X_2$.
+\end{oss}
+
+\subtitlet{Autointersezione}
+
+Sia $X$ compatta chiusa orientata, e non lo ripeteremo.
+C'è un'immersione canonica $X\hookrightarrow TX$ come sezione nulla: $X\ni x\mapsto\av0\in T_xX$.
+Allora è definito il numero di autointersezione di $X$ dentro $TX$.
+Siccome è importante ha un nome:
+
+\begin{defn}[Caratteristica di Eulero-Poincaré]
+	$\chi(X)\is\intnum XX.$
+\end{defn}
+
+In generale una sezione è un'applicazione $s$ che fa commutare questo diagramma:
+\begin{center}
+	\begin{tikzcd}
+		X \arrow[r, "s"] \arrow[rd, "\id"] & TX \arrow[d, "\pi"] \\
+		& X
+	\end{tikzcd}
+\end{center}
+ovvero è un campo di vettori tangenti.
+La sezione nulla è il campo nullo, chiamiamola $s_0$.
+Ha senso chiedersi se $s\pitchfork s_0$.
+I punti in cui s'intersecano sono gli zeri di $s$.
+Per definizione, $s\pitchfork s_0$ se e solo se in carte locali centrate sugli zeri $D_0s$ è iniettivo.
+
+Rivediamo la costruzione di $\intnum XX$.
+Sia $\Fundef[h]X{TX}$ vicina, omotopa e trasversa a $s_0$.
+Non è detto che $h$ sia una sezione, e invece:
+
+\begin{lemma}
+	Non è restrittivo assumere che $h$ sia una sezione.
+\end{lemma}
+
+\begin{proof}
+	La composizione $\pi\circ h$ è vicina a $\pi\circ s_0=\id$ che è un diffeomorfismo e i diffeomorfismi sono aperti, allora \wlg $\pi\circ h$ è un diffeomorfismo $X\funarrow X$.
+	Componendo ancora, $s\is h\circ(\pi\circ h)^{-1}$ è una sezione e $s\pitchfork s_0$\footnotemark.
+	\footnotetext{La dimostrazione di quest'ultimo fatto è non banale.}
+\end{proof}
+
+\noindent Dunque siamo in questa situazione:
+\begin{itemize}
+	\item $s_0$ campo nullo
+	\item $s$ campo trasverso a $s_0$
+	\item $\set{x_1,\dots,x_k}$ zeri di $s$
+\end{itemize}
+Quindi per definizione $\intnum XX=\sum_{i=1}^k\sgn(x_i)$, dove $\sgn x=\sgn\det D_0s$ in una carta locale centrata in $x$.
+
+\begin{oss}
+	Ogni $s$ è omotopo a $s_0$, vicino o lontano che sia.
+\end{oss}
+
+\noindent Allora abbiamo dimostrato che
+\[\forall s\text{ campo trasverso a }s_0:\intnum XX=\sum_{x\text{ zero di s}}\sgn x\]
+
+\begin{oss}
+	In carte locali, $\sgn x=\grad\hat s$\footnotemark.
+	\footnotetext{Vedi inizio lezione.}
+\end{oss}
+
+\noindent Da cui sorge naturalmente un tentativo di generalizzazione.
+
+Sia $s$ campo su $X$ con un numero finito di zeri, non necessariamente trasverso a $s_0$.
+Possiamo sostituire il segno di uno zero con il grado di $\hat s$ in carte locali, questo si può fare anche se lo zero è degenere.
+
+\begin{defn}
+	Dato $x$ zero isolato di un campo $s$ chiamiamo \emph{indice di $x$}: $i(x)\is\grad\hat s$.
+\end{defn}
+
+\begin{oss}
+	$x$ non degenere $\implies i(x)=\sgn x$.
+\end{oss}
+
+\begin{defn}
+	Sia $s$ campo con zeri tutti isolati $\set{x_1,\dots,x_k}$. La \emph{caratteristica di $s$} è:
+	\[\chi(s)\is\sum_{i=1}^ki(x_i)\]
+\end{defn}
+
+\begin{oss}
+	$s\pitchfork s_0\implies\chi(s)=\chi(X)$.
+\end{oss}
+
+\begin{teo}[di Hopf]
+	In verità vale $\chi(s)=\chi(X)$ anche se $\neg(s\pitchfork s_0)$.
+\end{teo}
+
+\begin{proof}
+	Sia $x$ zero di $s$.
+	Mi metto in una carta locale centrata in $x$ con dentro un $S^{n-1}$.
+	\begin{figure}
+		\centering
+		\input{figura17.pdf_tex}
+		\caption{Faccio esplodere uno zero eventualmente degenere del campo in più zeri regolari.}
+		\label{fig:zeroexpl}
+	\end{figure}
+	Considero un $\tilde s$ omotopo a $s$ e $\tilde s\pitchfork s_0$, con gli zeri contenuti nell'$S^{n-1}$ (vedi \autoref{fig:zeroexpl}).
+	Allora ho che $i_s(x)=\grad\hat s_{S^{n-1}}=\grad\hat{\tilde s}_{S^{n-1}}$ per omotopia.
+	Siano $\tilde x_i$ gli zeri di $\tilde s$, intorno a ognuno prendo un $S_i^{n-1}$.
+	Ho che $i_{\tilde s}(\tilde x_i)=\grad\hat{\tilde s}_{S_i^{n-1}}$ e dunque che $\sum_ii_{\tilde s}(\tilde x_i)=i_s(x)$ per cobordismo.
+\end{proof}
+
+\begin{oss}
+	Condizione necessaria per avere campi non nulli è che la varietà abbia caratteristica nulla.
+\end{oss}

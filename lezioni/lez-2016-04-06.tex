@@ -1,0 +1,121 @@
+% Federico
+%cusu
+
+\newcommand*\tc{\ \text{t.c.} \ } % tale che
+\newcommand*\dual{{^\ast}} % dual
+\newcommand*\base[1][B]{\mathcal{#1}} % base
+
+\titlet{Richiami della lezione scorsa}
+\begin{defn}[Equivalenza tra fibrati in termini di cocicli]
+Sia $M$ una varietà differenziabile con atlante massimale $\set{(U_i, \phi_i)}$ e sia $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{G} }$ un cociclo a valori in un gruppo $G \subseteq \Aut(F)$ (con $F$ varietà liscia). Ripetendo la costruzione usata per realizzare il fibrato tangente $T(M)$ (per cui s'era usato $G = \GL(n, \R)$ e $F=\R^n$, $n = \dim M$), ottengo un fibrato $\Fundef[\pi]{E}{M}$ di fibra $F$ e gruppo strutturale $G$.
+Siano dati due fibrati su $M$ con lo stesso gruppo di struttura e la stesa fibra: $\fundef[\pi_1]{E_1}{M}$ e  $\fundef[\pi_2]{E_2}{M}$.
+Siano $\set{ \fundef[\mu_{ij}]{U_i \cap U_j}{G} }$ e $\set{ \fundef[\lambda_{ij}]{U_i \cap U_j}{G} }$ rispettivamente coclici di $E_1$ e $E_2$.
+$E_1$ ed $E_2$ sono fibrati equivalenti (nel senso dei coclici) se $\exists \fundef[\gamma_{i}]{U_i}{G}$ tale che $\forall x U_i \cup U_j$ dati $\lambda_{ij}$ e $\mu_{ij}$
+sia $\lambda_{ji} = {\gamma_j}^{-1} \times \mu_{ji} \times  {\gamma_i}^{-1}$.  (Quest'ultima è la moltiplicazione tra elementi del gruppo $G$)
+\end{defn}
+
+\begin{defn}[Immersione liscia]
+Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}]{T_{x}X}{T_{f(x)} X}$ (restrizione dell'applicazione tangente alla fibra) è iniettiva.
+\end{defn}
+
+\begin{defn}[Embedding] 
+ Una immersione $f$ è un embedding se $\fundef[f]{X}{f(X)}$  è un omeomorfismo (funzione continua fra spazi topologici tale che ha inversa continua).
+\end{defn}
+
+%Nn mi è chiaro cosa volesse dire con questa frase...
+%Se $X$ è compatta e $f$ è iniettiva e suriettiva allora $f$ è un embedding.
+
+\titlet{Teorema di Embedding}
+
+\begin{teo}[Di embedding elementare di Whitney]
+ Se $X$ è una varietà compatta allora esiste un $N$ abbastanza grande tale che $\exists$ un embedding $\fundef[f]{X}{\mathbb{R}^{n}}$
+\end{teo}
+
+
+\begin{proof}
+ Poiché $X$ è compatta esiste un atlante finito $\set{(U_i, \phi_i)}_{i = 1, ..., m}$ tale che 
+ \begin{itemize}
+  \item $\ball[2]0 \subseteq {\phi}_{i}(U_{i})$
+  \item ${\phi_{i}^{-1}(\ball[1]0)}$ ricopre tutto $X$
+  \end{itemize}
+ Sia $\fundef[\lambda]{\R^N}{[0, 1]}$ la funzione a foruncolo relativa alle palle $B_{1}$ e $B_{2}$. Definisco la funzione $\fundef[\lambda_i]{U_i\subseteq X}{[0,1]}$
+ come $\lambda \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$.
+ 
+ ${B_{i}}$ ricopre $X$ e $B_{i} = {\lambda}^{-1} \subseteq U_{i}$. Poiché $\lambda_i$ vale 1 quando sono su ${\phi_{i}}^{-1} (\ball[1]0)$ ho un ricoprimento.
+
+ 
+ Definisco $\fundef[f]{X}{\R^N}$ come $\lambda_{i}  \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$. Considero le funzioni $\fundef[g_{i}]{X}{\mathbb{R}^{N}}$
+ definita come $x \mapsto (f_{i}(x), \lambda_{i}(x))$. Definisco ancora la funzione $g$ che: $x \mapsto (g_1, g_2, \dots, g_m)$.
+ 
+ \marginpar{da rivedere - fede}
+ 
+ Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $g$ è omomorfismo nella sua immagine
+ cioè ha funzione inversa continua.
+ 
+ \begin {itemize}
+  \item è diffeomorfismo per costruzione
+  \item tutte le $g_{i}$ per come son state costruite sono immersioni ogniuna nel suo $\psi^{-1}(B_1(0))$
+  \item g è iniettiva: se ho $x \neq y$  ho due possibilità: $x, y \in B_{i}$ allora la $f_i$ coincide con la $\phi_i$ sulla palla $B_{i}$, che è iniettiva sulla palla. 
+  Oppure $x, y$ stanno in due palle diverse in particolare $y \in B_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x) = 0$. Dunque ogni funzione $g_i$ è iniettiva e quindi lo è anche la funzione
+  $g$.
+  \qedhere
+ \end {itemize}
+\end{proof}
+
+Se ho una varietà $X$ con bordo $\boundary X \neq 0$ si può rafforzare la costruzione in modo che $(X, \boundary X)$ sia una sottovarietà del semipiano 
+$(\mathbb{H}^{N}, \boundary \mathbb{H}^{N})$ con $\boundary X = X \cup \boundary \mathbb{H}^{N}$ e su $\boundary X$ ho $X \perp \boundary \mathbb{H}^{N}$.
+Inoltre se $x_{1}, x_{2}, x_{3}, \dots, x_{k}$ sono punti della varietà con bordo non nullo si può rafforzare la costruzione in modo che un intorno di $x_{j}$ va in un piano di $\mathbb{R}^{N}$.
+
+\begin{defn}[Metrica Riemanniana] %a caso
+ Una metrica riemanniana su una varietà $X$ è un campo di tensori di tipo (0,2) su $X$ simmetrici e definiti positivi. Cioè è una sezione del 
+ fibrato tangente tale che ogni tensore associato ad un punto della varietà è simmetrico e definito positivo: $\fundef[R]{TX}{{T_{2}}^{0}}$ 
+\end{defn}
+
+\begin{teo}
+Ogni $X$ compatta ha una metrica Riemanniana.
+\end{teo}
+
+\begin{proof}
+  Esistendo un embedding, per il teorema sopra, posso vedere la varietà come immersa in un $\mathbb{R}^{n}$ dotato del suo prodotto scalare canonico $g_{0}$. $X \hookrightarrow \mathbb{R}^{n}$.
+  Posso definire la metrica riemanniana sulla varietà $X$ come $g_{x} = g_{0}|_{T_x X}$.
+ Ad ogni punto $x$ prendo dunque come metrica il tensore associato al prodotto canonico ristretto all'immagine del $T_x X$ attraverso l'embedding.
+\end{proof}
+
+
+\titlet{Topologia sullo spazio delle applicazione lisce tra varietà - fede}
+
+\marginpar{Sii più specifico su come entra in gioco il compatto in questa definizione}
+
+\titlet{Spazi di applicazioni lisce}
+\begin{defn}[Topologia sulle applicazioni lisce tra varietà in $\mathbb{R}^{N}$]
+Definisco $\mathcal{E} \is \setdef[\fundef{X}{Y}]{f\text{liscia}}$, con $X$ e $Y$ varietà lisce. Voglio munire  $\mathcal{E} =  {\fundef[f]{X}{Y}, f \text{liscia}} $ di una topologia. Se $X \subseteq \mathbb{R}^{N}$ e $Y = \mathbb{R}^{N}$ considero
+la base di intorni data $U_{r, k, \epsilon}$ e $r \in \mathbb{N}$ e $K \subseteq X$  è un compatto e $\epsilon > 0$. Questa base di intorni è definita da 
+\[U_{r, K, \epsilon} \is \Setdef[{\fundef[g]{X}{\mathbb{R}^{N}}}]{\left\|\frac{\partial f}{\partial x_{i_{1}} \dots \partial x_{i_{k}}} - \frac{\partial g}{\partial x_{i_{1}} \dots \partial x_{i_{k}}}\right\| \eqslantless \epsilon}\]
+Posso considerare un ricoprimento compatto finito,  ${K_i}$ (che trovo se la varietà X è compatta) e posso prendere l'intersezione dei $U_{r,K_i, \epsilon}$, in questo modo ottengo
+dei $U_{r, \epsilon}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. 
+Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di intorni per lo spazio delle funzioni lisce $\mathcal{E}$.
+\end{defn}
+
+\marginpar{perchè ti restringi (solo in arrivo mi sembra di capire) a varietà reali? - non ho capito la critica - fede}
+
+\begin{defn}
+Per definire una topologia tra varietà generiche mi riduco al caso di varietà reali.
+Definisco una base di intorni $U_{r, K, \epsilon, (U, \phi), (U', \phi')} = \set{\fundef[g]{X}{\mathbb{R}^{N}}}$ tale che $g(U) \subseteq U'$ e valga 
+$\phi \circ g \circ \phi^{-1} \in U_{r, K, \epsilon}(\phi \circ g \circ \phi^{-1})$ cioè che $\phi \circ g \circ \phi^{-1}$ sia intorno di una funzione da $\mathbb{R}^{N}$ a $\mathbb{R}^{N}$.
+Posso considerare un ricoprimento compatto finito,  ${K_i}$ (che trovo se la varietà X è compatta) e posso prendere l'intersezione dei $U_{r,K_i, (U_i, \psi_i)(U'_i, \psi'_j)}$, in questo modo ottengo
+dei $U_{r, \epsilon, (U, \phi), (U', \phi')}$ che sono indipendenti dal compatto $K$, questo è ora un intorno della funzione $\fundef[f]{X}{Y}$. Si procede similmente a quanto fatto precedentemente 
+per rimuovere la dipendenza dal compatto K.
+Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di intorni per lo spazio delle funzioni lisce $\mathcal{E}$.
+
+\end{defn}
+
+\begin{oss}
+ La topologia che ottengo è metrizzabile.
+\end{oss}
+
+
+
+
+
+
+

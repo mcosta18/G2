@@ -1,0 +1,58 @@
+%Costa
+%Benedetti ha fatto una buona parte di ricapitolazione se non erro a inizio lezione. Non l'ho inclusa.
+
+\begin{defn}[Varietà parallelizzabile]
+ Una varietà $X$ si dice \emph{parallelizzabile} se $TX\simeq X\times\R$.
+\end{defn}
+Tutte le varietà sono parallelizzabili?
+\begin{oss}
+ Se questo fosse vero, allora su ogni varietà $X$ avremmo l'esistanteza di un campo vettoriale mai nullo: infatti se $TX\simeq X\times\R$, abbiamo un diffeomorfismo $\phi$ tra i due insiemi.
+ Ma su $X\times\R$ posso prendere il campo costante $s(x)=e_1$, e poi portarlo indietro tramite $\phi^{-1}$, ottenendo un campo vettoriale su $X$ mai nullo.
+
+\end{oss}
+Analizziamo intanto i casi delle sfere $S^n$.
+\begin{es}[$S^1$]
+ E' facile mostrare che esiste un campo di vettori mai nullo: basta prendere quello tangente in verso antiorario e modulo costante.
+ \marginpar{Disegno mulinello}
+\end{es}
+\begin{es}[$S^2$]
+ Mostro che esiste un campo vettoriale che si annulla solo sul polo nord e sul polo sud.
+ \marginpar{Non ho capito quale è tale mappa, anche se una idea ce l'avrei...}
+ \marginpar{Ricicla vecchi disegnini con sfera e piano tangente}
+ Dunque ho due zeri isolati. Per calcolare $\chi(S^2)$ devo dunque sommare $i_N(s)$, $i_S(s)$ con $N= (0,0,1)$, $S=(0,0,-1)$.
+ \begin{oss} Per il lemma di Morse, dato che $N$, $S$ sono punti critici della mappa $t$, esiste un sistema di coordinate in cui la funzione è quadratica. 
+ In particolare, esiste intorno di $N$ in cui la funzione è nella forma $-(y_1^2+y_2^2)$ e un intorno di $S$ in cui è nella forma $y_1^2+y_2^2$.
+ \end{oss}
+ Segue che $i(N)=i(S)=1$ (ho due autovalori negativi o due positivi).
+ Dunque $\chi(S^2)=2$.
+ \marginpar{Disegnino con pozzo e sorgente di linee di campo}
+\end{es}
+\begin{prop}
+ $\chi(S^{2n+1})=0$ e $\chi(S^{2n})=2$.
+ \end{prop}
+ \begin{proof}
+  Basta considerare un campo analogo a quello esibito per $S^{2}$ e concludere tramite Morse.
+ \end{proof}
+
+\begin{cor}
+ Per $n$ pari non è possibile che esista un campo mai nullo
+ (``la sfera non è pettinabile'').
+\end{cor}
+\begin{prop}
+ Ci chiediamo se effettivamente per le sfere $S^{2n+1}$ esista un campo di vettori mai nullo. La risposta è affermativa.
+\end{prop}
+\begin{proof}
+La risposta è affermativa: $S^{2n+1}\subseteq\R^{2n+2}$. Considero la mappa 
+\begin{align*}
+ f : S^{2n+2} &\funarrow {TS^{2n+2}} \\
+ (x_1, y_1,\dots, x_{n+1}, y_{n+1}) &\mapsto \big((x_1, y_1,\dots, x_{n+1}, y_{n+1}), (-x_1, y_1,\dots, -x_{n+1}, y_{n+1})\big)
+\end{align*}
+
+
+\marginpar{La notazione usata è forse non corretta: volevo scrivere in modo formale il fatto che la mappa associasse ad un punto un vettore (un elemento del tangente). La componente ``vettoriale'' è solo la seconda dopo il prodotto cartesiano \\
+\emph{Risposta: secondo me la notazione formalmente corretta è questa con le parentesi}}
+\end{proof}
+\begin{oss}
+ Questo fatto è vero più in generale: $X$ varietà, $\chi(X)=0\implies \exists$~campo vettoriale mai nullo.
+\end{oss}
+

@@ -1,0 +1,153 @@
+% trascrizione: Petrillo
+
+\titlet{Cobordismo}
+
+Considereremo solo varietà compatte se non diversamente specificato.
+Facciamo prima una versione non orientata, poi faremo quella orientata.
+
+\begin{defn}[Triade]
+	Una tripletta $(W,V_0,V_1)$ è una \emph{triade} se $W$ è una varietà con bordo $\boundary W=V_0\djcup V_1$.
+\end{defn}
+
+Fisicamente potete pensare $W$ come una transizione da $V_0$ a $V_1$.
+
+\begin{oss}
+	Le componenti del bordo $V_0$ e $V_1$ possono anche essere vuote.
+	Ad esempio se $W$ è chiusa avremo $V_0=V_1=\nullset$.
+\end{oss}
+
+\begin{defn}[Cobordismo]
+	Siano $X_0$, $X_1$ $n$-varietà chiuse. Diciamo che $X_0$ è \emph{cobordante} a $X_1$ se esiste una triade le cui componenti del bordo sono diffeomorfe a $X_0$ e $X_1$:
+	\[\text{$X_0$ cobordante a $X_1$}\means
+	\exists W,V_0,V_1,f_0,f_1:\begin{cases}
+		\boundary W=V_0\djcup V_1 \\
+		\fundef[f_0]{X_0}{V_0}\text{ diffeomorfismo} \\
+		\fundef[f_1]{X_1}{V_1}\text{ diffeomorfismo}
+	\end{cases}\]
+\end{defn}
+
+\begin{center}
+	\input{figura18.pdf_tex}
+\end{center}
+
+Il concetto di cobordismo estende quello di diffeomorfismo:
+
+\begin{prop}
+	\label{th:diffcob}
+	Due varietà diffeomorfe sono cobordanti.
+\end{prop}
+
+\begin{proof}
+	Sia $\fundef{X_0}{X_1}$ diffeomorfismo.
+	Poniamo $W\is X_0\times[0,1]$ cilindro di base $X_0$.
+	Allora $(W,X_0\times\set0,X_0\times\set1,\id,f^{-1})$ è il cobordismo cercato.
+\end{proof}
+
+\begin{center}
+	\input{figura19.pdf_tex}
+\end{center}
+	
+\begin{oss}
+	Essere diffeomorfe è una relazione di equivalenza, perché:
+	\begin{itemize}
+		\item $\Fundef[\id]XX$
+		\item $\Fundef XY\implies\Fundef[f^{-1}]YX$
+		\item $\Fundef X{\Fundef[g]YZ}\implies\Fundef[g\circ f]XZ$
+	\end{itemize}
+\end{oss}
+
+\begin{lemma}
+	Essere cobordanti è una relazione di equivalenza.
+\end{lemma}
+
+\begin{proof}
+	Verifichiamo le tre proprietà dell'equivalenza:
+	\begin{description}
+		\item[Riflessiva]
+			Per vedere che $X$ è cobordante a se stesso considerare il cilindro $X\times[0,1]$, oppure osservare che $X$ è diffeomorfo a se stesso e usare la \autoref{th:diffcob}.
+		\item[Simmetrica]
+			Basta osservare che se $(W,V_0,V_1)$ è una triade, lo è anche $(W,V_1,V_0)$.
+		\item[Transitiva]
+			Sia $X_0$ cobordante a $X_1$ tramite la triade $(W,V_0,V_1)$ e $X_1$ cobordante a $X_2$ tramite $(W',V_0',V_1')$.
+			Per la seguente \autoref{th:varglue}, esiste una varietà $\mathcal W$ ``incollaggio'' di $W$ e $W'$ lungo le componenti del bordo diffeomorfe a $X_1$ con, intuitivamente, $\boundary\mathcal W=V_0\djcup V_1'$.
+			Allora $X_0$ è cobordante a $X_2$ tramite $(\mathcal W,V_0,V_1')$.
+			\qedhere
+	\end{description}
+\end{proof}
+
+\begin{center}
+	\vspace{-7mm} % la figura ha un po' di margine superiore
+	\input{figura20.pdf_tex}
+\end{center}
+
+\begin{prop}[Incollaggio]
+	\label{th:varglue}
+	Siano $W$ e $W'$ $n$-varietà con due sottovarietà dei loro bordi diffeomorfe:
+	\[Z\subseteq\boundary W,\ Z'\subseteq\boundary W',\ \fundef[\varphi]Z{Z'}\text{ diffeomorfismo}\]
+	Sia $\mathscr H$ il quoziente dell'unione di $W$ e $W'$ rispetto all'equivalenza indotta da $\varphi$:
+	\[\mathscr H=\quoset{W\djcup W'}\sim,\qquad x\sim y\means x=\varphi(y)\vel y=\varphi(x)\]
+	Allora $\mathscr H$ ammette una struttura di $n$-varietà con bordo dato dalle parti non diffeomorfe dei bordi e con $W$ e $W'$ che possono essere considerate sottovarietà di $\mathscr H$, cioè le immersioni di $W$ e $W'$ in $\mathscr H$ sono embedding:
+	\begin{gather*}
+		\mathscr H\text{ $n$-varietà},\ \boundary\mathscr H=(\boundary W\setminus Z)\djcup(\boundary W'\setminus Z'),\\
+		\Fundefhook[j]{W}{\mathscr H},\,\Fundefhook[j']{W'}{\mathscr H}\text{ embedding}
+	\end{gather*}
+\end{prop}
+
+\begin{proof}
+	In generale, se ho una varietà $A$ con bordo, il bordo ammette un \emph{collare} nella varietà, cioè esiste un embedding $\fundef[c]{\boundary A\times[0,1]}A$ tale che $c|_{\boundary A\times\set0}=\id$.
+	\marginpar{FIGURA COLLARE}
+	Siano $g_1$ e $g_2$ due collari di $Z$ e $Z'$
+	\begin{align*}
+		&\fundef[g_1]{Z\times(0,1]}W\\
+		&\fundef[g_2]{Z'\times[1,2)}{W'}
+	\end{align*}
+	che danno il bordo in 1:
+	\begin{align*}
+		g_1|_{Z\times\set1}&=\id\\
+		g_2|_{Z'\times\set1}&=\id
+	\end{align*}
+	Definiamo una concatenazione $g$ in $\mathscr H$ dei collari:
+	\begin{align*}
+		g&:Z\times(0,2)\funarrow\mathscr H \\
+		g(x,t)&\is\begin{cases}
+			j(g_1(x,t)) & t\in(0,1] \\
+			j'(g_2(\varphi(x),t)) & t\in(1,2)
+		\end{cases}
+	\end{align*}
+	Osserviamo che $\mathscr H$ è ricoperto dagli aperti $j(W\setminus Z)$, $j'(W'\setminus Z')$ e $g(Z\times(0,2))$ e che le mappe $j$, $j'$ e $g$ inducono un atlante liscio su $\mathscr H$ con le proprietà volute. Basta verificare che queste ``carte generalizzate'' siano compatibili.
+\end{proof}
+
+\begin{oss}
+	Abbiamo dimostrato l'esistenza di un incollaggio, ma in verità si può mostrare anche l'unicità: dati due incollaggi di due varietà fissate, sono diffeomorfi e il diffeomorfismo è l'identità fuori da un intorno compatto del bordo d'incollaggio.
+\end{oss}
+
+Consideriamo ora l'insieme $\eta_n$ delle $n$-varietà compatte chiuse quozientate per cobordismo:
+\[\eta_n\is\quoset{\setdef[X]{\text{$X$ $n$-varietà compatta}\et\boundary X=\nullset}}{\sim_\text{cob}}\]
+Definiamo un'operazione su $\eta_n$ che lo rende un gruppo abeliano:
+\[[X],[Y]\in\eta_n\qquad[X]+[Y]\is[X\djcup Y]\]
+L'elemento neutro è $[\nullset]$, cioè la classe dei bordi:
+\[[\nullset]=\setdef[X]{\exists W:X=\boundary W}\]
+L'unione disgiunta di due varietà chiuse cobordanti è un bordo, per definizione. Ma ogni varietà chiusa è cobordante a se stessa, quindi:
+\[[X\djcup X]=[\nullset]\implies-[X]=[X]\]
+Cioè in particolare $2[X]=[\nullset]$. Allora $(\eta_n,+,\	cdot)$ è uno spazio vettoriale sul campo finito $\quoset\Z{2\Z}=\set{0,1}$, con prodotto:
+\[0\cdot[X]=[\nullset],\ 1\cdot[X]=[X]\]
+Vedremo poi che in generale $\eta_n$ non è banale. Adesso generalizziamo $\eta_n$: sia $Y$ una \emph{varietà obiettivo}, non necessariamente compatta; vogliamo definire un oggetto $\eta_n(Y)$ che si riduca a $\eta_n$ quando $\card Y=1$. Poniamo:
+\[\mathscr F=\setdef[\fundef XY]{\text{$X$ $n$-varietà compatta chiusa}\et\text{$f$ liscia}}\]
+Osserviamo che $\mathscr F$ si riduce alle varietà compatte chiuse se $Y$ è un punto. Analogamente alla costruzione di $\eta_n$, vogliamo quozientare $\mathscr F$ per cobordismo, ma prima dobbiamo definire il cobordismo tra fuzioni:
+
+\begin{defn}[Cobordismo tra funzioni]
+	Siano $X_0$ e $X_1$ $n$-varietà compatte chiuse, $Y$ una varietà e $\fundef[f_0]{X_0}Y$, $\fundef[f_1]{X_1}Y$ liscie. Diciamo che $(X_0,f_0)$ è cobordante a $(X_1,f_1)$ se $X_0$ è cobordante a $X_1$ tramite la varietà $W$ e i diffeomorfismi $\varphi_0$ e $\varphi_1$ ed esiste una funzione liscia $\fundef[F]WY$ tale che $F\circ\varphi_0=f_0$ e $F\circ\varphi_1=f_1$, cioè che fa commutare il diagramma:
+	\begin{center}
+		\input{figura21.pdf_tex}
+	\end{center}
+\end{defn}
+
+Si verifica che anche questa è una relazione di equivalenza e poniamo dunque:
+\[\eta_n(Y)\is\quoset{\mathscr F}{\sim_\text{cob}}\]
+Analogamente a $\eta_n$ l'unione dei grafici ci dà una somma su $\eta_n(Y)$ con le proprietà già viste, e $\eta_n(Y)$ è un $\quoset\Z{2\Z}$-spazio vettoriale.
+
+Ora per evitare complicazioni assumiamo che le varietà obiettivo siano compatte. Consideriamo una funzione liscia $\fundef[g]{Y_1}{Y_2}$. Questa induce una funzione lineare $\fundef[g_*]{\eta_n(Y_1)}{\eta_n(Y_2)}$ così definita:
+\[g_*([X,f])\is[X,g\circ f]\]
+Si verifica facilmente che è ben definita e funtoriale, infatti $g_{1*}\circ g_{2*}=(g_1\circ g_2)_*$ e $\id_*=\id$. Inoltre se $g$ è un diffeomorfismo, $g_*$ è un isomorfismo.
+
+Rispetto alla varietà obiettivo questi spazi vettoriali perdono informazioni, cioè è possibile avere varietà non diffeomorfe con spazi uguali. Però se gli spazi sono diversi le varietà non sono diffeomorfe, quindi li possiamo usare per distinguere varietà che siano abbastanza diverse.
