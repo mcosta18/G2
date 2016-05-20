@@ -59,6 +59,7 @@
 % The motivations behind this macro are the use of a specific arrow and the \nolinebreak.
 \newcommand*\fundef[3][f]{{#1}\nolinebreak:{#2}\nolinebreak\funarrow\nolinebreak{#3}}
 \newcommand*\Fundef[3][f]{{#2}\nolinebreak\xrightarrow{\ #1\ }\nolinebreak{#3}}
+\newcommand*\fundefhook[3][f]{{#1}\nolinebreak:{#2}\nolinebreak\hookrightarrow\nolinebreak{#3}}
 \newcommand*\Fundefhook[3][f]{{#2}\nolinebreak\xhookrightarrow{\ #1\ }\nolinebreak{#3}}
 
 \newcommand*\deriv[2]{\frac{\dd{#1}}{\dd{#2}}} % derivative
@@ -171,5 +172,6 @@
 \DeclareMathOperator\imm{Imm}
 \DeclareMathOperator\emb{Emb}
 \DeclareMathOperator\diff{Diff}
+\newcommand*\csum{\mathop{\sharp}} % connected sum
 
 \endinput
