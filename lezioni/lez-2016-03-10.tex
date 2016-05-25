@@ -4,7 +4,6 @@
 %devi parlare del modello a semipiano
 % risposta: se era nella mia lezione, mi sa che me lo sono perso, se tu ce l'hai mettilo.
 
-DA FINIRE
 
 \begin{defn}[Funzioni a foruncolo]
  $\fundef[\lambda] {\R^n}{\R^n}, \lambda(\av x) = \lambda(\abs{\av x})$ tale che 
@@ -24,22 +23,24 @@ Usiamo adesso questa nozione per estendere funzioni definite localmente.
  Sia $M$ una varietà e $(U, \phi)$ una carta. Allora posso estenderla su tutta la varietà.
 \end{prop}
  \begin{proof}
-  Basta considerare $\fundef[\lambda\cdot f] M\R$ con $\lambda$ a foruncolo. Si verifica subito che 
+  Basta considerare $\fundef[\lambda\cdot f] M\R$ con $\lambda$ a foruncolo.
  \end{proof}
  
 \titlet{Varietà con bordo}
-\begin{defn}[Diffeomorfismo fra sottoinsiemi arbitrati di $\R^n$]
+\begin{defn}[Diffeomorfismo fra sottoinsiemi arbitrari di $\R^n$]
 $\fundef AB$ con $A,B\subseteq \R^n$. $f$ è \emph{diffeomorfismo} se
 \begin{itemize}
  \item è un omeomorfismo
  \item $\forall x\in A \exists \fundef[\phi] U\R^n$ carta locale tale che $f|_{U\cap A}=\phi|_{U\cap A}$
 \end{itemize}
 \end{defn}
+Per le varietà con bordo, prendo come modello il sempiano superiore $\mathbb H_n=\setdef[x\in\R^n]{x_n\ge 0 \; \forall n}$
 \begin{defn}[Varietà con bordo]
  $M$ è una \emph{varietà con bordo} se 
  \begin{itemize}
   \item è spazio topologico $T_2$, $2$-numerabile
-  \item è munito di atlante massimale 
+  \item è munito di atlante massimale tale che $\phi_{\lambda}: U_{\lambda}\rightarrow U_{\lambda}\subseteq\mathbb H_n$, $\phi$ omeomorfismo.
+  \item $\forall \mu,\lambda\; \phi_{\mu}\circ\phi_{\lambda}^{-1}:\phi_{\lambda}(U_{\lambda}\cap U_{\mu})\rightarrow\phi_{\mu}(U_{\lambda}\capU_{\mu})$ è diffeomorfismo.
  \end{itemize}
 \end{defn}
 \begin{defn}[Bordo]
@@ -68,11 +69,19 @@ Si estendono ora tutte le definizioni date alle varietà alle varietà con bordo
  Segue da funzione implicita in forma iniettiva
 \end{proof}
 \begin{oss}
- Nel teorema dopra l'ipotesi di omeomorfismo è necessaria!
- Come controesempio basta prendere (metti disegnino)
+ Nel teorema sopra l'ipotesi di omeomorfismo è necessaria!
+ Come controesempio basta prendere 
+ \marginpar{metti trifoglio}
 \end{oss}
+Si osservi che abbiamo tre modelli possibili al variare del domicilio di una  $n$-sottovarietà contenuta in una $m$-varietà ($n\le m$):
+\begin{itemize}
+ \item Il bordo sta nel bordo (1).
+ \item Il bordo di $\mathbb H^n$ non sta nel bordo di $\mathbb H^m$ (2).
+ \item Caso misto (3).
+\end{itemize}
 
+\marginpar{metti disegnino dei tre modelli possibili}
 \begin{defn}[Sottovarietà propria]
- $N\in M$ è \emph{sottovarietà propria} se l'unico modello che si realizza è (inserisci disegnino)
-\end{defn}
+ $N\in M$ è \emph{sottovarietà propria} se l'unico modello che si realizza è (1), ossia $\partial N = N\cap \partial M$.
 
+\end{defn}
