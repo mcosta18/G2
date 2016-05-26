@@ -1,0 +1,40 @@
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper,twocolumn,landscape,openany,twoside]{book}
+\usepackage[inner=2.5cm,outer=1cm,top=2cm,bottom=1cm]{geometry}
+\setlength{\columnsep}{1cm}
+\setlength{\headsep}{1.5em}
+
+\usepackage{etoolbox} % \patchcmd
+\usepackage{ifthen} % \ifthenelse
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\oldmarginpar{}}
+
+\patchcmd{\chapter}{plain}{fancy}{}{}
+
+\newcounter{thislessonpage}
+\newcounter{lastlessonpage}
+\newenvironment{lesson}[3]{%
+\setcounter{thislessonpage}{\value{page}}%
+\DTMsavenoparsedate{thislessondate}{#1}{#2}{#3}{-1}%
+\DTMmakeglobal{thislessondate}%
+}
+{%
+\setcounter{lastlessonpage}{\value{page}}%
+\DTMsavenoparsedate{lastlessondate}{\DTMfetchyear{thislessondate}}{\DTMfetchmonth{thislessondate}}{\DTMfetchday{thislessondate}}{-1}%
+\DTMmakeglobal{lastlessondate}%
+}
+
+\newcommand*\headcmacro{%
+\ifthenelse { \value{lastlessonpage} = \value{page} \and \value{thislessonpage} = \value{lastlessonpage}}
+{Lezioni \DTMusedate{lastlessondate}, \DTMusedate{thislessondate}}
+{Lezione \DTMusedate{thislessondate}}%
+}
+\newcommand*\titlet[1]{\section{#1}}
+\newcommand*\subtitlet[1]{\subsection{#1}}
+
+\input{appunti_core.tex}

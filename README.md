@@ -60,7 +60,7 @@ Per aggiungere una lezione:
 1. creare il file `lez-YYYY-MM-DD.tex` e trascrivere la lezione prendendo a esempio i file precedenti
 2. mettere in un commento all'inizio del file il proprio nome
 3. mettere eventuali nuove macro in `macros.sty` (**in modo ordinato!**)
-4. aggiungere `\includelesson{YYYY}{MM}{DD}` in fondo all'elenco in `appunti.tex`
+4. aggiungere `\includelesson{YYYY}{MM}{DD}` in fondo all'elenco in `appunti_core.tex`
 
 ## Figure in LaTeX
 

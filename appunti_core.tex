@@ -1,0 +1,122 @@
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc} % si possono usare caratteri accentati direttamente
+\usepackage{macros}
+
+% --- FONT ---
+\usepackage{lmodern}
+% font 1 (sans serif più leggero)
+% \usepackage{cmbright}
+% font 2 (già in uso)
+% \usepackage{newpxtext, newpxmath} % (!) tenere dopo {macros}
+% ------------
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=darkgray, citecolor=darkgray, filecolor=darkgray]{hyperref}
+\usepackage[all]{hypcap} % (!) tenere dopo {hyperref}
+\usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
+\usepackage{fancyhdr}
+\usepackage[section]{placeins} % tiene le figure nella sezione
+
+% --- THEOREMS ---
+\declaretheorem[style=definition,name=Definizione]{defn}
+\declaretheorem[style=plain,name=Teorema]{teo}
+\declaretheorem[style=plain,name=Lemma,sibling=teo]{lemma}
+\declaretheorem[style=plain,name=Proposizione,sibling=teo]{prop}
+\declaretheorem[style=plain,name=Corollario,sibling=teo]{cor}
+\declaretheorem[style=remark,name=Esempio]{es}
+\declaretheorem[style=remark,name=Osservazione]{oss}
+\declaretheorem[style=remark,name=Esercizio]{ex}
+% ----------------
+
+\DTMlangsetup{showyear=false}
+
+\newcommand\includelesson[4]{%
+\begin{lesson}{#1}{#2}{#3}
+\input{lez-#1-#2-#3}
+\end{lesson}}
+
+% --- SEARCH PATHS ---
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{figure/}, {lezioni/}}
+\makeatother
+\graphicspath{{figure/}}
+% --------------------
+
+%%% --- DOCUMENT --- %%%
+
+\title{Appunti di Geometria 2, corso di fisica}
+\author{%
+Federico Belliardo\\
+Alberto Bordin\\
+Alessandro Candido\\
+Marco Costa\\
+Valerio Lomanto\\
+Andrea Luzio\\
+Giacomo Petrillo\\
+Roberto Ribatti}
+\date{Anno accademico 2015-2016}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+% \frontmatter
+
+\fancyhf{}
+\fancyhead[LO,RE]{\rightmark}
+\fancyhead[RO,LE]{\thepage}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+% \mainmatter
+
+\fancyhf{}
+\fancyhead[LO,RE]{\rightmark}
+\fancyhead[RO]{{\small\headcmacro}\hspace{2cm}\thepage}
+\fancyhead[LE]{\thepage\hspace{2cm}{\small\headcmacro}}
+
+\chapter{Spazi topologici}
+\includelesson{2016}{02}{15}{Ribatti}
+\includelesson{2016}{02}{17}{Petrillo}
+\includelesson{2016}{02}{18}{Petrillo}
+\includelesson{2016}{02}{22}{Costa}
+\includelesson{2016}{02}{24}{Candido}
+\includelesson{2016}{02}{25}{Luzio}
+\chapter{Varietà}
+\includelesson{2016}{02}{29}{Bordin}
+\includelesson{2016}{03}{02}{Lomanto}
+\includelesson{2016}{03}{03}{Belliardo}
+\includelesson{2016}{03}{07}{Ribatti}
+\includelesson{2016}{03}{09}{Petrillo}
+\includelesson{2016}{03}{10}{Costa}
+\includelesson{2016}{03}{14}{Candido}
+\includelesson{2016}{03}{16}{Luzio}
+\includelesson{2016}{03}{17}{Bordin}
+\includelesson{2016}{04}{04}{Lomanto}
+\includelesson{2016}{04}{06}{Belliardo}
+\includelesson{2016}{04}{07}{Ribatti}
+\includelesson{2016}{04}{11}{Petrillo}
+\includelesson{2016}{04}{13}{Costa}
+\includelesson{2016}{04}{14}{Candido}
+\includelesson{2016}{04}{18}{Luzio}
+\includelesson{2016}{04}{20}{Bordin}
+\includelesson{2016}{04}{21}{Lomanto}
+\includelesson{2016}{04}{27}{Belliardo}
+\includelesson{2016}{04}{28}{Ribatti}
+\includelesson{2016}{05}{02}{Petrillo}
+\includelesson{2016}{05}{04}{Costa}
+\includelesson{2016}{05}{05}{Candido}
+% \includelesson{2016}{05}{09}{Luzio}
+\includelesson{2016}{05}{11}{Bordin}
+\includelesson{2016}{05}{12}{Lomanto}
+% \includelesson{2016}{05}{16}{Belliardo}
+\includelesson{2016}{05}{18}{Ribatti}
+\includelesson{2016}{05}{19}{Petrillo}
+% \includelesson{2016}{05}{23}{Costa}
+
+\end{document}
