@@ -1,0 +1,110 @@
+% trascrizione iniziale: Petrillo
+
+\titlet{Teoria di Morse}
+
+\begin{lemma}[del cilindro]
+	Siano $(W,V_0,V_1)$ una triade, $W$ compatta, $\fundef W{[0,1]}$ di Morse senza punti critici; allora $\exists\fundef[h]{V_0\times[0,1]}W$ diffeomorfismo tale che questo diagramma commuta:
+	\begin{equation*}
+		\begin{tikzcd}
+			V_0\times[0,1] \arrow[r, "h"] \arrow[rd, "\pi"] & W \arrow[d, "f"] \\
+			& {[0,1]}
+		\end{tikzcd}
+	\end{equation*}
+\end{lemma}
+
+\begin{proof}
+	Fissiamo una metrica Riemanniana $g$ su $W$.
+	Consideriamo $\nabla f$ rispetto a $g$.
+	$\nabla f>0$ ovunque perché $f$ non ha punti critici.
+	Allora lo posso normalizzare:
+	\[\nu(f)\is\frac{\nabla f}{\norm{\nabla f}}\so
+	\norm{\nu(f)}=1\]
+	Consideriamo l'equazione differenziale ordinaria associata al campo:
+	\begin{gather*}
+		\fundef[\varphi]{[a,b]}W \\
+		\deriv{}t(f\circ\varphi)=\norm{\nu(f)} \so f(\varphi(t))=t+\mathrm{costante}
+	\end{gather*}
+	A meno di riparametrizzazione, $f(\varphi(s))=s$.
+	Poiché $W$ è compatta, $\varphi$ è definita su tutto $[0,1]$.
+	Allora $\forall y\in W\,\exists!\text{ curva integrale }\fundef[\psi_y]{[0,1]}W$ passante per $y$ tale che $f(\psi_y(s))=s$.
+	Infine $h(y,s)\is\psi_y(s)$.
+\end{proof}
+
+\begin{defn}[Manico]
+	Fissiamo $n$ dimensione e $0\le\lambda\le n$.
+	Il \emph{manico standard di indice $\lambda$ (e dimensione $n$)} ovvero \emph{$\lambda$-manico} è $D^\lambda\times D^{n-\lambda}$.
+\end{defn}
+
+\begin{oss}
+	Topologicamente $D^\lambda\times D^{n-\lambda}\simeq D^n$.
+\end{oss}
+
+\begin{defn}[Cuore]
+	Il \emph{cuore} del $\lambda$-manico è $D^\lambda\times\set0$.
+\end{defn}
+
+\begin{defn}[A-sfera]
+	L'\emph{a-sfera} è il bordo del cuore.
+\end{defn}
+
+\begin{defn}[A-tubo]
+	L'\emph{a-tubo} del $\lambda$-manico è $S^{\lambda-1}\times D^{n-\lambda}$.
+\end{defn}
+
+\begin{defn}[Cocuore]
+	Il \emph{cocuore} del $\lambda$-manico è $\set0\times D^{n-\lambda}$.
+\end{defn}
+
+\begin{defn}[B-sfera]
+	La \emph{b-sfera} è il bordo del cocuore.
+\end{defn}
+
+\begin{defn}[B-tubo]
+	Il \emph{b-tubo} del $\lambda$-manico è $D^\lambda\times S^{n-\lambda-1}$.
+\end{defn}
+
+\begin{oss}
+	Il cuore e il cocuore sono duali: sono codimensionali, trasversi e si intersecano in un punto.
+\end{oss}
+
+\begin{defn}[Attaccamento]
+	Sia $W$ $n$-varietà.
+	Fissato un embedding $\fundefhook[\varphi]{(\text{a-tubo})}{\boundary W}$ detto \emph{funzione di attaccamento del manico}, considerando la relazione di equivalenza indotta da $\varphi$, l'insieme:
+	\[\tilde W=\quoset{\big(W\djcup(D^\lambda\times D^{n-\lambda})\big)}{\varphi}\]
+	è l'\emph{attaccamento del $\lambda$-manico a $W$}.
+	\marginpar{questa definizione va sistemata tenendo conto del teorema di incollaggio}
+\end{defn}
+
+\begin{oss}
+	Vale sempre $\dim(\text{a-tubo})=\dim\boundary W$.
+\end{oss}
+
+\begin{teo}
+	A meno di allisciamento sistematico degli angoli, $\tilde W$ è una $n$-varietà differenziabile univocamente definita a meno di diffeomorfismi.
+\end{teo}
+
+\begin{oss}
+	$\boundary \tilde W=\clos{\boundary W\setminus\varphi(\text{a-tubo})}\cup(\text{b-tubo})$
+\end{oss}
+
+\begin{oss}
+	L'attaccamento di un manico in generale cambia la topologia.
+\end{oss}
+
+\begin{teo}[della teoria di Morse]
+	Siano $(W,V_0,V_1)$ triade, $\fundef W{[0,1]}$ di Morse, $x$ punto critico di $f$ di indice $\lambda$;
+	poniamo $c\is f(x)$, $W_t\is f^{-1}([0,t])$, $V_t\is f^{-1}(\set t)$;
+	sia $\varepsilon$ abbastanza piccolo tale che $V_{c-\varepsilon}$ e $V_{c+\varepsilon}$ intersecano una carta di Morse centrata in $x$.
+	Allora $W_{c+\varepsilon}$ è l'attaccamento di un $\lambda$-manico a $W_{c-\varepsilon}$ lungo la componente del bordo $V_{c-\varepsilon}$.
+\end{teo}
+
+\begin{proof}
+	Mettiamoci nella carta di Morse.
+	Allora $f=-\sum_{i=1}^\lambda x_i^2+\sum_{i=\lambda+1}^n x_i^2$ e i livelli $V_{-\varepsilon}$, $V_{+\varepsilon}$ sono iperboloidi definiti dalle equazioni $f=-\varepsilon$, $f=\varepsilon$.
+	Scegliamo una metrica riemanniana su $W$ tale che nella carta di Morse sia standard, in particolare $\nabla f=2(-x_1,\dots,-x_\lambda,x_{\lambda+1},\dots,x_n)$.
+	
+	Consideriamo l'unione delle linee integrali di $\nabla f$ passanti per l'origine che provengono da $V_{-\varepsilon}$.
+	Ha la dimensione giusta per essere il cuore di un $\lambda$-manico.
+	La ingrassiamo a un manico tra le due componenti di $V_{-\varepsilon}$.
+	Per completare la dimostrazione, basta integrare lungo $\nabla f$ per ottenere un diffeomorfismo tra questo attaccamento e $V_{+\varepsilon}$. \marginpar{In realtà non proprio ma non ho capito bene}
+\end{proof}

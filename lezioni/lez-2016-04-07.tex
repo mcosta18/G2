@@ -4,7 +4,7 @@
 
 \marginpar{DA FINIRE}
 
-Date due varietà $X$ e $Y$ consideriamo $\xi(X,Y)=\{ \fundef{X}{Y}\text{ liscie} \} $ con la topologia definita precedentemente. Restringiamoci al caso $X$ compatta. Consideriamo alcuni sottoinsiemi:
+Date due varietà $X$ e $Y$ consideriamo $\mathcal E (X,Y)=\{ \fundef{X}{Y}\text{ liscie} \} $ con la topologia definita precedentemente. Restringiamoci al caso $X$ compatta. Consideriamo alcuni sottoinsiemi:
 \begin{itemize}
 \item le immersioni $\imm(X,Y) =\{\fundef{X}{Y}\text{ immersioni}\}$\\ovvero $\forall x \in X \; \fundef[Df_x]{T_xX}{T_{f(x)}Y}$ è iniettiva \\(la funzione tangente ristretta alla fibra $x$ che manda lo spazio tangente a $x$ nello spazio tangente a $f(x)$ è iniettiva)
 \item gli embedding $\emb(X,Y)=\{\fundef{X}{Y}\text{ embedding}\}$\\ovvero, poiché $X$ compatta $f$ è un'immersione iniettiva.
@@ -16,7 +16,7 @@ Questi insiemi possono anche essere vuoti.
 \end{oss}
 
 \begin{teo}
-Questi elencati sono sottoinsiemi aperti di $\xi(X,Y)$.
+Questi elencati sono sottoinsiemi aperti di $\mathcal E (X,Y)$.
 \end{teo}
 
 Moralmente, se una funzione è ``abbastanza vicina'' a un'immersione (o embedding o diffeom.) è essa stessa un'immersione (o embedding o diffeom.).
@@ -38,9 +38,9 @@ Considero adesso $v_n \is \frac{y_n-x_n}{\left \|y_n - x_n \right \|} \in S^{n-1
 Segue che $\dd_{x_0}f[v_0]=0$,
 \marginpar{manco qui}
 assurdo perché anche il differenziale di $f$ è iniettivo. \absurd
-\item [$\diff(X,Y)$] Per i punti precedenti presa $g$ funzione ``vicina'' a $f$ diffeomorfismo, $g$ è un embedding. Mi resta da mostrare la sugettività.
+\item [$\diff(X,Y)$] Per i punti precedenti presa $g$ funzione ``vicina'' a $f$ diffeomorfismo, $g$ è un embedding. Mi resta da mostrare la surgettività.
 
-Poichè $g$ è un embedding $g(x) \subseteq Y$ è aperto, inoltre $X$ è compatta, quindi $g(x)$ è anche chiuso (nelle ipotesi in cui lavoriamo compatto $\iff$ chiuso).
+Poiché $g$ è un embedding $g(x) \subseteq Y$ è aperto, inoltre $X$ è compatta, quindi $g(x)$ è anche chiuso (nelle ipotesi in cui lavoriamo compatto $\iff$ chiuso).
 
 Ma se $X$ e $Y$ sono connesse (ipotesi di comodo) allora $g(x) = Y$, ovvero $g$ è diffeomorfismo. In mancanza dell'ipotesi di comodo mi posso restringere alle singole componenti connesse in partenza e in arrivo.
 \qedhere

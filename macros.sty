@@ -15,10 +15,12 @@
 \RequirePackage{chemarrow} % \chemarrow
 \RequirePackage{fixltx2e} % \TextOrMath
 \RequirePackage{centernot} % \centernot
-\RequirePackage{wrapfig}
+% \RequirePackage{wrapfig}
 \RequirePackage{tikz}
 \RequirePackage{tikz-cd}
 \RequirePackage{epigraph}
+
+\usetikzlibrary{tqft}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% MISCELLANEOUS %%%%%%%%%%%%%%%%%%%%%%%%%%
 % macros that do not have enough siblings to get their own category
@@ -34,6 +36,9 @@
 
 \newcommand*\av[1]{\underline{#1}} % algebraic vector
 
+% this symbol copied from txfonts
+\DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
+\DeclareMathSymbol{\varprod}{\mathop}{largesymbolsA}{16}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -54,6 +59,7 @@
 % The motivations behind this macro are the use of a specific arrow and the \nolinebreak.
 \newcommand*\fundef[3][f]{{#1}\nolinebreak:{#2}\nolinebreak\funarrow\nolinebreak{#3}}
 \newcommand*\Fundef[3][f]{{#2}\nolinebreak\xrightarrow{\ #1\ }\nolinebreak{#3}}
+\newcommand*\fundefhook[3][f]{{#1}\nolinebreak:{#2}\nolinebreak\hookrightarrow\nolinebreak{#3}}
 \newcommand*\Fundefhook[3][f]{{#2}\nolinebreak\xhookrightarrow{\ #1\ }\nolinebreak{#3}}
 
 \newcommand*\deriv[2]{\frac{\dd{#1}}{\dd{#2}}} % derivative
@@ -109,6 +115,7 @@
 \newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
 \newcommand*\Z{\mathbb{Z}} % set of integers
 \newcommand*\N{\mathbb{N}} % set of natural numbers
+\renewcommand*\P{\mathbb{P}} % proiettivo
 \DeclareMathOperator\Hom{Hom} % space of homomorphisms
 \DeclareMathOperator\Mult{Mult} % space of multilinear functions
 \DeclareMathOperator\Aut{Aut} % set of automorphisms
@@ -165,5 +172,6 @@
 \DeclareMathOperator\imm{Imm}
 \DeclareMathOperator\emb{Emb}
 \DeclareMathOperator\diff{Diff}
+\newcommand*\csum{\mathop{\sharp}} % connected sum
 
 \endinput
