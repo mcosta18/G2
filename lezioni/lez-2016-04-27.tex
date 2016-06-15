@@ -12,11 +12,11 @@ Metto come orientazione sulla linea verticale l'unica che mi da l'orientazione d
 \newcommand*\base{\mathcal B}
 \marginpar{ditemi se ho interpretato giusto - fede}
 
-Sia $i$ una immersione cioè $X \hookrightarrow Y \supset A$ e definisco $i^{-1} (A) = X \pitchfork A$. Si ha anche $T_{x}X + T_{x}A = T_{x}Y$ e definisco $T_{x}(X \cup A) = T_{x}X \cup T_{y}A$. 
-Nella lezione precedente ho dato una procedura per orientare $i^{-1} (A) = X \pitchfork A$. Ora voglio orientare  $T_{x}(X \cup A)$ sapendo che l'unione degli spazi di cui è intersezione da tutto l'ambiente $T_{x}Y$. Per fare ciò si darà una procedura per orientare l'intersezione di due spazi vettoriali.
-Ho che $\mathbb{R}^{N}$ è lo spazio ambiente e vale $V+W = \mathbb{R}^{N}$. Sia $\base$ una base dell'intersezione $V \cup W $. Le basi $\base_{W}$ e $\base_{W}$ sono basi di $V$ e $W$ così come lo sono rispettivamente anche $(\base, \base_{V})$ e  $(\base, \base_{W})$
+Sia $i$ una immersione cioè $X \hookrightarrow A \subset Y$ e definisco $i^{-1} (A) = X \pitchfork A$. Si ha anche $T_{x}X + T_{x}A = T_{x}Y$ e definisco $T_{x}(X \cap A) = T_{x}X \cap T_{y}A$. 
+Nella lezione precedente ho dato una procedura per orientare $i^{-1} (A) = X \pitchfork A$. Ora voglio orientare  $T_{x}(X \cap A)$ sapendo che l'unione degli spazi di cui è intersezione da tutto l'ambiente $T_{x}Y$. Per fare ciò si darà una procedura per orientare l'intersezione di due spazi vettoriali.
+Ho che $\mathbb{R}^{N}$ è lo spazio ambiente e vale $V+W = \mathbb{R}^{N}$. Sia $\base$ una base dell'intersezione $V \cap W $. Le basi $\base_{W}$ e $\base_{W}$ sono basi di $V$ e $W$ così come lo sono rispettivamente anche $(\base, \base_{V})$ e  $(\base, \base_{W})$
 . L'orientazione di $V$ e $W$ è data da queste ultime basi. L'insieme $(\base, \base_V, \base_W)$ è base di $\mathbb{R}^{N}$ e produce quindi una orientazione di $\mathbb{R}^{N}$.
-L'orientazione della base $\base$ di $V \cup W$ è quella per cui la procedura specificata produce una base per $\mathbb{R}^{N}$ che ha la stessa orientazione data in partenza.
+L'orientazione della base $\base$ di $V \cap W$ è quella per cui la procedura specificata produce una base per $\mathbb{R}^{N}$ che ha la stessa orientazione data in partenza.
 
 
 \begin{oss}
@@ -26,7 +26,7 @@ L'orientazione della base $\base$ di $V \cup W$ è quella per cui la procedura s
 
 Se è $\fundef[f]{X}{Y}$ con $A \subseteq Y$ generico per dimostrare che $f^{-1}(A)$ è una varietà e dargli una orientazione
 ci si riconduce al caso in cui $A = \set{y_{0}}$, a questo punto si applica la procedura esposta precedentemente.
-
+brouwer
 \marginpar{Aggiungere disegno incoprensibile 2}
 
 \begin{defn}[Trasversalità di funzioni]
@@ -36,13 +36,13 @@ Diciamo $f_{1} \pitchfork f_{2} \means f_{1} \times f_{2} \pitchfork \Delta$.
 \end{defn}
 
 \begin{teo}
-Data $\fundef[f_2]{X_2}{Y}$, definiamo $\pitchfork(A, f_{2}) \is \setdef[\fundef{X_{1}}{Y \supseteq A}] {f\pitchfork f_{2}}$ l'insieme così definito è un aperto denso di $\mathcal{E}(X_{1}, Y)$.
+Data $\fundef[f_2]{X_2}{Y}$, definiamo $\pitchfork(A, f_{2}) \is \setdef[\fundef{X_{1}}{A \supseteq Y}] {f\pitchfork f_{2}}$ l'insieme così definito è un aperto denso di $\mathcal{E}(X_{1}, Y)$.
 \end{teo}
 
 Abbiamo visto nelle lezioni precedenti:
 
 \begin{itemize}
- \item Non esistono retrazioni $\fundef[r]{X}{\boundary X}$ diffeomorfismi, da cui segue il teorema del punto fisso di Brouer
+ \item Non esistono retrazioni $\fundef[r]{X}{\boundary X}$ diffeomorfismi, da cui segue il teorema del punto fisso di Brouwer
  \item Vale il teorema di embedding cioè ogni varietà $X^{n}$ di dimensione $n$ si può immergere con un embedding in $\mathbb{R}^{2n+1}$ se non richiedo iniettività della funzione nella sua 
  immagine (condizione per avere embedding) posso comunque trovare un'immersione in $\mathbb{R}^{2n}$. 
 \end{itemize}
@@ -53,7 +53,7 @@ $\forall X^{n}$ trovo un embedding $X^{n} \hookrightarrow \mathbb{R}^{2n}$.
 
 \begin{oss}
  Per dimostrarlo non basta usare considerazioni di trasversalità. Devo definire una procedura a partire dalla immersione in $\mathbb{R}^{2n}$ per
- eliminare tutte le autointersezioni della varietà immersa, questa procedura è nota come \"Whitney Trick\".
+ eliminare tutte le autointersezioni della varietà immersa, questa procedura è nota come Whitney Trick.
 \end{oss}
 
 \begin{oss} %molto a caso
@@ -96,7 +96,7 @@ $f$: $\grad_{2}(f)$ è ben definita cioè non dipende né dalla scelta di $y_{0}
  
 \marginpar{Inserisco il disegnino cancer di g1 e g2 che sono cobordanti e mostro eplicitamente dove stanno gli insiemi di cui sto parlando}
  
- %non so se funziona quanetsa notazione per primare le cose
+ %non so se funziona questa notazione per primare le cose
 Ora devo eliminare l'arbitrarietà del punto $y_{0}$. Prendo due punti $x$ e $y$ faremo vedere nella prossima lezione che si può utilizzare il fatto che $Y$ è connessa per costruire una isotopia
 $\fundef[H]{Y \times [0,1]}{Y}$ tale che posto $H_{t} = H|_{Y \times {t}}$ ho che $H_{t}$ è un diffeomorfismo di $Y$ $\forall t \in [0,1]$  e vale che $H_{0} = \id$ e $H_{1} (x) = y$.
 Comunque prendo due punti esiste un diffeomorfismo che manda un punto nell'altro, in questo senso nessun punto è privilegiato. Questo significa che una varietà è omogenea, cioè a meno di 
