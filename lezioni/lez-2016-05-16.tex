@@ -1,75 +1,74 @@
 %fede
 
-\titletit{Classificazione spazi vettoriali su $\frac{\mathbb{Z}}{\mathbb{2Z}}$}
+\titlet{Classificazione spazi vettoriali su $\quoset\Z{2\Z}$}
 
-Daremo una classificazione completa a meno di isometrie degli spazi vettoriali $V$ su campo $\frac{\mathbb{Z}}{\mathbb{2Z}}$ di dimensione 
-$dim(V) = n$. Lo spazio vettoriale è dotato di un prodotto scalare non degenere.
+Daremo una classificazione completa a meno di isometrie degli spazi vettoriali $V$ su campo $\quoset\Z{2\Z}$ di dimensione 
+$\dim(V) = n$. Lo spazio vettoriale è dotato di un prodotto scalare non degenere.
 %non sono sicuro della parola isometria
-Decomperremo lo spazio vettoriali in somme ortogonali (rispetto al prodotto scalare dato) di spazi vettoriali isometrici
-a $U, V$ di dimensioni rispettivamente 1 e 2. Quuesti spazi si scrivono in qualche base rispettivamente come: $ \left[\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right]$
-e $\left[\begin{matrix} 1 \end{matrix}\right]$.
+Decomporremo lo spazio vettoriale in somme ortogonali (rispetto al prodotto scalare dato) di spazi vettoriali isometrici
+a $U$, $H$ di dimensioni rispettivamente 1 e 2. Questi spazi si scrivono in qualche base rispettivamente come: $\begin{bmatrix} 1 \end{bmatrix}$ e $ \begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$.
 $H$ è totalmente isotropo ma non è identicamente nullo (ricorda che sono in caratteristica 2!).
 
-Reminder: Un prodotto scalare totalmente isotropo è uno per cui $(v,v) = 0 \forall v \in V$.
+Reminder: Un prodotto scalare totalmente isotropo è uno per cui $(v,v) = 0,\, \forall v \in V$.
 
-%non mi è chiaro se quetso teorema lo abbiamo dimostyrato o lo abbiamo solo detto%
+%non mi è chiaro se quetso teorema lo abbiamo dimostrato o lo abbiamo solo detto%
 \begin{teo}
  Posso scrivere $V$ in due e due sole forme:
  \begin{itemize}
-  \item $V = U \bot U \bot ... \bot U$
-  $V$ è somma di n copie di $U$ e in questo caso V ha una base ortogonale e $dim(V) = n$.
-  \item $V = H \bot H \bot ... \bot H$.
-  $V$ è somma di n copie di $H$, il prodotto scalare è totalmente isotropo ma non è nullo. $dim(V) = 2n$.
+  \item $V = U \perp U \perp \dots \perp U$.
+  $V$ è somma di $n$ copie di $U$ e in questo caso V ha una base ortogonale e $\dim(V) = n$.
+  \item $V = H \perp H \perp \dots \perp H$.
+  $V$ è somma di $n$ copie di $H$, il prodotto scalare è totalmente isotropo ma non è nullo. $\dim(V) = 2n$.
  \end{itemize}
 \end{teo}
 
-Il caso intermedio in cui:  $V = (H \bot H \bot ... \bot H) \bot (U \bot U \bot ... \bot U)$ si può eliminare grazie al lemma seguente:
+Il caso intermedio in cui:  $V = (H \perp H \perp \dots \perp H) \perp (U \perp U \perp \dots \perp U)$ si può eliminare grazie al lemma seguente:
 
 %verifica che isometrico è il termine corretto.
-\begin{lemma}:
- $U \bot H \simeq 3U$, cioè $U \bot H$ è isometrico a tre copie di $U$.
+\begin{lemma}
+ $U \perp H \simeq 3U$, cioè $U \perp H$ è isometrico a tre copie di $U$.
 \end{lemma}
 
 \begin{proof}
- $U \bot H = \left[\begin{matrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{matrix}\right]$. Trovo $W$ di dimesione 2 tale che in una certa base la sua matrrice sia:
- $ \left[\begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix}\right]$. Chiamati $u, v, z$ rispettivamente i tre vettori della base in cui ho scritto $U \bot H$ considero $W = Span(u+v, u+z)$.
- Si verifica che si può scrivere $W$ come somma di due sottospazi vettorili di dimesione 1 generati da $u+v$ e $u+z$ rispettivamente. Di conseguenza $V = W \bot U$ dove U è uno spazio di dimensione 1  (non degenere per dimensione!)
+ $U \perp H = \left[\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{smallmatrix}\right]$. Trovo $W$ di dimesione 2 tale che in una certa base la sua matrice sia:
+ $ \left[\begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix}\right]$. Chiamati $u, v, z$ rispettivamente i tre vettori della base in cui ho scritto $U \perp H$ considero $W = \Span(u+v, u+z)$.
+ Si verifica che si può scrivere $W$ come somma di due sottospazi vettoriali di dimesione 1 generati da $u+v$ e $u+z$ rispettivamente. Di conseguenza $V = W \perp U$ dove $U$ è uno spazio di dimensione 1  (non degenere per dimensione!)
 \end{proof}
 
-Dunque $V$ è caratterizzato totalmente dall'avere una base ortogonale o dall'essere totalmente isotropo rispetto al proddotto scalare associato.
+Dunque $V$ è caratterizzato totalmente dall'avere una base ortogonale o dall'essere totalmente isotropo rispetto al prodotto scalare associato.
 
-Sia $X$ una superficie compatta, chiusa connessa. $V = \eta _1(x)$,il prodotto scalre non degenere è la forma di intersezione precedentemente definita. Dato un diffeomorfismo tra due varietà:
-$\fundef[f]{S_1}{S_2}$ questo induce un isomorfismo tra gli spazi vettoriali. Questo isomorfismo è in realtà un isometria poichè conserva la forma di intersezione definita come sopra.
-Dunque se due varietà sono diffeomorfe allora gli spazi vettoriali dotatti di prodotto scalare $(\eta _1(S_1), \beta_1)$ e $(\eta _1(S_2), \beta_2)$ sono isometrici. In particolare se gli spazi non sono isometrici le varietà non possono essere diffeomorfe.
+Sia $X$ una superficie compatta, chiusa, connessa. $V = \eta _1(x)$, il prodotto scalre non degenere è la forma di intersezione precedentemente definita. Dato un diffeomorfismo tra due varietà:
+$\fundef[f]{S_1}{S_2}$ questo induce un isomorfismo tra gli spazi vettoriali. Questo isomorfismo è in realtà un'isometria poiché conserva la forma di intersezione definita come sopra.
+Dunque se due varietà sono diffeomorfe allora gli spazi vettoriali dotati di prodotto scalare $(\eta _1(S_1), \beta_1)$ e $(\eta _1(S_2), \beta_2)$ sono isometrici. In particolare se gli spazi non sono isometrici le varietà non possono essere diffeomorfe.
 
 Per ogni classe di isometria degli spazi vettoriali in caratteristica due esiste  una varietà $X$ che realizza la classe di isometria data tramite lo spazio $(\eta(S), \beta)$.
 
-\titletit{$\eta(S^{2})$}
+\titlet{$\eta(S^{2})$}
 
-Studio $\eta(S^{2})$, dimostro che esso ha $dim \eta(S^{2}) = 0$, in particolare contiene una sola calsse di equivalenza. Sia $\fundef[f]{S^1}{S^2}$ per quanto detto in precedenza per caratterizzare
-gli elementi di $\eta(S^{2}$ è sufficiente consoiderare le funzioni da una 1-varietà connessa a $S^2$. $f$ è liscia, $S^{2}/f(S^1)$ è aperto denso, dunque $f$ non è surgettiva. Considero 
-$\Fundef[f]{S^{1}}{S^{2}}$ e $\Fundef[p]{S^{1}}{\mathbb{R^{n}}}$, dove $p$ è la proiezione strereografica dunque ho una proiezione $\Fundef[p \circle f]{S^{1}}{\mathbb{R^{n}}}$. 
-La proiezione streregrafica deve essere presa rispetto ad un certo punto $P \in f(S^{1 0)$. Considero la retrazione su $mathbb{R^{2}}$ del laccio proiettato: $\fundef[r_{t}]{x}{tx}$ che manda il laccio nell'origine, questo corrisponde a retrarre
+Studio $\eta(S^{2})$, dimostro che esso ha $\dim \eta(S^{2}) = 0$, in particolare contiene una sola classe di equivalenza. Sia $\fundef[f]{S^1}{S^2}$ per quanto detto in precedenza per caratterizzare
+gli elementi di $\eta(S^{2})$ è sufficiente considerare le funzioni da una 1-varietà connessa a $S^2$. $f$ è liscia, $S^{2}/f(S^1)$ è aperto denso, dunque $f$ non è surgettiva. Considero 
+$\Fundef[f]{S^{1}}{S^{2}}$ e $\Fundef[p]{S^{1}}{\R^n}$, dove $p$ è la proiezione stereografica dunque ho una proiezione $\Fundef[p \circ f]{S^{1}}{\R^n}$. 
+La proiezione stereografica deve essere presa rispetto ad un certo punto $P \in f(S^1 0)$. Considero la retrazione su $\R^2$ del laccio proiettato: $\fundef[r_{t}]{x}{tx}$ che manda il laccio nell'origine, questo corrisponde a retrarre
 il laccio nel punto $P$. Dunque tutti i lacci sono equvalenti tra di loro.
 
 \marginpar{aggiungere disegno}
 
-\titletit{$\eta(T_{2}) \eq H$}
+\titlet{$\eta(T_{2}) = H$}
 
-Studio $\eta(S^{1} \times S^{1} = T_{2})$, sappiamo che $\eta(T_{2}) = \frac{\mathbb{Z}}{2 \mathbb{z}} \times \frac{\mathbb{Z}}{2 \mathbb{z}}$. Voglio mostrare che questo spazio è un modello per
-$H = \left[\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right]$. Considero due lacci sul toro che si intersecano in un punto ma non si autointersecano, questi generano un sottospazio di $\eta$ 
-in cui la restrizione di $\beta$ è chiaramante $H$. Voglio dimostrare che $\frac{\mathbb{R^{2}}}{\mathbb{Z^{2}}}$. Apro il toro lungo i due lacci e ottengo 
-un quadrato.Metto sul piano reale la relzione di equivalenza: $(x, y) \sim (x', y') \Leftrightarrow \exist (n,m) \in \mathbb{Z^{2}}$ tale che $ (x',y')-(x,y) = (n, m)$.
+Studio $\eta(S^{1} \times S^{1} = T_{2})$, sappiamo che $\eta(T_{2}) = \quoset\Z{2\Z} \times \quoset\Z{2\Z}$. Voglio mostrare che questo spazio è un modello per
+$H = \begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$. Considero due lacci sul toro che si intersecano in un punto ma non si autointersecano, questi generano un sottospazio di $\eta$ 
+in cui la restrizione di $\beta$ è chiaramante $H$. Voglio dimostrare che $\quoset{\R^2}{\Z^2}$. Apro il toro lungo i due lacci e ottengo 
+un quadrato. Metto sul piano reale la relazione di equivalenza: $(x, y) \sim (x', y') \Leftrightarrow \exists (n,m) \in \Z^2$ tale che $ (x',y')-(x,y) = (n, m)$.
 
 %non so se identificazioni è la parola giusta
 
-Dunque divido il piano in celle (dominio fondamentale del toro) attraverso il reticolo $\mathbb{Z^{2}}$. ottengo le identificazioni 
-$\frac{\mathbb{R^{2}}}{\mathbb{Z^{2}}} \Leftarrow S^{1} \times S^{1} \subseteq \mathbb{C} X \mathbb{C}$, $(x, y) \Leftarrow (e^{2 \pi i x}, e^{2 \pi i y})$
-Dunque posso stotolare un laccio sul toro com ein figura e si vede che ogni laccio è omotopo al segmento tra l'origine e il punto $(p, q) \in \mathbb{Z^2}$, dove $p$ e $q$ indicano il
+Dunque divido il piano in celle (dominio fondamentale del toro) attraverso il reticolo $\Z^2$. ottengo le identificazioni 
+$\quoset{\R^2}{\Z^2} \Leftarrow S^{1} \times S^{1} \subseteq \mathbb{C} \times \mathbb{C}$, $(x, y) \Leftarrow (e^{2 \pi i x}, e^{2 \pi i y})$.
+Dunque posso srotolare un laccio sul toro come in figura e si vede che ogni laccio è omotopo al segmento tra l'origine e il punto $(p, q) \in \Z^2$, dove $p$ e $q$ indicano il
 numero di volte in cui il laccio si avvolge orizzontalmente e verticalmente sul toro. 
 
 \begin{teo} 
- $(p, q) =1 \Leftrightarrow $  il laccio non ha autointersezioni
+ $(p, q) =1 \iff $  il laccio non ha autointersezioni
 \end{teo}
 
 Se tolgo un punto al toro posso retrarre tutto il laccio nel punto (come si vede nel disegno). 
@@ -80,23 +79,23 @@ orizzontali e verticali che il laccio compie.
 Quello di cui dovrei convincermi è che non è assolutamente chiaro e che due lacci disgiunti che compiono un giro verticale e uno orizzontale generano tutto. Se questo è vero allora $\eta(T_{2})$ 
 è una realizzazione di $H$.
 
-\titletit{$\eta(P^{2}) \eq U$}
+\titlet{$\eta(P^{2}) = U$}
 
-Studio $\eta(P^{2})$, cioè $\eta$ del pinao proiettivo. Considero la calotta sferica di $S^2$. I punti non del bordo della calotta rappresentano un solo punto del piano proiettivo mentre
+Studio $\eta(P^{2})$, cioè $\eta$ del piano proiettivo. Considero la calotta sferica di $S^2$. I punti non del bordo della calotta rappresentano un solo punto del piano proiettivo mentre
 identifico i punti del bordo. La calotta sferica $S^{2}/s$ mi da un dominio fondamentale del proiettivo.
 
-Come si vede nella figura costruisco un $S^1$ identificando i punti antipodali ($S^1/\eq$), si vede che il bordo della calotta ricopre due volte $S^1/\eq$. Il collare che ha per bordo questi due anelli
-è chiamato nastro di Moebious e si indica con $mathcal{M}$. 
-L'anima del nostro di Moebious è il proiettivo $\mathbb{P^{1}} \subseteq \mathbb{P^{2}} $, si vede inoltre che il bordo $\delta \mathccal{M}$ ha una sola componente connessa.
-Sempre dalle figure è chiaro che $\mathbb{P^{2}} = \mathccal{M} \cup D^{2}$ incollati lungo il bordo.
+Come si vede nella figura costruisco un $S^1$ identificando i punti antipodali ($\quoset{S^1}=$), si vede che il bordo della calotta ricopre due volte $\quoset{S^1}=$. Il collare che ha per bordo questi due anelli
+è chiamato nastro di Möbius e si indica con $\mathcal{M}$. 
+L'anima del nostro di Möbius è il proiettivo $\mathbb{P}^1 \subseteq \mathbb{P}^2 $, si vede inoltre che il bordo $\boundary \mathcal{M}$ ha una sola componente connessa.
+Sempre dalle figure è chiaro che $\mathbb{P}^2 = \mathcal{M} \cup D^{2}$ incollati lungo il bordo.
 
-Se tolgo un punto al disco e prendo $\mathbb{P^{2}}/{P}$ ottengo una varietà completamente retraibile nell'anima del nastro di Moebious cioè in $\mathbb{P^{1}}$.
+Se tolgo un punto al disco e prendo $\quoset{\mathbb P^2}P$ ottengo una varietà completamente retraibile nell'anima del nastro di Möbius cioè in $\mathbb{P}^1$.
 
-Un laccio sul natro di Moebious è costretto all'autointersezione, dunque $\mathccal{M}$ è un modello per U.
+Un laccio sul natro di Möbius è costretto all'autointersezione, dunque $\mathcal{M}$ è un modello per $U$.
 
-\titletit{Modelli per spazi di dimensione maggiore}
+\titlet{Modelli per spazi di dimensione maggiore}
 
-Un modello per $H 
+Un modello per $H$ 
 
 
 
