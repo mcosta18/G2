@@ -2,3 +2,50 @@
 
 % che insomma se non si mettono in chiaro le cose me lo dica che me ne vado
 
+\newcommand*\tc{\ \text{t.c.} \ } % tale che
+\newcommand*\dual{{^\ast}} % dual
+\newcommand*\base[1][B]{\mathcal{#1}} % base
+
+\titlet{Forme d'intersezione}
+
+\subtitlet{Una costruzione alternativa}
+
+Sia $X$ superficie, su $\eta_1(X)$ abbiamo la forma d'intersezione $\fundef[\beta]{\eta_1(X) \times \eta_1(X)}{\Z_2}$. Consideriamo le curve su $X$ liscie a meno di un numero finito di incroci normali; ogni tale curva $\gamma$ può essere decomposta in circuiti (ovvero immersioni di $S^1$): $\gamma = \gamma_1 \cup \gamma_2 \cup \gamma_3 \dots$.
+Siano $\fundef{S^1 \djcup S^1 \djcup S^1 \djcup \dots \djcup S^1}{X}$ immersioni, allora queste curve sono date da $\set{\gamma} = \set{\Im f}$.
+
+Su queste curve posso definire una relazione di equivalenza specificando operazioni rispetto a cui le classi di equivalenza siano chiuse (ovvero, specificando come posso modificare una di queste curve in modo da ottenere una curva equivalente); sia la relazione $\simeq$ generata dalle operazioni seguenti:
+\begin{itemize}
+	\item Isotopia ambiente (ovvero, $\gamma \simeq H(1, \gamma)$ con $\fundef[H}{[0,1] \times X}{X}$ isotopia e $H |_{ \set{0} \times X} = \id_X}$)
+	\item \input{figura36.pdf_tex}
+	\item \input{figura37.pdf_tex}
+	\item \input{figura38.pdf_tex}
+\end{itemize}
+Posso allora pensare $\eta_1(X)$ come $\quoset{ \set{\gamma} }{\simeq} $, e la somma $[\gamma_1] + [\gamma_2]$ è data da $[\gamma_1 \cup \gamma_2]$, con $\gamma_1, \gamma_2$ rappresentanti trasversi tra loro (dunque che s'icrociano solo normalmente e in un numero finito di punti), che certamente esistono (ad esempio per isotopia).
+
+Definisco allora $\beta([\gamma_1], [\gamma_2]} = [\gamma_1] \cdot [\gamma_2]$ come la parità del numero di intersezioni di $\gamma_1 \cup \gamma_2$ (avendo sempre cura di scegliere rappresentanti trasversi tra loro), ovvero come $\mod_2( \card\setdef{x}{x \in \gamma_1 \et x \in \gamma_2})$.
+
+Per mostrare che $\beta$ è non degenere, notiamo che con la nostra relazione $\simeq$ possiamo supporre che per $[\gamma] \neq 0$, $\gamma$ sia liscia e connessa e non può sconnettere $X$, dunque ripetendo la costruzione della lezione precedente posso trovare una curva che intersechi trasversalmente $\gamma$ esattamente una volta.
+
+\subtitlet{Caratterizzazione delle classi d'isometria}
+
+Ricordiamo che la classe d'isometria di $(\eta_1(X), \beta)$ è invariante per diffeomorfismi.
+
+Sia in generale $V$ vettoriale su $\Z_2$ e $\beta$ prodotto scalare non degenere su $V$. Il lettore ricorderà che per spazi vettoriali su $\R$ o $\C$ un prodotto scalare non degenere ammette almeno un vettore non isotropo, poiché se ogni vettore è isotropo si ottiene $0 = \scalprod{v+w}{v+w} = 2\scalprod{w}{v} \ \forall v,w$. È chiaro però che su $\Z_2$ (e in generale per campi con caratteristica 2) quest'identità risulta banale e non implica che $\beta$ sia degenere; poiché la non totale isotropia era necessaria con gli spazi su $\R$ o $\C$ per dimostrare (induttiamente) l'esistenza di una base ortonormale, segue che non potremo concludere altrettanto per $V$.
+
+\begin{lemma}[Lemma 1]
+	$V = A \operp B$, con $(A, \beta)$ avente una base ortonormale e $(B, \beta)$ totalmente isotropo.
+\end{lemma}
+\begin{proof}
+	Infatti, essendo $\beta$ non degenere vi sono due possibilità: o $V$ è totalmente isotropo, oppure $\exists v \in V$ non isotropo. Nel primo caso il lemma è banalmente vero, nel secondo ho $V = \Span(v) \operp \set{v}^\perp$ e ripetendo induttivamente il ragionamento su $\set{v}^\perp$ ottengo $V = U \operp U \operp \dots \operp U \operp B$, con $B$ totalmente isotropo e $U$ sottospazio di dimensione 1 tale che $\beta = (1)$ in $U$ (ovvero, $U$ generati da vettori ortonormali).
+\end{proof}
+
+Consideriamo ora un sottospazio $H \subseteq V$ totalmente isotropo (con $\beta|_H$ non degenere). Prendiamo una base di $H$ $\base = \set{v_1, v_2, v_3, \dots, v_n}$ e consideriamo la base duale $\base\dual = \set{v_1\dual, v_2\dual, v_3\dual, \dots, v_n\dual}$. Allora dal teorema di rappresentazione sappiamo che 
+$v \mapsto (\phi_v : w \mapsto \beta(v,w)$ è isomorfismo, siano dunque $\set{w_1, \dots, w_n}£$ i vettori che rappresentano i covettori di $\base\dual$ (ovvero la controimmagine di $\base\dual$ per l'isomorfismo indicato). Abbiamo quindi $\beta(w_i, v_j) = \delta_{ij}$, e in particolare $\beta(v_1, w_1) = 1$. Pertanto in $\Span(v_1, w_1)$ si ha $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ e dunque $H$ si decompone come $\Span(v_1, w_1) \operp \set{v_1, w_1}^\perp$, e continuando per induzione ottengo una base di $H$ rispetto a cui \[
+\beta = \left( \begin{matrix} 0 & 1 \\
+							  1 & 0 \\
+								&   & 1 & 0 \\
+								&   & 1 & 0 \\
+								&   &   &   & 1 & 0 \\
+								&   &   &   & 1 & 0 \\
+								&   &   &   &   &   & \ddots \\
+							 \end{matrix} \right)
