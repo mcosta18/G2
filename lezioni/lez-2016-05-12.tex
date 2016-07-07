@@ -5,6 +5,8 @@
 \newcommand*\tc{\ \text{t.c.} \ } % tale che
 \newcommand*\dual{{^\ast}} % dual
 \newcommand*\base[1][B]{\mathcal{#1}} % base
+\newcommand*\operp{\overset{\perp}{\oplus}} % orthogonal direct sum
+\newcommand*\bigoperp{\overset{\perp}{\bigoplus}} % orthogonal direct sum
 
 \titlet{Forme d'intersezione}
 
@@ -30,7 +32,7 @@ Per mostrare che $\beta$ è non degenere, notiamo che con la nostra relazione $\
 
 Ricordiamo che la classe d'isometria di $(\eta_1(X), \beta)$ è invariante per diffeomorfismi.
 
-Sia in generale $V$ vettoriale su $\Z_2$ e $\beta$ prodotto scalare non degenere su $V$. Il lettore ricorderà che per spazi vettoriali su $\R$ o $\C$ un prodotto scalare non degenere ammette almeno un vettore non isotropo, poiché se ogni vettore è isotropo si ottiene $0 = \scalprod{v+w}{v+w} = 2\scalprod{w}{v} \ \forall v,w$. È chiaro però che su $\Z_2$ (e in generale per campi con caratteristica 2) quest'identità risulta banale e non implica che $\beta$ sia degenere; poiché la non totale isotropia era necessaria con gli spazi su $\R$ o $\C$ per dimostrare (induttiamente) l'esistenza di una base ortonormale, segue che non potremo concludere altrettanto per $V$.
+Sia in generale $V$ vettoriale su $\Z_2$ e $\beta$ prodotto scalare non degenere su $V$. Il lettore ricorderà che per spazi vettoriali su $\R$ o $\C$ un prodotto scalare non degenere ammette almeno un vettore non isotropo, poiché se ogni vettore è isotropo si ottiene $0 = \scalprod{v+w}{v+w} = 2\scalprod{w}{v} \ \forall v,w$. È chiaro però che su $\Z_2$ (e in generale per campi con caratteristica 2) quest'identità risulta banale e non implica che $\beta$ sia degenere; poiché la non totale isotropia era necessaria con gli spazi su $\R$ o $\C$ per dimostrare (induttivamente) l'esistenza di una base ortonormale, segue che non potremo concludere altrettanto per $V$.
 
 \begin{lemma}[Lemma 1]
 	$V = A \operp B$, con $(A, \beta)$ avente una base ortonormale e $(B, \beta)$ totalmente isotropo.
@@ -43,9 +45,36 @@ Consideriamo ora un sottospazio $H \subseteq V$ totalmente isotropo (con $\beta|
 $v \mapsto (\phi_v : w \mapsto \beta(v,w)$ è isomorfismo, siano dunque $\set{w_1, \dots, w_n}£$ i vettori che rappresentano i covettori di $\base\dual$ (ovvero la controimmagine di $\base\dual$ per l'isomorfismo indicato). Abbiamo quindi $\beta(w_i, v_j) = \delta_{ij}$, e in particolare $\beta(v_1, w_1) = 1$. Pertanto in $\Span(v_1, w_1)$ si ha $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ e dunque $H$ si decompone come $\Span(v_1, w_1) \operp \set{v_1, w_1}^\perp$, e continuando per induzione ottengo una base di $H$ rispetto a cui \[
 \beta = \left( \begin{matrix} 0 & 1 \\
 							  1 & 0 \\
+								&   & 0 & 1 \\
 								&   & 1 & 0 \\
-								&   & 1 & 0 \\
-								&   &   &   & 1 & 0 \\
+								&   &   &   & 0 & 1 \\
 								&   &   &   & 1 & 0 \\
 								&   &   &   &   &   & \ddots \\
 							 \end{matrix} \right)
+\]
+
+\begin{defn}[Piano iperbolico]
+Chiameremo uno spazio vettoriale di dimensione 2 con prodotto scalare $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ un \emph{piano iperbolico}
+\end{defn}
+Notiamo che su $\Z_2$ un tale prodotto scalare è totalmente isotropo e non degenere.
+
+Da quanto abbiamo appena visto segue il seguente lemma:
+\begin{lemma}[Lemma 2]
+	Se $\beta$ su $V$ (vettoriale su $\Z_2$) è non degenere e totalmente isotropo, $\dim V$ è pari e $V$ è somma diretta ortogonale di piani iperbolici.
+\end{lemma}
+
+Dunque in generale $V$ vettoriale su $\Z_2$ con $\beta$ non degenere si decompone come $V = \bigoperp U_i \operp \bigoperp H_i$, con $\beta|_{U_i} = (1)$ e $\beta|_{H_i} = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$.
+
+\begin{lemma}[Lemma 3]
+	$U \operp H = U \operp U \operp U$ (con $H$ piano iperbolico e $U$ generato da un vettore non isotropo).
+\end{lemma}
+
+La dimostrazione segue nella lezione successiva; i tre lemmi visti ci permettono di dimostrare quanto segue:
+\begin{teo}[Teorema di classificazione]
+	Dato un prodotto scalare $\beta$ non degenere su $V$ di dimensione $n$, si ha a meno di isometrie:
+\begin{itemize}
+	\item $V = \bigoperp \limit_{i=1}^n U_i$ \\
+	oppure
+	\item $ V = \bigoperp \limit_{i=1}^n{ \sfrac{n}{2} } H_i$
+\end{itemize}
+\end{teo}
