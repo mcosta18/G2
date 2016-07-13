@@ -1,4 +1,4 @@
-%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'figura37.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{595.27559055bp}%
+    \setlength{\unitlength}{320.53563747bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,12 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.41428571)%
+  \begin{picture}(1,0.78696578)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figura37.pdf}}%
-    \put(0.36669691,1.17832577){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15119048\unitlength}\raggedright \end{minipage}}}%
-    \put(0.5270068,1.11065003){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.21694632\unitlength}\raggedright \end{minipage}}}%
-    \put(0.49196903,1.13944822){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.27262283\unitlength}\raggedright \end{minipage}}}%
-    \put(0.39789495,1.09673092){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\simeq$}}}%
-    \put(0.57452381,1.079452){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Oppure}}}%
+    \put(0.36763227,0.56462497){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28078001\unitlength}\raggedright \end{minipage}}}%
+    \put(0.6653482,0.43894248){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.402897\unitlength}\raggedright \end{minipage}}}%
+    \put(0.60027859,0.49242439){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.5062954\unitlength}\raggedright \end{minipage}}}%
+    \put(0.42557102,0.41309292){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\simeq$}}}%
+    \put(0.75359335,0.38100376){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Oppure}}}%
   \end{picture}%
 \endgroup%
