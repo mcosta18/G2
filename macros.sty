@@ -37,9 +37,19 @@
 
 \newcommand*\av[1]{\underline{#1}} % algebraic vector
 
-% this symbol copied from txfonts
+% product of manifolds (copied from txfonts)
 \DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
-\DeclareMathSymbol{\varprod}{\mathop}{largesymbolsA}{16}
+\DeclareMathSymbol{\varprod}{\mathbin}{largesymbolsA}{16}
+
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareSymbolFont{symbols2}{LS1}{stixfrak} {m} {n}
+\DeclareMathSymbol{\operp}{\mathbin}{symbols2}{"A8}
+\newcommand\bigoperp{\mathop{\vphantom{\sum}\mathchoice
+  {\vcenter{\hbox{\huge $\operp$}}}
+  {\vcenter{\hbox{\Large $\operp$}}}{\operp}{\operp}}\displaylimits}
+% \newcommand*\operp{\overset{\perp}{\oplus}} % orthogonal direct sum
+% \newcommand*\bigoperp{\overset{\perp}{\bigoplus}} % orthogonal direct sum
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -47,7 +57,6 @@
 \DeclareMathOperator\sgn{sgn} % sign
 \DeclareMathOperator\im{Im} % image
 \DeclareMathOperator\Span{span} % span
-\DeclareMathOperator\mod{mod} % modulus
 \newcommand*\scp[2]{\langle{#1},{#2}\rangle} % scalar product
 \newcommand*\transp[1]{{#1}^{\text T}} % transpose
 \newcommand*\norm[1]{\|{#1}\|} % norm
@@ -107,12 +116,13 @@
 
 % Basic derived sets:
 \newcommand*\pset{\mathscr{P}} % power set (set of subsets)
-\DeclareMathOperator\img{Img} % image of a subset of the domain
+\DeclareMathOperator\img{Im} % image of a subset of the domain
 \newcommand*\quoset[2]{{#1}/{#2}} % quotient set
 
 \DeclareMathOperator\card{\#} % cardinality of
 
 % Specific sets:
+\newcommand*\C{\mathbb{C}} % set/field of complex numbers
 \newcommand*\R{\mathbb{R}} % set/field of real numbers
 \newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
 \newcommand*\Z{\mathbb{Z}} % set of integers
@@ -134,7 +144,7 @@
 \newcommand*\djunion\bigsqcup % disjoint union
 
 % "Small" (binary) union and intersection:
-\newcommand*\djcup\sqcup % disjoint union
+\DeclareMathOperator\djcup{\sqcup} % disjoint union
 
 \newcommand*\set[1]{\left\{{#1}\right\}} % \set{x} = \left \{ x \right \}
 

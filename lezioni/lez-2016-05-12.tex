@@ -5,26 +5,28 @@
 \newcommand*\tc{\ \text{t.c.} \ } % tale che
 \newcommand*\dual{{^\ast}} % dual
 \newcommand*\base[1][B]{\mathcal{#1}} % base
-\newcommand*\operp{\overset{\perp}{\oplus}} % orthogonal direct sum
-\newcommand*\bigoperp{\overset{\perp}{\bigoplus}} % orthogonal direct sum
 
 \titlet{Forme d'intersezione}
 
 \subtitlet{Una costruzione alternativa}
 
 Sia $X$ superficie, su $\eta_1(X)$ abbiamo la forma d'intersezione $\fundef[\beta]{\eta_1(X) \times \eta_1(X)}{\Z_2}$. Consideriamo le curve su $X$ liscie a meno di un numero finito di incroci normali; ogni tale curva $\gamma$ può essere decomposta in circuiti (ovvero immersioni di $S^1$): $\gamma = \gamma_1 \cup \gamma_2 \cup \gamma_3 \dots$.
-Siano $\fundef{S^1 \djcup S^1 \djcup S^1 \djcup \dots \djcup S^1}{X}$ immersioni, allora queste curve sono date da $\set{\gamma} = \set{\Im f}$.
+Siano $\fundef{S^1 \djcup S^1 \djcup S^1 \djcup \dots \djcup S^1}{X}$ immersioni, allora queste curve sono date da $\set{\gamma} = \set{\img f}$.
 
 Su queste curve posso definire una relazione di equivalenza specificando operazioni rispetto a cui le classi di equivalenza siano chiuse (ovvero, specificando come posso modificare una di queste curve in modo da ottenere una curva equivalente); sia la relazione $\simeq$ generata dalle operazioni seguenti:
 \begin{itemize}
-	\item Isotopia ambiente (ovvero, $\gamma \simeq H(1, \gamma)$ con $\fundef[H}{[0,1] \times X}{X}$ isotopia e $H |_{ \set{0} \times X} = \id_X}$)
-	\item \input{figura36.pdf_tex}
-	\item \input{figura37.pdf_tex}
-	\item \input{figura38.pdf_tex}
+	\item Isotopia ambiente (ovvero, $\gamma \simeq H(1, \gamma)$ con $\fundef[H]{[0,1] \times X}{X}$ isotopia e $H |_{ \set{0} \times X} = \id_X$)
+	\newcommand*\INPUTIMAGE[1]{%
+		\def\svgwidth{7cm} % width of the image
+		\item \raisebox{-0.5\height+1ex}{\input{#1}} % first parameter controls vertical alignment
+	}
+	\INPUTIMAGE{figura36.pdf_tex}
+	\INPUTIMAGE{figura37.pdf_tex}
+	\INPUTIMAGE{figura38.pdf_tex}
 \end{itemize}
 Posso allora pensare $\eta_1(X)$ come $\quoset{ \set{\gamma} }{\simeq} $, e la somma $[\gamma_1] + [\gamma_2]$ è data da $[\gamma_1 \cup \gamma_2]$, con $\gamma_1, \gamma_2$ rappresentanti trasversi tra loro (dunque che s'icrociano solo normalmente e in un numero finito di punti), che certamente esistono (ad esempio per isotopia).
 
-Definisco allora $\beta([\gamma_1], [\gamma_2]} = [\gamma_1] \cdot [\gamma_2]$ come la parità del numero di intersezioni di $\gamma_1 \cup \gamma_2$ (avendo sempre cura di scegliere rappresentanti trasversi tra loro), ovvero come $\mod_2( \card\setdef{x}{x \in \gamma_1 \et x \in \gamma_2})$.
+Definisco allora $\beta([\gamma_1], [\gamma_2]) = [\gamma_1] \cdot [\gamma_2]$ come la parità del numero di intersezioni di $\gamma_1 \cup \gamma_2$ (avendo sempre cura di scegliere rappresentanti trasversi tra loro), ovvero come $\card(\gamma_1\cap\gamma_2) \mod 2$.
 
 Per mostrare che $\beta$ è non degenere, notiamo che con la nostra relazione $\simeq$ possiamo supporre che per $[\gamma] \neq 0$, $\gamma$ sia liscia e connessa e non può sconnettere $X$, dunque ripetendo la costruzione della lezione precedente posso trovare una curva che intersechi trasversalmente $\gamma$ esattamente una volta.
 
@@ -42,19 +44,19 @@ Sia in generale $V$ vettoriale su $\Z_2$ e $\beta$ prodotto scalare non degenere
 \end{proof}
 
 Consideriamo ora un sottospazio $H \subseteq V$ totalmente isotropo (con $\beta|_H$ non degenere). Prendiamo una base di $H$ $\base = \set{v_1, v_2, v_3, \dots, v_n}$ e consideriamo la base duale $\base\dual = \set{v_1\dual, v_2\dual, v_3\dual, \dots, v_n\dual}$. Allora dal teorema di rappresentazione sappiamo che 
-$v \mapsto (\phi_v : w \mapsto \beta(v,w)$ è isomorfismo, siano dunque $\set{w_1, \dots, w_n}£$ i vettori che rappresentano i covettori di $\base\dual$ (ovvero la controimmagine di $\base\dual$ per l'isomorfismo indicato). Abbiamo quindi $\beta(w_i, v_j) = \delta_{ij}$, e in particolare $\beta(v_1, w_1) = 1$. Pertanto in $\Span(v_1, w_1)$ si ha $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ e dunque $H$ si decompone come $\Span(v_1, w_1) \operp \set{v_1, w_1}^\perp$, e continuando per induzione ottengo una base di $H$ rispetto a cui \[
-\beta = \left( \begin{matrix} 0 & 1 \\
-							  1 & 0 \\
-								&   & 0 & 1 \\
-								&   & 1 & 0 \\
-								&   &   &   & 0 & 1 \\
-								&   &   &   & 1 & 0 \\
-								&   &   &   &   &   & \ddots \\
-							 \end{matrix} \right)
+$v \mapsto (\phi_v : w \mapsto \beta(v,w))$ è isomorfismo, siano dunque $\set{w_1, \dots, w_n}$ i vettori che rappresentano i covettori di $\base\dual$ (ovvero la controimmagine di $\base\dual$ per l'isomorfismo indicato). Abbiamo quindi $\beta(w_i, v_j) = \delta_{ij}$, e in particolare $\beta(v_1, w_1) = 1$. Pertanto in $\Span(v_1, w_1)$ si ha $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ e dunque $H$ si decompone come $\Span(v_1, w_1) \operp \set{v_1, w_1}^\perp$, e continuando per induzione ottengo una base di $H$ rispetto a cui \[
+\newcommand*\ROTIDMAT{\begin{matrix}0 & 1 \\ 1 & 0\end{matrix}}
+\beta =
+\begin{pmatrix}
+	\ROTIDMAT \\
+	& \ROTIDMAT \\
+	& & \ROTIDMAT \\
+	& & & \ddots
+\end{pmatrix}
 \]
 
 \begin{defn}[Piano iperbolico]
-Chiameremo uno spazio vettoriale di dimensione 2 con prodotto scalare $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ un \emph{piano iperbolico}
+Chiameremo uno spazio vettoriale di dimensione 2 con prodotto scalare $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ un \emph{piano iperbolico}.
 \end{defn}
 Notiamo che su $\Z_2$ un tale prodotto scalare è totalmente isotropo e non degenere.
 
@@ -72,9 +74,10 @@ Dunque in generale $V$ vettoriale su $\Z_2$ con $\beta$ non degenere si decompon
 La dimostrazione segue nella lezione successiva; i tre lemmi visti ci permettono di dimostrare quanto segue:
 \begin{teo}[Teorema di classificazione]
 	Dato un prodotto scalare $\beta$ non degenere su $V$ di dimensione $n$, si ha a meno di isometrie:
-\begin{itemize}
-	\item $V = \bigoperp \limit_{i=1}^n U_i$ \\
-	oppure
-	\item $ V = \bigoperp \limit_{i=1}^n{ \sfrac{n}{2} } H_i$
-\end{itemize}
+\marginpar{ho lasciato l'ambiente \texttt{flalign*} così se vuoi andare a capo in quel modo puoi farlo appropriatamente, però secondo me è meglio così}
+\begin{flalign*}
+V = \bigoperp_{i=1}^n U_i \qquad
+\text{oppure} \qquad
+V = \bigoperp_{i=1}^{ n/2 } H_i
+\end{flalign*}
 \end{teo}
