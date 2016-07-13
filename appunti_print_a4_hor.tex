@@ -19,7 +19,7 @@
 
 \newcounter{thislessonpage}
 \newcounter{lastlessonpage}
-\newenvironment{lesson}[3]{%
+\newenvironment{lesson}[4]{%
 \setcounter{thislessonpage}{\value{page}}%
 \DTMsavenoparsedate{thislessondate}{#1}{#2}{#3}{-1}%
 \DTMmakeglobal{thislessondate}%
