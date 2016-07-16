@@ -1,0 +1,97 @@
+%trascrizione: Costa
+%metto sempre il simbolo di vettore?
+% risposta: no, in effetti mi sa che ho fatto una cazzata nella lezione precedente, il simbolo di vettore sarebbe da usare quando si fa riferimento alla struttura vettoriale in particolare, mo' li tolgo.
+%devi parlare del modello a semipiano
+% risposta: se era nella mia lezione, mi sa che me lo sono perso, se tu ce l'hai mettilo.
+
+
+\begin{defn}[Funzioni a foruncolo]
+ $\fundef[\lambda] {\R^n}{\R^n}, \lambda(\av x) = \lambda(\abs{\av x})$ tale che 
+ \begin{itemize}
+  \item $1 > \lambda(\av x) > 0$
+  \item $\lambda(\av x) = 1 \forall \av x: \abs{\av x} < a$
+  \item $\lambda(\av x) = 0 \forall \av x: \abs{\av x} > b$
+  \item $\lambda$ liscia
+ \end{itemize}
+ è detta funzione a foruncolo (o anche partizione dell'unità di Paley-Littlewood)
+\end{defn}
+\begin{oss}
+ Nei punti in cui $\abs{\av x} = \pm a$ tutte le derivate sono nulle, dunque $\lambda$ non può essere analitica in quei punti.
+\end{oss}
+Usiamo adesso questa nozione per estendere funzioni definite localmente.
+\begin{prop}
+ Sia $M$ una varietà e $(U, \phi)$ una carta. Allora posso estenderla su tutta la varietà.
+\end{prop}
+ \begin{proof}
+  Basta considerare $\fundef[\lambda\cdot f] M\R$ con $\lambda$ a foruncolo.
+ \end{proof}
+ 
+\titlet{Varietà con bordo}
+\begin{defn}[Diffeomorfismo fra sottoinsiemi arbitrari di $\R^n$]
+$\fundef AB$ con $A,B\subseteq \R^n$. $f$ è \emph{diffeomorfismo} se
+\begin{itemize}
+ \item è un omeomorfismo
+ \item $\forall x\in A \exists \fundef[\phi] U\R^n$ carta locale tale che $f|_{U\cap A}=\phi|_{U\cap A}$
+\end{itemize}
+\end{defn}
+Per le varietà con bordo, prendo come modello il sempiano superiore $\mathbb H_n=\setdef[x\in\R^n]{x_n\ge 0 \; \forall n}$
+\begin{defn}[Varietà con bordo]
+ $M$ è una \emph{varietà con bordo} se 
+ \begin{itemize}
+  \item è spazio topologico $T_2$, $2$-numerabile
+  \item è munito di atlante massimale tale che $\phi_{\lambda}: U_{\lambda}\rightarrow U_{\lambda}\subseteq\mathbb H_n$, $\phi$ omeomorfismo.
+  \item $\forall \mu,\lambda\; \phi_{\mu}\circ\phi_{\lambda}^{-1}:\phi_{\lambda}(U_{\lambda}\cap U_{\mu})\funarrow\phi_{\mu}(U_{\lambda}\cap U_{\mu})$ è diffeomorfismo.
+ \end{itemize}
+\end{defn}
+\begin{defn}[Bordo]
+$\boundary M\is \setdef[x\in M]{\exists\text{ carta intorno a }x\text{ tale che } \phi_{\lambda}(x) \in \partial H}$ è detto il \emph{bordo} di $M$.
+\end{defn}
+\begin{prop}
+ Se un punto è di bordo per una carta, lo è per tutte le carte dell'atlante. (La dimostrazione è lasciata per esercizio).
+\end{prop}
+Si estendono ora tutte le definizioni date alle varietà alle varietà con bordo.
+\begin{defn}[Sottovarietà]
+ Una \emph{sottovarietà} $N^n$ di $M^m$ varietà con $\partial M = \nullset, N\subseteq M (n\le m)$ se $\forall x\in N, \exists$ carta locale di $x \in M$ con $\fundef[\phi] U\R^m $
+\end{defn}
+\begin{defn}[Punto regolare]
+ $y$ è un \emph{punto regolare} per $f$ se $\forall x\in f^{-1}(y)$, $\dd_xf$ è surgettiva.
+\end{defn}
+\begin{prop}
+ $y$ punto regolare $\implies f^{-1}\is N$ è sottovarietà di $U$.
+\end{prop}
+\begin{proof}
+ Segue da funzione implicita in forma surgettiva.
+ \begin{figure}
+  \centering
+  \input{diffeo.pdf_tex}
+  \caption{la nuova carta "vede dritto!"}
+ \end{figure}
+
+\end{proof}
+\begin{prop}
+ $\fundef[f] U\R^m$, $U$ aperto di $\R^n$. Se $\forall x \in U, \dd_xf$ iniettiva, $f$ omeomorfismo$\implies N\is f^{-1}(y)$ è sottovarietà di $\R^n$ e f diffeomorfismo.
+\end{prop}
+\begin{proof}
+ Segue da funzione implicita in forma iniettiva
+\end{proof}
+\begin{oss}
+ Nel teorema sopra l'ipotesi di omeomorfismo è necessaria!
+ Come controesempio basta prendere 
+ \begin{figure}
+  \centering
+  \input{trifoglio.pdf_tex}
+  \caption{nel cerchio tratteggiato si ha il problema: ci sono 3 "rami"!}
+ \end{figure}
+\end{oss}
+Si osservi che abbiamo tre modelli possibili al variare del domicilio di una  $n$-sottovarietà contenuta in una $m$-varietà ($n\le m$):
+\begin{itemize}
+ \item Il bordo sta nel bordo (1).
+ \item Il bordo di $\mathbb H^n$ non sta nel bordo di $\mathbb H^m$ (2).
+ \item Caso misto (3).
+\end{itemize}
+
+\marginpar{metti disegnino dei tre modelli possibili}
+\begin{defn}[Sottovarietà propria]
+ $N\in M$ è \emph{sottovarietà propria} se l'unico modello che si realizza è (1), ossia $\partial N = N\cap \partial M$.
+
+\end{defn}

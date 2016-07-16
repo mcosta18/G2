@@ -1,0 +1,100 @@
+%Marco Costa
+
+\marginpar{DA FINIRE}
+
+\begin{oss}
+ $(g\circ h )_* = g_*\circ h*$,
+ $\id_* = \id$
+\end{oss}
+$g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2} \right]$
+\begin{oss}
+ Se $\fundef[g]{Y_1}{Y_2}$ è diffeomorfismo, $\exists \fundef[g^{-1}]{Y_2}{Y_1}$ liscia $\implies g_*$ è isomorfismo di spazi vettoriali.
+\end{oss}
+\begin{defn}[Omotopia]
+ $\fundef[g_0]{Y_1}{Y_2}$, $\fundef[g_1]{Y_1}{Y_2}$ sono \emph{omotope} se $\exists \fundef[G]{Y_1\times\left[ 0,1\right]}{Y_2}$ tale che,
+ detta $G_t\is  G|_{Y_1\times \set t}, G_0=g_0, G_1=g_1$.
+\end{defn}
+ \begin{oss}
+  L'omotopia è un particolare cobordismo (basta considerare il cilindro associato!)
+ \end{oss}
+\begin{prop}
+ $g_0, g_1$ omotope$\implies g_{0*}=g_{1*}$.
+\end{prop}
+\begin{proof}
+ \begin{figure}
+  \centering
+  \input{homotopy.pdf_tex}
+  \caption{dimostrazione teorema}
+ \end{figure}
+ Costruisco ora il cobordismo. Pongo $\forall t\in \left[ 0,1\right], F(x,t)=(f(x,t), t)$}
+  \begin{figure}
+  \centering
+  \input{homotopy2.pdf_tex}
+  \caption{$G\circ F (W) = Y_2$}
+ \end{figure}
+
+\end{proof}
+\begin{oss}
+ $\eta_S (\R ^n) = \eta (punto)_S = \eta_S $
+\end{oss}
+
+
+\begin{defn}[Cobordismo orientato]
+ $X_0\sim_{cob^+}X_1$ se $\exists$ triade $(W, Z_0, Z_1)$ con $W, \boundary W$ orientata e isomorfismi $\fundef[\phi_0]{X_0}{Z_0}, \fundef[\phi_1]{X_1}{Z_1}$
+ che preservano l'orientazione.
+\end{defn}
+\begin{defn}
+ $\Omega _n(punto)=\Omega _n = \left \{ $X n-varietà compatta, chiusa, $\boundary X\neq \nullset$, orientata$\right \} /\sim_{cob^+}$
+\end{defn}
+
+\begin{oss}
+ Anche in questo caso possiamo equipaggiare $\Omega _n$, con la stessa operazione definita nella lezione precedente.
+ In particolare valgono:
+ \begin{itemize}
+  \item $\left [ X \right ] + \left [ Y \right ] = \left [ X \djcup Y \right ]$
+  \item 0 = $\left [ \nullset \right ]$ ossia i bordi orientati.
+  \item $-\left[ X\right]=\left[-X\right]$. (Viene scambiata l'orientazione di tutte le componenti connesse).
+ \end{itemize}
+ Così $(\Omega _n, +)$ assuma la struttura di gruppo abeliano.
+\end{oss}
+Possiamo adesso ripercorrere lo schema precedente e cambiare la varietà obiettivo.
+\begin{defn}
+ $\Omega_n (Y) = \setdef[\fundef[X][Y] liscia][{X n-varietà liscia}]$
+\end{defn}
+\begin{oss}
+ Non ho chiesto nessuna condizione di orientabilità sulla varietà $Y$ in arrivo.
+\end{oss}
+Adesso ripetiamo la costruzione e creiamo degli omomorfismi di gruppi $g_*:\Omega _n (Y_1)\rightarrow \Omega _n(Y_2)$ tale che $(g\circ h )_* = g_*\circ h*$,
+ $\id_* = \id$.
+\begin{teo}
+ Vale la proprietà di omotopia
+\end{teo}
+\marginpar{Non so cosa significhi ma sugli appunti c'è scritto così}
+Questi si chiamano oggetti topologico-algebrici e servono a fare i conti. Un esempio di questi è il seguente.
+\titlet{Gruppo fondamentale}
+$y_0\in Y$ varietà connessa per archi. Considero la coppia $(Y, y_0)$
+\begin{defn}[Omotopia puntata]
+Una omotopia $F$ è detta \emph{puntata} se $F(P, t) = y_0 \forall t$
+ \begin{figure}
+  \centering
+  \input{puntata.pdf_tex}
+  \caption{Esempio nel caso si sia preso $(S^1, P).$}
+ \end{figure}
+
+\end{defn}
+Considero ora l'insieme $\Setdef[f:(S^1, P)\rightarrow (Y, y_0), f(P) = y_0][f]/\sim_{omotopia puntata}$, ossia considero i cammini chiuso a meno di omotopia puntata.
+Lo doto di una operazione in modo da renderlo un gruppo.
+\begin{defn}
+ $f_0 * f_1:(S^1, P)\rightarrow (Y, y_0)\begin{cases} f_1(2t), & \mbox{se } t\in \left [0, 1/2\right ] \\ f_0(2t-1), & \mbox{se }t\in \left [1/2, 1\right ]\end{cases}$.
+ In pratica è percorrere i 2 cammini in successione a velocità doppia.
+ E' ben definita e $\left [ f_0 \right] *\left [ f_1 \right] = \left [ f_0 * f_1 \right]$
+ \marginpar{Questaa definizione di concatenazione l'ho presa da wiki, anche se mi pare Benedetti l'abbia fatta identica a lezione}
+\end{defn}
+\begin{oss}
+ Moralmente il partire da $S^1$ sente se $\R ^2$ ha buchi (stiamo "lanciando" nella varietà di arrivo un laccio chiuso).
+ Se partivo da un punto, avrei sentito solo la connessione per archi, non la semplice connessione.
+\end{oss}
+\begin{defn}[Gruppo fondamentale]
+ L'insieme $\pi_1(Y, y_0)=\Setdef[f:(S^1, P)\rightarrow (Y, y_0), f(P) = y_0]/\sim_{omotopia puntata}$ è detto \emph{gruppo fondamentale} della varietà $Y$.
+\end{defn}
+
