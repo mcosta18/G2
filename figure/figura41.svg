@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg6159"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="figura41.svg">
+  <defs
+     id="defs6161" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="160.36148"
+     inkscape:cy="771.51942"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6164">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 75.714286,235.93363 C 48.649976,212.23301 125.6734,200.63913 111.42857,164.50506 L 79.285714,93.790775 C 61.790591,36.948626 197.14286,84.743156 260,78.790775 c 25.41249,-3.508765 28.374,44.995015 -2.85714,67.142855 -19.90556,20.20949 -57.86161,42.86767 34.28571,59.28572 30.90949,7.07598 -12.10969,56.99017 -41.42857,62.85714 L 130,297.3622 C 85.832614,304.10928 92.724083,257.89192 75.714286,235.93363 Z"
+       id="path6707"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.04860926;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99239544"
+       id="path6709"
+       sodipodi:type="arc"
+       sodipodi:cx="178.92857"
+       sodipodi:cy="219.8622"
+       sodipodi:rx="32.475697"
+       sodipodi:ry="31.047123"
+       sodipodi:start="0"
+       sodipodi:end="6.2825919"
+       sodipodi:open="true"
+       d="m 211.40427,219.8622 a 32.475697,31.047123 0 0 1 -32.47088,31.04712 32.475697,31.047123 0 0 1 -32.48051,-31.03791 32.475697,31.047123 0 0 1 32.46124,-31.05633 32.475697,31.047123 0 0 1 32.49014,31.02869" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.61913413;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99239544"
+       id="path6709-2"
+       sodipodi:type="arc"
+       sodipodi:cx="178.92859"
+       sodipodi:cy="220.57649"
+       sodipodi:rx="19.476149"
+       sodipodi:ry="18.047575"
+       sodipodi:start="0"
+       sodipodi:end="6.2825919"
+       sodipodi:open="true"
+       d="m 198.40474,220.57649 a 19.476149,18.047575 0 0 1 -19.47326,18.04758 19.476149,18.047575 0 0 1 -19.47904,-18.04222 19.476149,18.047575 0 0 1 19.46748,-18.05293 19.476149,18.047575 0 0 1 19.48481,18.03686" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6734"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(12.142857,10)"><flowRegion
+         id="flowRegion6736"><rect
+           id="rect6738"
+           width="144.28572"
+           height="57.857143"
+           x="100"
+           y="89.505058" /></flowRegion><flowPara
+         id="flowPara6740">$\phi(U_{j})$</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6742"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion6744"><rect
+           id="rect6746"
+           width="24.285715"
+           height="29.285715"
+           x="128.57143"
+           y="248.07649" /></flowRegion><flowPara
+         id="flowPara6748">$B</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6750"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(17.857143,-95.714286)"><flowRegion
+         id="flowRegion6752"><rect
+           id="rect6754"
+           width="92.14286"
+           height="42.142853"
+           x="101.42857"
+           y="344.50507" /></flowRegion><flowPara
+         id="flowPara6756">$B_{1}$</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6750-7"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(15.600028,-186.1251)"><flowRegion
+         id="flowRegion6752-0"><rect
+           id="rect6754-9"
+           width="92.14286"
+           height="42.142853"
+           x="101.42857"
+           y="344.50507" /></flowRegion><flowPara
+         id="flowPara6756-3">$B_{2}$</flowPara></flowRoot>  </g>
+</svg>

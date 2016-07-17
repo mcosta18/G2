@@ -6,7 +6,7 @@ Daremo una classificazione completa a meno di isometrie degli spazi vettoriali $
 $\dim(V) = n$. Lo spazio vettoriale è dotato di un prodotto scalare non degenere.
 %non sono sicuro della parola isometria
 Decomporremo lo spazio vettoriale in somme ortogonali (rispetto al prodotto scalare dato) di spazi vettoriali isometrici
-a $U$, $H$ di dimensioni rispettivamente 1 e 2. Questi spazi si scrivono in qualche base rispettivamente come: $\begin{bmatrix} 1 \end{bmatrix}$ e $ \begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$.
+a $U$, $H$ di dimensioni rispettivamente 1 e 2. Questi spazi si scrivono in qualche base rispettivamente come: $\begin{bmatrix} 1 \end{bmatrix}$ e $\begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$.
 $H$ è totalmente isotropo ma non è identicamente nullo (ricorda che sono in caratteristica 2!).
 
 Reminder: Un prodotto scalare totalmente isotropo è uno per cui $(v,v) = 0,\, \forall v \in V$.
@@ -51,14 +51,31 @@ $\Fundef[f]{S^{1}}{S^{2}}$ e $\Fundef[p]{S^{1}}{\R^n}$, dove $p$ è la proiezion
 La proiezione stereografica deve essere presa rispetto ad un certo punto $P \in f(S^1 0)$. Considero la retrazione su $\R^2$ del laccio proiettato: $\fundef[r_{t}]{x}{tx}$ che manda il laccio nell'origine, questo corrisponde a retrarre
 il laccio nel punto $P$. Dunque tutti i lacci sono equvalenti tra di loro.
 
-\marginpar{aggiungere disegno}
+\begin{figure}
+	\centering 
+	\input{figura48.pdf_tex}
+	\caption{Proiezione Stereografica}
+\end{figure}
 
 \subtitlet{$\eta(T_{2}) = H$}
 
+\begin{figure}
+	\centering 
+	\input{figura49.pdf_tex}
+	\caption{Due lacci su un toro}
+\end{figure}
+
 Studio $\eta(S^{1} \times S^{1} = T_{2})$, sappiamo che $\eta(T_{2}) = \quoset\Z{2\Z} \times \quoset\Z{2\Z}$. Voglio mostrare che questo spazio è un modello per
 $H = \begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$. Considero due lacci sul toro che si intersecano in un punto ma non si autointersecano, questi generano un sottospazio di $\eta$ 
-in cui la restrizione di $\beta$ è chiaramante $H$. Voglio dimostrare che $\quoset{\R^2}{\Z^2}$. Apro il toro lungo i due lacci e ottengo 
-un quadrato. Metto sul piano reale la relazione di equivalenza: $(x, y) \sim (x', y') \Leftrightarrow \exists (n,m) \in \Z^2$ tale che $ (x',y')-(x,y) = (n, m)$.
+in cui la restrizione di $\beta$ è chiaramante $H$. Voglio dimostrare che $\quoset{\R^2}{\Z^2}$. Apro il toro lungo i due lacci e ottengo un quadrato. 
+
+\begin{figure}
+	\centering 
+	\input{figura50.pdf_tex}
+	\caption{Toro tagliato lungo due lacci}
+\end{figure}
+
+Metto sul piano reale la relazione di equivalenza: $(x, y) \sim (x', y') \Leftrightarrow \exists (n,m) \in \Z^2$ tale che $ (x',y')-(x,y) = (n, m)$.
 
 %non so se identificazioni è la parola giusta
 
@@ -67,14 +84,34 @@ $\quoset{\R^2}{\Z^2} \Leftarrow S^{1} \times S^{1} \subseteq \mathbb{C} \times \
 Dunque posso srotolare un laccio sul toro come in figura e si vede che ogni laccio è omotopo al segmento tra l'origine e il punto $(p, q) \in \Z^2$, dove $p$ e $q$ indicano il
 numero di volte in cui il laccio si avvolge orizzontalmente e verticalmente sul toro. 
 
+
+\begin{figure}
+	\centering 
+	\input{figura51.pdf_tex}
+	\caption{Sviluppo del dominio fondamentale del toro nel piano xy}
+\end{figure}
+
+
 \begin{teo} 
  $(p, q) =1 \iff $  il laccio non ha autointersezioni
 \end{teo}
 
-Se tolgo un punto al toro posso retrarre tutto il laccio nel punto (come si vede nel disegno). 
+Se tolgo un punto al toro posso retrarre tutto il laccio nel punto (come si vede nel disegno).
+
+\begin{figure}
+	\centering 
+	\input{figura52.pdf_tex}
+	\caption{Retrazione dei lacci dopo aver tolto un punto al toro}
+\end{figure}
 
 Si può rappresentare un laccio sul toro come un ``bucket a due petali'' cioè due circonferenze $S^{1}$ attaccate per un punto che vengono percorse tante volte quanti sono i giri
 orizzontali e verticali che il laccio compie.
+
+\begin{figure}
+	\centering 
+	\input{disegno7.pdf_tex}
+	\caption{Bucket a due petali}
+\end{figure}
 
 Quello di cui dovrei convincermi è che non è assolutamente chiaro e che due lacci disgiunti che compiono un giro verticale e uno orizzontale generano tutto. Se questo è vero allora $\eta(T_{2})$ 
 è una realizzazione di $H$.
@@ -84,18 +121,73 @@ Quello di cui dovrei convincermi è che non è assolutamente chiaro e che due la
 Studio $\eta(\P^{2})$, cioè $\eta$ del piano proiettivo. Considero la calotta sferica di $S^2$. I punti non del bordo della calotta rappresentano un solo punto del piano proiettivo mentre
 identifico i punti del bordo. La calotta sferica $S^{2}/s$ mi da un dominio fondamentale del proiettivo.
 
+\begin{figure}
+	\centering 
+	\input{figura53.pdf_tex}
+	\caption{Identificazione dei punti antipodali}
+\end{figure}
+
 Come si vede nella figura costruisco un $S^1$ identificando i punti antipodali ($\quoset{S^1}=$), si vede che il bordo della calotta ricopre due volte $\quoset{S^1}=$. Il collare che ha per bordo questi due anelli
 è chiamato nastro di Möbius e si indica con $\mathcal{M}$. 
 L'anima del nostro di Möbius è il proiettivo $\mathbb{P}^1 \subseteq \mathbb{P}^2 $, si vede inoltre che il bordo $\boundary \mathcal{M}$ ha una sola componente connessa.
 Sempre dalle figure è chiaro che $\mathbb{P}^2 = \mathcal{M} \cup D^{2}$ incollati lungo il bordo.
 
-Se tolgo un punto al disco e prendo $\quoset{\mathbb P^2}P$ ottengo una varietà completamente retraibile nell'anima del nastro di Möbius cioè in $\mathbb{P}^1$.
+\begin{figure}
+	\centering 
+	\input{figura54.pdf_tex}
+	\caption{Proiettivo ottenuto come somma di un disco più un nasto di Moebius}
+\end{figure}
+
+Se tolgo un punto al disco e prendo $\quoset{\mathbb P^2}{P}$ ottengo una varietà completamente retraibile nell'anima del nastro di Möbius cioè in $\mathbb{P}^1$.
 
 Un laccio sul natro di Möbius è costretto all'autointersezione, dunque $\mathcal{M}$ è un modello per $U$.
 
+\begin{figure}
+	\centering 
+	\input{figura56.pdf_tex}
+	\caption{Autointersezione necessaria per un nastro di Möbius}
+\end{figure}
+
+Ricordiamo che $\eta_1(T_{2}) \sim H$ e $\eta_1(P^{2}) \sim U$
+
 \subtitlet{Modelli per spazi di dimensione maggiore}
 
-Un modello per $H$ 
+Un modello per $H \bot H \bot H ... H$ (somma ortogonale di g spazi vettoriali isomorfi a H) si può ottenere considerando g tori separati. Essi infatti sono g componenti connesse e i lacci su tori diversi non si intersecano. Quindi la matrice associata è diagonale e ogni blocco corriponde a $\begin{bsmallmatrix} 0 & 1 \\ 1 & 0 \end{bsmallmatrix}$.
+Per quanto detto vale dunque $eta_{2}(T_{2} \sqcup T_{2} \sqcup T_{2} \sqcup ... \sqcup T_{2} = \quoset{\mathbb{Z}}{2\mathbb{Z}} \times \quoset{\mathbb{Z}}{2\mathbb{Z}} \times \quoset{\mathbb{Z}}{2\mathbb{Z}} \times ... \quoset{\mathbb{Z}}{2\mathbb{Z}}$.
 
+Voglio dimostrare che la relazione sopra scritta vale anche nel caso in cui sostituisca l'unione disgiunta di $g$ tori con la somma connessa, cioè: $eta_{2}(T_{2} # T_{2} # T_{2} # ... # T_{2} = \quoset{\mathbb{Z}}{2\mathbb{Z}} \times \quoset{\mathbb{Z}}{2\mathbb{Z}} \times \quoset{\mathbb{Z}}{2\mathbb{Z}} \times ... \quoset{\mathbb{Z}}{2\mathbb{Z}}$.
 
+Due lacci diversi sulla somma connessa di più tori si intersecano sempre in un due punti quindi li posso accoppiare a due a due e la relazione rimane vera.
+
+\begin{figure}
+	\centering 
+	\input{figura57.pdf_tex}
+	\caption{Intersezione di due lacci su somma connessa di due tori}
+\end{figure}
+
+Si può dimostare che prendere la somma connessa rispetto alla somma disgiunta non cambia la classe di cobordismo. 
+
+\begin{figure}
+	\centering 
+	\input{figura58.pdf_tex}
+	\caption{_}
+\end{figure}
+
+\begin{figure}
+	\centering 
+	\input{figura59.pdf_tex}
+	\caption{_}
+\end{figure}
+
+\begin{figure}
+	\centering 
+	\input{figura60.pdf_tex}
+	\caption{_}
+\end{figure}
+
+\begin{figure}
+	\centering 
+	\input{figura61.pdf_tex}
+	\caption{_}
+\end{figure}
 

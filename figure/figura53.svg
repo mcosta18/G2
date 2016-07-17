@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg7410"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="figura53.svg">
+  <defs
+     id="defs7412" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="170.74603"
+     inkscape:cy="852.21834"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7415">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path7958"
+       sodipodi:type="arc"
+       sodipodi:cx="242.5"
+       sodipodi:cy="233.07649"
+       sodipodi:rx="133.21428"
+       sodipodi:ry="52.857143"
+       sodipodi:start="0"
+       sodipodi:end="6.2825919"
+       sodipodi:open="true"
+       d="M 375.71428,233.07649 A 133.21428,52.857143 0 0 1 242.51976,285.93364 133.21428,52.857143 0 0 1 109.28573,233.09218 133.21428,52.857143 0 0 1 242.44071,180.21935 133.21428,52.857143 0 0 1 375.71426,233.04513" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 108.57143,231.64791 C 102.48578,55.254458 338.11765,-16.799212 375.71429,230.93363"
+       id="path7960"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 178.57143,278.79078 90.71428,-97.85715"
+       id="path7962"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7964"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(16.37165,-16.897753)"><flowRegion
+         id="flowRegion7966"><rect
+           id="rect7968"
+           width="95.714287"
+           height="56.42857"
+           x="148.57143"
+           y="297.36221" /></flowRegion><flowPara
+         id="flowPara7970">$x$</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7996"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(4.0406102,11.616754)"><flowRegion
+         id="flowRegion7998"><rect
+           id="rect8000"
+           width="60.609154"
+           height="24.748737"
+           x="267.69043"
+           y="152.82137" /></flowRegion><flowPara
+         id="flowPara8002">$-x$</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot8004"
+       style="font-style:normal;font-weight:normal;font-size:35px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(-196.97975,32.324882)"><flowRegion
+         id="flowRegion8006"><rect
+           id="rect8008"
+           width="191.42392"
+           height="77.781746"
+           x="379.81735"
+           y="87.161446"
+           style="font-size:35px" /></flowRegion><flowPara
+         id="flowPara8010">$P^{2}$</flowPara></flowRoot>  </g>
+</svg>
