@@ -1,0 +1,86 @@
+%Trascrizione iniziale: Costa
+
+Fissata una triade $(W, V_0, V_1)$ e una funzione di Morse $\fundef[W][{\left [0,1\right ]}]$, posso ottenere una decomposizione in manici della suddetta triade.
+
+\begin{example}
+ Sia $W$ una superficie compatta, chiusa, connessa.$\Rightarrow (W, \nullset, \nullset)$
+ \marginpar{fai disegni alberto}
+ \chi(W) = $\card$ $0$-manici - $\card$ $1$-manici + $\card$ $2$-manici.
+\end{example}
+
+Per contarli, vorrei potermi dimenticare dei massimi e minimi e selle. 
+Pertanto, vogliamo trovare una serie di mosse che semplifichino la superficie lasciandone invariate le proprietà cercate.
+
+\begin{enumerate}
+ \item Cancellazione di una coppia (0-manico, 1-manico) in posizione complementare.
+  \marginpar{disegno}
+  Infatti nel conteggio di $\chi (W)$, conteggiando con il segno giusto i manici da semplificare, si ottiene 1-1 = 0
+  \begin{teo}
+    Posso cancellare $0$-manici e $1$-manici fino a restare con un solo $0$-manico
+  \end{teo}
+  \begin{proof}
+    Siccome la superficie è connessa, posso cancellare a coppie per induzione i manici. Se parto infatti con una collezione di $0$-manici, questi possono essere connessi solo tramite rete di $1$-manici.
+    Li retraggo a 2 a 2 e resto con un solo $0$-manico.
+    \marginpar{Altro disegno}
+  \end{proof}
+  \begin{cor}
+  Esiste una funzione di Morse con un solo punto di minimo.
+  \end{cor}
+  \begin{oss}
+  Per un ragionamento duale ($f\rightarrow -f$) ho anche un solo $2$-manico (e dunque esiste una funzione di Morse con un solo massimo).
+  \end{oss}
+\item Scivolamento.
+\marginpar{inserisci disegni}
+Posso assumere che tutti gli $1$-manici si attachino solamente lungo il bordo dello $0$-manico, che deve essere uno solo perchè lo devo poter tappare con un solo $2$-manico.
+\end{enumerate}
+
+Segue che ogni superficie compatta connessa ammette una decomposizione in manici del seguente tipo
+\begin{enumerate}
+ \item Un solo $0$-manico $D^2$.
+ \item Si attaccano solamante $k$ $1$-manici lungo $\partial D^2$. Da questo punto e dal precedente risulta una $S$ connessa con $\boundary S \sim S^1$
+ \item Si tappa $\boundary S$ con un unico $2$-manico.
+\end{enumerate}
+\begin{oss}
+ $\chi(W) = 2-k$, ossia, più volgarmente, ci dice che la $\chi$ conta i buchi.
+\end{oss}
+\begin{es}
+ Per $k=0$ si ha $S^2$. Per $k=1$ si ha il $\mathbb P^2$ (che è un nastro di Moebius); un toro non può essere tappato con un $2$-manico.
+ Per $k=2$ va bene solo la superficie disegnata, che tappata con un $2$-manico diviene un toro $T_2$.
+ \marginpar{figura strana}
+\end{es}
+
+Siccome la $\chi$ è troppo difficile da calcolare, usiamo la forma di intersezione. 
+Supponiamo di avere una superficie $W$ e una forma di intersezione $\beta$ totalmente isotropa.
+\begin{oss}
+ esiste una curva semplice $\left [ c\right ]\neq 0$, c\cdot c = 0. Dato che $c$ non sconnette $W$, $c$ ha un intorno a nastro diffeomorfo a $c \times \left[ 0 \right ]$
+\end{oss}
+Segue che esiste $c'$ tale che $c'\cdot c = 1$ e $\left [ c' \right ]\neq 0$. Ma dato che $\beta$ è completamente isotropo, $\c' \cdot c'= 0$.
+Allora abbiamo ottenuto un toro: $W = T_2\csum Z$, dove $Z$ non la conosco, ma so che ha un numero di manici inferiore (scatta l'induzione!).
+\begin{oss}
+ $\beta$ è totalmente isotropo anche ristretta a $Z$
+\end{oss}
+\begin{oss}
+ $Z$ ha una decomposizione in manici con 2 manici in meno rispetto a $W$.
+\end{oss}
+\begin{teo}
+ Se $W$ ha una $\beta$ totalmente isotropa, allora $W\simeq \underbrace {T_2\csum \dots \csum T_2}_{g addendi}$ e $\chi (W) = 2 - 2g$.
+\end{teo}
+
+Supponiamo ora che $W\neq S^2$ e $\beta$ non totalmente isotropa, ossia esiste $c$ semplice su $W$ tale che $c\cdot c = 1$.
+\begin{oss}
+ Allora $c$ ha un intorno che è diffeomorfo ad un nastro di Moebius, ossia $W=\mathbbP ^2 \csum Z$
+\end{oss}
+Anche qui adesso vogliamo far scattare l'induzione come sopra! Abbiamo due casi:
+\begin{enumerate}
+ \item $W\simeq \underbrace {\mathbb P^2\csum \cdot \mathbb P^2}_{k addendi}$ e $\chi (W) = 2 - k$
+ \item $W\simeq\underbrace{\mathbb P^2\csum \dots \csum \mathbb P^2}_{r volte}\csum Z$ con $Z$ totalmente isotropo.
+ Tuttavia se $Z$ è totalmente isotropo, possiamo applicare i ragionamenti fatti in precdedenza. Così otteniamo la scomposizione
+ $W \simeq \underbrace{\mathbb P^2\csum \dots \csum \mathbb P^2}_{r volte}\csum \underbrace{T_2\csum \dots \csum T_2}_{g volte}$.
+ Segue che $\chi(W) = 2-r-2g$.
+\end{enumerate}
+\begin{lemma}
+ 
+\end{lemma}
+
+
+

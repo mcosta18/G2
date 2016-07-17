@@ -26,7 +26,7 @@ $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2}
   \input{homotopy.pdf_tex}
   \caption{dimostrazione teorema}
  \end{figure}
- Costruisco ora il cobordismo. Pongo $\forall t\in \left[ 0,1\right], F(x,t)=(f(x,t), t)$
+ Costruisco ora il cobordismo. Pongo $\forall t\in \left[ 0,1\right], F(x,t)=(f(x,t), t)$}
   \begin{figure}
   \centering
   \input{homotopy2.pdf_tex}
@@ -44,7 +44,7 @@ $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2}
  che preservano l'orientazione.
 \end{defn}
 \begin{defn}
- $\Omega _n(punto)=\Omega _n = \set{ X \mbox{$n$-varietà compatta, chiusa, orientata}} /\sim_{cob^+}$
+ $\Omega _n(punto)=\Omega _n = \left \{ $X n-varietà compatta, chiusa, $\boundary X\neq \nullset$, orientata$\right \} /\sim_{cob^+}$
 \end{defn}
 
 \begin{oss}
@@ -59,12 +59,12 @@ $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2}
 \end{oss}
 Possiamo adesso ripercorrere lo schema precedente e cambiare la varietà obiettivo.
 \begin{defn}
- $\Omega_n (Y) = \set{\mbox{$X$ $n$-varietà liscia tale che} \exists \fundef XY \mbox{liscia}}$
+ $\Omega_n (Y) = \setdef[\fundef[X][Y] liscia][{X n-varietà liscia}]$
 \end{defn}
 \begin{oss}
  Non ho chiesto nessuna condizione di orientabilità sulla varietà $Y$ in arrivo.
 \end{oss}
-Adesso ripetiamo la costruzione e creiamo degli omomorfismi di gruppi $\fundef[g_*]{\Omega _n (Y_1)}{\Omega _n(Y_2)}$ tale che $(g\circ h )_* = g_*\circ h*$,
+Adesso ripetiamo la costruzione e creiamo degli omomorfismi di gruppi $g_*:\Omega _n (Y_1)\rightarrow \Omega _n(Y_2)$ tale che $(g\circ h )_* = g_*\circ h*$,
  $\id_* = \id$.
 \begin{teo}
  Vale la proprietà di omotopia
@@ -74,7 +74,7 @@ Questi si chiamano oggetti topologico-algebrici e servono a fare i conti. Un ese
 \titlet{Gruppo fondamentale}
 $y_0\in Y$ varietà connessa per archi. Considero la coppia $(Y, y_0)$
 \begin{defn}[Omotopia puntata]
-Una omotopia $F$ è detta \emph{puntata} (o \emph{o.p.}) se $F(P, t) = y_0 \forall t$
+Una omotopia $F$ è detta \emph{puntata} se $F(P, t) = y_0 \forall t$
  \begin{figure}
   \centering
   \input{puntata.pdf_tex}
@@ -82,7 +82,7 @@ Una omotopia $F$ è detta \emph{puntata} (o \emph{o.p.}) se $F(P, t) = y_0 \fora
  \end{figure}
 
 \end{defn}
-Considero ora l'insieme $\set{\fundef {(S^1, P)}{(Y, y_0)}, f(P) = y_0}/\sim_{o.p.}$, ossia considero i cammini chiuso a meno di omotopia puntata.
+Considero ora l'insieme $\Setdef[f:(S^1, P)\rightarrow (Y, y_0), f(P) = y_0][f]/\sim_{omotopia puntata}$, ossia considero i cammini chiuso a meno di omotopia puntata.
 Lo doto di una operazione in modo da renderlo un gruppo.
 \begin{defn}
  $f_0 * f_1:(S^1, P)\rightarrow (Y, y_0)\begin{cases} f_1(2t), & \mbox{se } t\in \left [0, 1/2\right ] \\ f_0(2t-1), & \mbox{se }t\in \left [1/2, 1\right ]\end{cases}$.
@@ -95,6 +95,6 @@ Lo doto di una operazione in modo da renderlo un gruppo.
  Se partivo da un punto, avrei sentito solo la connessione per archi, non la semplice connessione.
 \end{oss}
 \begin{defn}[Gruppo fondamentale]
- L'insieme $\pi_1(Y, y_0)=\set{\fundef{(S^1, P)}{(Y, y_0)}, f(P) = y_0}/\sim_{o.p.}$ è detto \emph{gruppo fondamentale} della varietà $Y$.
+ L'insieme $\pi_1(Y, y_0)=\Setdef[f:(S^1, P)\rightarrow (Y, y_0), f(P) = y_0]/\sim_{omotopia puntata}$ è detto \emph{gruppo fondamentale} della varietà $Y$.
 \end{defn}
 
