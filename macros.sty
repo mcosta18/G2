@@ -37,10 +37,6 @@
 
 \newcommand*\av[1]{\underline{#1}} % algebraic vector
 
-% product of manifolds (copied from txfonts)
-\DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
-\DeclareMathSymbol{\varprod}{\mathbin}{largesymbolsA}{16}
-
 \DeclareFontEncoding{LS1}{}{}
 \DeclareFontSubstitution{LS1}{stix}{m}{n}
 \DeclareSymbolFont{symbols2}{LS1}{stixfrak} {m} {n}
@@ -144,7 +140,7 @@
 \newcommand*\djunion\bigsqcup % disjoint union
 
 % "Small" (binary) union and intersection:
-\DeclareMathOperator\djcup{\sqcup} % disjoint union
+\newcommand*\djcup{\sqcup} % disjoint union
 
 \newcommand*\set[1]{\left\{{#1}\right\}} % \set{x} = \left \{ x \right \}
 
@@ -185,5 +181,9 @@
 \DeclareMathOperator\emb{Emb}
 \DeclareMathOperator\diff{Diff}
 \newcommand*\csum{\mathop{\sharp}} % connected sum
+
+% product of manifolds (copied from txfonts)
+\DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
+\DeclareMathSymbol{\varprod}{\mathbin}{largesymbolsA}{16}
 
 \endinput
