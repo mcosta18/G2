@@ -44,7 +44,7 @@ Cioè si identifica la fibra come lo spazio tangente del punto $x$, quindi lo sp
 \end{figure}
 
 \begin{defn}[Applicazione tangente]
-Data un'applicazione liscia $\fundef[f]{U}{W}$ si definisce l'\emph{applicazione tangente} di $f$ la funzione $\fundef[Df]{T(U)}{T(W)}$ che manda $(x,v) \mapsto (f(x), \dd_xf(v))$, cioè quell'applicazione che fa commutare il seguente diagramma:
+Data un'applicazione liscia $\fundef[f]{U}{W}$ si definisce l'\emph{applicazione tangente} di $f$ la funzione $\fundef[Df]{T(U)}{T(W)}$ che manda $(x,v) \mapsto (f(x), \de_xf(v))$, cioè quell'applicazione che fa commutare il seguente diagramma:
 \begin{equation*}
 \begin{tikzcd}
 	T(U) \arrow[r, dashrightarrow, "Df"] \arrow[d, "\pi_U"]
@@ -56,10 +56,10 @@ Data un'applicazione liscia $\fundef[f]{U}{W}$ si definisce l'\emph{applicazione
 \end{defn}
 
 \begin{oss}
-L'applicazione tangente manda fibre in fibre in modo lineare, poiché $\forall x\in U\ \ \fundef[\dd_xf]{T_x U}{T_x W}$, e il differenziale è un'applicazione lineare per definizione.
+L'applicazione tangente manda fibre in fibre in modo lineare, poiché $\forall x\in U\ \ \fundef[\de_xf]{T_x U}{T_x W}$, e il differenziale è un'applicazione lineare per definizione.
 L'applicazione tangente gode inoltre delle seguenti proprietà:
 \begin{itemize}
-\item è un'applicazione liscia in tutte le sue variabili (infatti $f$ è liscia e, $\dd_xf$ è liscia perché lineare)
+\item è un'applicazione liscia in tutte le sue variabili (infatti $f$ è liscia e, $\de_xf$ è liscia perché lineare)
 \item è functoriale: $h = g\circ f \implies Dh = Dg\circ Df$
 \item $D(\id) = \id$
 \item se $f$ è un diffeomorfismo anche $Df$ è un diffeomorfismo e manda fibra in fibra attraverso isomorfismi lineari
@@ -166,14 +166,14 @@ Sia dunque $M$ una n-varietà liscia e $\mathcal{A} = \set{(U_j, \varphi _j)}_j$
 \begin{oss}
 Dato un cambiamento di carte $\varphi _j \circ \varphi _i ^{-1}$ si ha che esso è una funzione tra aperti di $\R ^n$ ed è perciò definita l'applicazione tangente:
 \begin{equation*}
-D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto \big(\varphi _j \circ \varphi _i ^{-1}(x), \dd_x(\varphi _j \circ \varphi _i ^{-1})(v)\big)
+D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto \big(\varphi _j \circ \varphi _i ^{-1}(x), \de_x(\varphi _j \circ \varphi _i ^{-1})(v)\big)
 \end{equation*}
 \end{oss}
 
 Si considerano ora le applicazioni $\mu_{ji}$ definite come segue:
 \begin{align*}
 \mu_{ji} : U_i\cap U_j &\funarrow \GL(n) \\
-x &\mapsto \dd_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
+x &\mapsto \de_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
 \end{align*}
 
 \begin{oss}[Proprietà delle $\mu_{ji}$]

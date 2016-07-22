@@ -5,39 +5,39 @@ MOLTO DA SISTEMARE
 \begin{lemma}
 	\label{th:lemprec}
 	Sia $\fundef{\R^n}\R$ liscia con $U\subseteq\R^n$ aperto connesso, $f(0)=0$, $0\in U$.
-	Allora $\exists\fundef[g_i]{\R^n}\R$ liscie tali che $f(x)=\sum_ix_ig_i(x)$.
+	Allora $\exists\fundef[g_i]{\R^n}\R$ lisce tali che $f(x)=\sum_ix_ig_i(x)$.
 \end{lemma}
 
 \begin{proof}
 	Per il teorema fondamentale del calcolo abbiamo:
-	\[f(x)=\int_0^1\deriv{f(tx)}t\dd t=
-	\sum_{i=1}^n\left(\int_0^1\pderiv f{x_i}(tx)\dd t\right)x_i\]
+	\[f(x)=\int_0^1\deriv{f(tx)}t\de t=
+	\sum_{i=1}^n\left(\int_0^1\pderiv f{x_i}(tx)\de t\right)x_i\]
 	Allora poniamo:
-	\[g_i(x)\is\int_0^1\pderiv f{x_i}(tx)\dd t
+	\[g_i(x)\is\int_0^1\pderiv f{x_i}(tx)\de t
 	\qedhere\]
 \end{proof}
 
 \begin{teo}[Linearizzazione dei diffeomorfismi di $\R^n$ a meno di isotopia]
-	Sia $\fundef{\R^n}{\R^n}$ diffeomorfismo con $\forall x\in\R^n:\det(\dd f_{x})>0$. Allora $\exists\fundef[F]{\R^n\times[0,1]}{\R^n}$ liscia tale che $\forall t\in[0,1]:f_t$ è un diffeomorfismo di $\R^n$ e $f_0=f$, $f_1=\id$, dove $f_t\is F|_{\R^n\times\set t}$.
+	Sia $\fundef{\R^n}{\R^n}$ diffeomorfismo con $\forall x\in\R^n:\det(\de f_{x})>0$. Allora $\exists\fundef[F]{\R^n\times[0,1]}{\R^n}$ liscia tale che $\forall t\in[0,1]:f_t$ è un diffeomorfismo di $\R^n$ e $f_0=f$, $f_1=\id$, dove $f_t\is F|_{\R^n\times\set t}$.
 	\marginpar{ridondante, MERGIARE}
 \end{teo}
 
 \begin{proof}
 	$\wlg f(0)=0$. Infatti se $f(0)=x_0$, $H(x,t)\is f(x)-t(x_0)$ è un'isotopia tra $f$ e la  $f'$ con $f'(0)=0$.
 	
-	Per definizione, $\dd f_{0}(x)=\lim_{t\to 0}\frac{f(tx)}t$.
+	Per definizione, $\de f_{0}(x)=\lim_{t\to 0}\frac{f(tx)}t$.
 	
 	Poniamo:
 	\[\tilde F(x,t)\is
 	\begin{dcases}
 		\frac{f(tx)}t & t\in[0,1] \\
-		\dd f_{0}(x) & t=0
+		\de f_{0}(x) & t=0
 	\end{dcases}\]
 	
 	\claim $\tilde F$ è liscia. Infatti applicando il \autoref{th:lemprec} abbiamo $\tilde F(x,t)=\sum_ix_ig_i(x)$.
 	\marginpar{questo non mi torna}
 	
-	Sia $A\is\dd f_{0}$, osserviamo che $\det A>0$.
+	Sia $A\is\de f_{0}$, osserviamo che $\det A>0$.
 	Dobbiamo mostrare che $A$ è connessa con l'identità in modo liscio, ovvero se consideriamo $\GL_n^+\is\setdef[M\in\GL_n]{\det M>0}$ aperto di $\GL_n$, dobbiamo mostrare che è connesso per archi.
 	
 	Intanto, il cammino più intuitivo $t\mapsto tA+(1-t)I$ non funziona in generale se $n$ è dispari, perché il determinante si può annullare.
@@ -50,7 +50,7 @@ MOLTO DA SISTEMARE
 	 \begin{itemize}
 	 	\item $B_1=A$
 		\item $B_0\in\SO_n$
-		\item le formule G-S per i $B^i$ sono liscie.
+		\item le formule G-S per i $B^i$ sono lisce.
 		\item $\det B_t>0$
 	 \end{itemize} 
 	Allora da $B_0$ ci connettiamo all'identità come nel caso $A\in\SO_n$.
@@ -60,17 +60,17 @@ Sia $\fundef U{\R^n}$ con $f$ liscia, $0\in U\subseteq\R^n$, $U$ aperto, $f(0)=0
 
 Espandiamo in serie la $f$:
 \[f(x)=
-\dd f_{0}(x)+\transp{x}(Hf_{0})x+R
+\de f_{0}(x)+\transp{x}(Hf_{0})x+R
 \quad\text{con}\quad
 \lim_{x\to0}\frac R{\norm{x}^2}=0\]
 Dove $Hf$ è la matrice hessiana:
 \[(Hf_{0})_{ij}\is
 \frac{\partial^2f}{\partial x_j\partial x_i}(0)\]
-Ricordiamo che l'hessiana è simmetrica per le funzioni liscie.
+Ricordiamo che l'hessiana è simmetrica per le funzioni lisce.
 
-Se $\dd f_{0}\neq0$ cioè $\nabla f(0)\neq0$, siamo nelle ipotesi del \autoref{th:funimpsurg}. Allora $\exists$~parametrizzazione locale $\psi$ tale che $f\circ\psi(x)=x_1$.
+Se $\de f_{0}\neq0$ cioè $\nabla f(0)\neq0$, siamo nelle ipotesi del \autoref{th:funimpsurg}. Allora $\exists$~parametrizzazione locale $\psi$ tale che $f\circ\psi(x)=x_1$.
 
-Supponiamo che $\dd f_{0}=0$. Allora chiamiamo $0$ \emph{punto critico} di $f$. In questo caso $f(x)=\transp{x}(Hf_{0})x+R$.
+Supponiamo che $\de f_{0}=0$. Allora chiamiamo $0$ \emph{punto critico} di $f$. In questo caso $f(x)=\transp{x}(Hf_{0})x+R$.
 \marginpar{scrivere definizione per bene}
 
 Supponiamo che sia un punto critico \emph{non degenere}, cioè $\det(Hf_{0})\neq0$. Allora applichiamo il teorema di Sylvester alla matrice $Hf$ (che è simmetrica e non degenere), avremo indici di positività e negatività $i_+$ e $i_-=n-i_+$ e:
@@ -121,9 +121,9 @@ Chiamiamo $i_-$ l'indice del punto critico non degenere.
 	Applichiamo due volte il \autoref{th:lemprec}:
 	\begin{align*}
 		f(0)=0 &\so f(x)=\sum_ix_ig_i(x) \\
-		\dd f_{0}\equiv0 &\so f(x)=\sum_{ij}b_{ij}(x)x_ix_j
+		\de f_{0}\equiv0 &\so f(x)=\sum_{ij}b_{ij}(x)x_ix_j
 	\end{align*}
-	Dove le $b_{ij}$ sono liscie. \wlg $b_{ij}=b_{ji}$ perché simmetrizzo con $b_{ij}\mapsto\frac{b_{ij}+b_{ji}}2$, che a meno di restringere $U$ non cambia l'indice di $(b_{ij})\si B$ che in effetti è $\lambda$ (a meno di un cambiamento lineare di base, posso suppore $Hf_{0}=J$).
+	Dove le $b_{ij}$ sono lisce. \wlg $b_{ij}=b_{ji}$ perché simmetrizzo con $b_{ij}\mapsto\frac{b_{ij}+b_{ji}}2$, che a meno di restringere $U$ non cambia l'indice di $(b_{ij})\si B$ che in effetti è $\lambda$ (a meno di un cambiamento lineare di base, posso suppore $Hf_{0}=J$).
 	\marginpar{spiegare per bene}
 	
 	Applichiamo Gram-Schmidt alle $B$:
@@ -141,9 +141,9 @@ Chiamiamo $i_-$ l'indice del punto critico non degenere.
 			& & 1 \\
 		\end{matrix}
 	\end{pmatrix}\si J\]
-	Osserviamo che $P(0)=I$ e che le $P$ sono liscie.
+	Osserviamo che $P(0)=I$ e che le $P$ sono lisce.
 	
-	Sia $\fundef[\varphi]U{\R^n}$ con $\varphi(x)\is P(x)^{-1}$. Osserviamo che $\dd\varphi_{0}=\id$.
+	Sia $\fundef[\varphi]U{\R^n}$ con $\varphi(x)\is P(x)^{-1}$. Osserviamo che $\de\varphi_{0}=\id$.
 	
 	Applichiamo il teorema della funzione inversa: $\varphi$ è un diffeomorfismo se restringiamo il codominio all'immagine.
 	

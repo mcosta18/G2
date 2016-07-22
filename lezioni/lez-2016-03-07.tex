@@ -63,7 +63,7 @@ Tuttavia le due varietà differenziabili sono diffeomorfe attraverso $\phi_1^{-1
 \end{oss}
 
 \begin{teo}[Funzione inversa]
-$\fundef{\Omega \subseteq \R^n}{\R^n}$, $C^\infty$, tale che $\forall x \in \Omega$, $\dd_xf$ è invertibile $\implies \exists U_x, U\subseteq \Omega$ tale che $f(U)$ è aperto e $f$ è un diffeomorfismo.
+$\fundef{\Omega \subseteq \R^n}{\R^n}$, $C^\infty$, tale che $\forall x \in \Omega$, $\de_xf$ è invertibile $\implies \exists U_x, U\subseteq \Omega$ tale che $f(U)$ è aperto e $f$ è un diffeomorfismo.
 \end{teo}
 
 \begin{oss}
@@ -72,11 +72,11 @@ In pratica restringendo $f$ ad un intorno aperto opportuno di $x$ in $\Omega$, $
 È interessante notare come questo teorema, a partire da un informazione locale (in un punto), ci restituisce informazioni ``localmente globali''.
 \end{oss}
 
-Definisco prima un \emph{modello locale lineare}, ovvero una proiezione $\fundef[\pi]{\R^n}{\R^m}$ con $n \ge m$ tale che $j(x_1,\dots,x_n)=(x_1,\dots,x_m)$. Noto che $\forall x \in \R^n, \dd_xj$ è iniettivo (essendo $\dd_xj=j(x)$ per linearità di $j$).
+Definisco prima un \emph{modello locale lineare}, ovvero una proiezione $\fundef[\pi]{\R^n}{\R^m}$ con $n \ge m$ tale che $j(x_1,\dots,x_n)=(x_1,\dots,x_m)$. Noto che $\forall x \in \R^n, \de_xj$ è iniettivo (essendo $\de_xj=j(x)$ per linearità di $j$).
 
 \begin{teo}[Funzione implicita, versione surgettiva]
 \label{th:funimpsurg}
-Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\dd_xf$ è surgettivo $\implies$ Esiste una parametrizzazione locale di $U$ intorno a $x$: $\fundef[\phi]{U'\subseteq \R^n}{\phi(U')\subseteq U}$ diffeomorfismo tale che $f \circ \phi = \pi$
+Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\de_xf$ è surgettivo $\implies$ Esiste una parametrizzazione locale di $U$ intorno a $x$: $\fundef[\phi]{U'\subseteq \R^n}{\phi(U')\subseteq U}$ diffeomorfismo tale che $f \circ \phi = \pi$
 \end{teo}
 
 \begin{center}
@@ -84,11 +84,11 @@ Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione 
 \input{figura4.pdf_tex}
 \end{center}
 
-Similmente a prima definisco prima un \emph{modello locale lineare}, stavolta una inclusione $\fundef[j]{\R^n}{\R^m}$ con $n \le m$ tale che $\pi(x_1,\dots,x_n)=(x_1,\dots,x_n,0,0,\dots)$. Noto che $\forall x \in \R^n, \dd_xj$ è surgettivo (essendo $\dd_xj=j(x)$ per linearità di $j$).
+Similmente a prima definisco prima un \emph{modello locale lineare}, stavolta una inclusione $\fundef[j]{\R^n}{\R^m}$ con $n \le m$ tale che $\pi(x_1,\dots,x_n)=(x_1,\dots,x_n,0,0,\dots)$. Noto che $\forall x \in \R^n, \de_xj$ è surgettivo (essendo $\de_xj=j(x)$ per linearità di $j$).
 
 \begin{teo}[Funzione implicita, versione iniettiva]
 
-Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\dd_xf$ è iniettivo $\implies$ Esiste una carta locale di $U$ intorno a $x$: $\fundef[\psi]{U}{U''\subset \R^m}$ diffeomorfismo tale che $\psi \circ f = j$.
+Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione $C^\infty$ tale che $\forall x \in U$, $\de_xf$ è iniettivo $\implies$ Esiste una carta locale di $U$ intorno a $x$: $\fundef[\psi]{U}{U''\subset \R^m}$ diffeomorfismo tale che $\psi \circ f = j$.
 \end{teo}
 
 \begin{center}
@@ -96,19 +96,19 @@ Sia $\fundef{U \subseteq \R^n}{\R^n}$ (con $U$ aperto e $n \ge m$) una funzione 
 \end{center}
 
 \begin{prop}
-Sia $\fundef{\R^n}{\R^n}$ un generico diffeomorfismo. La composizione del differenziale $\fundef[\dd f]{\R^n}{\GL_n(\R)}$, del determinante $\fundef[\det]{\GL_n(\R)}{\R\setminus\{0\}}$ e della funzione segno $\fundef[\sgn]{\R\setminus\{0\}}{\{\pm1\}}$: $\sgn \circ \det \circ \,\dd f$ è una funzione costante che può valere $1$ o $-1$.
+Sia $\fundef{\R^n}{\R^n}$ un generico diffeomorfismo. La composizione del differenziale $\fundef[\de f]{\R^n}{\GL_n(\R)}$, del determinante $\fundef[\det]{\GL_n(\R)}{\R\setminus\{0\}}$ e della funzione segno $\fundef[\sgn]{\R\setminus\{0\}}{\{\pm1\}}$: $\sgn \circ \det \circ \,\de f$ è una funzione costante che può valere $1$ o $-1$.
 \end{prop}
 
 \begin{proof}
-$\R^n$ è connesso e $\sgn \circ \det \circ \,\dd f$ è composizione di funzioni continue, quindi continua.
+$\R^n$ è connesso e $\sgn \circ \det \circ \,\de f$ è composizione di funzioni continue, quindi continua.
 \end{proof}
 
 \begin{defn}
-Se $\forall x \in \R^n, \det \dd_xf > 0$, si dice che $f$ \emph{preserva l'orientazione}.
+Se $\forall x \in \R^n, \det \de_xf > 0$, si dice che $f$ \emph{preserva l'orientazione}.
 \end{defn}
 
 \begin{oss}
-In pratica basta valutare il segno di $\det (\dd_xf)$ in un punto, per saperne il valore dappertutto per la proposizione precedente.
+In pratica basta valutare il segno di $\det (\de_xf)$ in un punto, per saperne il valore dappertutto per la proposizione precedente.
 
 Inoltre, se $f$ non preserva l'orientazione basterà comporla con
 \begin{equation*}

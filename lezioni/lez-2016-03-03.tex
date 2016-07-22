@@ -71,10 +71,10 @@ Se $L$ esiste è necessariamente unica.
 $\fundef[f]{\Omega \subseteq \R^n}{\R^m}$ è differenziabile in $\Omega$ se è differenziabile in ogni suo punto.
 \end{defn}
 \begin{defn}[Funzione differenziale]
-$\fundef[\dd f]{\Omega}{\Hom(\R^n, \R^m)} \approx \R^{nm}$ è chiamata differenziale della funzione $\fundef[f]{\Omega \subseteq \R^n}{\R^m}$.
+$\fundef[\de f]{\Omega}{\Hom(\R^n, \R^m)} \approx \R^{nm}$ è chiamata differenziale della funzione $\fundef[f]{\Omega \subseteq \R^n}{\R^m}$.
 \end{defn}
 \begin{oss}
-Posso costruire induttivamente $\dd(\dd f) = \dd^2f$, $\dd(\dd^2f) = \dd^3f$ e così via.
+Posso costruire induttivamente $\de(\de f) = \de^2f$, $\de(\de^2f) = \de^3f$ e così via.
 \end{oss}
 \begin{oss}
 $f$ è $n$-differenziabile e posso costruire induttivamente le funzioni sopra mostrate fino alla $n$-esima.
@@ -92,7 +92,7 @@ $\fundef[f]{\Omega \subseteq \R^n}{\Omega' \subseteq \R^n}$ è un diffeomorfismo
 Se $\fundef[f]{\R^n}{\R^m}$ è diffeomorfismo allora $n = m$, cioè la dimensione è un invariante per diffeomorfismo.
 \end{prop}
 \begin{proof}
-Sia $g$ la funzione inversa di $f$. allora $g \circ f = \id$ e $f \circ g = \id$, in particolare vale che $\dd(f \circ g) = \dd f \circ \dd g = \id$ (dall'analisi reale). Dunque valutando il differenziale in un punto ottengo che le due matrici che sono i differenziali della funzione $f$ e della sua inversa sono una l'inversa dell'altra ma per avere un'inversa la matrice deve essere quadrata, dunque il diffeomorfismo conserva le dimensioni.
+Sia $g$ la funzione inversa di $f$. allora $g \circ f = \id$ e $f \circ g = \id$, in particolare vale che $\de(f \circ g) = \de f \circ \de g = \id$ (dall'analisi reale). Dunque valutando il differenziale in un punto ottengo che le due matrici che sono i differenziali della funzione $f$ e della sua inversa sono una l'inversa dell'altra ma per avere un'inversa la matrice deve essere quadrata, dunque il diffeomorfismo conserva le dimensioni.
 \end{proof}
 \begin{defn}[$n$-varietà topologica differenziabile]
 Sia un atlante $\mathcal{A} = {(U_i, f_i)}$. Considero gli omeomorfismi
