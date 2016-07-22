@@ -17,7 +17,8 @@
 \subtitlet{Compattezza e funzioni continue}
 
 \begin{lemma}
-	L'immagine continua di un compatto è compatta.
+	L'immagine continua di un compatto è compatta.\footnotemark
+	\footnotetext{Non stiamo dimostrando che l'immagine continua di $T_2$ è $T_2$.}
 \end{lemma}
 
 \begin{proof}
@@ -39,7 +40,7 @@
 	
 	Sia $(y_n)_{n\in N}$ una successione in $Y$. Per ognuno degli $y_n$ scelgo un $x_n\in f^{-1}(y_n)$, definendo così una successione in $X$.
 	Estraggo da essa una sottosuccessione convergente $(x_{n_k})$ (esiste poiché $X$ è compatto per successioni).
-	Tornando indietro, $(f(x_{n_k}))$ è una sottosuccessione di $(y_n)$ e converge per continuità di $f$.
+	Tornando indietro, $(f(x_{n_k}))$ è una sottosuccessione di $(y_n)$ e converge per continuità di~$f$.
 \end{proof}
 
 \begin{lemma}
@@ -78,26 +79,29 @@ Definiamo ora delle operazioni fra spazi topologici che ci permettano di costrui
 
 \begin{oss}
 	Si vede come la condizione sulle proiezioni non sia impossibile da soddisfare. Infatti la topologia discreta sul prodotto cartesiano soddisfa banalmente.
-
-	Non è altrettanto palese che effettivamente esista una topologia minimale rispetto all'inclusione che soddisfi il requisito. Il punto non è stato chiarito a lezione. È chiaro comunque che la topologia di cui stiamo parlando è quella generata dalle preimmagini secondo $p_1$ o $p_2$ di aperti di $X$ o di $Y$.
-	\marginpar{non sarebbe male esplicitare che è $\setdef[A_X\times A_Y]{...}$}
 \end{oss}
 
-\begin{oss}
-	Tutte le proprietà comuni ai due spazi di partenza si propagano allo spazio prodotto\footnote{fatto non dimostrato a lezione}, in particolare il prodotto di spazi compatti è compatto, il prodotto di spazi connessi è connesso, il prodotto di spazi $T_2$ è $T_2$.
-\end{oss}
+\begin{fat}
+	La topologia prodotto esiste ed è generata dalle controimmagini secondo le proiezioni canoniche di aperti di $X$ e di $Y$,
+	ovvero dalla base di aperti:
+	\[\setdef[A_X\times A_Y]{\text{$A_X$ aperto di $X$}\et\text{$A_Y$ aperto di $Y$}}\]
+\end{fat}
+
+\begin{fat}
+	Proprietà comuni di compattezza, connessione, $T_2$, 1- o 2-numerabilità si propagano allo spazio prodotto.
+\end{fat}
 
 \begin{oss}
 	Data una funzione surgettiva $\fundef XY$, la relazione $a\sim b\means f(a)=f(b)$ è di equivalenza, e l'insieme quoziente si identifica con $Y$ perché $\quoset X\sim=\setdef[f^{-1}(\set{y})]{y\in Y}$.
 	
-	Viceversa, data una relazione di equivalenza $\sim$ su $X$, l'immersione che manda un elemento nella sua classe di equivalenza
+	Viceversa, data una relazione di equivalenza $\sim$ su $X$, la proiezione che manda un elemento nella sua classe di equivalenza
 	\[f\is\fundef[{(x\mapsto [x]_\sim)}]X{\quoset X\sim}\]
 	ha la proprietà che $a\sim b\iff f(a)=f(b)$.
 \end{oss}
 
 \begin{defn}[Topologia quoziente]
 	Siano $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$.
-	La \emph{topologia quoziente} è la topologia più fine su $\quoset X\sim$ tale che l'immersione $x\mapsto[x]_\sim$ è continua.
+	La \emph{topologia quoziente} è la topologia più fine su $\quoset X\sim$ tale che la proiezione $x\mapsto[x]_\sim$ è continua.
 \end{defn}
 
 \begin{oss}
@@ -108,13 +112,20 @@ Definiamo ora delle operazioni fra spazi topologici che ci permettano di costrui
 	Data una funzione $\fundef{X}{Y}$ si dice $f$-saturo un $X'\subseteq X$ tale che $f^{-1}(f(X'))=X'$.
 \end{defn}
 
-\begin{prop}
-	La topologia quoziente su $\quoset X\sim$ è data dalle immagini attraverso $f\is(x\mapsto[x]_\sim)$ di aperti $f$-saturi di $X$.
-\end{prop}
+\begin{fat}
+	La topologia quoziente su $\quoset X\sim$ esiste ed è data dalle immagini attraverso $f\is(x\mapsto[x]_\sim)$ di aperti $f$-saturi di $X$.
+\end{fat}
 
-\begin{oss} \marginpar{queste sarebbero da controllare!!!}
-	Non tutte le proprietà si propagano al quoziente. Fortunatamente si propagano la connessione e la compattezza.
-\end{oss}
+\begin{fat}
+	Le proprietà di connessione e compattezza si propagano al quoziente.
+	\marginpar{Non si propaga anche $T_2$?}
+\end{fat}
+
+% questo esercizio non c'era a lezione però poi viene implicitamente usato questo fatto
+% e si dimostra facilmente partendo dalla def. con gli f-saturi
+\begin{ex}
+	La topologia quoziente è data dagli insiemi la cui controimmagine attraverso la proiezione è aperta.
+\end{ex}
 
 % questa parte è un'anticipazione della lezione successiva
 %
