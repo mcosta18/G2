@@ -111,7 +111,7 @@ Definiamo ora alcune proprietà che collegano singoli punti di un insieme alle n
 
 \begin{defn}[Punto di accumulazione]
 	Un elemento $x$ (non necessariamente in $Y$) è \emph{punto di accumulazione per $Y$} se ogni intorno di $x$ contiene punti di $Y$ diversi da $x$:
-	\[x\text{ accumulazione per }Y\means\forall\,U_x:(U\setminus\set{x})\cap Y\neq\nullset\]
+	\[x\text{ accumulazione per }Y\means\forall\,U_x:(U_x\setminus\set{x})\cap Y\neq\nullset\]
 \end{defn}
 
 \begin{defn}[Punto isolato]
@@ -165,7 +165,8 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 \end{prop}
 
 \begin{proof}
-	Basta usare il \autoref{th:chiusuraacc} e osservare che $Y\cup\setdef{x\text{ accumulazione}}=\setdef{x\text{ isolato}}\cup\setdef{x\text{ accumulazione}}$.
+	Basta usare il \autoref{th:chiusuraacc} e osservare che:
+	\[Y\setminus\setdef{x\text{ accumulazione}}=\setdef{x\text{ isolato}} \qedhere\]
 \end{proof}
 
 \begin{prop}
@@ -193,7 +194,7 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
 	Si ha che:
 	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
-	Ad esempio per $(X, \tau_\text{disc})$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
+	Ad esempio per $(X, \tau_D)$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
 	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
 \end{oss}
 
@@ -295,7 +296,7 @@ Vediamo che non vale il viceversa:
 
 \begin{es}[Topologia di Zariski]
 	Sia $\tau_z$ una topologia su $\R$ i cui aperti sono i complementari di insiemi finiti:
-	\[\tau_z\is\Setdef[A\subset\R]{A=\nullset\vel(A=\comp F\et\card F\in\N)}\]
+	\[\tau_z\is\Setdef[A\subseteq\R]{A=\nullset\vel(A=\comp F\et\card F\in\N)}\]
 	Gli aperti non vuoti non sono disgiunti, quindi $(\R,\tau_z)$ non è $T_2$.
 	Però i singoletti sono chiusi.
 \end{es}
@@ -338,7 +339,7 @@ La topologia euclidea è più fine di $\tau_z$.
 
 \begin{es}
 	Sia $\fundef[\id]\R\R$ l'identità e $\tau_E$ la topologia euclidea.
-	$\id$ è continua rispetto a $\tau_E\funarrow\tau_z$ perché $\tau_z\subseteq\tau_E$,
+	$\id$ è continua rispetto a $\tau_E\funarrow\tau_z$ perché $\tau_E\supseteq\tau_z$,
 	però non nell'altro verso.
 	Infatti $(\R,\tau_E)$ è $T_2$ ma $(\R,\tau_z)$ no,
 	quindi non possono essere omeomorfi.
@@ -352,14 +353,12 @@ Di solito con insieme numerabile si intende un insieme con la cardinalità dei n
 	$S\text{ numerabile}\means\card S\leq\card\N$
 \end{defn}
 
-\begin{defn}[Proprietà di numerabilità]
-	Uno spazio topologico è \emph{1-numerabile} se ogni punto ha una base di intorni numerabile:
-	\[X\text{ 1-numerabile}\means
-	\forall x\in X\,\exists\,\text{base di intorni di $x$ numerabile}\]
+\begin{defn}[1-numerabilità]
+	Uno spazio topologico è \emph{1-numerabile} se ogni punto ha una base di intorni numerabile.
 \end{defn}
 
 \begin{prop}
-	$X$ metrizzabile $\implies X$ 1-numerabile
+	metrizzabile $\implies$ 1-numerabile
 \end{prop}
 
 \begin{proof}
@@ -368,7 +367,6 @@ Di solito con insieme numerabile si intende un insieme con la cardinalità dei n
 	che è ancora una base perché $\forall r\,\exists n:\ball[1/n]x\subseteq\ball x$.
 \end{proof}
 
-\begin{defn}[Proprietà di numerabilità]
-	Uno spazio topologico è \emph{2-numerabile} se ha una base di aperti numerabile:
-	\[X\text{ 2-numerabile}\means\exists\,\text{base di aperti di $X$ numerabile}\]
+\begin{defn}[2-numerabilità]
+	Uno spazio topologico è \emph{2-numerabile} se ha una base di aperti numerabile.
 \end{defn}
