@@ -22,13 +22,17 @@
 \end{lemma}
 
 \begin{proof}
-	Sia $X$ compatto e $\fundef XY$ continua. Vogliamo dimostrare che $f(X)$ con la topologia di sottospazio è compatto.
+	Sia $X$ compatto e $\fundef XY$ continua.
+	Vogliamo dimostrare che $f(X)$ con la topologia di sottospazio è compatto.
 
 	Prendiamo dunque un ricoprimento aperto $\mathcal A$ di $f(X)$.
 	Consideriamo $\mathcal A_X\is\setdef[f^{-1}(A)]{A\in\mathcal A}$.
-	Per definizione di continuità, gli elementi di $\mathcal A_X$ sono aperti, mentre per ragioni insiemistiche ricoprono $X$.
+	Per definizione di continuità,
+	gli elementi di $\mathcal A_X$ sono aperti,
+	mentre per ragioni insiemistiche ricoprono $X$.
 	Allora da $\mathcal A_X$ posso estrarre un sottoricoprimento finito $\mathcal A_X^F$.
-	Tornando indietro, l'insieme $\setdef[f(A)]{A\in\mathcal A_X^F}$ è un sottoricoprimento finito di $\mathcal A$.
+	Tornando indietro,
+	l'insieme $\setdef[f(A)]{A\in\mathcal A_X^F}$ è un sottoricoprimento finito di $\mathcal A$.
 \end{proof}
 
 \begin{lemma}
@@ -36,11 +40,16 @@
 \end{lemma}
 
 \begin{proof}
-	Siano $X$ compatto per successioni e $\fundef XY$ continua, vogliamo dimostrare che $f(X)$ è compatto per successioni.
+	Siano $X$ compatto per successioni e $\fundef XY$ continua,
+	vogliamo dimostrare che $f(X)$ è compatto per successioni.
 	
-	Sia $(y_n)_{n\in N}$ una successione in $Y$. Per ognuno degli $y_n$ scelgo un $x_n\in f^{-1}(y_n)$, definendo così una successione in $X$.
-	Estraggo da essa una sottosuccessione convergente $(x_{n_k})$ (esiste poiché $X$ è compatto per successioni).
-	Tornando indietro, $(f(x_{n_k}))$ è una sottosuccessione di $(y_n)$ e converge per continuità di~$f$.
+	Sia $(y_n)_{n\in N}$ una successione in $Y$.
+	Per ognuno degli $y_n$ scelgo un $x_n\in f^{-1}(y_n)$,
+	definendo così una successione in $X$.
+	Estraggo da essa una sottosuccessione convergente $(x_{n_k})$
+	(esiste poiché $X$ è compatto per successioni).
+	Tornando indietro, $(f(x_{n_k}))$ è una sottosuccessione di $(y_n)$
+	e converge per continuità di~$f$.
 \end{proof}
 
 \begin{lemma}
@@ -48,11 +57,17 @@
 \end{lemma}
 
 \begin{proof}
-	L'immagine continua di compatti è compatta, dunque $f(X)$ è compatto. Ma in $\R$ compatto equivale a chiuso e limitato. Dalla limitatezza segue che esiste, in $\R$, estremo superiore e inferiore, dalla chiusura che essi sono in $f(X)$.
+	L'immagine continua di compatti è compatta,
+	dunque $f(X)$ è compatto.
+	Ma in $\R$ compatto equivale a chiuso e limitato.
+	Dalla limitatezza segue che esiste, in $\R$, estremo superiore e inferiore,
+	dalla chiusura che essi sono in $f(X)$.
 \end{proof}
 
 \begin{lemma}
-	Se $X$ è compatto e $\fundef XY$ è continua e invertibile, allora $f^{-1}$ è continua (corollario: è un omeomorfismo).
+	Se $X$ è compatto e $\fundef XY$ è continua e invertibile,
+	allora $f^{-1}$ è continua
+	(corollario: è un omeomorfismo).
 \end{lemma}
 
 \begin{proof}
@@ -63,49 +78,67 @@
 	$f(C)$ è un sottospazio compatto di $Y$ quindi è chiuso.
 	
 	Sia ora $A\subseteq X$ aperto.
-	Il suo complementare $\comp A$ è un chiuso di $X$, allora la sua immagine $f(\comp A)$ è un chiuso di $Y$ ovvero $\comp{f(\comp A)}$ è aperto.
+	Il suo complementare $\comp A$ è un chiuso di $X$,
+	allora la sua immagine $f(\comp A)$ è un chiuso di $Y$ ovvero $\comp{f(\comp A)}$ è aperto.
 	Per invertibilità, $\comp{f(\comp A)}=f(A)$.
 	Abbiamo quindi che $f^{-1}$ è continua.
 \end{proof}
 
 \titlet{Topologia prodotto e topologia quoziente}
 
-Definiamo ora delle operazioni fra spazi topologici che ci permettano di costruirne altri in maniera ``naturale''.
+Definiamo ora delle operazioni fra spazi topologici
+che ci permettano di costruirne altri in maniera ``naturale''.
 
 \begin{defn}[Topologia prodotto]
 	Siano $X$, $Y$ spazi topologici.
-	La \emph{topologia prodotto} è la topologia meno fine su $X\times Y$ tale che le proiezioni canoniche $(x,y)\mapsto x$ e $(x, y)\mapsto y$	sono continue.
+	La \emph{topologia prodotto} è la topologia meno fine su $X\times Y$
+	tale che le proiezioni canoniche $(x,y)\mapsto x$ e $(x, y)\mapsto y$	sono continue.
 \end{defn}
 
 \begin{oss}
-	Si vede come la condizione sulle proiezioni non sia impossibile da soddisfare. Infatti la topologia discreta sul prodotto cartesiano soddisfa banalmente.
+	Si vede come la condizione sulle proiezioni non sia impossibile da soddisfare.
+	Infatti la topologia discreta sul prodotto cartesiano soddisfa banalmente.
 \end{oss}
 
 \begin{fat}
-	La topologia prodotto esiste ed è generata dalle controimmagini secondo le proiezioni canoniche di aperti di $X$ e di $Y$,
+	La topologia prodotto esiste
+	ed è generata dalle controimmagini secondo le proiezioni canoniche di aperti di $X$ e di $Y$,
 	ovvero dalla base di aperti:
 	\[\setdef[A_X\times A_Y]{\text{$A_X$ aperto di $X$}\et\text{$A_Y$ aperto di $Y$}}\]
 \end{fat}
 
 \begin{fat}
-	Proprietà comuni di compattezza, connessione, $T_2$, 1- o 2-numerabilità si propagano allo spazio prodotto.
+	Proprietà comuni di compattezza, connessione, $T_2$, 1- o 2-numerabilità
+	si propagano allo spazio prodotto.
 \end{fat}
 
 \begin{oss}
-	Data una funzione surgettiva $\fundef XY$, la relazione $a\sim b\means f(a)=f(b)$ è di equivalenza, e l'insieme quoziente si identifica con $Y$ perché $\quoset X\sim=\setdef[f^{-1}(\set{y})]{y\in Y}$.
+	Il prodotto si estende a prodotto di più fattori, e si ha:
+	\[\R^n=\underbrace{\R\times\dots\times\R}_\text{$n$ volte}\]
+\end{oss}
+
+\begin{oss}
+	Data una funzione surgettiva $\fundef XY$,
+	la relazione $a\sim b\means f(a)=f(b)$ è di equivalenza,
+	e l'insieme quoziente si identifica con $Y$
+	perché $\quoset X\sim=\setdef[f^{-1}(\set{y})]{y\in Y}$.
 	
-	Viceversa, data una relazione di equivalenza $\sim$ su $X$, la proiezione che manda un elemento nella sua classe di equivalenza
+	Viceversa, data una relazione di equivalenza $\sim$ su $X$,
+	la proiezione che manda un elemento nella sua classe di equivalenza
 	\[f\is\fundef[{(x\mapsto [x]_\sim)}]X{\quoset X\sim}\]
-	ha la proprietà che $a\sim b\iff f(a)=f(b)$.
+	è surgettiva e ha la proprietà che $a\sim b\iff f(a)=f(b)$.
 \end{oss}
 
 \begin{defn}[Topologia quoziente]
 	Siano $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$.
-	La \emph{topologia quoziente} è la topologia più fine su $\quoset X\sim$ tale che la proiezione $x\mapsto[x]_\sim$ è continua.
+	La \emph{topologia quoziente} è la topologia più fine su $\quoset X\sim$
+	tale che la proiezione $x\mapsto[x]_\sim$ è continua.
 \end{defn}
 
 \begin{oss}
-	Anche questa volta, se l'esistenza di topologie che rendano continua l'immersione è palese (basti pensare alla topologia banale), non è affatto scontato che esista una ``topologia più fine possibile''.
+	Anche questa volta, se l'esistenza di topologie che rendano continua l'immersione è palese
+	(basti pensare alla topologia banale),
+	non è affatto scontato che esista una ``topologia più fine possibile''.
 \end{oss}
 
 \begin{defn}[Insieme $f$-saturo]
@@ -113,7 +146,8 @@ Definiamo ora delle operazioni fra spazi topologici che ci permettano di costrui
 \end{defn}
 
 \begin{fat}
-	La topologia quoziente su $\quoset X\sim$ esiste ed è data dalle immagini attraverso $f\is(x\mapsto[x]_\sim)$ di aperti $f$-saturi di $X$.
+	La topologia quoziente su $\quoset X\sim$ esiste
+	ed è data dalle immagini attraverso $f\is(x\mapsto[x]_\sim)$ di aperti $f$-saturi di $X$.
 \end{fat}
 
 \begin{fat}
