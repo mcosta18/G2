@@ -13,6 +13,8 @@
 
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=darkgray, citecolor=darkgray, filecolor=darkgray]{hyperref}
 \usepackage[all]{hypcap} % (!) tenere dopo {hyperref}
+\usepackage{chngcntr} % \counterwithout
+\counterwithout{figure}{chapter} % numerazione globale delle figure
 \usepackage[useregional]{datetime2} % (!) tenere dopo {babel}
 \usepackage{fancyhdr}
 \usepackage[section]{placeins} % tiene le figure nella sezione
@@ -55,7 +57,7 @@ Valerio Lomanto\\
 Andrea Luzio\\
 Giacomo Petrillo\\
 Roberto Ribatti}
-\date{Anno accademico 2015-2016}
+\date{Anno accademico 2015--2016}
 
 \begin{document}
 
