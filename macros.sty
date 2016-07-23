@@ -17,10 +17,12 @@
 \RequirePackage{centernot} % \centernot
 % \RequirePackage{wrapfig}
 \RequirePackage{tikz}
-\RequirePackage{tikz-cd}
+% \RequirePackage{tikz-cd}
 \RequirePackage{epigraph}
 
 \usetikzlibrary{tqft}
+\usetikzlibrary{intersections}
+\usetikzlibrary{cd}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% MISCELLANEOUS %%%%%%%%%%%%%%%%%%%%%%%%%%
 % macros that do not have enough siblings to get their own category
@@ -78,6 +80,7 @@
 
 \newcommand*\wlg{\TextOrMath{\texttt{WLOG} }{\;\mathtt{WLOG}\;}} % "without loss of generality", works outside math environments
 \newcommand*\claim{\TextOrMath{\texttt{CLAIM} }{\mathtt{CLAIM}\;}} % claim
+\newcommand*\tc{\ \text{t.c.} \ } % tale che
 
 % Queste quattro macro servono per dire che dimostri la freccia o l'inclusione verso destra/sinistra (i nomi delle macro sono intuitivi). Funzionano anche fuori dagli ambienti matematici. Tipicamente si usano in questo modo:
 % \begin{description}
@@ -123,7 +126,9 @@
 \newcommand*\Q{\mathbb{Q}} % set/field of rational numbers
 \newcommand*\Z{\mathbb{Z}} % set of integers
 \newcommand*\N{\mathbb{N}} % set of natural numbers
-\renewcommand*\P{\mathbb{P}} % proiettivo
+\renewcommand*\P{\mathbb{P}} % proiettivo (DA SOSTITUIRE CON \Ps)
+\newcommand*\Ps{\mathbb{P}} % projective space
+\newcommand*\Ro[1][n]{\mathbb{R}_0^{#1}} % set of real vectors excluding origin
 \DeclareMathOperator\Hom{Hom} % space of homomorphisms
 \DeclareMathOperator\Mult{Mult} % space of multilinear functions
 \DeclareMathOperator\Aut{Aut} % set of automorphisms
