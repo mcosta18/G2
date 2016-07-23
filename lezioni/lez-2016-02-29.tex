@@ -1,5 +1,6 @@
 %questo documento è in ogni sua parte opera originale del sottoscritto
 %Alberto Bordin
+% in realtà non più
 
 \begin{verse}
 C'era una volta un nero serpentello\\
@@ -19,98 +20,113 @@ immaginare che se io accosto
 dello schermo ogni lato a quello opposto\\
 di quel mondo si svela la natura:\\
 non ha forma di un piano, ma di un toro.
-\footnote{Il sonetto è lasciato per esercizio ma non è richiesto nel corso.}
 \end{verse}
 
 \titlet{Definizioni di base}
 
-\begin{defn}[$n$-euclideo]
-$X$ s.t. è detto \emph{$n$-euclideo} se $\forall x \in X$ esiste un intorno aperto $U$ di $x$ e un omeomorfismo $\fundef UW \subseteq (\R^n, \tau _E)$ con $W$ aperto.
+\begin{defn}[Localmente euclideo]
+	Uno spazio topologico $X$ è detto \emph{localmente $n$-euclideo} se
+	$\forall x \in X$ esiste un intorno aperto $U$ di $x$
+	e un omeomorfismo $\fundef UW \subseteq (\R^n, \tau _E)$ con $W$ aperto.
+	Si hanno le seguenti denominazioni:
+	\begin{itemize}
+		\item $(U,f)$ è detta \emph{carta locale} di $X$ intorno a $x$;
+		\item $\fundef [f^{-1}] WU$ è detta \emph{parametrizzazione locale} di $X$ intorno a $x$;
+		\item la famiglia di tutte le carte locali è detta \emph{atlante (completo)}.
+	\end{itemize}
 \end{defn}
 
-\begin{defn}[varietà] $\\$
-Una \emph{$n$-varietà topologica} è uno s.t. $n$-localmente euclideo, $T_2$ e 2-numerabile
-\end{defn}
-
-\begin{defn} $\\$
-$(U,f)$ è detta \emph{carta locale} di $X$ intorno a $x$ \\
-$\fundef [f^{-1}] WU$ è detta \emph{parametrizzazione locale} di $X$ intorno a $x$ \\
-Un'unione di tutte le carte locali è detto \emph{atlante (completo)}
+\begin{defn}[Varietà]
+	Una \emph{$n$-varietà} è uno spazio topologico localmente $n$-euclideo, $T_2$ e 2-numerabile.
 \end{defn}
 
 \begin{prop}
-localmente euclideo $\notimplies$ 2-numerabile
+	localmente euclideo $\notimplies$ 2-numerabile
 \end{prop}
-\begin{proof} \marginpar{creare una macro per i controesempi}
-Si consideri $X = (\R^n, \tau _E) \times (\R, \tau _D)$.
-Tale spazio è localmente $n$-euclideo, ma non 2-numerabile.
 
-\begin{figure}
-	\centering
-	\input{figura1.pdf_tex}
-	\caption{$(\R,\tau_E)\times(\R,\tau_D)$ è localmente 1-euclideo ma non 2-numerabile}
-\end{figure}
-
-Un controesempio minimale è $(X, \tau _D)$ con $X$ non numerabile, questi è 0-localmente euclideo, ma non 2-numerabile.
+\begin{proof} \marginpar{creare una macro per i controesempi\\\emph{Adesso non ho voglia}}
+	Si consideri $X = (\R^n, \tau _E) \times (\R, \tau _D)$.
+	Tale spazio è localmente $n$-euclideo, ma non 2-numerabile (vedi \autoref{fig:locen2n}).
+	\begin{figure}
+		\centering
+		\input{figura1.pdf_tex}
+		\caption{$(\R,\tau_E)\times(\R,\tau_D)$ è localmente 1-euclideo ma non 2-numerabile.}
+		\label{fig:locen2n}
+	\end{figure}
+	Un controesempio minimale è $(X, \tau _D)$ con $X$ non numerabile,
+	questi è localmente 0-euclideo, ma non 2-numerabile.
+	\marginpar{Aveva detto che c'entra qualcosa con i quasi-cristalli (?)}
 \end{proof}
 
 \begin{prop}
-localmente euclideo $\notimplies T_2$
+	localmente euclideo $\notimplies T_2$
 \end{prop}
+
 \begin{proof}
-Prese 2 copie di $(\R^n, \tau _E)$ sia $(x,0) \in (\R^n_0, \tau _0)$  e $(x,1) \in (\R^n_1, \tau _1)$, e sia $X = (\R^n_0 \cup \R^n_1, \tau _0 \cup \tau _1)$. Si consideri la relazione di equivalenza $(x,0)\sim(x,1)$ se $x>0$ mentre gli altri elementi fanno classe a sé. Si consideri l'insieme quoziente $\quoset X\sim$ e la funzione $\fundef{(-\varepsilon,\varepsilon)}{\quoset X\sim}$ che manda $t \mapsto [(t,0)]$. Si verifica che $f$ è un omeomorfismo (esercizio) che rende $\quoset X\sim$ localmente 1-euclideo. Tuttavia $\quoset X\sim$ non è $T_2$ in quanto non è possibile separare i punti $[(0,0)]$ e $[(0,1)].$
-\begin{figure}
-	\centering
-	\input{figura2.pdf_tex}
-	\caption{$\R\djcup\R$ quozientato in modo che l'unione non sia disgiunta sulla semiretta positiva; i punti nell'origine sono disgiunti ma non separati}
-\end{figure}
+	Prese 2 copie di $(\R^n, \tau_E)$ sia $(x,0) \in (\R^n_0, \tau_0)$ e $(x,1) \in (\R^n_1, \tau_1)$,
+	e sia $X = (\R^n_0 \cup \R^n_1, \setdef[A_0\cup A_1]{A_0\in\tau_0,A_1\in\tau_1})$.
+	Si consideri la relazione di equivalenza $(x,0)\sim(x,1)$ se $x>0$
+	mentre gli altri elementi fanno classe a sé.
+	Si consideri l'insieme quoziente $\quoset X\sim$
+	e la funzione $\fundef{(-\varepsilon,\varepsilon)}{\quoset X\sim}$
+	che manda $t \mapsto [(t,0)]$.
+	Si verifica che $f$ è un omeomorfismo (esercizio)
+	che rende $\quoset X\sim$ localmente 1-euclideo.
+	Tuttavia $\quoset X\sim$ non è $T_2$
+	in quanto non è possibile separare i punti $[(0,0)]$ e $[(0,1)]$
+	(vedi \autoref{fig:locent2}).
+	\begin{figure}
+		\centering
+		\input{figura2.pdf_tex}
+		\caption{$\R\djcup\R$ quozientato in modo che l'unione non sia disgiunta sulla semiretta positiva;
+		i punti nell'origine sono disgiunti ma non separati.}
+		\label{fig:locent2}
+	\end{figure}
 \end{proof}
 
-\titlet{Esempi di varietà}
+\subtitlet{Esempi di varietà}
 
 \begin{itemize}
-\item $(\R^n, \tau_E)$
-\item Ogni aperto di $\R^n$
-\item Le $n$-sfere: \, $S^n \subseteq (\R^{n+1}, \tau _E) \qquad S^n=\setdef[x\in \R^{n+1}]{x^2 _1 + x^2 _2 + \dots + x^2 _{n+1} = 1}$
-
-\begin{oss}
-$S^n$ è compatto, $T_2$ e 2-numerabile
-
-Dobbiamo esibire un atlante $\mathcal{A}$.
-
-Siano
-\, \( N =  \begin{pmatrix}
-0\\
-0\\
-\vdots\\
-1\end{pmatrix} \;$e$ \;\; S = \begin{pmatrix}
-0\\
-0\\
-\vdots\\
--1\end{pmatrix}$
-il polo Nord e il polo Sud.
-
-$\mathcal{A} = \set{\, (S^n \setminus \set N, f_N),\, (S^n \setminus \set S, f_S)\,}$ \\
-Dove $f_N$ e $f_S$ sono le \emph{proiezioni stereografiche} di centro N ed S così definite:
-\begin{align*}
-f_N:(S^n \setminus \set N) &\funarrow \R^n \\
-%\fundef[f_N]{(S^n \setminus \set N)}{\R^n} \\
-\begin{pmatrix}
-x_1\\
-\vdots\\
-x_n\\
-x_{n+1}\end{pmatrix} &\mapsto \begin{pmatrix}
-\dfrac{x_1}{1-x_{n+1}}\\
-\vdots\\
-\dfrac{x_n}{1-x_{n+1}}\\
-0\end{pmatrix}
-\end{align*}
-
-\begin{figure}
-	\centering
-	\input{figura3.pdf_tex}
-	\caption{la proiezione stereografica $f_N$ di centro $N$}
-\end{figure}
-
-\end{oss}
+	\item $(\R^n, \tau_E)$
+	\item Ogni aperto di $\R^n$
+	\item Le $n$-sfere:
+		\[S^n \subseteq (\R^{n+1}, \tau _E), \quad
+		S^n\is\setdef[x\in \R^{n+1}]{x_1^2 + x_2^2 + \dots + x_{n+1}^2 = 1}\]
+		
+		\begin{oss}
+			$S^n$ è compatto, $T_2$ e 2-numerabile.
+		\end{oss}
+		
+		\begin{prop}
+			$S^n$ è localmente $n$-euclideo.
+		\end{prop}
+		
+		\vspace{-2.5ex}
+		\begin{proof}
+			Dobbiamo esibire un atlante $\mathcal{A}$.
+			Siano $N\is(0,0,\dots,1)$ e $S\is(0,0,\dots,-1)$ il polo Nord e il polo Sud.
+			Siano $f_N$ e $f_S$ le \emph{proiezioni stereografiche} di centro $N$ ed $S$ così definite:
+			\begin{align*}
+				f_N:(S^n \setminus \set N) &\funarrow \R^n \\
+				\begin{pmatrix}
+					x_1\\
+					\vdots\\
+					x_n\\
+					x_{n+1}
+				\end{pmatrix} &\mapsto
+				\begin{pmatrix}
+					\dfrac{x_1}{1-x_{n+1}}\\
+					\vdots\\
+					\dfrac{x_n}{1-x_{n+1}}\\
+					0
+				\end{pmatrix}
+			\end{align*}
+			E analogamente $f_S$. Allora abbiamo l'atlante:
+			\[\mathcal{A} = \set{\, (S^n \setminus \set N, f_N),\, (S^n \setminus \set S, f_S)\,} \qedhere\]
+			\begin{figure}
+				\centering
+				\input{figura3.pdf_tex}
+				\caption{La proiezione stereografica $f_N$ di centro $N$ su $S^1$.}
+			\end{figure}
+		\end{proof}
 \end{itemize}
