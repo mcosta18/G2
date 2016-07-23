@@ -79,16 +79,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.6583915"
-     inkscape:cx="130.84966"
-     inkscape:cy="951.41754"
+     inkscape:cx="210.02635"
+     inkscape:cy="927.29778"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1243"
+     inkscape:window-height="755"
+     inkscape:window-x="37"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     showguides="false" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -167,75 +168,75 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="M 146.17256,89.337461 C 81.120098,67.565872 108.29716,116.46305 103.154,123.69985 c -3.875297,5.45282 -4.721553,6.55771 -4.721553,6.55771"
+       d="m 146.17256,89.337461 c -38.52073,-9.108717 -49.332285,22.904629 -54.475445,30.141429 -3.875297,5.45282 -4.721553,6.55771 -4.721553,6.55771"
        id="path5269"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 283.36067,90.412136 c 67.87896,11.817314 55.15421,32.957924 28.25284,36.089924 -22.95464,2.67251 6.55078,12.65092 6.55078,12.65092"
+       d="m 283.36067,90.412136 c 21.44843,3.375399 28.65685,6.514234 38.50374,18.603094 l 16.19868,19.88686"
        id="path5717"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Sans, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
-       x="276.84125"
-       y="75.255104"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="262.97238"
+       y="68.01918"
        id="text5901"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="276.84125"
-         y="75.255104"
-         id="tspan5905">$U_j$</tspan></text>
+         x="262.97238"
+         y="68.01918"
+         id="tspan5905">$W$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Sans, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
-       x="139.44933"
-       y="121.06178"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       x="174.42297"
+       y="69.2043"
        id="text5901-7"
        sodipodi:linespacing="125%"
        inkscape:transform-center-x="4.7215428"><tspan
          sodipodi:role="line"
-         x="139.44933"
-         y="121.06178"
-         id="tspan5905-7">$U_i$</tspan></text>
+         x="174.42297"
+         y="69.2043"
+         id="tspan5905-7">$U$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="26.180347"
-       y="183.69301"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="24.401308"
+       y="127.04152"
        id="text5901-7-8"
        sodipodi:linespacing="125%"
        inkscape:transform-center-x="4.7215495"><tspan
          sodipodi:role="line"
-         x="26.180347"
-         y="183.69301"
-         id="tspan5905-7-4">$W_i = f_{i}(U_{i} \cup U_{k})$</tspan></text>
+         x="24.401308"
+         y="127.04152"
+         id="tspan5905-7-4">$\phi(U)$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Sans, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
-       x="88.737015"
-       y="102.97023"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       x="103.42983"
+       y="91.13131"
        id="text5901-7-4"
        sodipodi:linespacing="125%"
        inkscape:transform-center-x="4.7215508"><tspan
          sodipodi:role="line"
-         x="88.737015"
-         y="102.97023"
-         id="tspan5905-7-40">$\varphi_i$</tspan></text>
+         x="103.42983"
+         y="91.13131"
+         id="tspan4169">$\phi$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Sans, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
-       x="306.19379"
-       y="120.2999"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="323.51953"
+       y="98.622047"
        id="text5901-7-6"
        sodipodi:linespacing="125%"
        inkscape:transform-center-x="4.7215422"><tspan
          sodipodi:role="line"
-         x="306.19379"
-         y="120.2999"
-         id="tspan5905-7-1">$\varphi_j$</tspan></text>
+         x="323.51953"
+         y="98.622047"
+         id="tspan5905-7-1">$\psi$</tspan></text>
     <path
        style="fill:url(#pattern6049);fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4.0333333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 206.82768,108.32773 c -14.7552,-8.561615 -15.66235,-21.108238 -2.17518,-30.084369 2.33916,-1.556778 5.27644,-3.087884 8.00498,-4.172719 l 1.96236,-0.780216 1.79121,0.670014 c 6.20491,2.320981 10.59855,6.169083 12.03152,10.537606 0.59062,1.800526 0.63509,4.939515 0.0947,6.686404 -1.72847,5.587998 -6.49394,10.83463 -13.92928,15.33566 -1.75357,1.06154 -5.37995,2.9502 -5.6646,2.9502 -0.0807,0 -1.03272,-0.51416 -2.11575,-1.14258 z"
@@ -243,15 +244,57 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="262.55606"
-       y="192.14941"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       x="312.85544"
+       y="171.04463"
        id="text5901-7-8-3"
        sodipodi:linespacing="125%"
        inkscape:transform-center-x="4.7215495"><tspan
          sodipodi:role="line"
-         x="262.55606"
-         y="192.14941"
-         id="tspan5905-7-4-6">$W_j = f_{j}(U_{j} \cup U_{k})$</tspan></text>
+         x="312.85544"
+         y="171.04463"
+         id="tspan5905-7-4-6">$\psi(U\cap W)$</tspan></text>
+    <text
+       inkscape:transform-center-x="4.7215495"
+       sodipodi:linespacing="125%"
+       id="text4194"
+       y="170.42714"
+       x="103.93663"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         id="tspan4196"
+         y="170.42714"
+         x="103.93663"
+         sodipodi:role="line">$\phi(U\cap W)$</tspan></text>
+    <text
+       inkscape:transform-center-x="4.7215495"
+       sodipodi:linespacing="125%"
+       id="text4202"
+       y="125.65901"
+       x="410.86261"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         id="tspan4204"
+         y="125.65901"
+         x="410.86261"
+         sodipodi:role="line">$\psi(W)$</tspan></text>
+    <path
+       sodipodi:nodetypes="csc"
+       inkscape:connector-curvature="0"
+       id="path4217"
+       d="m 110.95582,149.1874 c 30.03589,-2.05227 71.48325,-2.0039 100.25232,-1.51118 30.41901,0.52097 99.06494,4.08723 99.06494,4.08723"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="207.68152"
+       y="139.89542"
+       id="text4219"
+       sodipodi:linespacing="125%"
+       inkscape:transform-center-x="4.7215495"><tspan
+         sodipodi:role="line"
+         x="207.68152"
+         y="139.89542"
+         id="tspan4221">$\psi\circ\phi^{-1}|_{\phi(U\cap W)}\in C^\infty$</tspan></text>
   </g>
 </svg>

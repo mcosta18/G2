@@ -1,120 +1,199 @@
 %appunti trascritti la sera del venerdì 4 Marzo 2016 da Belliardo Federico.
 
-\titlet{Ripasso e complementi sul proiettivo}
+% questa parte si sovrappone totalmente alla lezione precedente, la commento
+% \titlet{Ripasso e complementi sul proiettivo}
+%
+% \begin{defn}[Spazio proiettivo]
+% Dalla scorsa lezione sappiamo che posso definire lo spazio proiettivo
+% $\mathbb{P}^n$ dalle funzioni $\fundef[\pi]{\R^{n+1}}{\quoset {\R^{n+1}}{\sim}}$ o $\fundef[\pi_S]{S^n \subseteq \R^{n+1}}{\quoset {S^{n}}{\sim}}$. Dove gli insiemi quozienti sono omeomorfi (come spazi topologici) e quindi definiscono entrambi lo stesso spazio topologico $\mathbb{P}^{n}$.
+% \end{defn}
+% \begin{oss}
+% Intuitivamente gli aperti della prima topologia sono i coni di centro nell'origine e gli aperti della seconda sono le intersezioni di questi coni con la sfera unitaria. Dunque abbiamo una proiezione che è corrispondenza biunivoca tra gli spazi topologici che induce una corrispondenza biunivoca tra gli aperti.
+% \end{oss}
+% \begin{oss}
+% $\mathbb{P}^{n}$ è $T_{2}$ e 2-numerabile, queste proprietà passano al quoziente perché la proiezione $\pi$ è una mappa aperta (manda aperti in aperti).
+% \marginpar{Sarebbe bello dimostrarlo}
+% \end{oss}
+% \begin{oss}
+% $\mathbb{P}^{n}$ è compatto perché è immagine di $S^{n}$ tramite una mappa continua.
+% \end{oss}
 
-\begin{defn}[Spazio proiettivo]
-Dalla scorsa lezione sappiamo che posso definire lo spazio proiettivo 
-$\mathbb{P}^n$ dalle funzioni $\fundef[\pi]{\R^{n+1}}{\quoset {\R^{n+1}}{\sim}}$ o $\fundef[\pi_S]{S^n \subseteq \R^{n+1}}{\quoset {S^{n}}{\sim}}$. Dove gli insiemi quozienti sono omeomorfi (come spazi topologici) e quindi definiscono entrambi lo stesso spazio topologico $\mathbb{P}^{n}$.
-\end{defn}
-\begin{oss}
-Intuitivamente gli aperti della prima topologia sono i coni di centro nell'origine e gli aperti della seconda sono le intersezioni di questi coni con la sfera unitaria. Dunque abbiamo una proiezione che è corrispondenza biunivoca tra gli spazi topologici che induce una corrispondenza biunivoca tra gli aperti.
-\end{oss}
-\begin{oss}
-$\mathbb{P}^{n}$ è $T_{2}$ e 2-numerabile, queste proprietà passano al quoziente perché la proiezione $\pi$ è una mappa aperta (manda aperti in aperti).
-\marginpar{Sarebbe bello dimostrarlo}
-\end{oss}
-\begin{oss}
-$\mathbb{P}^{n}$ è compatto perché è immagine di $S^{n}$ tramite una mappa continua.
-\end{oss}
+% questo atlante per la sfera mi sembra sbagliato, lo commento
+% cosa mi sembra sbagliato: quando devo costruire una carta intorno all'equatore (che è chiuso),
+% uso le carte dell'equatore come S^{n-1}, quindi andrebbero in qualche modo estese ad aperti di S^n.
+% comunque la figura è un poccio
+% \titlet{Sfera come $n$-varietà}
+%
+% \begin{prop}
+% Si può costruire un atlante $\mathcal{A} = \set{{(U_1, f_1), (U_2, f_2), \dots, (U_{n+1}, f_{n+1})}}$.
+% \end{prop}
+% \begin{proof}
+% Considero il piano $x_{n+1} = 1$. La retta passante per l'origine degli assi e per un punto della sfera appartenente alla calotta con $x_{n+1} > 0$ interseca il piano suddetto in un punto. Il piano è isomorfo a $\R^n$ e questa procedura stabilisce una biezione tra i punti della calotta superiore e i punti del piano. Ripeto la costruzione per la calotta inferiore.
+% Devo costruire una carta locale anche per l'equatore ma esso è isomorfo a una sfera $S^{n-1}$ dunque posso procedere iterativamente, finché non arrivo a $S^{0}$.
+% \marginpar{e poi come faccio a costruire una mappa per $S^{0}$?}
+% \end{proof}
+%
+% \begin{figure}
+%     \centering % per centrare l'immagine
+%     \input{figura40.pdf_tex}
+%     \caption{Proiezione stereografica della sfera}
+% \end{figure}
+%
+% Dunque si riesce a dotare $S^{n}$ di un atlante, essa è poi 2-numerabile e $T_{2}$ poiché queste proprietà passano ai sottospazi topologici.
 
-\titlet{Sfera come $n$-varietà}
+\titlet{Varietà prodotto}
 
-\begin{prop}
-Si può costruire un atlante $\mathcal{A} = \set{{(U_1, f_1), (U_2, f_2), \dots, (U_{n+1}, f_{n+1})}}$.
+\begin{prop}[Prodotto di varietà]
+	Date $M_{1}$ e $M_2$ $n_1$-varietà e $n_2$-varietà,
+	$M_1\times M_2$ è una $(n_1+n_2)$-varietà.
 \end{prop}
+
 \begin{proof}
-Considero il piano $x_{n+1} = 1$. La retta passante per l'origine degli assi e per un punto della sfera appartenente alla calotta con $x_{n+1} > 0$ interseca il piano suddetto in un punto. Il piano è isomorfo a $\R^n$ e questa procedura stabilisce una biezione tra i punti della calotta superiore e i punti del piano. Ripeto la costruzione per la calotta inferiore. 
-Devo costruire una carta locale anche per l'equatore ma esso è isomorfo a una sfera $S^{n-1}$ dunque posso procedere iterativamente, finché non arrivo a $S^{0}$. 
-\marginpar{e poi come faccio a costruire una mappa per $S^{0}$?}
+	Devo esibire un atlante.
+	Se $\set{(U_i, f_i)}$ è un atlante per $M_1$ e $\set{(W_j, g_j)}$ è un atlante per $M_2$ 
+	allora $\set{(U_i \times W_j, f_i \times g_j)}$ è un atlante per il prodotto.
+	Il prodotto di funzioni è definito come segue: sia $\fundef UA$ e $\fundef[g]WB$,
+	allora $\fundef[f\times g]{U\times W}{A\times B}$ è la funzione $(p, q) \mapsto \big(f(p), g(q)\big)$.
+	$T_2$ e 2-numerabilità sono proprietà che passano al prodotto topologico.
 \end{proof}
 
-\begin{figure}
-    \centering % per centrare l'immagine
-    \input{figura40.pdf_tex}
-    \caption{Proiezione stereografica della sfera}
-\end{figure}
+% già detto
+% \begin{oss}
+% La topologia sul prodotto cartesiano degli insiemi è quella meno fine che rende le proiezioni $\fundef[f]{M_1 \times M_2}{M_1}$ e $\fundef[f]{M_1 \times M_2}{M_2}$ continue.
+% \end{oss}
 
-Dunque si riesce a dotare $S^{n}$ di un atlante, essa è poi 2-numerabile e $T_{2}$ poiché queste proprietà passano ai sottospazi topologici.
+\begin{es}~
+	\begin{itemize}
+		\item $S^p \times S^q$ è una $(p+q)$-varietà.
+		\item
+			$\underbrace{S^1 \times \dots \times S^1}_\text{$n$ volte}$
+			è chiamato \emph{$n$-toro} ed è una $n$-varietà.
+	\end{itemize}
+\end{es}
+
+% già detto
+% \begin{defn}
+% $\fundef[f]{M_1}{M_2}$ con $f$ continua si dice morfismo tra spazi topologici.
+% \end{defn}
+% L'obbiettivo è studiare gli spazi topologici a meno di applicazioni continue.
 
 \titlet{Varietà differenziabili}
 
-\begin{prop}[Prodotto di varietà topologiche]
-Date $M_{1}$ e $M_2$ $n_1$-varietà e $n_2$-varietà topologiche $M_1\times M_2$ è una \emph{$(n_1+n_2)$-varietà}.
-\end{prop}
-\begin{proof}
-Devo esibire un atlante. Se $\mathcal{A}_{1} = {(U_i, f_i)}$ è un atlante per $M_1$ e $\mathcal{A}_{2} = {(U_i, f_i)}$ è un atlante per $M_2$ allora il prodotto $\mathcal{A}_{1} \times \mathcal{A}_{2} = {(U_i \times U_j, f_i \times f_j)}$ è un atlante per il prodotto. Il prodotto di funzioni è definito come segue: sia $\fundef[f_i]{U_i}{A_i}$ e $\fundef[f_j]{W_j}{B_j}$ allora $\fundef[f_i\times f_j]{U_{i} \times W_{j}}{A_{i} \times B_{j}}$ è la funzione tale che $(p, q) \mapsto f_i(p) \times f_j(q)$  .
-$T_2$ e 2-numerabilità sono proprietà che passano al prodotto topologico.
-\end{proof}
+\begin{oss}
+	Gli omeomorfismi sono isomorfismi anche per le varietà.
+\end{oss}
 
-\begin{oss}
-La topologia sul prodotto cartesiano degli insiemi è quella meno fine che rende le proiezioni $\fundef[f]{M_1 \times M_2}{M_1}$ e $\fundef[f]{M_1 \times M_2}{M_2}$ continue.
-\end{oss}
-\begin{oss}
-$S^p \times S^q$ è una $(p+q)$-varietà, proprio come $S^1 \times S^1 \times S^n \times \ldots S^1$ è chiamato $n$-toro ed è anche una $n$-varietà.
-\end{oss}
-\begin{defn}
-$\fundef[f]{M_1}{M_2}$ con $f$ continua si dice morfismo tra spazi topologici.
-\end{defn}
-L'obbiettivo è studiare gli spazi topologici a meno di applicazioni continue.
-\begin{oss} 
-$S^n$ è omeomorfo a $S^m$? $S^n$ e $\mathbb{P}^n$ sono omeomorfi? 
-Sono domande di non facile risposta\dots
-\end{oss}
+\begin{fat} 
+	$S^n$ è omeomorfo a $S^m$ se e solo se $n=m$,
+	e $S^n$ non è omeomorfo a $\mathbb{P}^n$,
+	ma non è facile dimostrarlo.
+\end{fat}
+
+Gli omeomorfismi e in generale le funzioni continue possono essere molto lontani dalla nostra intuizione di ``continuo'':
+
 \begin{es}[Curva di Peano]
-Definisco una funzione $\fundef[f]{[0,1]}{[0,1]\times[0,1]}$ continua e surgettiva. Dunque i due insiemi di partenza e di arrivo con la topologia euclidea sono omeomorfi.
+	Esiste una funzione $\fundef[f]{[0,1]}{[0,1]\times[0,1]}$ continua e surgettiva.\footnotemark
+	\footnotetext{Ma non un omeomorfismo.}
 \end{es}
+
+Dunque vogliamo definire degli oggetti che siano ``più continui''.
+
 \begin{defn}[Differenziabilità in un punto]
-$\fundef[f]{\R^n}{\R^k}$ è differenziabile in $x_0$ se esiste un applicazione lineare $\fundef[L]{\R^n}{\R^k}$ tale che $\lim_{h\to 0}{\frac{f(x_0+h)-f(x_0)-L(h)}{\Vert h \Vert}}=0$
-Se $L$ esiste è necessariamente unica.
+	$\fundef[f]{\R^n}{\R^k}$ è differenziabile in $x$ se esiste un'applicazione lineare
+	$\fundef[L]{\R^n}{\R^k}$ tale che:
+	\[\lim_{h\to 0}{\frac{f(x+h)-f(x)-L(h)}{|h|}}=0\]
 \end{defn}
-\begin{defn}
-$\fundef[f]{\Omega \subseteq \R^n}{\R^m}$ è differenziabile in $\Omega$ se è differenziabile in ogni suo punto.
+
+\begin{fat}
+	Se $L$ esiste è necessariamente unica.
+\end{fat}
+
+\begin{defn}[Differenziabilità in un insieme]
+	$\fundef[f]{\Omega \subseteq \R^n}{\R^k}$ è differenziabile in $\Omega$
+	se è differenziabile in ogni suo punto.
 \end{defn}
+
 \begin{defn}[Funzione differenziale]
-$\fundef[\de f]{\Omega}{\Hom(\R^n, \R^m)} \approx \R^{nm}$ è chiamata differenziale della funzione $\fundef[f]{\Omega \subseteq \R^n}{\R^m}$.
+	Data una funzione differenziabile $\fundef[f]{\Omega \subseteq \R^n}{\R^k}$,
+	la funzione $\fundef[\de f]\Omega{\Hom(\R^n,\R^k)\simeq\R^{nk}}$
+	che manda $x\mapsto L$
+	è il \emph{differenziale} di $f$.
 \end{defn}
+
 \begin{oss}
-Posso costruire induttivamente $\de(\de f) = \de^2f$, $\de(\de^2f) = \de^3f$ e così via.
+	Se il differenziale è differenziabile,
+	posso costruire induttivamente $\de(\de f) = \de^2f$,
+	e analogamente $\de(\de^2f) = \de^3f$ e così via.
 \end{oss}
-\begin{oss}
-$f$ è $n$-differenziabile e posso costruire induttivamente le funzioni sopra mostrate fino alla $n$-esima.
-\end{oss}
+
 \begin{defn}
-$f$ è $C^{\infty}$ se è $k$-differenziabile $\forall k > 0$.
+	$f$ è $n$-differenziabile se esiste $\de^n f$.
 \end{defn}
-\begin{defn}
-Dall'analisi reale sappiamo che $f$ è $C^{\infty}$ se tutte le derivate parziali esistono e sono continue
+
+\begin{defn}[Funzione liscia]
+	$f$ è $C^{\infty}$ o \emph{liscia} se è $k$-differenziabile $\forall k > 0$.
 \end{defn}
+
+\begin{fat}
+	Dall'analisi reale sappiamo che $f$ è $C^{\infty}$
+	se tutte le derivate parziali esistono e sono continue.
+\end{fat}
+
 \begin{defn}[Diffeomorfismo]
-$\fundef[f]{\Omega \subseteq \R^n}{\Omega' \subseteq \R^n}$ è un diffeomorfismo se è $C^\infty$ ed è invertibile tale che $f^{-1}$ è $C^{\infty}$.
+	$\fundef[f]{\Omega \subseteq \R^n}{\Omega' \subseteq \R^k}$ è un \emph{diffeomorfismo}
+	se è $C^\infty$ ed è invertibile con inversa $C^{\infty}$.
 \end{defn}
+
 \begin{prop}
-Se $\fundef[f]{\R^n}{\R^m}$ è diffeomorfismo allora $n = m$, cioè la dimensione è un invariante per diffeomorfismo.
+	Se $\fundef[f]{\R^n}{\R^k}$ è diffeomorfismo allora $n = k$,
+	cioè la dimensione è un invariante per diffeomorfismo.
 \end{prop}
+
 \begin{proof}
-Sia $g$ la funzione inversa di $f$. allora $g \circ f = \id$ e $f \circ g = \id$, in particolare vale che $\de(f \circ g) = \de f \circ \de g = \id$ (dall'analisi reale). Dunque valutando il differenziale in un punto ottengo che le due matrici che sono i differenziali della funzione $f$ e della sua inversa sono una l'inversa dell'altra ma per avere un'inversa la matrice deve essere quadrata, dunque il diffeomorfismo conserva le dimensioni.
+	Sia $g$ la funzione inversa di $f$.
+	Allora $g \circ f = \id$ e $f \circ g = \id$,
+	in particolare vale che $\de(f \circ g) = \de f \circ \de g = \id$ (dall'analisi reale).
+	Dunque valutando il differenziale in un punto ottengo che le due matrici
+	che sono i differenziali della funzione $f$ e della sua inversa
+	sono una l'inversa dell'altra ma per avere un'inversa la matrice deve essere quadrata,
+	dunque il diffeomorfismo conserva le dimensioni.
 \end{proof}
-\begin{defn}[$n$-varietà topologica differenziabile]
-Sia un atlante $\mathcal{A} = {(U_i, f_i)}$. Considero gli omeomorfismi
-$\fundef[f_i]{U_i}{A_i \subseteq \R^n }$ e $\fundef[f_j]{W_j}{B_j\subseteq \R^n}$ e l'intersezione 
-$U_i \cap U_j$. Dico che $\mathcal{A}$ è un atlante differenziabile se ogni funzione $\fundef[f_k \circ f_j^{-1}]{f_j(U_i \cap U_j)}{f_i(U_i \cap U_j)}$ è $C^{\infty}$. Essa è evidentemente una funzione da $\R^n$ a $\R^n$ ed è anche invertibile infatti $f_j \circ f_k^{-1}$ è la sua inversa.
-\end{defn}
 
-\begin{figure}
-    \centering % per centrare l'immagine
+\begin{defn}[Atlante differenziabile]
+	Un atlante è \emph{differenziabile} se,
+	per ogni coppia di carte $(U,\phi)$, $(W,\psi)$, si ha che la funzione
+	$\psi\circ\phi^{-1}|_{\phi(U\cap W)}$ è liscia.\footnotemark
+	\footnotetext{Per simmetria, è in effetti un diffeomorfismo.}
+	\begin{figure}
+    \centering
     \input{figura39.pdf_tex}
-    \caption{Digramma varietà differenziabile}
-\end{figure}
-
-\begin{defn} 
-Data una $n$-varietà M (topologica) due atlanti differenziabili si dicono compatibili se $\mathcal{A}_1 \cup \mathcal{A}_2$ è ancora un atlante differenziabile.
+    \caption{Un atlante è differenziabile se il passaggio da una rappresentazione a un'altra è liscio.}
+	\end{figure}
 \end{defn}
+
 \begin{oss}
-Se le carte non si intersecano l'atlante è differenziabile
+	Se le carte non si intersecano l'atlante è differenziabile.
 \end{oss}
+
+\begin{defn}[Atlanti compatibili]
+Due atlanti differenziabili sulla stessa varietà sono \emph{compatibili} se la loro unione è ancora un atlante differenziabile.
+\end{defn}
+
+\begin{defn}[Atlante massimale]
+	Per una certa classe di atlanti compatibili,
+	l'unione di tutti gli atlanti possibili è l'\emph{atlante massimale}.
+\end{defn}
+
+\begin{defn}[Varietà differenziabile]
+	Una varietà dotata di atlante differenziabile è una \emph{varietà differenziabile} o \emph{liscia}.
+\end{defn}
+
 \begin{oss}
-Potrei avere più di un atlante differenziabile, l'unione di tutti gli atlanti differenziabili è l'atlante massimale per quella struttura di $n$-varietà liscia.
+	La struttura di varietà differenziabile si identifica con l'atlante massimale.
 \end{oss}
-\begin{oss}
-Data una $n$-varietà topologica esiste sempre un atlante differenziabile massimale?
-\end{oss}
+
+D'ora in poi chiameremo brevemente ``varietà'' le varietà lisce
+e quando vorremo specificare che non è liscia la chiameremo ``varietà topologica''.
+
+Data una varietà topologica esiste sempre un atlante differenziabile massimale? È unico?
+Sono domande a cui non risponderemo.
