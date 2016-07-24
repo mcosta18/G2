@@ -50,16 +50,16 @@
   \makeatother%
   \begin{picture}(1,0.30692229)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figura39.pdf}}%
-    \put(0.61855808,0.28225313){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W$}}}%
-    \put(0.38854613,0.27917471){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$U$}}}%
-    \put(-0.00114339,0.12893936){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi(U)$}}}%
-    \put(0.20413754,0.2222181){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\phi$}}}%
-    \put(0.77583263,0.2027605){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\psi$}}}%
+    \put(0.61855808,0.28225313){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$U_k$}}}%
+    \put(0.38854613,0.27917471){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$U_i$}}}%
+    \put(-0.00114339,0.12893936){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi_i(U_i)$}}}%
+    \put(0.20413754,0.2222181){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\phi_i$}}}%
+    \put(0.77583263,0.2027605){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi_k$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figura39.pdf}}%
-    \put(0.74813206,0.01463886){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\psi(U\cap W)$}}}%
-    \put(0.20545398,0.01624283){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi(U\cap W)$}}}%
-    \put(1.00271107,0.1325305){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\psi(W)$}}}%
+    \put(0.74813206,0.01463886){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\phi_k(U_i\cap U_k)$}}}%
+    \put(0.20545398,0.01624283){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi_i(U_i\cap U_k)$}}}%
+    \put(1.00271107,0.1325305){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\phi_k(U_k)$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figura39.pdf}}%
-    \put(0.47493702,0.09555066){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\psi\circ\phi^{-1}|_{\phi(U\cap W)}\in C^\infty$}}}%
+    \put(0.47493702,0.09555066){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\phi_k\circ\phi_i^{-1}|_{\phi(U_i\cap U_k)}\in C^\infty$}}}%
   \end{picture}%
 \endgroup%

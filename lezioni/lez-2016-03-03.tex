@@ -118,7 +118,18 @@ Dunque vogliamo definire degli oggetti che siano ``più continui''.
 	la funzione $\fundef[\de f]\Omega{\Hom(\R^n,\R^k)\simeq\R^{nk}}$
 	che manda $x\mapsto L$
 	è il \emph{differenziale} di $f$.
+	Poiché il valore è una funzione, l'argomento si indica a pedice: $\de_x f$.
 \end{defn}
+
+% questa cosa in realtà stava negli appunti all'inizio della lezione successiva (7 marzo)
+\begin{oss}
+	Il differenziale è \emph{functoriale}, ovvero:
+	\begin{itemize}
+		\item $\de_x\id=\id$;
+		\item $\de_x(f\circ g)=\de_{g(x)}f\circ\de_xg$;
+	\end{itemize}
+	le quali implicano $\de_x(f^{-1})=\de_{f(x)}f$.
+\end{oss}
 
 \begin{oss}
 	Se il differenziale è differenziabile,
@@ -161,8 +172,8 @@ Dunque vogliamo definire degli oggetti che siano ``più continui''.
 
 \begin{defn}[Atlante differenziabile]
 	Un atlante è \emph{differenziabile} se,
-	per ogni coppia di carte $(U,\phi)$, $(W,\psi)$, si ha che la funzione
-	$\psi\circ\phi^{-1}|_{\phi(U\cap W)}$ è liscia.\footnotemark
+	per ogni coppia di carte $(U_i,\phi_i)$, $(U_k,\phi_k)$, si ha che la funzione
+	$\phi_k\circ\phi_i^{-1}|_{\phi(U_i\cap U_k)}$ è liscia.\footnotemark
 	\footnotetext{Per simmetria, è in effetti un diffeomorfismo.}
 	\begin{figure}
     \centering
@@ -176,7 +187,8 @@ Dunque vogliamo definire degli oggetti che siano ``più continui''.
 \end{oss}
 
 \begin{defn}[Atlanti compatibili]
-Due atlanti differenziabili sulla stessa varietà sono \emph{compatibili} se la loro unione è ancora un atlante differenziabile.
+	Due atlanti differenziabili sulla stessa varietà sono \emph{compatibili}
+	se la loro unione è ancora un atlante differenziabile.
 \end{defn}
 
 \begin{defn}[Atlante massimale]
