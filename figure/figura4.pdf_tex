@@ -1,4 +1,4 @@
-%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'figura4.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{203.2918292bp}%
+    \setlength{\unitlength}{202.39720391bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,17 +48,17 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.54240083)%
+  \begin{picture}(1,0.54506791)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figura4.pdf}}%
-    \put(0.22005056,0.46241769){\makebox(0,0)[lb]{\smash{$U’$}}}%
-    \put(0.61928825,0.46241769){\makebox(0,0)[lb]{\smash{$U$}}}%
-    \put(0.61928825,0.46241769){\makebox(0,0)[lb]{\smash{$U$}}}%
-    \put(0.83544922,0.46241769){\makebox(0,0)[lb]{\smash{$\R^m$}}}%
+    \put(0.22102321,0.46473123){\makebox(0,0)[lb]{\smash{$U’$}}}%
+    \put(0.62202559,0.46473123){\makebox(0,0)[lb]{\smash{$U$}}}%
+    \put(0.62202559,0.46473123){\makebox(0,0)[lb]{\smash{$U$}}}%
+    \put(0.83914203,0.46473123){\makebox(0,0)[lb]{\smash{$\R^m$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figura4.pdf}}%
-    \put(0.29367003,0.33918474){\makebox(0,0)[lb]{\smash{$\phi$}}}%
-    \put(0.69543591,0.33173973){\makebox(0,0)[lb]{\smash{$f$}}}%
+    \put(0.29496809,0.34095357){\makebox(0,0)[lb]{\smash{$\phi$}}}%
+    \put(0.69850984,0.33347566){\makebox(0,0)[lb]{\smash{$f$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figura4.pdf}}%
-    \put(0.48261773,0.00789868){\makebox(0,0)[lb]{\smash{$\pi$}}}%
+    \put(0.48475097,0.00820318){\makebox(0,0)[lb]{\smash{$\pi$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{figura4.pdf}}%
   \end{picture}%
 \endgroup%
