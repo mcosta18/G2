@@ -1,16 +1,23 @@
 % trascrizione: Petrillo
 
-MOLTO DA SISTEMARE
+Adesso facciamo un teorema che intuitivamente vuol dire:
+preso un diffeomorfismo di $\R^n$ in sé stesso che preserva l'orientazione,
+possiamo deformarlo in modo liscio (``senza strappi'')
+fino a farlo diventare l'identità.
+Ma prima, un lemma utilissimo:
 
-\begin{lemma}
+\begin{lemma}[Taylor dei geometri]
 	\label{th:lemprec}
-	Sia $\fundef{\R^n}\R$ liscia con $U\subseteq\R^n$ aperto connesso, $f(0)=0$, $0\in U$.
-	Allora $\exists\fundef[g_i]{\R^n}\R$ lisce tali che $f(x)=\sum_ix_ig_i(x)$.
+	Sia $\fundef{U\subseteq\R^n}\R^k$ liscia con $U$ aperto convesso, $0\in U$, $f(0)=0$.
+	Allora esistono $n$ funzioni lisce $\fundef[g_i]{\R^n}\R^k$ tali che $f(x)=\sum_ix_ig_i(x)$.
 \end{lemma}
 
 \begin{proof}
+	Lavorando componente per componente, ci restringiamo al caso $k=1$.
 	Per il teorema fondamentale del calcolo abbiamo:
-	\[f(x)=\int_0^1\deriv{f(tx)}t\de t=
+	\[f(x)=
+	f(1\cdot x)-f(0)=
+	\int_0^1\deriv{}t\big(f(tx)\big)\de t=
 	\sum_{i=1}^n\left(\int_0^1\pderiv f{x_i}(tx)\de t\right)x_i\]
 	Allora poniamo:
 	\[g_i(x)\is\int_0^1\pderiv f{x_i}(tx)\de t
@@ -18,42 +25,90 @@ MOLTO DA SISTEMARE
 \end{proof}
 
 \begin{teo}[Linearizzazione dei diffeomorfismi di $\R^n$ a meno di isotopia]
-	Sia $\fundef{\R^n}{\R^n}$ diffeomorfismo con $\forall x\in\R^n:\det(\de f_{x})>0$. Allora $\exists\fundef[F]{\R^n\times[0,1]}{\R^n}$ liscia tale che $\forall t\in[0,1]:f_t$ è un diffeomorfismo di $\R^n$ e $f_0=f$, $f_1=\id$, dove $f_t\is F|_{\R^n\times\set t}$.
-	\marginpar{ridondante, MERGIARE}
+	Gli autodiffeomorfismi euclidei che preservano l'orientazione sono diff-isotopi all'identità:
+	\begin{equation*}
+		\begin{rcases}
+			\fundef{\R^n}{\R^n}\text{ diffeomorfismo} \\
+			\forall x\in\R^n:\det(\de_xf)>0
+		\end{rcases}
+		\implies \exists F:
+		\begin{cases}
+			\fundef[F]{\R^n\times[0;1]}{[0;1]}\text{ liscia} \\
+			\forall t\in[0;1]:F_t\text{ diffeomorfismo} \\
+			\hspace{-1ex}\begin{array}{l}
+				F_0=f \\
+				F_1=\id
+			\end{array}\quad\text{dove }F_t\is F|_{\R^n\times\set t}
+		\end{cases}
+	\end{equation*}
 \end{teo}
 
 \begin{proof}
-	$\wlg f(0)=0$. Infatti se $f(0)=x_0$, $H(x,t)\is f(x)-t(x_0)$ è un'isotopia tra $f$ e la  $f'$ con $f'(0)=0$.
+	Non costruiamo subito la $F$:
+	esibiremo vari cammini del tipo di $F$ ma che non collegano direttamente $f$ a $\id$;
+	la loro concatenazione darà $F$.
 	
-	Per definizione, $\de f_{0}(x)=\lim_{t\to 0}\frac{f(tx)}t$.
+	\newcommand*\ISOMOUSE[2]{\fbox{${#1}\longrightarrow{#2}$}}
+	\begin{description}
+		\item[\ISOMOUSE{f}{f(0)=0}]
+			Sia $x_0\is f(0)$.
+			Allora $H(x,t)\is f(x)-tx_0$ collega $f=H_0$ a $f'\is H_1$ con $f'(0)=0$,
+			e $H_t$ è sempre un diffeomorfismo.
+			Per leggerezza di notazione diciamo che $f(0)=0$.
+		\item[\ISOMOUSE{f}{\de_0f}]
+			Per definizione, $\de_0f(x)=\lim_{t\to 0}\frac{f(tx)}t$.
+			Allora poniamo:
+			\[\tilde F(x,t)\is
+			\begin{dcases}
+				\frac{f(tx)}t & t\in[0;1] \\
+				\de_0f(x) & t=0
+			\end{dcases}\]
+			Verifichiamo che $\tilde F$ è liscia.
+			Applicando il \autoref{th:lemprec} a $f$ abbiamo $\tilde F(x,t)=\sum_ix_ig_i(tx)$ per $t\neq 0$.
+			Ma, osservando la forma esplicita delle $g_i$,
+			vediamo che $g_i(0)=\pderiv f{x_i}(0)$,
+			quindi l'uguaglianza si estende a $t=0$.
+		\item[\ISOMOUSE{\de_0f}{B_1\in\SO_n}]
+			Sia $A$ la matrice di $\de_0f$,
+			per ipotesi $\det A>0$.
+			Allora esiste un unico prodotto scalare definito positivo $\scp{}{}_A$
+			tale che le colonne $A^i$ sono una base ortonormale;
+			sia invece $\scp{}{}_I$ quello canonico.
+			Osserviamo che
+			\[\scp{}{}_t\is (1-t)\scp{}{}_A+t\scp{}{}_I\qquad t\in[0;1]\]
+			ci dà un cammino di prodotti scalari definiti positivi.
+			Per ogni $\scp{}{}_t$ applico Gram-Schmidt alle $A^i$ ottenendo una base ortonormale
+			$\set{B_t^1,\dots,B_t^n}$
+			dove consideriamo le $B^i_t$ come colonne di una matrice $B_t$.
+			Basta dunque osservare che:
+			\begin{itemize}
+				\item le formule di Gram-Schmidt per le $B^i_t$ sono lisce;
+				\item $\det B_t>0$;
+				\item $B_0=A$;
+				\item $B_1\in\SO_n$.
+			\end{itemize}
+		\item[\ISOMOUSE{B_1}{\id}]
+			\marginpar{Non sono riuscito a formalizzare per bene il procedimento,
+			che in effetti è geometricamente intuitivo:
+			ruoto lungo un asse alla volta.
+			Benedetti ha datto due hint:\\
+			\emph{A lezione}: considero che le colonne $B_1^i$ sono una base ortonormale
+			rispetto al prodotto canonico, ruoto e cambio base;\\
+			\emph{Sulle dispense}: induzione su $n$ partendo da $\SO_2$.}
+			È geometricamente intuitivo collegare una matrice di $\SO_n$ all'identità.
+	\end{description}
 	
-	Poniamo:
-	\[\tilde F(x,t)\is
-	\begin{dcases}
-		\frac{f(tx)}t & t\in[0,1] \\
-		\de f_{0}(x) & t=0
-	\end{dcases}\]
-	
-	\claim $\tilde F$ è liscia. Infatti applicando il \autoref{th:lemprec} abbiamo $\tilde F(x,t)=\sum_ix_ig_i(x)$.
-	\marginpar{questo non mi torna}
-	
-	Sia $A\is\de f_{0}$, osserviamo che $\det A>0$.
-	Dobbiamo mostrare che $A$ è connessa con l'identità in modo liscio, ovvero se consideriamo $\GL_n^+\is\setdef[M\in\GL_n]{\det M>0}$ aperto di $\GL_n$, dobbiamo mostrare che è connesso per archi.
-	
-	Intanto, il cammino più intuitivo $t\mapsto tA+(1-t)I$ non funziona in generale se $n$ è dispari, perché il determinante si può annullare.
-	
-	Restringiamoci prima al caso semplice $A\in\SO_n$: le $A^i$ sono una base ortonormale rispetto al prodotto scalare canonico. Notiamo che $I\in\SO_n$ e che possiamo connettere $A$ a $I$ attraverso $\SO_n$, il procedimento è geometricamente intuitivo.
-	
-	 Passiamo ora al caso generale $A\in\GL_n^+$. Sia $\scp{}{}_A$ il prodotto scalare definito positivo tale che le $A^i$ sono una base ortonormale; sia $\scp{}{}_I$ quello canonico.
-	 
-	 Osserviamo che $\scp{}{}_t\is t\scp{}{}_A+(1-t)\scp{}{}_I$ ci dà un cammino di prodotti scalari definiti positivi. $\forall t$ applico Gram-Schmidt alle $A^i$ ottenendo una base ortonormale $B_t\is\set{B_t^1,\dots,B_t^n}$. Abbiamo che:
-	 \begin{itemize}
-	 	\item $B_1=A$
-		\item $B_0\in\SO_n$
-		\item le formule G-S per i $B^i$ sono lisce.
-		\item $\det B_t>0$
-	 \end{itemize} 
-	Allora da $B_0$ ci connettiamo all'identità come nel caso $A\in\SO_n$.
+	Per concatenare questi cammini in modo liscio,
+	basta prima comporre la variabile $t$ con una funzione liscia $\fundef[\varphi]\R\R$ tale che:
+	\[\varphi(0)=0, \quad
+	\varphi(1)=1, \quad
+	\forall k\in\N:\frac{\de^k\varphi}{\de t^k}(0)=\frac{\de^k\varphi}{\de t^k}(1)=0.\]
+	Un esempio di tale funzione è:
+	\[\varphi(x)=\frac{\phi_{0,\frac32}(x)}{\phi_{0,\frac32}(x)+\phi_{-\frac12,1}(x)},\quad
+	\phi_{a,b}(x)=\begin{cases}
+		e^{\frac1{(x-a)(x-b)}} & x\in(a;b) \\
+		0 & \text{altrimenti}
+	\end{cases}\]
 \end{proof}
 
 Sia $\fundef U{\R^n}$ con $f$ liscia, $0\in U\subseteq\R^n$, $U$ aperto, $f(0)=0$.
