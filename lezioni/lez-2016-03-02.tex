@@ -102,10 +102,10 @@ Si ricorda che gli aperti della topologia quoziente sono le immagini degli apert
 			\draw[->] (0,-\axisr) -- (0,\axisr) node[above] {$x$}; % y axis
 			\draw[name path=pi] (1,-\axisr) -- (1,\axisr); % the \Pi_i
 			\path (1,-1) node[right] {$\Pi_i$};
-			\draw[name path=line] (\angle:0) -- (\angle:2);
-			\path[name intersections={of=line and sn, by=dot1}];
+			\draw[name path=line, dashed] (\angle:-1.5) -- (\angle:2);
+			\path[name intersections={of=line and sn, by={dot1, dot3}}];
 			\path[name intersections={of=line and pi, by=dot2}];
-			\foreach\x in {1,2} \fill (dot\x) circle (.05);
+			\foreach\x in {1,2,3} \fill (dot\x) circle (.05);
 		\end{tikzpicture}
 		\caption{Carta $i$-esima di $\Ps^n$.}
 		\label{fig:cartaipn}
