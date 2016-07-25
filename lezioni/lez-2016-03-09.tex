@@ -48,7 +48,7 @@ Ma prima, un lemma utilissimo:
 	esibiremo vari cammini del tipo di $F$ ma che non collegano direttamente $f$ a $\id$;
 	la loro concatenazione darà $F$.
 	
-	\newcommand*\ISOMOUSE[2]{\fbox{${#1}\longrightarrow{#2}$}}
+	\newcommand*\ISOMOUSE[2]{\fbox{${#1}\dashrightarrow{#2}$}}
 	\begin{description}
 		\item[\ISOMOUSE{f}{f(0)=0}]
 			Sia $x_0\is f(0)$.
@@ -102,35 +102,35 @@ Ma prima, un lemma utilissimo:
 	basta prima comporre la variabile $t$ con una funzione liscia $\fundef[\varphi]\R\R$ tale che:
 	\[\varphi(0)=0, \quad
 	\varphi(1)=1, \quad
-	\forall k\in\N:\frac{\de^k\varphi}{\de t^k}(0)=\frac{\de^k\varphi}{\de t^k}(1)=0.\]
+	\forall k\ge1:\deriv[k]\varphi t(0)=\deriv[k]\varphi t(1)=0.\]
 	Un esempio di tale funzione è:
-	\[\varphi(x)=\frac{\phi_{0,\frac32}(x)}{\phi_{0,\frac32}(x)+\phi_{-\frac12,1}(x)},\quad
+	\[\varphi(x)=\frac{\phi_{0,2}(x)}{\phi_{0,2}(x)+\phi_{-1,1}(x)},\quad
 	\phi_{a,b}(x)=\begin{cases}
 		e^{\frac1{(x-a)(x-b)}} & x\in(a;b) \\
 		0 & \text{altrimenti}
 	\end{cases}\]
 \end{proof}
 
-Sia $\fundef U{\R^n}$ con $f$ liscia, $0\in U\subseteq\R^n$, $U$ aperto, $f(0)=0$.
-
+Sia ora $\fundef{U\subseteq\R^n}{\R}$ liscia con $U$ aperto, $0\in U$, $f(0)=0$.
 Espandiamo in serie la $f$:
 \[f(x)=
-\de f_{0}(x)+\transp{x}(Hf_{0})x+R
+\de_0f(x)+\transp{x}(H_0f)x+R
 \quad\text{con}\quad
 \lim_{x\to0}\frac R{\norm{x}^2}=0\]
-Dove $Hf$ è la matrice hessiana:
-\[(Hf_{0})_{ij}\is
-\frac{\partial^2f}{\partial x_j\partial x_i}(0)\]
-Ricordiamo che l'hessiana è simmetrica per le funzioni lisce.
+Dove $Hf$ è la matrice hessiana, che per le funzioni lisce è simmetrica:
+\[(H_0f)_{ij}\is
+\frac{\partial^2f}{\partial x_j\partial x_i}(0)=(H_0f)_{ji}\]
+Se $\de_0f\neq0$, siamo nelle ipotesi del teorema della funzione implicita, versione surgettiva.
+Allora esiste una parametrizzazione locale $\psi$ tale che $f\circ\psi(x)=x_1$.
 
-Se $\de f_{0}\neq0$ cioè $\nabla f(0)\neq0$, siamo nelle ipotesi del \autoref{th:funimpsurg}. Allora $\exists$~parametrizzazione locale $\psi$ tale che $f\circ\psi(x)=x_1$.
+Supponiamo invece che $\de_0f=0$. In questo caso $f(x)=\transp{x}(H_0f)x+R$.
+\begin{defn}[Punto critico]
+	Sia $\fundef{U\subseteq\R^n}{\R}$ liscia; $x\in U$ si dice \emph{punto critico} di $f$ se $\de_xf=0$; un punto critico si dice \emph{non degenere} se $H_xf$ è invertibile.
+\end{defn}
 
-Supponiamo che $\de f_{0}=0$. Allora chiamiamo $0$ \emph{punto critico} di $f$. In questo caso $f(x)=\transp{x}(Hf_{0})x+R$.
-\marginpar{scrivere definizione per bene}
-
-Supponiamo che sia un punto critico \emph{non degenere}, cioè $\det(Hf_{0})\neq0$. Allora applichiamo il teorema di Sylvester alla matrice $Hf$ (che è simmetrica e non degenere), avremo indici di positività e negatività $i_+$ e $i_-=n-i_+$ e:
+Supponiamo dunque che 0 sia un punto critico non degenere, cioè $\det(H_0f)\neq0$. Allora applichiamo il teorema di Sylvester alla matrice $H_0f$ (che è simmetrica e non singolare), avremo indici di positività e negatività $i_+$ e $i_-=n-i_+$ tali che:
 \[\exists P\in\GL_n:
-\transp P(Hf_{0})P=
+\transp P(H_0f)P=
 \begin{pmatrix}
 	\begin{matrix}
 		1 & & \\
@@ -144,45 +144,50 @@ Supponiamo che sia un punto critico \emph{non degenere}, cioè $\det(Hf_{0})\neq
 	\end{matrix}
 \end{pmatrix}\si J\]
 
-Definiamo le forme quadratiche: $Q_H(x)\is\transp{x}(Hf_{0})x$, $Q_J(x)=x_1^2+\dots+x_{i_+}^2-(x_{i_++1}^2+\dots+x_n^2)$. Allora $f(x)=Q_H(x)+R$.
+\begin{defn}[Indice del punto critico]
+	Sia $x$ punto critico non degenere di $f$;
+	chiamiamo \emph{indice di $x$} l'indice di negatività di $H_xf$.
+\end{defn}
 
-Chiamiamo $i_-$ l'indice del punto critico non degenere.
-\marginpar{scrivere definizione per bene}
+Sia $Q_A(x)\is\transp xAx$ la forma quadratica associata a una matrice $A$, allora:
+\begin{align*}
+Q_H(x)&=\transp{x}(H_0f)x \\
+Q_J(x)&=x_1^2+\dots+x_{i_+}^2-(x_{1+i_+}^2+\dots+x_n^2) \\
+f(x)&=Q_H(x)+R
+\end{align*}
 
 \begin{ex}
-	La proprietà di punto critico e il suo indice sono invarianti per riparametrizzazione differenziabile a sinistra.
+	Sia $\psi$ una parametrizzazione locale di $U$ intorno a 0.
+	Allora $f\circ\psi$ ha un punto critico in $\psi^{-1}(0)$ con lo stesso indice.
 \end{ex}
 
 \begin{teo}[Lemma di Morse]
-	Sia $f$ come sopra ma a valori in $\R$, allora esiste una riparametrizzazione locale intorno all'origine che trasforma la $f$ nella forma quadratica canonica del tipo di $Q_J$:
+	Sia $f$ come sopra, allora esiste una parametrizzazione locale intorno all'origine che trasforma la $f$ nella forma quadratica canonica del tipo di $Q_J$:
 	\[\begin{rcases}
-		f\in C^\infty(U,\R^n) \\
-		\text{$U$ intorno di $0$ in $\R^n$} \\
+		\fundef U\R\text{ liscia} \\
+		\text{$U\subseteq\R^n$ intorno di $0$} \\
 		\text{$0$ punto critico di indice $\lambda$} \\
 		f(0)=0
 	\end{rcases}\implies
-	\exists\psi,U',U'':\begin{dcases}
-		U''\subseteq\R^n \\
-		U'\subseteq U \\
-		\text{$U'$ intorno di $0$} \\
-		\fundef[\psi]{U''}{U'} \\
+	\exists\psi,W,U':\begin{dcases}
+		W\subseteq\R^n\text{ intorno aperto di $0$} \\
+		U'\subseteq U\text{ intorno aperto di $0$} \\
+		\fundef[\psi]W{U'}\text{ diffeomorfismo} \\
 		f\circ\psi(x)=-\sum_{i=1}^\lambda x_i^2+\sum_{i=\lambda+1}^nx_i^2
 	\end{dcases}\]
 \end{teo}
 
 \begin{proof}
-	\wlg restringiamoci a $U$ convesso.
-	
-	Applichiamo due volte il \autoref{th:lemprec}:
+	Possiamo restringerci a $U$ convesso, e applicare due volte il \autoref{th:lemprec}:
 	\begin{align*}
 		f(0)=0 &\so f(x)=\sum_ix_ig_i(x) \\
-		\de f_{0}\equiv0 &\so f(x)=\sum_{ij}b_{ij}(x)x_ix_j
+		\de_0f\equiv0 &\so f(x)=\sum_{ij}b_{ij}(x)x_ix_j
 	\end{align*}
-	Dove le $b_{ij}$ sono lisce. \wlg $b_{ij}=b_{ji}$ perché simmetrizzo con $b_{ij}\mapsto\frac{b_{ij}+b_{ji}}2$, che a meno di restringere $U$ non cambia l'indice di $(b_{ij})\si B$ che in effetti è $\lambda$ (a meno di un cambiamento lineare di base, posso suppore $Hf_{0}=J$).
-	\marginpar{spiegare per bene}
+	Dove le $b_{ij}$ sono lisce. Sia $B$ la matrice di componenti $b_{ij}$, poiché la usiamo in una forma quadratica è \wlg simmetrica (in effetti dalla formula esplicita si vedrebbe che è già simmetrica).
+	Essendo $\GL_n$ aperto, a meno di restringere ancora $U$ le $B(x)$ sono invertibili e hanno lo stesso indice di negatività di $B(0)=H_0f$.
 	
 	Applichiamo Gram-Schmidt alle $B$:
-	\[\forall x\,\exists P(x)\in\GL_n:
+	\[\forall x\in U\,\exists P(x)\in\GL_n:
 	\transp PBP=
 	\begin{pmatrix}
 		\begin{matrix}
@@ -196,11 +201,9 @@ Chiamiamo $i_-$ l'indice del punto critico non degenere.
 			& & 1 \\
 		\end{matrix}
 	\end{pmatrix}\si J\]
-	Osserviamo che $P(0)=I$ e che le $P$ sono lisce.
+	Le formule di Gram-Schmidt sono lisce, quindi anche le $P(x)$.
 	
-	Sia $\fundef[\varphi]U{\R^n}$ con $\varphi(x)\is P(x)^{-1}$. Osserviamo che $\de\varphi_{0}=\id$.
-	
-	Applichiamo il teorema della funzione inversa: $\varphi$ è un diffeomorfismo se restringiamo il codominio all'immagine.
-	
+	Sia $\fundef[\varphi]U{\R^n}$ con $\varphi(x)\is P(x)^{-1}x$.
+	Osserviamo che $\de_0\varphi$ è invertibile, allora applichiamo il teorema della funzione inversa: intorno a 0, $\varphi$ è un diffeomorfismo (restringendo il codominio).
 	Abbiamo finalmente $f=\transp\varphi(\transp PBP)\varphi=\transp\varphi J\varphi$.
 \end{proof}
