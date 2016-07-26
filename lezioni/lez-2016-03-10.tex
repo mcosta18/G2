@@ -4,52 +4,95 @@
 %devi parlare del modello a semipiano
 % risposta: se era nella mia lezione, mi sa che me lo sono perso, se tu ce l'hai mettilo.
 
+\titlet{Funzioni a foruncolo}
 
-\begin{defn}[Funzioni a foruncolo]
- $\fundef[\lambda] {\R^n}{\R^n}, \lambda(\av x) = \lambda(\abs{\av x})$ tale che 
- \begin{itemize}
-  \item $1 > \lambda(\av x) > 0$
-  \item $\lambda(\av x) = 1 \forall \av x: \abs{\av x} < a$
-  \item $\lambda(\av x) = 0 \forall \av x: \abs{\av x} > b$
-  \item $\lambda$ liscia
- \end{itemize}
- è detta funzione a foruncolo (o anche partizione dell'unità di Paley-Littlewood)
+\begin{defn}[Funzione a foruncolo]
+	Dati $b>a>0$, una funzione liscia
+	$\fundef[\lambda] {\R^n}{\R}$
+	che dipende solo da $|x|$ tale che 
+	\begin{itemize}
+		\item $|x|\le a\implies\lambda(x)=1$;
+		\item $a<|x|<b\implies0<\lambda(x)<1$;
+		\item $|x|\ge b\implies\lambda(x)=0$
+	\end{itemize}
+	è detta \emph{funzione a foruncolo} (o anche \emph{partizione dell'unità di Paley-Littlewood}).\footnotemark
+	\footnotetext{In fondo alla dimostrazione del lemma di Morse (\autoref{th:lemmamorse}) c'è un esempio di come costruire funzioni di questo tipo.}
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			\pgfmathsetmacro\a{1}
+			\pgfmathsetmacro\b{2}
+			\pgfmathsetmacro\h{(\a+\b)/2}
+			\draw[->] (0,-.5) -- (0,2) node[right] {$\lambda(x)$};
+			\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+			\foreach \x in {,-} {
+				\draw (\x\a,-.1) node[below] {$\x a$} -- (\x\a,.1);
+				\draw (\x\b,-.1) node[below] {$\x b$} -- (\x\b,.1);
+				\draw[dashed] (\x\a,0) -- (\x\a,1.1);
+				\draw[thick] (\x3,0) -- (\x\b,0) .. controls (\x\h,0) and (\x\h,1) .. (\x\a,1) -- (0,1);
+			}
+			\path (0,1) node[above right] {$1$};
+		\end{tikzpicture}
+		\caption{Funzione a foruncolo $\R\funarrow\R.$}
+	\end{figure}
 \end{defn}
+
 \begin{oss}
- Nei punti in cui $\abs{\av x} = \pm a$ tutte le derivate sono nulle, dunque $\lambda$ non può essere analitica in quei punti.
+ Nei punti in cui $\abs x = a$ tutte le derivate sono nulle, dunque $\lambda$ non è analitica.
 \end{oss}
-Usiamo adesso questa nozione per estendere funzioni definite localmente.
-\begin{prop}
- Sia $M$ una varietà e $(U, \phi)$ una carta. Allora posso estenderla su tutta la varietà.
-\end{prop}
- \begin{proof}
-  Basta considerare $\fundef[\lambda\cdot f] M\R$ con $\lambda$ a foruncolo.
- \end{proof}
+
+% questa cosa mi sembra senza senso, la sostituisco con supercazzola generica
+% Usiamo adesso questa nozione per estendere funzioni definite localmente.
+% \begin{prop}
+%  Sia $M$ una varietà e $(U, \phi)$ una carta. Allora posso estenderla su tutta la varietà.
+% \end{prop}
+%  \begin{proof}
+%   Basta considerare $\fundef[\lambda\cdot f] M\R$ con $\lambda$ a foruncolo.
+%  \end{proof}
+
+Le funzioni a foruncolo si usano per estendere funzioni lisce $U\subseteq\R^n\funarrow\R^k$ a tutto $\R^n$:
+se il dominio contiene una palla, si moltiplica la funzione per una funzione a foruncolo che sia nulla fuori dalla palla.
  
 \titlet{Varietà con bordo}
+Per definire le varietà come oggetti che localmente somigliano a $\R^n$, abbiamo usato omeomorfismi locali con aperti di $\R^n$.
+Per definire le varietà con bordo, considereremo omeomorfismi locali con aperti di un sottoinsieme di $\R^n$ che abbia bordo.
+In particolare useremo il \emph{semipiano superiore}:
+\[\mathbb H^n\is[0;\infty)^n=\setdef[x\in\R^n]{\forall i:x_i\ge 0}\]
+
 \begin{defn}[Diffeomorfismo fra sottoinsiemi arbitrari di $\R^n$]
-$\fundef AB$ con $A,B\subseteq \R^n$. $f$ è \emph{diffeomorfismo} se
+	\label{th:arbdiffeo}
+Sia $\fundef AB$ con $A,B\subseteq \R^n$. $f$ è un \emph{diffeomorfismo} se
 \begin{itemize}
- \item è un omeomorfismo
- \item $\forall x\in A \exists \fundef[\phi] U\R^n$ carta locale tale che $f|_{U\cap A}=\phi|_{U\cap A}$
+ \item è un omeomorfismo;
+ \item $\forall x\in A \,\exists (U_x,\phi)$ carta locale di $\R^n$ tale che $f|_{U\cap A}=\phi|_{U\cap A}$.
 \end{itemize}
 \end{defn}
-Per le varietà con bordo, prendo come modello il sempiano superiore $\mathbb H_n=\setdef[x\in\R^n]{x_n\ge 0 \; \forall n}$
+
 \begin{defn}[Varietà con bordo]
- $M$ è una \emph{varietà con bordo} se 
+ $M$ è una \emph{$n$-varietà con bordo} se 
  \begin{itemize}
-  \item è spazio topologico $T_2$, $2$-numerabile
-  \item è munito di atlante massimale tale che $\phi_{\lambda}: U_{\lambda}\rightarrow U_{\lambda}\subseteq\mathbb H_n$, $\phi$ omeomorfismo.
-  \item $\forall \mu,\lambda\; \phi_{\mu}\circ\phi_{\lambda}^{-1}:\phi_{\lambda}(U_{\lambda}\cap U_{\mu})\funarrow\phi_{\mu}(U_{\lambda}\cap U_{\mu})$ è diffeomorfismo.
+  \item è uno spazio topologico $T_2$ e 2-numerabile;
+  \item è munito di atlante massimale $\set{(U_\lambda,\phi_\lambda)}$ a valori in $\mathbb H^n$, cioè si ha $\fundef[\phi_\lambda]{U_\lambda}{W_\lambda}$ omeomorfismo con $U_\lambda$ aperto di $M$ e $W_\lambda$ aperto di $\mathbb H^n$;
+  \item $\forall \mu,\lambda: \phi_{\mu}\circ\phi_{\lambda}^{-1}:\phi_{\lambda}(U_{\lambda}\cap U_{\mu})\funarrow\phi_{\mu}(U_{\lambda}\cap U_{\mu})$ è un diffeomorfismo nel senso della \autoref{th:arbdiffeo}.
  \end{itemize}
 \end{defn}
 \begin{defn}[Bordo]
-$\boundary M\is \setdef[x\in M]{\exists\text{ carta intorno a }x\text{ tale che } \phi_{\lambda}(x) \in \partial H}$ è detto il \emph{bordo} di $M$.
+	Il \emph{bordo} di una $n$-varietà con bordo $M$ è costituito dai punti la cui immagine attraverso una carta è contenuta nella frontiera del semipiano superiore:
+	\begin{gather*}
+\boundary M \is \setdef[x\in M]{\exists(U_x,\phi)\text{ carta locale}:\phi(x) \in \bound \mathbb H^n} \\
+\bound \mathbb H^n = \mathbb H^n \cap \setdef[x\in\R^n]{\exists i:x_i=0}
+\end{gather*}
+	Può essere $\boundary M=\nullset$, nel qual caso diciamo che $M$ è senza bordo o \emph{chiusa}.
 \end{defn}
-\begin{prop}
- Se un punto è di bordo per una carta, lo è per tutte le carte dell'atlante. (La dimostrazione è lasciata per esercizio).
-\end{prop}
-Si estendono ora tutte le definizioni date alle varietà alle varietà con bordo.
+\begin{ex}
+ Se un punto è di bordo per una carta, lo è per tutte le carte che lo contengono.
+\end{ex}
+\begin{fat}
+	Le nozioni di applicazione liscia e quindi di diffeomorfismo si estendono alle varietà con bordo.
+\end{fat}
+
+\subtitlet{Sottovarietà}
+
 \begin{defn}[Sottovarietà]
  Una \emph{sottovarietà} $N^n$ di $M^m$ varietà con $\partial M = \nullset, N\subseteq M (n\le m)$ se $\forall x\in N, \exists$ carta locale di $x \in M$ con $\fundef[\phi] U\R^m $
 \end{defn}
