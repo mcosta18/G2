@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'modellobordo.pdf' (pdf, eps, ps)
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{172.575bp}%
+    \setlength{\unitlength}{189.85142722bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,10 +48,10 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.50427775)%
-    \put(0,0){\includegraphics[width=\unitlength]{modellobordo.pdf}}%
-    \put(0.10943355,0.31854795){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
-    \put(0.39914451,0.32517026){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
-    \put(0.80923156,0.34005246){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+  \begin{picture}(1,0.43252379)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{modellobordo.pdf}}%
+    \put(0.2357296,0.23658074){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{1}}}%
+    \put(0.48045658,0.2362335){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{2}}}%
+    \put(0.72371758,0.23660643){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{3}}}%
   \end{picture}%
 \endgroup%
