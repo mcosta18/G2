@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{267.11580718bp}%
+    \setlength{\unitlength}{255.01567223bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,12 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.5944824)%
+  \begin{picture}(1,0.43034871)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figura8.pdf}}%
-    \put(0.38633008,0.18066409){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
+    \put(0.3572123,0.13689469){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figura8.pdf}}%
-    \put(0.04708821,0.56279233){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_1$}}}%
-    \put(0.44947804,0.27961935){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_3$}}}%
-    \put(0.89056553,0.21736935){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_2$}}}%
+    \put(0.17262917,0.22291978){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$W_1$}}}%
+    \put(0.42335654,0.24054523){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_3$}}}%
+    \put(0.88537302,0.17534156){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W_2$}}}%
   \end{picture}%
 \endgroup%

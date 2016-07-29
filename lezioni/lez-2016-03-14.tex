@@ -1,145 +1,191 @@
 %autore: Alessandro Candido
 
+\marginpar{Candido mi pare sia l'unico che usa la terza persona, bisognerebbe uniformarlo ma non mi va}
+
 \titlet{Fibrato tangente}
 
 \subtitlet{Modello locale}
 
-Si definisce di seguito il fibrato tangente di un aperto di $\R ^n$ e altre nozioni ad esso connesse.
-Queste definizioni non saranno generali, poiché la teoria che si intende affrontare non si limita a varietà immerse, esse però costituiranno il modello locale delle strutture più generali quali le varietà differenziabili, come sono state precedentemente definite.
+Si definisce di seguito il fibrato tangente di un aperto di $\R ^n$
+e altre nozioni ad esso connesse.
+Queste definizioni non saranno generali,
+poiché la teoria che si intende affrontare non si limita a sottovarietà di $\R^ n$,
+esse però costituiranno il modello locale delle strutture più generali sulle varietà.
 
-\begin{defn}[Fibrato tangente]
-Si definisce fibrato tangente di un aperto $U$ di $\R ^n$ l'insieme $T(U) = U \times \R ^n$. Ogni $x\in U$ è detto \emph{punto} di $U$ mentre ogni $v\in \R ^n$ è detto \emph{vettore} di $\R ^n$.
+\begin{defn}[Spazio totale]
+	Si definisce \emph{spazio totale del fibrato tangente} di un aperto $U$ di $\R^ n$
+	l'insieme $T(U) \is U \times \R^ n$.
+	Ogni $x\in U$ è detto \emph{punto} di $U$
+	mentre ogni $v\in \R^ n$ è detto \emph{vettore} di $\R ^n$.
 \end{defn}
 
-Si nota che, fissato un $x$ punto di $U$, la traslazione $v \mapsto v + x$~~$\forall v\in \R ^n$  consente di identificare $\R ^n$ con lo spazio dei vettori tangenti a $U$ nel punto $x$.
+Si nota che, fissato un $x$ punto di $U$, la traslazione
+$v \mapsto v + x$~~$\forall v\in \R^ n$
+consente di identificare $\R ^n$
+con lo spazio dei vettori tangenti a $U$ nel punto $x$.
 
-\begin{figure}[b]
-\centering
-\input{figura6.pdf_tex}
-\caption{Esempio di fibrato tangente}
+\begin{figure}
+	\centering
+	\input{figura6.pdf_tex}
+	\caption{Esempio di fibrato tangente.}
 \end{figure}
 
-
 \begin{defn}[Proiezione naturale]
-Si definisce \emph{proiezione naturale} $\fundef[\pi _U]{T(U)~}{U}$ la mappa $(x,v) \mapsto x$.
+	Si definisce \emph{proiezione naturale}
+	$\fundef[\pi _U]{T(U)~}{U}$
+	la mappa $(x,v) \mapsto x$.
 \end{defn}
 
-Nella precedente definizione l'aggettivo \emph{naturale} serve solamente a specificare che la mappa cui ci si riferisce è quella indotta dalla definizione come prodotto. In seguito ci si riferirà ad essa anche solo come proiezione.
+Nella precedente definizione
+l'aggettivo \emph{naturale} serve solamente a specificare
+che la mappa cui ci si riferisce è quella indotta dalla definizione come prodotto.
+In seguito ci si riferirà ad essa anche solo come proiezione.
+
+\begin{defn}[Fibrato tangente]
+	La coppia $\big(T(U),\pi_U\big)$ è il \emph{fibrato tangente} con \emph{spazio di base} $U$.
+\end{defn}
 
 \begin{defn}[Fibra]
-Si definisce fibra la controimmagine di un punto tramite la proiezione naturale, e si scrive $T_x U = \pi ^{-1} _U (x)$.
+	Si definisce fibra la controimmagine di un punto tramite la proiezione naturale,
+	e si scrive $T_x U = \pi ^{-1} _U (x)$.
 \end{defn}
 
 Alla luce di quest'ultima definizione si identificano:
 \begin{itemize}
-\item $T_x U = \set{x} \times \R ^n = \setdef[(x,v)\in T(U)]{v \in \R^n}$
-\item $T(U) = \djunion_{x \in U} T_x U$
+	\item $T_x U = \set{x} \times \R ^n = \setdef[(x,v)\in T(U)]{v \in \R^n}$
+	\item $T(U) = \djunion_{x \in U} T_x U$
 \end{itemize}
-Cioè si identifica la fibra come lo spazio tangente del punto $x$, quindi lo spazio dei vettori applicati, mentre l'intero fibrato come unione disgiunta delle fibre.
+Cioè si identifica la fibra come lo spazio tangente del punto $x$,
+quindi lo spazio dei vettori applicati,
+mentre l'intero fibrato come unione disgiunta delle fibre.
 
 \begin{figure}
-\centering
-\input{figura7.pdf_tex}
-\caption{Esempio di proiezione naturale di $U$}
+	\centering
+	\input{figura7.pdf_tex}
+	\caption{Esempio di proiezione naturale di $U$.}
 \end{figure}
 
 \begin{defn}[Applicazione tangente]
-Data un'applicazione liscia $\fundef[f]{U}{W}$ si definisce l'\emph{applicazione tangente} di $f$ la funzione $\fundef[Df]{T(U)}{T(W)}$ che manda $(x,v) \mapsto (f(x), \de_xf(v))$, cioè quell'applicazione che fa commutare il seguente diagramma:
-\begin{equation*}
-\begin{tikzcd}
-	T(U) \arrow[r, dashrightarrow, "Df"] \arrow[d, "\pi_U"]
-		& T(W) \arrow[d, "\pi_W"] \\
-	U \arrow[r, "f"]
-		& W
-\end{tikzcd}
-\end{equation*}
+	Data un'applicazione liscia tra aperti $\fundef[f]{U}{W}$
+	si definisce l'\emph{applicazione tangente} di $f$
+	la funzione $\fundef[Df]{T(U)}{T(W)}$
+	che manda $(x,v) \mapsto \big(f(x), \de_xf(v)\big)$.
 \end{defn}
 
 \begin{oss}
-L'applicazione tangente manda fibre in fibre in modo lineare, poiché $\forall x\in U\ \ \fundef[\de_xf]{T_x U}{T_x W}$, e il differenziale è un'applicazione lineare per definizione.
-L'applicazione tangente gode inoltre delle seguenti proprietà:
-\begin{itemize}
-\item è un'applicazione liscia in tutte le sue variabili (infatti $f$ è liscia e, $\de_xf$ è liscia perché lineare)
-\item è functoriale: $h = g\circ f \implies Dh = Dg\circ Df$
-\item $D(\id) = \id$
-\item se $f$ è un diffeomorfismo anche $Df$ è un diffeomorfismo e manda fibra in fibra attraverso isomorfismi lineari
-\end{itemize}
+	L'applicazione tangente fa commutare il seguente diagramma:
+	\begin{center}
+		\begin{tikzcd}
+			T(U) \arrow[r, dashrightarrow, "Df"] \arrow[d, "\pi_U"]
+				& T(W) \arrow[d, "\pi_W"] \\
+			U \arrow[r, "f"]
+				& W
+		\end{tikzcd}
+	\end{center}
+\end{oss}
+
+\begin{oss}
+	L'applicazione tangente manda fibre in fibre in modo lineare,
+	poiché $\forall x\in U\ \ \fundef[\de_xf]{T_x U}{T_x W}$,
+	e il differenziale è un'applicazione lineare per definizione.
+	L'applicazione tangente gode inoltre delle seguenti proprietà:
+	\begin{itemize}
+		\item
+			è un'applicazione liscia in tutte le sue variabili
+			(infatti $f$ è liscia e $\de_xf$ è liscia perché lineare);
+		\item è functoriale: $D(g\circ f) = Dg\circ Df$, $D(\id) = \id$;
+		\item
+			se $f$ è un diffeomorfismo anche $Df$ è un diffeomorfismo
+			e manda fibra in fibra attraverso isomorfismi lineari.
+	\end{itemize}
 \end{oss}
 
 \begin{defn}[Applicazioni fibrate]
-Un'applicazione che ha la proprietà di $Df$ di mandare fibra in fibra in modo lineare è detta applicazione \emph{fibrata}.
+	Un'applicazione che ha la proprietà di $Df$ di mandare fibra in fibra in modo lineare
+	è detta applicazione \emph{fibrata}.
 \end{defn}
 
-Se $f$ è un diffeomorfismo si ha che $Df$ è quindi un diffeomorfismo fibrato (come si è già enunciato tra le proprietà di $Df$).
+Se $f$ è un diffeomorfismo si ha che $Df$ è quindi un diffeomorfismo fibrato
+(come si è già enunciato tra le proprietà di $Df$).
 
 \subtitlet{Caratterizzazione differenziale di $T_x U$}
 
 Di seguito sarà esposta una caratterizzazione più intrinseca delle definizioni che sono state nella sezione precedente.
 
 \begin{defn}[Spazio dei germi]
-Dato un punto $x\in U$ aperto di $\R ^n$, e un intorno $W$ di $x$ definisce dunque lo spazio dei germi $\Sge_x$ l'insieme quoziente delle funzioni lisce da un aperto di $W$ in $\R$ con la seguente relazione di equivalenza:
-\begin{equation*}
-(W_1, f_1) \approx (W_2, f_2) \means \exists W_3 \subseteq W_1 \cap W_2\ \ \text{t.c.}\ \ f_1(y)=f_2(y)\ \ \forall y\in W_3
-\end{equation*}
+	Dato un punto $x\in U$ aperto di $\R ^n$,
+	si definisce \emph{spazio dei germi} $\Sge_x$
+	l'insieme delle funzioni lisce da un intorno aperto di $x$ in $U$ a valori in $\R$,
+	quozientato con la seguente relazione di equivalenza:
+	\begin{equation*}
+		(\fundef[f_1]{W_1}\R) \sim (\fundef[f_2]{W_2}\R) \means
+		\exists W_3 \subseteq W_1 \cap W_2:
+		\begin{cases}
+			\text{$W_3$ intorno aperto di $x$} \\
+			f_1|_{W_3}=f_2|_{W_3}
+		\end{cases}
+	\end{equation*}
 \end{defn}
-%\marginpar{di solito usiamo $\sim$ per le equivalenze}
-%In letteratura si usa come simbolo di equivalenza un simbolo a mezza altezza e simmetrico, se ne possono trovare varii (tilde, più tilde, trattino e tilde, tilde e punto, etc.) usarne più d'uno non è male, un po' meno di confusione no?
-% bah
 
 \begin{figure}[h]
-\centering
-\input{figura8.pdf_tex}
-\caption{Un germe è definito da ciò che accade in un intorno del punto}
+	\centering
+	\input{figura8.pdf_tex}
+	\caption{Un germe è definito da ciò che accade in un intorno del punto.}
 \end{figure}
 
 Lo spazio dei germi $\Sge_x$ ha una  naturale struttura di $\R$-algebra, cioè:
 \begin{itemize}
-\item un $\R$-spazio vettoriale
-\item munito di un prodotto (in questo caso commutativo)
+	\item è un $\R$-spazio vettoriale;
+	\item è munito di un prodotto (in questo caso commutativo).
 \end{itemize}
-Per verificarlo è sufficiente mostrare che la somma e il prodotto di due germi è un germe fissato, indipendentemente dai rappresentanti scelti.
+Per verificarlo è sufficiente mostrare che
+la somma e il prodotto di due germi è un germe fissato,
+indipendentemente dai rappresentanti scelti.
 
 \begin{oss}
-Si ha che lo spazio $\Sge_x$ non dipende dall'aperto $U$, che costituisce in questo caso la struttura locale, infatti è caratterizzato dalle proprietà locali.
+	Si ha che lo spazio $\Sge_x$ non dipende dall'aperto $U$,
+	che costituisce in questo caso la struttura locale,
+	infatti è caratterizzato dalle proprietà locali.
+	\marginpar{Cosa vuol dire <<che costituisce la struttura locale>>?}
 \end{oss}
 
 \begin{defn}[Derivata direzionale]
-Dato $v\in T_x U$ la derivata direzionale lungo il vettore $v$ nel punto $x$ è un'applicazione lineare sullo spazio dei germi definita nel modo seguente:
-\begin{gather*}
-\fundef[\delta_v]{\Sge_x~}{\R} \\
-\delta_v([f]) \is \sum_j v^j \left(\pderiv{f}{x^j}(x)\right)
-\end{gather*}
-Dove i $v^j$ sono le componenti del vettore $v$ nella base canonica di $\R ^n$.
+	Dato $v\in T_x U$ la \emph{derivata direzionale} lungo il vettore $v$ nel punto $x$
+	è un'applicazione lineare sullo spazio dei germi definita nel modo seguente:
+	\begin{align*}
+		\delta_v: \Sge_x &\funarrow \R \\
+		[f] &\mapsto \sum_j v^j \pderiv{f}{x^j}(x)
+	\end{align*}
+	Dove i $v^j$ sono le componenti del vettore $v$ nella base canonica di $\R ^n$.
 \end{defn}
 
 \begin{oss}[Proprietà della derivata direzionale]
-Si verifica facilmente che la derivata direzionale, in un punto $x$ fissato, ha le seguenti proprietà:
-\begin{itemize}
-\item è ben definita (cioè non dipende dal rappresentante del germe)
-\item è $\R$-lineare
-\item ha la proprietà di Leibniz:
-\begin{equation*}
-\delta_v(f\circ g) = f(x)\delta_v(g) + g(x)\delta_v(f)
-\end{equation*}
-\end{itemize}
-Che si riassumono dicendo che $\delta_v$ è una \emph{derivazione} su $\Sge_x$ (questa definizione corrisponde agli ultimi due punti).
+	Si verifica facilmente che la derivata direzionale, in un punto $x$ fissato, ha le seguenti proprietà:
+	\begin{itemize}
+		\item è ben definita (cioè non dipende dal rappresentante del germe);
+		\item è $\R$-lineare;
+		\item
+			ha la proprietà di Leibniz:
+			\[ \delta_v(f\circ g) = f(x)\delta_v(g) + g(x)\delta_v(f) \]
+	\end{itemize}
+	Che si riassumono dicendo che $\delta_v$ è una \emph{derivazione} su $\Sge_x$ (questa definizione corrisponde agli ultimi due punti).
 \end{oss}
 
-Si ha inoltre che, sempre fissato il punto $x$, è definita la funzione $\fundef[\delta_v]{T_x U}{\Der(\Sge_x)}$ che ad ogni vettore associa una derivazione su $\Sge_x$.
+Si ha dunque che, sempre fissato il punto $x$, è definita la funzione $\fundef[\delta]{T_x U}{\Der(\Sge_x)}$ che manda $v\mapsto\delta_v$, dove $\Der(\Sge_x)$ è lo spazio delle derivazioni su $\Sge_x$.
 
 \begin{lemma}
-L'applicazione $\delta$ è un isomorfismo di spazi vettoriali
+L'applicazione $\delta$ è un isomorfismo di spazi vettoriali.
 \end{lemma}
 \begin{proof}
 Si verificano le proprietà di un isomorfismo singolarmente:
 \begin{description}
-\item[Linearità] è evidente dalla definizione
-\item[Iniettività] il nucleo di $\delta$ è evidentemente $\set{0}$, infatti la derivazione nulla è quella in cui $v^j = 0~ \forall j$
-\item[Suriettività] si deve verificare che $\forall d\in \Der(\Sge_x)\ \ \exists v\in T_x U\ \text{t.c.}\ d = \delta_v$. Dato $f\in \Sge_x$ sia $h = f -f(x)$. Poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso. Si applica dunque ad $h$ il lemma di Morse: $h(x) = \sum_j g_j(x)x_j$ con le $g_j$ lisce e $\text{t.c.}\ g_j(x) = \pderiv{f}{x^j}(x)$. Allora si ha:
+\item[Linearità] È evidente dalla definizione.
+\item[Iniettività] Il nucleo di $\delta$ è $\set{0}$, infatti la derivazione nulla è quella in cui $v^j = 0~ \forall j$.
+\item[Suriettività] Si deve verificare che $\forall d\in \Der(\Sge_x)\ \exists v\in T_x U\ \text{t.c.}\ d = \delta_v$. Dato $f\in \Sge_x$ sia $h(y) \is f(y) -f(x)$. Poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso. Si applica dunque ad $h$ il \autoref{th:lemprec}: $h(y) = \sum_j g_j(y)(y-x)^j$ con le $g_j$ lisce e tali che $g_j(x) = \pderiv{f}{x^j}(x)$. Allora si ha:
 \begin{equation*}
-d(h) = d(f - f(x)) = d(f) - d(f(x)) = d(f) = \sum_jd(x^j)g_j(x) 
+d(f) = d(h) = \sum_jg_j(x)d(y\mapsto y^j) 
 \end{equation*}
-e quindi $v$ è definito per componenti $v^j = d(x^j)$
+e quindi $v$ è definito per componenti $v^j = d(y\mapsto y^j)$.
 \qedhere
 \end{description}
 \end{proof}
@@ -147,47 +193,46 @@ e quindi $v$ è definito per componenti $v^j = d(x^j)$
 \begin{oss}
 Sia $\fundef[\varphi]{U}{W}$ un'applicazione liscia, e $\fundef[f]{W}{\R}$ un'altra applicazione liscia. Allora $\fundef[\delta_v]{\Sge_x}{\R}$ ha la seguente proprietà:
 \begin{equation*}
-\delta_v(f\circ \varphi) = \delta_{d\varphi (v)}(f)
+\delta_v(f\circ \varphi) = \delta_{\de_x\varphi (v)}(f)
 \end{equation*}
 \end{oss}
 
-\subtitlet{Costruzione del fibrato tangente su varietà differenziabili}
+\subtitlet{Costruzione del fibrato tangente su varietà}
 
-Si vogliono ora estendere le definizioni date a generiche varietà differenziabili.
-
-Sia dunque $M$ una n-varietà liscia e $\mathcal{A} = \set{(U_j, \varphi _j)}_j$ un atlante massimale.
+Si vogliono ora estendere le definizioni date a generiche varietà.
+Sia dunque $M$ una $n$-varietà con atlante massimale $\set{(U_i, \phi _i)}_{i\in I}$.
 
 \begin{figure}
 \centering
 \input{figura9.pdf_tex}
-\caption{Cambiamento di carte su cui si definisce il cociclo}
+\caption{Cambiamento di carte su cui si definisce il cociclo.}
 \end{figure}
 
 \begin{oss}
-Dato un cambiamento di carte $\varphi _j \circ \varphi _i ^{-1}$ si ha che esso è una funzione tra aperti di $\R ^n$ ed è perciò definita l'applicazione tangente:
+Dato un cambiamento di carte $\phi _j \circ \phi _i ^{-1}$ si ha che esso è una funzione tra aperti di $\R ^n$ ed è perciò definita l'applicazione tangente:
 \begin{equation*}
-D(\varphi _j \circ \varphi _i ^{-1}): (x,v) \mapsto \big(\varphi _j \circ \varphi _i ^{-1}(x), \de_x(\varphi _j \circ \varphi _i ^{-1})(v)\big)
+D(\phi _j \circ \phi _i ^{-1}): (x,v) \mapsto \big(\phi _j \circ \phi _i ^{-1}(x), \de_x(\phi _j \circ \phi _i ^{-1})(v)\big)
 \end{equation*}
 \end{oss}
 
 Si considerano ora le applicazioni $\mu_{ji}$ definite come segue:
 \begin{align*}
-\mu_{ji} : U_i\cap U_j &\funarrow \GL(n) \\
-x &\mapsto \de_{\varphi_j(x)(\varphi _j \circ \varphi _i ^{-1})}
+\mu_{ji} : U_i\cap U_j &\funarrow \GL_n \\
+x &\mapsto \de_{\phi_i(x)}(\phi _j \circ \phi _i ^{-1})
 \end{align*}
 
 \begin{oss}[Proprietà delle $\mu_{ji}$]
 Si ha che le funzioni ora definite hanno le seguenti proprietà:
 \begin{itemize}
-\item ogni $\mu_{ji}$ è liscia
-\item $\forall i$ si ha che $\fundef[\mu_{ii}]{U_i}{\GL(n)}$ ha come immagine $\set{\id}$
-\item $\mu_{ji} = [\mu_{ji}]^{-1}$ \marginpar{\normalsize??}
-\item $\forall x \in U_i\cap U_j\cap U_k$ si ha che $\mu_{ik}(x)\mu_{kj}(x)\mu_{ji}(x) = \id$
+\item ogni $\mu_{ji}$ è liscia;
+\item $\forall i$ si ha che $\fundef[\mu_{ii}]{U_i}{\GL_n}$ ha come immagine $\set{\id}$;
+\item $\mu_{ji}(x) = \mu_{ij}(x)^{-1}$;
+\item $\forall x \in U_i\cap U_j\cap U_k$ si ha che $\mu_{ij}(x)\mu_{jk}(x)\mu_{ki}(x) = \id$.
 \end{itemize}
 Una famiglia di funzioni che verifica le ultime tre proprietà è detta \emph{cociclo}.
 \end{oss}
 
 
 \begin{epigraphs}	
-\qitem{\emph{Un cociclo è una \emph{colla} che incolla le fibre}}{\emph{R.Benedetti}}
+\qitem{Un cociclo è una \emph{colla} che incolla le fibre}{R.Benedetti}
 \end{epigraphs}
