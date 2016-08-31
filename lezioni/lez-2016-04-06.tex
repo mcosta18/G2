@@ -35,14 +35,16 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
 
 \begin{proof}
  Poiché $X$ è compatta esiste un atlante finito $\set{(U_i, \phi_i)}_{i = 1, ..., m}$ tale che 
+%chi ti ha detto che esista un atlante con la proprietà 2?
+%proposta: prendo un atlante, faccio in modo che ogni punto caschi in un C_i, prendendo un'altra carta per ogni punto, simile ad una che ho già in cui compare il punto in questione, con l'immagine opportunamente traslata, cosicché il punto caschi in 0, e la aggiungo all'atlante; essendo traslazioni i cambiamenti di carta sono ovviamente lisci, quindi continua ad essere un atlante, e i C_i ricoprono X, a questo punto poiché X è compatto estraggo su i C_i: una sottofamiglia di carte è ovviamente compatibile, perchè lo era nell'atlante di partenza, e poiché i C_i ricoprono lo fanno anche le carte in cui sono contenuti, quindi è a tutti gli effetti un atlante e soddisfa la proprietà 2. La proprietà 1 è facilmente soddisfatta, prendendo in partenza per l'altro un atlante finito, magari ottenuto estraendo da uno a caso, e scegliendo nell'immagine di ogni carta una palla centrata in 0 e intersecandole tutte: ottengo un'altra palla aperta che soddisfa la proprietà 1 e la chiamo B_2 (se voglio ovviamente, riscalando opportunamente le carte, non c'è problema a fare in modo che abbia proprio raggio 2), e poi riparto con il procedimento di sopra
  \begin{itemize}
   \item $\ball[2]0 \subseteq {\phi}_{i}(U_{i})$
-  \item ${\phi_{i}^{-1}(\ball[1]0)}$ ricopre tutto $X$
+  \item la famiglia ${\phi_{i}^{-1}(\ball[1]0)}$ ricopre l'insieme $X$
   \end{itemize}
  Sia $\fundef[\lambda]{\R^N}{[0, 1]}$ la funzione a foruncolo relativa alle palle $B_{1}$ e $B_{2}$. Definisco la funzione $\fundef[\lambda_i]{U_i\subseteq X}{[0,1]}$
  come $\lambda \circ \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$.
  
- ${B_{i}}$ ricopre $X$ e $B_{i} = {\lambda}^{-1} \subseteq U_{i}$. Poiché $\lambda_i$ vale 1 quando sono su ${\phi_{i}}^{-1} (\ball[1]0)$ ho un ricoprimento.
+ ${C_{i}} = {\phi_{i}}^{-1} (\ball[1]0)$ ricopre $X$ e $C_{i} = {\lambda}_{i}^{-1}(1) \subseteq U_{i}$. Poiché $\lambda_i$ vale 1 quando sono su ${\phi_{i}}^{-1} (\ball[1]0)$, e quindi i $C_{i}$ sono un ricoprimento.
 
 
 \begin{figure}
@@ -50,21 +52,22 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
     \input{figura41.pdf_tex}
     \caption{Palle $B_{1}$ e $B_{2}$}
 \end{figure}
+\marginpar{la figura fa schifo: manca lo 0, inutile ma citato, i nomi sono sparsi a casaccio}
  
  Definisco $\fundef[f]{X}{\R^N}$ come $\lambda_{i}  \phi_{i}$ in $U_{i}$ e $0$ in $X \setminus U_{i}$. Considero le funzioni $\fundef[g_{i}]{X}{\mathbb{R}^{N}}$
  definita come $x \mapsto (f_{i}(x), \lambda_{i}(x))$. Definisco ancora la funzione $g$ che: $x \mapsto (g_1, g_2, \dots, g_m)$.
  
  \marginpar{da rivedere - fede}
  
- Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $g$ è omomorfismo nella sua immagine
- cioè ha funzione inversa continua.
+ Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $g$ è omeomorfismo nella sua immagine cioè ha funzione inversa continua.
  
- \begin {itemize}
-  \item è diffeomorfismo per costruzione
-  \item tutte le $g_{i}$ per come son state costruite sono immersioni ogniuna nel suo $\psi^{-1}(B_1(0))$
-  \item g è iniettiva: se ho $x \neq y$  ho due possibilità: $x, y \in B_{i}$ allora la $f_i$ coincide con la $\phi_i$ sulla palla $B_{i}$, che è iniettiva sulla palla. 
-  Oppure $x, y$ stanno in due palle diverse in particolare $y \in B_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x) = 0$. Dunque ogni funzione $g_i$ è iniettiva e quindi lo è anche la funzione
-  $g$.
+\begin {itemize}
+  \item tutte le $g_{i}$ per come son state costruite sono immersioni ognuna nel suo $\phi^{-1}(B_1(0))$;
+%dovrebbe esserlo ovunque! in particolare dovrebbe esserlo in phi^{-1}(B_2(0)), per il resto è nulla
+  \item g è iniettiva: se ho $x \neq y$  ho due possibilità: $x, y \in C_{i}$ allora la $f_i$ coincide con la $\phi_i$ sull'aperto $C_{i}$, che è iniettiva su tali aperti, perchè contenuti nelle carte. 
+  Oppure $x, y$ stanno in due $C_i$ diversi, in particolare $y \in C_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x) \neq 1$. Dunque ogni funzione $g_i$ è iniettiva e quindi lo è anche la funzione $g$;
+  \item dunque è invertibile sull'immagine, e l'inversa c'è da dimostrare che è continua.
+%in particolare \lambda_i manda aperti, i C_i, in chiuso, il singoletto {1}, quindi non so come faccia g a mandare aperti in aperti
   \qedhere
  \end {itemize}
 \end{proof}
@@ -126,10 +129,5 @@ Unendo gli intorni per tutte le funzioni ottengo effettivamente una base di into
 \begin{oss}
  La topologia che ottengo è metrizzabile.
 \end{oss}
-
-
-
-
-
 
 
