@@ -30,7 +30,7 @@ Fisicamente potete pensare $W$ come una transizione da $V_0$ a $V_1$.
 	\input{figura18.pdf_tex}
 \end{center}
 
-Il concetto di cobordismo estende quello di diffeomorfismo:
+Il concetto di cobordismo indebolisce quello di diffeomorfismo:
 
 \begin{prop}
 	\label{th:diffcob}
@@ -84,12 +84,12 @@ Il concetto di cobordismo estende quello di diffeomorfismo:
 	\label{th:varglue}
 	Siano $W$ e $W'$ $n$-varietà con due sottovarietà dei loro bordi diffeomorfe:
 	\[Z\subseteq\boundary W,\ Z'\subseteq\boundary W',\ \fundef[\varphi]Z{Z'}\text{ diffeomorfismo}\]
-	Sia $\mathscr H$ il quoziente dell'unione di $W$ e $W'$ rispetto all'equivalenza indotta da $\varphi$:
-	\[\mathscr H=\quoset{W\djcup W'}\sim,\qquad x\sim y\means x=\varphi(y)\vel y=\varphi(x)\]
-	Allora $\mathscr H$ ammette una struttura di $n$-varietà con bordo dato dalle parti non diffeomorfe dei bordi e con $W$ e $W'$ che possono essere considerate sottovarietà di $\mathscr H$, cioè le immersioni di $W$ e $W'$ in $\mathscr H$ sono embedding:
+	Sia $\mathcal W$ il quoziente dell'unione di $W$ e $W'$ rispetto all'equivalenza indotta da $\varphi$:
+	\[\mathcal W=\quoset{W\djcup W'}\sim,\qquad x\sim y\means x=\varphi(y)\vel y=\varphi(x)\]
+	Allora $\mathcal W$ ammette una struttura di $n$-varietà con bordo dato dalle parti non diffeomorfe dei bordi e con $W$ e $W'$ che possono essere considerate sottovarietà di $\mathcal W$, cioè le immersioni di $W$ e $W'$ in $\mathcal W$ sono embedding:
 	\begin{gather*}
-		\mathscr H\text{ $n$-varietà},\ \boundary\mathscr H=(\boundary W\setminus Z)\djcup(\boundary W'\setminus Z'),\\
-		\Fundefhook[j]{W}{\mathscr H},\,\Fundefhook[j']{W'}{\mathscr H}\text{ embedding}
+		\mathcal W\text{ $n$-varietà},\ \boundary\mathcal W=(\boundary W\setminus Z)\djcup(\boundary W'\setminus Z'),\\
+		\Fundefhook[j]{W}{\mathcal W},\,\Fundefhook[j']{W'}{\mathcal W}\text{ embedding}
 	\end{gather*}
 \end{prop}
 
@@ -106,19 +106,19 @@ Il concetto di cobordismo estende quello di diffeomorfismo:
 		g_1|_{Z\times\set1}&=\id\\
 		g_2|_{Z'\times\set1}&=\id
 	\end{align*}
-	Definiamo una concatenazione $g$ in $\mathscr H$ dei collari:
+	Definiamo una concatenazione $g$ in $\mathcal W$ dei collari:
 	\begin{align*}
-		g&:Z\times(0,2)\funarrow\mathscr H \\
+		g&:Z\times(0,2)\funarrow\mathcal W \\
 		g(x,t)&\is\begin{cases}
 			j(g_1(x,t)) & t\in(0,1] \\
 			j'(g_2(\varphi(x),t)) & t\in(1,2)
 		\end{cases}
 	\end{align*}
-	Osserviamo che $\mathscr H$ è ricoperto dagli aperti $j(W\setminus Z)$, $j'(W'\setminus Z')$ e $g(Z\times(0,2))$ e che le mappe $j$, $j'$ e $g$ inducono un atlante liscio su $\mathscr H$ con le proprietà volute. Basta verificare che queste ``carte generalizzate'' siano compatibili.
+	Osserviamo che $\mathcal W$ è ricoperto dagli aperti $j(W\setminus Z)$, $j'(W'\setminus Z')$ e $g(Z\times(0,2))$ e che le mappe $j$, $j'$ e $g$ inducono un atlante liscio su $\mathcal W$ con le proprietà volute. Basta verificare che queste ``carte generalizzate'' siano compatibili.
 \end{proof}
 
 \begin{oss}
-	Abbiamo dimostrato l'esistenza di un incollaggio, ma in verità si può mostrare anche l'unicità: dati due incollaggi di due varietà fissate, sono diffeomorfi e il diffeomorfismo è l'identità fuori da un intorno compatto del bordo d'incollaggio.
+	Abbiamo dimostrato l'esistenza di un incollaggio, ma in verità si può mostrare anche l'unicità: dati due incollaggi di due varietà fissate, essi sono diffeomorfi e il diffeomorfismo è l'identità fuori da un intorno compatto del bordo d'incollaggio.
 \end{oss}
 
 Consideriamo ora l'insieme $\eta_n$ delle $n$-varietà compatte chiuse quozientate per cobordismo:
@@ -129,7 +129,7 @@ L'elemento neutro è $[\nullset]$, cioè la classe dei bordi:
 \[[\nullset]=\setdef[X]{\exists W:X=\boundary W}\]
 L'unione disgiunta di due varietà chiuse cobordanti è un bordo, per definizione. Ma ogni varietà chiusa è cobordante a se stessa, quindi:
 \[[X\djcup X]=[\nullset]\implies-[X]=[X]\]
-Cioè in particolare $2[X]=[\nullset]$. Allora $(\eta_n,+,\	cdot)$ è uno spazio vettoriale sul campo finito $\quoset\Z{2\Z}=\set{0,1}$, con prodotto:
+Cioè in particolare $2[X]=[\nullset]$. Allora $(\eta_n,+,\cdot)$ è uno spazio vettoriale sul campo finito $\quoset\Z{2\Z}=\set{0,1}$, con prodotto:
 \[0\cdot[X]=[\nullset],\ 1\cdot[X]=[X]\]
 Vedremo poi che in generale $\eta_n$ non è banale. Adesso generalizziamo $\eta_n$: sia $Y$ una \emph{varietà obiettivo}, non necessariamente compatta; vogliamo definire un oggetto $\eta_n(Y)$ che si riduca a $\eta_n$ quando $\card Y=1$. Poniamo:
 \[\mathscr F=\setdef[\fundef XY]{\text{$X$ $n$-varietà compatta chiusa}\et\text{$f$ liscia}}\]

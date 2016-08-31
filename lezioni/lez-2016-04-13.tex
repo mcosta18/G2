@@ -3,7 +3,7 @@
 \marginpar{DA FINIRE}
 
 \begin{oss}
- $(g\circ h )_* = g_*\circ h*$,
+ $(g\circ h )_* = g_*\circ h_*$,
  $\id_* = \id$
 \end{oss}
 $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2} \right]$
@@ -15,10 +15,10 @@ $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2}
  detta $G_t\is  G|_{Y_1\times \set t}, G_0=g_0, G_1=g_1$.
 \end{defn}
  \begin{oss}
-  L'omotopia è un particolare cobordismo (basta considerare il cilindro associato!)
+  L'omotopia è un particolare cobordismo (basta considerare il cilindro associato!), in cui le varietà che costituiscono il bordo sono la stessa, ma la funzione verso la varietà obiettivo è differente.
  \end{oss}
 \begin{prop}
- $g_0, g_1$ omotope$\implies g_{0*}=g_{1*}$.
+ $\fundef[g_0, g_1]{Y_1}{Y_2}$ omotope$\implies g_{0*}=g_{1*}$.
 \end{prop}
 \begin{proof}
  \begin{figure}
@@ -26,13 +26,16 @@ $g_*\left(\left[\Fundef[f]X{Y_1} \right]\right) = \left[\Fundef[g\circ f]X {Y_2}
   \input{homotopy.pdf_tex}
   \caption{dimostrazione teorema}
  \end{figure}
- Costruisco ora il cobordismo. Pongo $\forall t\in \left[ 0,1\right], F(x,t)=(f(x,t), t)$
+ Per dimostrare che le due funzioni sono uguali verifico che valutate in ogni punto sono uguali, dove un punto di $\eta_n(Y_1)$ è una varietà con la sua funzione a valori in $Y_1$, e l'uguaglianza è ai sensi del cobordismo, quindi se in ogni punto sono cobordanti.
+
+ Costruisco ora il cobordismo. Poiché le valuto nello stesso punto, in partenza avrò la coppia $(X,f)$ con $X$ varietà e $\fundef[f]{X}{Y_1}$ liscia.
+
+ Ho già un cobordismo tra $(Y_1, g_1)$ e $(Y_1, g_2)$, realizzato dal cilindro di base $Y_1$ e come funzione sul cilindro l'omotopia $G$ che congiunge $g_1$ a $g_2$. Considero inoltre, in partenza, il cilindro di base $X$, e lo mando nell'altro cilindro mediante la funzione definita da $\forall t\in \left[ 0,1\right], F(x,t)=(f(x,t), t)$. Componendo le funzioni sui due cilindri ottengo un cobordismo fra $g_{1*}((X,f))$ e $g_{1*}((X,f))$, valido per ogni coppia $(X,f) \in \eta_n(Y_1)$
   \begin{figure}
   \centering
   \input{homotopy2.pdf_tex}
   \caption{$G\circ F (W) = Y_2$}
  \end{figure}
-
 \end{proof}
 \begin{oss}
  $\eta_S (\R ^n) = \eta (punto)_S = \eta_S $
