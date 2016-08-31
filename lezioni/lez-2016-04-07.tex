@@ -30,17 +30,17 @@ Supponiamo per assurdo che sia falso. Allora potrò costruire una successione $g
 Poiché $X$ compatto, posso estrarre due sottosuccessioni $x_n \convarrow x_0$ e $y_n \convarrow y_0$. Se per assurdo $x_0 \neq y_0$, valuto $f$ in questi punti e dovrei avere $f(x_0)=f(y_0)$, ch'è assurdo poiché $f$ è iniettiva, ma allora $x_0=y_0$ e entrambe le serie convergono allo stesso punto $x_0$.
 
 Leggendo tutto attraverso una carta intorno a $x_0$ posso pensare $x_0$ e le successioni $x_n$ e $y_n$ in $\R^n$.
-Poiché $g_n(y_n)-g_n(x_n)=0$, per il teorema del valor medio $\exists z_n \text{ t.c. } \de_{z_n}g_n[y_n-z_n]=0$.
-\marginpar{questa scrittura con le quadre non mi è chiara}
+Poiché $g_n(y_n)-g_n(x_n)=0$, per il teorema del valor medio $\exists z_n \text{ t.c. } \de_{z_n}g_n(y_n-x_n)=0$.
+\marginpar{questa scrittura con le quadre non mi è chiara - infatti sono delle parentesi tonde, stai semplicemente valutando una funzione lineare, a volte le quadre si usano per il punto in cui prendi il differenziale, ma qui l'hai già indicato a pedice (Ale)}
 Ho inoltre che $z_n \convarrow x_0$ perché $z_n \in [x_n,y_n]$.
 
 Considero adesso $v_n \is \frac{y_n-x_n}{\left \|y_n - x_n \right \|} \in S^{n-1}$. Poiché $S^n$ è compatto a meno di estrarre una sottosuccessione $v_n \convarrow v_0 \in S^{n-1}$.
-Segue che $\de_{x_0}f[v_0]=0$,
+Segue che $\de_{x_0}f(v_0)=0$,
 \marginpar{manco qui}
 assurdo perché anche il differenziale di $f$ è iniettivo. \absurd
 \item [$\diff(X,Y)$] Per i punti precedenti presa $g$ funzione ``vicina'' a $f$ diffeomorfismo, $g$ è un embedding. Mi resta da mostrare la surgettività.
 
-Poiché $g$ è un embedding $g(x) \subseteq Y$ è aperto, inoltre $X$ è compatta, quindi $g(x)$ è anche chiuso (nelle ipotesi in cui lavoriamo compatto $\iff$ chiuso).
+Poiché $g$ è un embedding $g(X) \subseteq Y$ è aperto, inoltre $X$ è compatta, quindi $g(X)$ è anche chiuso (nelle ipotesi in cui lavoriamo compatto $\means$ chiuso, ad esempio $Y$ compatto, o $Y \subseteq \R^n$).
 
 Ma se $X$ e $Y$ sono connesse (ipotesi di comodo) allora $g(x) = Y$, ovvero $g$ è diffeomorfismo. In mancanza dell'ipotesi di comodo mi posso restringere alle singole componenti connesse in partenza e in arrivo.
 \qedhere
@@ -60,7 +60,7 @@ Infatti grazie alle proprietà del determinante e Binet:
 \begin{itemize}
 \item $\det M^{\mathcal{B}}_{\mathcal{B}} = \det \id = 1$
 \item $\det M^{\mathcal{B}}_{\mathcal{B''}} = \det ( M^{\mathcal{B}}_{\mathcal{B'}}  M^{\mathcal{B'}}_{\mathcal{B''}})= \det  M^{\mathcal{B}}_{\mathcal{B'}} \cdot \det  M^{\mathcal{B'}}_{\mathcal{B''}}$
-\item $\det M^{\mathcal{B}}_{\mathcal{B''}} = \det  M^{\mathcal{B'}}_{\mathcal{B}}$
+\item $\sgn(\det M^{\mathcal{B}}_{\mathcal{B'}}) = \sgn(\det  M^{\mathcal{B'}}_{\mathcal{B}})$, perché essendo una l'inversa dell'altra il determinante è il reciproco, e quindi mantiene il segno
 \qedhere
 \end{itemize}
 \end{proof}
@@ -78,7 +78,7 @@ Sia $X$ una varietà e $A = \{U_j, \phi_j\}$ un atlante di $X$ (non necessariame
 \end{defn}
 
 \begin{defn}[Atlanti compatibili]
-Due atlanti orientati (ammesso che esistano) sono \emph{compatibili} se la loro unione è un atlante orientato.
+Due atlanti orientati sullo stesso spazio topologico sono \emph{compatibili} se la loro unione è un atlante orientato.
 \end{defn}
 
 \begin{defn}[Orientazione su varietà]
