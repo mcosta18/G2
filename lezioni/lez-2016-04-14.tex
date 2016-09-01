@@ -7,7 +7,7 @@ Prima di tutto si esamina la struttura di varietà differenziabili in dimensione
 \item [n = 0] $X \in \{$0-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = \set{pt.}$, mentre in generale, in mancanza di connessione, si avrà un'unione disgiunta di punti;
 
 $X \in \{$0-varietà compatte orientate connesse$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ $\implies X = \set{pt., \pm}$, dove il segno specifica l'orientazione, e nel caso generale non connesso si ha un'unione disgiunta di punti con segno;
-\item [n = 1] $X \in \{$1-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = [a,b]$ nel caso di varietà con bordo $~\vel~ X = S^1$ nel caso di mancanza di bordo, al solito nel caso generale si ha un'unione disgiunta degli spazi descritti (quest'ultimo fatto è vero, ma la dimostrazione è non banale);
+\item [n = 1] $X \in \{$1-varietà compatte connesse$\}$/$\{$diffeomorfismi$\}$ $\implies X = [a,b]$ nel caso di varietà con bordo oppure $X = S^1$ nel caso di assenza di bordo, al solito nel caso generale si ha un'unione disgiunta degli spazi descritti (quest'ultimo fatto è vero, ma la dimostrazione è non banale);
 
 $X \in \{$1-varietà compatte orientate$\}$/$\{$diffeomorfismi che preservano l'orientamento$\}$ allora $X$ è uno spazio di quelli descritti nel caso non orientato, dove l'orientazione è definita per ogni componente connessa scegliendo il verso orario o antiorario per ogni componente senza bordo (di tipo $S^1$) e positivo o negativo (con riferimento alla struttura ordinata di $\R$) per le componenti con bordo (di tipo intervallo chiuso).
 
@@ -22,7 +22,7 @@ Sulle componenti con bordo si ha inoltre un'orientazione indotta, conformemente 
 \input{figura11.pdf_tex}
 \caption{Orientamento indotto sul bordo di un intervallo}
 \end{figure}
-Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. Stessa cosa per $b$.
+Perciò nell'intervallo $[a,b]$ si ha che il punto $a$ ha segno $+$ se la normale uscente è concorde con l'orientamento dell'intervallo, cioè se $[a,b]$ è preso con verso negativo, $-$ altrimenti. L'opposto per $b$.
 \end{description}
 
 \paragraph{Spazio $\eta_0$}
@@ -38,7 +38,7 @@ Prese due varietà compatte $X = \set{x_1, \dots, x_k}$, $f(x_i) = y_i$ e $Z = \
 \end{figure}
 Da questo si può osservare che riesco sempre a connettere tutti i punti con degli archi, ammesso che il totale sia pari (ogni arco ha un principio e una fine).
 \end{es}
-Perciò una condizione necessaria è che le due varietà abbiano cardinalità con la stessa parità. Inoltre poiché c'è bisogno anche di un diffeomorfismo $F$ su $W$ (che si identifica con l'unione disgiunta degli archi), se si considerano le immagini degli estremi di ogni arco si ha che anch'esse sono connesse da un arco immagine. Perciò, considerando una sola componente connessa di $Y$, la condizione di parità espressa precedentemente sulle intere varietà si deve quindi restringere alle controimmagini delle componenti connesse.
+Perciò una condizione necessaria è che le due varietà abbiano cardinalità con la stessa parità. Inoltre poiché c'è bisogno anche di un diffeomorfismo $F$ su $W$ (che si identifica con l'unione disgiunta degli archi), se si considerano le immagini degli estremi di ogni arco si ha che anch'esse sono connesse da un arco immagine. Perciò, considerando una per una le componenti connesse di $Y$, si ha che la condizione di parità espressa precedentemente sulle intere varietà si deve quindi restringere alle controimmagini delle componenti connesse.
 
 Si ottiene infine che due varietà sono cobordanti \emph{se e solo se} le controimmagini di una componente connessa in entrambe le varietà hanno la stessa parità.
 
@@ -46,7 +46,9 @@ Si è così ottenuta la struttura dello spazio:
 \begin{equation*}
 \eta_0(Y) = \Z/2\Z~\times~\Z/2\Z~\times~\cdots~\times~\Z/2\Z
 \end{equation*}
-tanti termini quante sono le componenti connesse di $Y$.
+tanti termini quante sono le componenti connesse di $Y$. \footnotemark
+
+\footnotetext{Cioè la dimensione dello spazio vettoriale è pari al numero di componenti connesse della varietà obiettivo}
 
 \begin{figure}[h]
 \centering
@@ -56,7 +58,7 @@ tanti termini quante sono le componenti connesse di $Y$.
 
 \paragraph{Gruppo $\Omega_0$}
 Come nel caso non orientato si hanno le stesse condizioni necessarie sugli archi (riguardanti la parità delle controimmagini delle componenti connesse). Si ha in più una condizione sull'orientamento, infatti ogni arco ha due estremi orientati in modo opposto.
-Perciò stavolta ciò che identifica la relazione tra le controimmagini delle componenti connesse non è la parità, ma la somma dei segni, che complessivamente deve essere nulla, da cui si ottiene che fissate tali somme in una varietà, l'altra, per essere cobordante, deve avere le stesse con segno opposto, in modo che tutte sommino a 0.
+Perciò stavolta ciò che identifica la relazione tra le controimmagini delle componenti connesse non è la parità, ma la somma dei segni, che complessivamente deve essere nulla fra due varietà cobordanti, per ogni componente connessa, da cui si ottiene che fissate tali somme in una varietà, l'altra, per essere cobordante, deve avere le stesse con segno opposto, in modo che tutte sommino a 0.
 
 La struttura del gruppo è dunque: 
 \begin{equation*}
@@ -68,7 +70,7 @@ anche qui il numero di termini è pari al numero di componenti connesse.
 
 \paragraph{Un paio di claim}
 \begin{itemize}
-\item C'è una mappa d'oblio $\fundef{\Omega_n(Y)}{\eta_n{Y}}$, che perde parte delle informazioni, quelle derivanti dall'orientamento;
+\item C'è una mappa d'oblio $\fundef{\Omega_n(Y)}{\eta_n(Y)}$, che perde parte delle informazioni, quelle derivanti dall'orientamento;
 \item Si possono classificare le superfici (2-varietà), mediante gli invarianti $\eta_1(Y)$ e $\Omega_1(Y)$, con $Y$ superficie.
 \end{itemize}
 
@@ -80,7 +82,7 @@ Si vuole introdurre un concetto secondo cui ci siano alcuni oggetti siano ``spec
 
 \begin{es}~
 \begin{itemize}
-\item In $\R^2$ quali sono i sottospazi di $\dim = 1$ rispetto ad una data retta? Solo se stesso, se come discriminante si considera lo spazio generato dalla retta fissata con l'altra arbitraria. Infatti tutti generano il piano di $\dim = 2$, tranne la retta stessa, che con se stessa genera uno spazio di $\dim = 1$ (sempre sé);
+\item In $\R^2$ quali sono i sottospazi speciali di $\dim = 1$ rispetto ad una data retta? Solo se stesso, se come discriminante si considera lo spazio generato dalla retta fissata con l'altra arbitraria. Infatti tutti generano il piano di $\dim = 2$, tranne la retta stessa, che con se stessa genera uno spazio di $\dim = 1$ (sempre sé);
 \item Per i piani nello spazio relativamente a una retta, o le rette relativamente ai piani, o sottospazi in dimensione più elevata si hanno delle estensioni naturali;
 \item Per le curve in uno spazio di $\dim \geq 2$ si ottiene una nozione analoga considerando i punti di intersezione e gli spazi tangenti in tali punti. Cioè sugli spazi tangenti si hanno le stesse relazioni descritte mediante l'algebra lineare.
 \end{itemize}
@@ -110,27 +112,26 @@ Si scrive inoltre che $f \pitchfork A$.
 $Y = \R^2$, $\Fundefhook[f]{X}{\R^2}$. I punti su cui verificare la proprietà di trasversalità sono l'intersezione, cioé:
 
 $\forall x \in X \cap A$ allora $T_xA + \id(T_xX) = \R^2 \iff T_xA \oplus T_xX$, infatti, essendo $f$ un'immersione, allora la sua applicazione tangente coincide con l'identità.
-\marginpar{FIGURA di curve trasverse, punti su cui verificare}
+\marginpar{FIGURA di curve trasverse, punti su cui verificare - C'è, basta guardare, attualmente è la numero 21 nel pdf (Ale)}
 \end{es}
 
 \begin{defn}[Trasversalità per superfici con bordo]
 Se $\partial X \neq \nullset$ definisco $f$ \emph{trasversa} ad $A$ se si ha $f|_{\partial X} \pitchfork A$ (infatti il bordo di una varietà è senza bordo).
-\marginpar{FIGURA?}
+\marginpar{FIGURA? - inutile, verrebbe identica a quella del caso senza bordo, al massimo si può esplicitare il rimando all'altra (Ale)}
 \end{defn}
 
 \paragraph{Focus}
 Si ha allora che:
 \begin{itemize}
 \item Se $f(X) \cap A = \nullset$ allora $f \pitchfork A$ per vacuità;
-\item $\Fundefhook[i]{X}{A \subseteq Y}$ sottovarietà, allora $i \pitchfork Y \iff X \pitchfork Y$, cioè $\forall x \in X\cap Y: T_xX + T_xA = T_xY$.
-
+\item Se $A = Y$ allora qualunque $f$ è trasversale;
+\item $\Fundefhook[i]{X}{Y}$ sottovarietà, allora $i \pitchfork A \iff X \pitchfork A$, cioè $\forall x \in X\cap A: T_xX + T_xA = T_xY$.
 Inoltre se $\dim X +\dim A = \dim Y \implies T_xX \oplus T_xA = T_xY$ (cioè $T_xX \cap T_xA = \set{0}$);
 \item Se $A = \set{y_0}$, $f \pitchfork \set{y_0}$:
-
-$\forall x \in X$ t.c. $f(x) = y_0$ allora $T_{y_0}(A) + D_xf(T_xX) = T_{y_0}Y \iff D_xf$ è surgettiva $\forall x \in f^{-1}(y_0)$, poiché $T_{y_0}(A)$
-\marginpar{Questa frase è torbida}
+$\forall x \in X$ t.c. $f(x) = y_0$ allora $T_{y_0}(A) + D_xf(T_xX) = T_{y_0}Y \iff D_xf$ è surgettiva $\forall x \in f^{-1}(y_0)$, poiché $T_{y_0}(A) = \set{0}$
+\marginpar{Questa frase è torbida - obiezione respinta in mancanza di ulteriori argomentazioni (Ale)}
 \end{itemize}
 
 \begin{defn}
-Si dice che $y_0 \in Y$ è un \emph{valore regolare} per $f$ se $\forall x \in f^{-1}(y_0)$ si verifica $D_xf$ è surgettiva, mentre $x \in X$ è un \emph{punto critico} per $f$ se $D_xf$ non è surgettiva.
+Si dice che $y_0 \in Y$ è un \emph{valore regolare} per $f$ se ogni $x \in f^{-1}(y_0)$ è un \emph{punto regolare} per $f$, cioè si verifica $D_xf$ è surgettiva, mentre $x \in X$ che non è regolare è detto \emph{punto critico}.
 \end{defn}
