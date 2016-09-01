@@ -36,6 +36,7 @@ Sarà quindi $D(Z) = (D(f))^{-1}(A)$ una sottovarietà di $D(X)$ e allora $Z = f
 Ora ci prepariamo ad affrontare la dimostrazione del (Teorema 2). Faremo un po' di nomenclatura e poi caleremo dal cielo senza dimostrazione qualche cannone come il teorema di Brown. Infatti se non bariamo un po' non riusciamo ad arrivare in fondo.
 
 \begin{defn} Sia $\fundef{X}{Y}$ una funzione liscia. Ricordiamo che un punto $x \in X$ si dice \emph{critico} per $f$ se $\fundef[D_xf]{T_xX}{T_{f(x)}Y}$ non è suriettiva. Chiameremo $C(f)$ l'insieme dei punti critici di $f$.
+\marginpar{inutile ricordare cos'è un punto critico, dato che è scritto due pagine prima, o se si preferisce due definizioni prima (Ale)}
 \end{defn}
 
 \begin{oss}
@@ -57,26 +58,42 @@ $\pitchfork(X,Y,A) \is \setdef[\fundef{X}{Y}]{f \pitchfork A}$ è un aperto dens
 \begin{proof}~
 \begin{description}
 \item [Apertura]
-Idea: l'algebra lineare ci da dei controlli locali (teorema del rango massimo) e la compattezza ci permette di estendere i controlli a livello globale.
+Idea: l'algebra lineare da dei controlli locali (teorema della funzione implicita) e la compattezza permette di estendere i controlli a livello globale, estraendo un ricoprimento finito di aperti controllati, nello stesso modo in cui si andrà a fare ora per la densità.
 \item [Densità]
 $X$ è compatto $\implies$ $f(X) \subseteq Y$ è compatto, quindi posso ricoprire $f(X)$ con un numero finito di carte locali di $Y$.
 
-Localmente vedo $Y$ come $\R^n$: $Y = U \subseteq \R^p \times \R^q$ e $A = \R^p \times \{ 0 \}$. Per ogni punto prendo una palla aperta $B$ e la sua controimmagine $K := f^{-1}(B) \subseteq X$; poiché i $K$ ricoprono $X$, che è compatta, allora posso estrarre un sottoricoprimento finito.
+Localmente si vede $Y$ come $\R^n$: $Y = U \subseteq \R^p \times \R^q$ e $A = \R^p \times \{ 0 \}$. Per ogni punto si prenda una palla aperta $B$ e la sua controimmagine $K := f^{-1}(B) \subseteq X$; poiché i $K$ ricoprono $X$, che è compatta, e dunque è possibile estrarre un sottoricoprimento finito.
 
 Sia $\pitchfork_K(X,Y,A) := \setdef[\fundef{X}{Y}]{f \pitchfork A \text{ lungo } K}$. Dimostriamo che $\forall K$ $\pitchfork_K(X,Y,A)$ è (un aperto) denso. 
 \begin{center}
   \input{fig13.pdf_tex}
 \end{center}
-La condizione di trasversalità si traduce quindi nel richiedere che, dato $f(x) \in A$, $x$ non sia un punto critico per $\pi \circ f$. Per il teorema di Brown esiste $\{ y_n \} \in \R^p \times \R^q$ tale che $y_n \convarrow 0$ e $(\pi \circ f)(y_n)$ è un valore regolare per $\pi \circ f$. Otteniamo $\{ f_n(x) \} = \{ f(x) - y_n \}$ che è una successione di funzioni trasverse ad $A$ e che converge uniformemente a $f$  in $K$.
+La condizione di trasversalità si traduce quindi nel richiedere che, dato $f(x) \in A$, $x$ non sia un punto critico per $\pi \circ f$, come accennato nella dimostrazione del Teorema 1 di trasversalità.
+\footnote{Confrontando più sopra si ha che la scelta della carta ha portato a $\pi(A) = 0$, per cui anche $\pi \circ f(x) = 0$}
+ Per il teorema di Brown esiste $\{ y_n \} \in \R^p \times \R^q$ tale che $y_n \convarrow 0$ e $\pi (y_n)$ è un valore regolare per $\pi \circ f$. Otteniamo $\{ f_n \} = \{ f - y_n \}$ che è una successione di funzioni trasverse ad $A$ e che converge uniformemente a $f$  in $K$.
 
-Abbiamo ottenuto che $\pitchfork_K(X,Y,A)$ è (un aperto) denso, dobbiamo estendere questa conquista a tutto $X$, ma questo non è difficile perché 
+Abbiamo ottenuto che $\pitchfork_K(X,Y,A)$ è denso, dobbiamo estendere questa conquista a tutto $X$, ma questo non è difficile perché 
 \begin{enumerate}
 \item per estendere le $f_n$ basta  usare le funzioni a foruncolo;
-\item basta notare che $\pitchfork(X,Y,A) = \union_K \pitchfork_K(X,Y,A)$ e poichè l'intersezione è finita ottengo che anche $\pitchfork(X,Y,A)$ è denso.
+\item basta notare che $\pitchfork(X,Y,A) = \inters_K \pitchfork_K(X,Y,A)$ e poichè l'intersezione è finita ottengo che anche $\pitchfork(X,Y,A)$ è denso. \footnotemark
 \end{enumerate}
 \end{description}
+\footnotetext{Infatti intersezione finita di aperti densi è un aperto denso, in generale sarebbe falso: basta pensare a $\Q$ in $\R$ e il suo complementare, entrambi densi con intersezione nulla}
+
+\marginpar{Attualmente nel tex è contenuta la dimostrazione di quanto descritto in nota sugli aperti densi, però è commentata (Ale)}
+%una qualunque intersezione finita di aperti densi è ancora densa.
+%vediamo come dimostrare questo:
+%Siano A_1, A_2, ... A_n aperti densi
+%e sia B la loro intersezione
+%provare che B è denso significa provare che per un qualunque aperto C l'intersezione con B non è vuota.
+%siccome gli A_1 è denso, C intersecato con A_1 non è vuoto,
+%indichiamo con C_1 questa intersezione che è ancora un aperto perchè intersezione di aperti
+%siccome A_2 è denso, C_1 intersecato con A_2 non è vuoto,
+%indichiamo con C_2 questa intersezione che è ancora un aperto perchè intersezione di aperti
+%iterando il procedimento arrivi al passo n che hai un insieme C_n che è l'intersezione di C con B e che non è vuota. 
 
 Per il caso $\boundary X \neq \nullset$ si usa anche qui il trucco del \emph{Doppio}.
+\marginpar{Non vedo dove abbiamo usato il fatto che X fosse chiuso (Ale)}
 \end{proof}
 
 Fra le potenti applicazioni di questi teoremi di trasversalità c'è il teorema di immersione (vedi lezione successiva).
