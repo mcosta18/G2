@@ -13,7 +13,7 @@ Diciamo che $X_1 \pitchfork X_2\means i_1\pitchfork i_2$.
 Ricordiamo la definizione di trasversalità per le funzioni: $i_1 \pitchfork i_2 \means\big((x_1,x_2)\mapsto(i_1(x_1),i_2(x_2)\big)\si i_1\times i_2\pitchfork\Delta\is\set{(y,y)\in Y\times Y}$.
 
 Siano $\hat i_1$ e $\hat i_2$ piccole perturbazioni di $i_1$ e $i_2$.
-\marginpar{\normalsize È meglio $\hat i$ o $\hat\imath$?}
+\marginpar{\normalsize È meglio $\hat i$ o $\hat\imath$? Io direi $\hat\imath$ (Ale)}
 Poiché gli embedding sono aperti, possiamo scegliere $\hat i_1$ e $\hat i_2$ embedding, omotopi a $i_1$ e $i_2$ e $\hat i_1\pitchfork\hat i_2$.
 \begin{figure}
 	\centering
@@ -33,8 +33,9 @@ Siano $\hat X_1\is\hat i_1(X_1)$ e $\hat X_2$ analogamente (vedi \autoref{fig:in
 
 \subtitlet{Versione orientata}
 
-Se $Y$, $X_1$, $X_2$ sono orientate, ogni punto di $\hat X_1\cap\hat X_2$ ha un segno.
+Se $Y$, $X_1$, $X_2$ sono orientate, ogni punto di $\hat X_1\cap\hat X_2$ ha un segno.\footnotemark
 Allora abbiamo naturalmente
+\footnotetext{Che si ricorda essere positivo se l'orientazione della base $(\base_{X_1}, \base_{X_2})$ è la stessa di $Y$, negativo altrimenti}
 
 \begin{defn}[Numero d'intersezione intero]
 	\[\intnum{X_1}{X_2}\is\sum_{x\in\hat X_1\cap\hat X_2}\sgn x\]
@@ -96,7 +97,7 @@ Non è detto che $h$ sia una sezione, e invece:
 	\item $s$ campo trasverso a $s_0$
 	\item $\set{x_1,\dots,x_k}$ zeri di $s$
 \end{itemize}
-Quindi per definizione $\intnum XX=\sum_{i=1}^k\sgn(x_i)$, dove $\sgn x=\sgn\det D_0s$ in una carta locale centrata in $x$.
+Quindi per definizione $\intnum XX=\sum_{i=1}^k\sgn(x_i)$, dove $\sgn x=\sgn\det D_0s$ in una carta locale centrata in $x$ (cioè con $\phi(x) = 0, ~\phi$ è la carta).
 
 \begin{oss}
 	Ogni $s$ è omotopo a $s_0$, vicino o lontano che sia.
@@ -106,11 +107,11 @@ Quindi per definizione $\intnum XX=\sum_{i=1}^k\sgn(x_i)$, dove $\sgn x=\sgn\det
 \[\forall s\text{ campo trasverso a }s_0:\intnum XX=\sum_{x\text{ zero di s}}\sgn x\]
 
 \begin{oss}
-	In carte locali, $\sgn x=\grad\hat s$\footnotemark.
+	In carte locali, $\sgn x=\grad\hat s$\footnotemark, con $\hat s$ riferita a una palla di centro $x$.
 	\footnotetext{Vedi inizio lezione.}
 \end{oss}
 
-\noindent Da cui sorge naturalmente un tentativo di generalizzazione.
+\noindent Da cui sorge naturalmente un tentativo di generalizzazione, dato che il grado lo posso definire anche per sezioni non trasverse a $s_0$.
 
 Sia $s$ campo su $X$ con un numero finito di zeri, non necessariamente trasverso a $s_0$.
 Possiamo sostituire il segno di uno zero con il grado di $\hat s$ in carte locali, questo si può fare anche se lo zero è degenere.

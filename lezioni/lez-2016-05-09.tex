@@ -1,26 +1,9 @@
 %Luzio 
 Nella lezione precedente si era visto come il doppio modo di calcolare la caratteristica di Eulero (per mezzo delle funzioni di Morse e per mezzo dei zeri di gradienti) ci fornisse di bei risultati come il fatto che $\chi(X)=0$ se $dim(X)$ è dispari.\\
-Ora si cerca di estendere tutto questo alle triadi. 
-
-\begin{defn}[Funzione di Morse su una triade]
-Sia $(W, V_0, V_1)$ una triade per cobordismo(non orientato). Una funzione $\fundef[f]{W}{[a_0, a_1]\subseteq \R}$ è di Morse se:\\
-\begin{itemize}
-\item $f^{-1}(a_0)=V_0$ e $f^{-1}(a_1)=V_1$
-\item $f$ non ha punti critici in un intorno di $\partial W$.
-\item tutti i punti critici sono non degeneri. 
-\end{itemize}
-\marginpar{In realtà basterebbe dire che non ha punti critici in $\partial W$ e che tutti i punti critici sono non degeneri.}
-\end{defn}
-
-Si ha ora il seguente teorema di "trasverslità".
-
-\begin{teo}
-Le funzioni di Morse sulla triade $(W, V_0, V_1)$ sono un aperto denso di $\epsilon(W, R)$.
-\end{teo}
 
 \begin{defn}[Campo di vettori sulla triade]
 Un campo di vettori sulla triade $(W, V_0, V_1)$ è una sezione di $T(W)$ tale che sia entrante in $V_0$ e uscente in $V_1$.
-\marginpar{Entrante e uscente sono un po' fumosi (be, quando li ha detti in classe nessuno ha protestato, ma ora...? Probabilmente la cosa è chiara in carte locali. Prendendo una carta locale...}
+\marginpar{Entrante e uscente sono un po' fumosi (be, quando li ha detti in classe nessuno ha protestato, ma ora...? Probabilmente la cosa è chiara in carte locali. Prendendo una carta locale... - Benedetti definì entrante e uscente in una lezione precedente, in particolare lo usò per definire l'orientazione indotta sul bordo, comunque sì: è definita in carte locali relativamente al semispazio $\H^n$ (Ale)}
 \end{defn}
 \begin{teo}
 Sia $s$ un campo di vettori su $(W, V_0, V_1)$. La funzione $\chi(s):=\sum_{\text{x zeri di s}} i_s(x)$ è indipendente da $s$.

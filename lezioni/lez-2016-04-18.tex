@@ -17,8 +17,9 @@ Sia $f \not\pitchfork A$. Esiste una funzione $g$ arbitrariamente vicina a $f$ t
 \marginpar{Ma la prima affermazione di questo teorema non è già nel teorema 2 quando si afferma che l'insieme è un aperto \emph{denso}}
 \item [Tipo 3] %"Siano pure trasverse, ma che siano almeno cobordanti!"
 \begin{teo}[Teorema 3]
-Siano $X_1$ e $X_2$ varietà compatte e senza bordo della stessa dimensione, $Y$ varietà e $A$ sottovarietà di $Y$. Siano inoltre $\fundef[f_1]{X_1}{Y}$ e $\fundef[f_2]{X_2}{Y}$. Se $f_1 \pitchfork A$ e $(X_1,f_1) \sim_{cob} (X_2,f_2)$ detti $Z_1=f_1^{-1}(A)$ e $Z_2=f_2^{-1}(A)$ si ha che $(Z_1, f_1|_{Z_1}) \sim_{cob} (Z_2,f_2|_{Z_2})$.
+Siano $X_1$ e $X_2$ varietà compatte e senza bordo della stessa dimensione, $Y$ varietà e $A$ sottovarietà di $Y$. Siano inoltre $\fundef[f_1]{X_1}{Y}$ e $\fundef[f_2]{X_2}{Y}$. Se $f_1, f_2 \pitchfork A$ e $(X_1,f_1) \sim_{cob} (X_2,f_2)$ detti $Z_1=f_1^{-1}(A)$ e $Z_2=f_2^{-1}(A)$ si ha che $(Z_1, f_1|_{Z_1}) \sim_{cob} (Z_2,f_2|_{Z_2})$.
 \end{teo}
+\marginpar{Ho aggiunto la condizione $f_2 \pitchfork A$, probabilmente essendo cobordante ad $f_1$, che è trasversa, si potrà dimostrare che anche lei è trasversa, forse, ma non avendolo mai fatto aggiungo l'ipotesi (Ale)}
 \marginpar{Inserirò un bel disegno quando imparerò a farlo!!!}
 \begin{proof}
  Diamo un po' di idee per la dimostrazione, dando per noti gli altri teoremi già esposti. Per il teorema~1 $Z_1$ e $Z_2$ sono delle sottovarietà di $X_1$ e di $X_2$. Chiamiamo $W$ la varietà che realizza il cobordismo ($\boundary W = X_1 \sqcup X_2$) ed $F$ la relativa funzione ($F|_{X_1} = f_1$ e $F|_{X_2}=f_2$). Grazie al teorema~2++ esiste una funzione $\fundef[G]{W}{Y}$ vicina a piacere ad $F$, che ristretta su $\boundary W$ valga $f_1\sqcup f_2$ (anzi, il teorema ci garantisce che la possiamo scegliere in modo che coincida con $F$ in un collare di $X_1\sqcup X_2$) e che sia trasversa ad $A$. Chiaramente la controimmagine di $G$ in $W$ è una sottovarietà per il teorema~1 e, grazie al fatto che $G$ coincide con $F$ in un collare di $X_1 \sqcup X_2$ ne segue che $G|_{G^{-1}(A)}$ realizza il cobordismo fra $Z_1$ e $Z_2$.
@@ -58,7 +59,4 @@ Per assurdo non vi sia alcun punto fisso per $f$. Sia $\fundef[r]{D^n}{\boundary
 \fill (rx)          circle (.05) node[below left]  {$r(x)$};
 \end{tikzpicture}
 \end{center}
-
-
-
 

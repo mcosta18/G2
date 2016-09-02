@@ -2,12 +2,13 @@
 %Benedetti ha fatto una buona parte di ricapitolazione se non erro a inizio lezione. Non l'ho inclusa.
 
 \begin{defn}[Varietà parallelizzabile]
- Una varietà $X$ si dice \emph{parallelizzabile} se $TX\simeq X\times\R$.
+ Una varietà $X$ si dice \emph{parallelizzabile} se $TX\simeq X\times\R^n$.
 \end{defn}
 Tutte le varietà sono parallelizzabili?
 \begin{oss}
- Se questo fosse vero, allora su ogni varietà $X$ avremmo l'esistanteza di un campo vettoriale mai nullo: infatti se $TX\simeq X\times\R$, abbiamo un diffeomorfismo $\phi$ tra i due insiemi.
- Ma su $X\times\R$ posso prendere il campo costante $s(x)=e_1$, e poi portarlo indietro tramite $\phi^{-1}$, ottenendo un campo vettoriale su $X$ mai nullo.
+ Se questo fosse vero, allora su ogni varietà $X$ avremmo l'esistanteza di un campo vettoriale mai nullo: infatti se $TX\simeq X\times\R^n$, abbiamo un diffeomorfismo $\phi$ tra i due insiemi.
+ Ma su $X\times\R^n$ posso prendere il campo costante $s(x)=e_1$, e poi portarlo indietro tramite $\phi^{-1}$, ottenendo un campo vettoriale su $X$ mai nullo.
+\footnote{Il campo non sarà costante in tutte le carte di $TX$, ma lo sarà carta per carta. Abbiamo però che non si annullerà mai, poiché essendo $\phi$ un diffeomorfismo non può accadere in nessuna presentazione locale che mandi un vettore non nullo in un vettore nullo, dato che il differenziale sarà invertibile.}
 
 \end{oss}
 Analizziamo intanto i casi delle sfere $S^n$.
@@ -18,6 +19,7 @@ Analizziamo intanto i casi delle sfere $S^n$.
 \begin{es}[$S^2$]
  Mostro che esiste un campo vettoriale che si annulla solo sul polo nord e sul polo sud.
  \marginpar{Non ho capito quale è tale mappa, anche se una idea ce l'avrei...}
+ \marginpar{Penso che sia lo stesso di $S^1$ sulle sezioni orizzontali, smorzato mano mano che si allontana dall'equatore e si avvicina ai poli}
  \marginpar{Ricicla vecchi disegnini con sfera e piano tangente}
  Dunque ho due zeri isolati. Per calcolare $\chi(S^2)$ devo dunque sommare $i_N(s)$, $i_S(s)$ con $N= (0,0,1)$, $S=(0,0,-1)$.
  \begin{oss} Per il lemma di Morse, dato che $N$, $S$ sono punti critici della mappa $t$, esiste un sistema di coordinate in cui la funzione è quadratica. 
