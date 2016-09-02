@@ -8,6 +8,7 @@
 \titlet{Forme d'intersezione}
 
 \subtitlet{Una costruzione alternativa}
+\marginpar{Per quanto ci sia scritto alternativa non ha un bel nulla di alternativo, ad eccezione del fatto, necessario, degli incroci multipli. Propongo un merge con la precedente (Ale)}
 
 Sia $X$ superficie, su $\eta_1(X)$ abbiamo la forma d'intersezione $\fundef[\beta]{\eta_1(X) \times \eta_1(X)}{\Z_2}$. Consideriamo le curve su $X$ lisce a meno di un numero finito di incroci normali; ogni tale curva $\gamma$ può essere decomposta in circuiti (ovvero immersioni di $S^1$): $\gamma = \gamma_1 \cup \gamma_2 \cup \gamma_3 \dots$.
 Siano $\fundef{S^1 \djcup S^1 \djcup S^1 \djcup \dots \djcup S^1}{X}$ immersioni, allora queste curve sono date da $\set{\gamma} = \set{\img f}$.
@@ -39,8 +40,9 @@ Sia in generale $V$ vettoriale su $\Z_2$ e $\beta$ prodotto scalare non degenere
 	$V = A \operp B$, con $(A, \beta)$ avente una base ortonormale e $(B, \beta)$ totalmente isotropo.
 \end{lemma}
 \begin{proof}
-	Infatti, essendo $\beta$ non degenere vi sono due possibilità: o $V$ è totalmente isotropo, oppure $\exists v \in V$ non isotropo. Nel primo caso il lemma è banalmente vero, nel secondo ho $V = \Span(v) \operp \set{v}^\perp$ e ripetendo induttivamente il ragionamento su $\set{v}^\perp$ ottengo $V = U \operp U \operp \dots \operp U \operp B$, con $B$ totalmente isotropo e $U$ sottospazio di dimensione 1 tale che $\beta = (1)$ in $U$ (ovvero, $U$ generati da vettori ortonormali).
+	Vi sono dunque due possibilità: o $V$ è totalmente isotropo, oppure $\exists v \in V$ non isotropo. Nel primo caso il lemma è banalmente vero, nel secondo ho $V = \Span(v) \operp \set{v}^\perp$\footnotemark e ripetendo induttivamente il ragionamento su $\set{v}^\perp$ ottengo $V = U \operp U \operp \dots \operp U \operp B$, con $B$ totalmente isotropo e $U$ sottospazio di dimensione 1 tale che $\beta = (1)$ in $U$ (ovvero, $U$ generati da vettori ortonormali).
 \end{proof}
+\footnotetext{Il procedimento di ortogonalizzazione è indipendente dalla caratteristica del campo(spero, toglierò queste parentesi non appena avrò controllato, Ale)}
 
 Consideriamo ora un sottospazio $H \subseteq V$ totalmente isotropo (con $\beta|_H$ non degenere). Prendiamo una base di $H$ $\base = \set{v_1, v_2, v_3, \dots, v_n}$ e consideriamo la base duale $\base\dual = \set{v_1\dual, v_2\dual, v_3\dual, \dots, v_n\dual}$. Allora dal teorema di rappresentazione sappiamo che 
 $v \mapsto (\phi_v : w \mapsto \beta(v,w))$ è isomorfismo, siano dunque $\set{w_1, \dots, w_n}$ i vettori che rappresentano i covettori di $\base\dual$ (ovvero la controimmagine di $\base\dual$ per l'isomorfismo indicato). Abbiamo quindi $\beta(w_i, v_j) = \delta_{ij}$, e in particolare $\beta(v_1, w_1) = 1$. Pertanto in $\Span(v_1, w_1)$ si ha $\beta = \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ e dunque $H$ si decompone come $\Span(v_1, w_1) \operp \set{v_1, w_1}^\perp$, e continuando per induzione ottengo una base di $H$ rispetto a cui \[

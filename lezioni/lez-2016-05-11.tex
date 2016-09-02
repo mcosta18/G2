@@ -35,12 +35,14 @@ Notiamo che ci sono $2k + 2$ punti critici di cui
 \item $2k$ punti di sella (2 per ogni buco): $\lambda = -1$
 \item $1$ minimo: $\lambda = 1$
 \end{itemize}
-\marginpar{$\lambda$ di solito è il nome dell'indice di Morse, e quindi sarebbero 0,1,2; quello che qui viene chiamato $\lambda$ è invece $(-1)^\lambda$}
+\marginpar{$\lambda$ di solito è il nome dell'indice di Morse, e quindi sarebbero 0,1,2; quello che qui viene chiamato $\lambda$ è invece $(-1)^\lambda$ (Ale)}
 Pertanto $\chi(T_k) = 2 - 2k$. Un modo alternativo per calcolarla è mostrare solamente che $\chi(T) = 0$ (notiamo in particolare che è facile trovare per $T$ un campo di vettori mai nullo, ad esempio il campo di vettori tangenti al toro che ``girano'' in senso antiorario) e poi usare la proprietà di additività della $\chi$.
+\marginpar{In realtà quella di addizionare i tori non è così semplice: infatti il toro è un cobordismo tra vuoto e vuoto non avendo bordo, e quindi non si somma a nulla che non sia sconnesso da lui. Per connettere bisognerebbe calcolare la caratteristica del toro meno un $D^2$ aperto e di quello meno due $D^2$ aperti. Questi infatti sono cobordismi tra vuoto e $S^1$, e tra $S^1$ e $S^1$, e si possono incollare tra loro. (Ale)}
 \end{oss}
 
 \begin{ex}
 	Sia $\mathbb{P}_2^2$ la varietà ottenuta incollando due $\mathbb{P}^2$ analogamente a quanto fatto per i \emph{tori siamesi}. Dimostrare che $\chi(\mathbb{P}_2^2) = 0$. \emph{Hint:} usare l'additività di $\chi$.
+\marginpar{anche per $\mathbb{P}^2$ vale la stessa cosa che per il toro, serve $\mathbb{P}^2$ meno un $D^2$ aperto (Ale)}
 \end{ex}
 
 \begin{oss}
@@ -60,10 +62,13 @@ $\dim \eta_1(S)$ è finita (per dimostrarlo si userebbe la compattezza di~$S$).
 \begin{cor}
 	$\dim \eta_1(S)$ è un invariante per diffeomorfismi.
 \end{cor}
+\begin{proof}
+Infatti i diffeomorfismi fra varietà obiettivo inducono degli isomorfismi tra gli spazi, questi ultimi conservano la dimensione.
+\end{proof}
 
-\begin{defn}[forma di intersezione $\beta$] $\beta$ sarà una \[ \fundef[\beta]{\eta_1(S) \times \eta_1(S)}{\quoset\Z{2\Z}} \] Cerchiamo un modo di definire $\beta([M_1,f_1],[M_2,f_2])$.
+\begin{defn}[forma di intersezione $\beta$] $\beta$ sarà una funzione: \[ \fundef[\beta]{\eta_1(S) \times \eta_1(S)}{\quoset\Z{2\Z}} \] Cerchiamo un modo di definire $\beta([M_1,f_1],[M_2,f_2])$.
 \[ f_1 \times f_2: M_1 \times M_2 \funarrow S \times S \hookleftarrow \Delta \text{ diagonale} \]
-Dai teoremi di trasversalità sappiamo trovare una $\tilde{f_1}$ e una $\tilde{f_2}$ omotope rispettivamente a $f_1$ e $f_2$ e tali che $\tilde{f_1} \pitchfork \tilde{f_2}$ e, sempre per i teoremi di trasversalità, abbiamo che $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ è una sottovarietà di $M_1 \times M_2$, che ha dimensione 2; inoltre $\codim{(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)} = 2$ pertanto $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ ha dimensione 0, ovvero è un insieme finito di $k$ punti $\{x_1, \dots , x_k \}$.
+Dai teoremi di trasversalità sappiamo trovare una $\tilde{f_1}$ e una $\tilde{f_2}$ omotope rispettivamente a $f_1$ e $f_2$ e tali che $\tilde{f_1} \pitchfork \tilde{f_2}$ e, sempre per i teoremi di trasversalità, abbiamo che $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ è una sottovarietà di $M_1 \times M_2$, che ha codimensione 2, pertanto $(\tilde{f_1} \times \tilde{f_2})^{-1}(\Delta)$ ha dimensione 0, ovvero è un insieme finito di $k$ punti $\{x_1, \dots , x_k \}$.
 
 Ha dunque senso definire \[ \beta([M_1,f_1],[M_2,f_2]) := k \mod 2 \]
 \end{defn}
@@ -73,6 +78,7 @@ Ha dunque senso definire \[ \beta([M_1,f_1],[M_2,f_2]) := k \mod 2 \]
 \end{ex}
 
 La forma d'intersezione $\beta$ misura la parità del numero di intersezioni tra le immagini di due curve su una superficie. Grazie ai teoremi di trasversalità (grazie anche alla dimensione finita e al teorema di immersione di Whitney) possiamo supporre che le $f_1$ e $f_2$ siano fin da subito immersioni e che i punti in comune alle due immagini su $S$ non siano dei punti di tangenza, ma siano degli incroci ``normali'', infatti se le $f_1$ e $f_2$ non avessero tali requisiti basterebbe perturbarle un poco per trovare delle $\tilde{f_1}$ e $\tilde{f_2}$, omotope alle precedenti, che abbiano i suddetti requisiti.
+\marginpar{per usare controimmagini degli incroci abbiamo bisogno che le curve siano iniettive, cosa che poi avremo con il truccone, ma sarebbe carino anticiparlo già qui (Ale)}
 
 \paragraph{Caratterizzazione di $\eta_1(S)$}
 Cercheremo ora di capire come sono fatte le classi di equivalenza $[M,f]$. Con lo stesso spirito di quando caliamo i cannoni per ``perturbare un poco'' le funzioni e ricondurci a studiare casi semplici, il nostro intento sarà introdurre alcune ``mosse'' che pur perturbando una curva non ne cambiano la classe. In questo modo potremo scegliere, senza perdita di generalità, un rappresentante particolarmente semplice: scopriremo che possiamo prendere un rappresentante connesso.
@@ -93,6 +99,7 @@ Notiamo che, non avendo orientazione, la scelta è indifferente.
 Quindi da una $\fundef{M}{S}$ abbiamo ottenuto un embedding $\fundef[i]{M'}{S}$ senza punti doppi.
 
 Esercizio: mostrare che $[M,f] = [M',i]$ in $\eta_1(S)$.
+\marginpar{La teoria deve essere qualcosa come: dal punto partono quattro rami, ne stacco due, li scambio e li riattacco, in modo che ognuno coincida in un intorno dell'incrocio con quello che prima era l'altro. In questo modo la curva è sempre liscia ma ora posso sbrogliare la matassa. (Ale)}
 
 \item Connettere l'immagine
 \begin{center}
@@ -100,6 +107,7 @@ Esercizio: mostrare che $[M,f] = [M',i]$ in $\eta_1(S)$.
   \input{fig26.pdf_tex}
 \end{center}
 Dove il cobordismo è ``esplicitato'' dalla figura seguente: i cerchi interni vanno immaginati come sollevati di qualche centimetro rispetto al piano del foglio e la parte colorata vista come una bolla di sapone.
+\marginpar{Senza troppo estro il succo è che: il bordo interno è una 1-varietà, il bordo esterno un'altra, e la parte colorata la transizione 2D, quindi è il cobordismo fra quelli sconnessi e quella connessa (Ale)}
 \begin{center}
 	\def\svgwidth{11cm}
   \input{fig27.pdf_tex}
@@ -107,6 +115,16 @@ Dove il cobordismo è ``esplicitato'' dalla figura seguente: i cerchi interni va
 \end{enumerate}
 
 Pertanto, grazie alla semplificazione (1), ogni classe di equivalenza  $\alpha \in \eta_1(S)$ può essere rappresentata per mezzo di una 1-sottovarietà di $S$ e, grazie alla (2), $\alpha$ può essere rappresentata da una curva connessa. D'ora in poi le curve che considereremo saranno belle lisce, iniettive e connesse.
+
+\begin{prop}[Fantasma]
+La forma di intersezione è bilineare.
+\end{prop}
+\marginpar{Il nome della proposizione è Fantasma perché nonostante la semplicità era stata ignorata. Per non confonderla con i cannoni indimostrabili ho deciso di scriverla (Ale)}
+\begin{proof}
+Per quanto riguarda la moltiplicazione per scalari essi sono soltanto 0 e 1. Per cui se lo scalare in questione fosse 1 è banalmente verificata, se fosse 0 si ha che la classe 0 è la classe del vuoto e quindi la sua forma di intersezione con qualunque curva è nulla.
+
+Per l'additività è sufficiente notare che l'unione disgiunta crea due curve sconnesse, e limitandosi a considerarle tali i punti di intersezione si sommano, per cui è additiva.
+\end{proof}
 
 \begin{teo}
  La forma di intersezione è non degenere.
@@ -116,6 +134,7 @@ Pertanto, grazie alla semplificazione (1), ogni classe di equivalenza  $\alpha \
 Utilizzeremo la notazione $\alpha \cdot \gamma := \beta(\alpha,\gamma)$.
 
 Sia $\alpha \in \eta_1(S)$ tale che $\alpha \cdot \gamma = 0$  $\forall \gamma$, vogliamo mostrare che  $\alpha = 0$.
+\footnote{Si ricorda che in $\eta_1$ lo 0 è rappresentato dalla classe dei bordi}
 
 Supponiamo per assurdo che $\alpha \neq 0$, sia dunque $\alpha = [c]$ con $c$ connessa su $S$.
 
