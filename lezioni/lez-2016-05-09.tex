@@ -9,7 +9,8 @@ Un campo di vettori sulla triade $(W, V_0, V_1)$ è una sezione di $T(W)$ tale c
 Sia $s$ un campo di vettori su $(W, V_0, V_1)$. La funzione $\chi(s):=\sum_{\text{x zeri di s}} i_s(x)$ è indipendente da $s$.
 \end{teo}
 \begin{defn}[Caratteristica di Eulero di una triade]
-Si definisce $\chi(W, V_0):=\sum_{x\text{ zeri di }s} i_s(x)$ per qualsiasi $s$ campo di vettori su $(W, V_0, V_1)$. Inoltre per ogni $f$ funzione di Morse sulla triade si ha $\chi(W, V_0)=\sum_{x\text{ punti critici di }f} (-1)^{\lambda(x)}$ dove $\lambda(x)$ è l'indice di positività del punto critico $x$.
+Si definisce $\chi(W, V_0):=\sum_{x\text{ zeri di }s} i_s(x)$ per qualsiasi $s$ campo di vettori su $(W, V_0, V_1)$. Inoltre per ogni $f$ funzione di Morse sulla triade si ha $\chi(W, V_0)=\sum_{x\text{ punti critici di }f} (-1)^{\lambda(x)}$ dove $\lambda(x)$ è l'indice di Morse del punto critico $x$.
+\marginpar{Stava scritto 'indice di positività', ho sostituito con 'indice di Morse', altrimenti non sarebbe risultato coerente con le altre definizioni (anche perché quello di Morse è quello di negatività)}
 \end{defn}
 \begin{oss}
 Questo ci fornisce un modo agevole per calcolare la caratteristica della triade "opposta". Infatti presa $f$ una qualsiasi funzione di morse sulla triade $(W, V_0, V_1)$ $-f$ è una funzione di Morse su $(W, V_1, V_0)$. Dato che la matrice hessiana cambia segno $\chi(W, V_1)=\sum_{x\text{ p.c. di }-f} (-1)^{n-\lambda(x)}=(-1)^n\sum_{x\text{ punti critici di }f}(-1)^{\lambda(x)}=(-1)^n\chi(W, V_0)$.  
@@ -31,13 +32,15 @@ $\chi((W, V_0, V_1)°(W', V_0', V_1'))=\chi(W, V_0, V_1)+\chi(W', V_0', V_1')$
 \begin{proof}
 \'E facile se si calcola il cobordismo se, avendo le sezioni $a$ e $b$, rispettivamente di $(W, V_0, V_1)$ e $(W', V_0', V_1')$ si crea la sezione di $(W, V_0, V_1)°(W', V_0', V_1')$.
 \end{proof}
+\marginpar{con le sezioni bisogna pasticciare un minimo per incollarle bene, meglio prendere due funzioni di Morse che sono costanti sul bordo e non hanno punti critici in un intorno (Ale)}
 
 \begin{teo}
 Sia $X$ una varietà chiusa.Sia $W=X\times [-1,1]$. $\chi(X)=\chi(W, \emptyset)$.   
 \end{teo}
 \begin{proof}
-Detta $z$ la coordinata verticale, si considera il campo vettoriale $s$ su $W$ che ha come componente verticale $z^2$. Chiaramente gli unici zeri di $s$ sono nella copia di $X$ $X\times{0}$. Tutti le matrici hessiane sono poi con un 1 in più...
+Detta $z$ la coordinata verticale, si considera il campo vettoriale $s$ su $W$ che ha come componente verticale $z^2$. Chiaramente gli unici zeri di $s$ sono nella copia di $X$ $X\times{0}$. Tutti le matrici hessiane aumentano di una dimensione rispetto a quelle del solo $X$, ma essendo già quadratico il campo nella dimensione ulteriore esse compaiono con un 1 in più, che non modifica il loro indice di Morse.
 \end{proof}
+\marginpar{Trovo sbagliato quanto deto sul campo vettoriale, dato che l'indice di Morse era associato a funzioni di Morse, e quindi anche l'hessiana, che per un campo vettoriale sarebbe un tensore di rango 3. Andrebbe dunque riformulato come una funzione di Morse su $X$ a cui va sommato $z^2$, a quel punto verrebbe come descritto (il campo descritto sarebbe il gradiente in realtà, che essendo perpendicolare sui bordi è associabile ad una funzione di Morse)}
 
 Questo risultato ci permette subito di vedere che esistono varietà chiuse che non sono bordo di una qualche altra varietà.
 \begin{teo}
@@ -50,20 +53,20 @@ Indichiamo con $D(X)$ il doppio di $X$. Chiaramente $D(X)$ è una varietà compa
 \paragraph{TQFT in soldoni}
 In questa sezione diamo un idea di che cosa sia una TQFT, pensata come "rappresentazione del cobordismo nell'algebra lineare".\\
 Vediamo di capire che cosa stiamo facendo nel linguaggio delle categorie. Da un lato gli oggetti in esame sono le $n$ varietà, i morfismi sono i possibili cobordismi fra esse.
-Dall'altro gli oggetti sono gli spazi vettoriali, i morfismi sono le applicazioni lineari.\\
+Dall'altro gli oggetti sono gli spazi vettoriali su campo complesso, i morfismi sono le applicazioni lineari.\\
 Supponiamo che io abbia da un lato delle varità connesse $X_i$, dall'altro uno spazio vettoriale $Z$. Quello che devo avere è una mappa\footnote{non bisognerebbe vedere questa mappa come una funzione ma come un funtore} che mandi una $X_i\rightarrow Z$, $X_1\cup ... \cup X_k =Z^{n\otimes}$ e mandi $(W, X_1\cup ... \cup X_k, X'_1\cup ... \cup X'_{k'})$ in un $Hom(Z^{k\otimes}, Z^{k'\otimes})$.
-Chiediamo che tutte queste richieste siano functoriali, che $F(\emptyset)=C$, e che $F((V\times[0, 1], V, V))=id_{F(V)}$. \\
+Chiediamo che tutte queste richieste siano functoriali, che $F(\emptyset)=\C$, e che $F((V\times[0, 1], V, V))=id_{F(V)}$. \\
 Bisogna a questo punto chiedersi se non abbiamo chiesto troppo. Purtroppo sembra di no poiché la caratteristica di Eulero ci fornisce un esempio.
 \subparagraph{Esempio stupido di TQFT}
 \begin{itemize}
-\item Mandiamo tutte le varietà connesse in $C$
-\item Preso il cobordismo $(W, X_1, X_2)$ lo mandiamo in $\fundef[F((W, X_1, X_2))]{C}{C}$ che manda $v\in C \rightarrow e^{\chi(W, X_1)}v$.
+\item Mandiamo tutte le varietà connesse in $\C$
+\item Preso il cobordismo $(W, X_1, X_2)$ lo mandiamo in $\fundef[F((W, X_1, X_2))]{\C}{\C}$ che manda $v\in \C \rightarrow e^{\chi(W, X_1)}v$.
 \end{itemize}
 Questa è un onestissima TQFT.
 
 
 \paragraph{Classificazione delle varietà bidimensionali a meno di cobordismo}
-Ricordate che cosa è $\ni _1(X)$? Bene, questo è uno spazio finito-dimensionale(forse lo dimostreremo).\\
+Ricordate che cosa è $\eta _1(X)$? Bene, questo è uno spazio finito-dimensionale(forse lo dimostreremo).\\
 Usando la definizione di numero di intersezione lo muniremo di un prodotto scalare. \\
 Problema: siamo in caratteristica 2! Dunque molti dei teoremi di algebra lineare visti a geometria 1 vanno rivisti.
 
