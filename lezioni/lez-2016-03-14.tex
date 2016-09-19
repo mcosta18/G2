@@ -181,11 +181,23 @@ Si verificano le proprietà di un isomorfismo singolarmente:
 \begin{description}
 \item[Linearità] È evidente dalla definizione.
 \item[Iniettività] Il nucleo di $\delta$ è $\set{0}$, infatti la derivazione nulla è quella in cui $v^j = 0~ \forall j$.
-\item[Suriettività] Si deve verificare che $\forall d\in \Der(\Sge_x)\ \exists v\in T_x U\ \text{t.c.}\ d = \delta_v$. Dato $f\in \Sge_x$ sia $h(y) \is f(y) -f(x)$. Poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso. Si applica dunque ad $h$ il \autoref{th:lemprec}: $h(y) = \sum_j g_j(y)(y-x)^j$ con le $g_j$ lisce e tali che $g_j(x) = \pderiv{f}{x^j}(x)$. Allora si ha:
+\item[Suriettività] 
+Per prima cosa si osserva che, detta $d$ una derivazione $c$ un germe costante in un intorno, $d(c)=d(1\cdot c)=d(1)\cdot c + d(c)=d(c) + d(c) = 2d(c) \rightarrow d(c) = 0$.
+
+Si deve verificare che $\forall d\in \Der(\Sge_x)\ \exists v\in T_x U\ \text{t.c.}\ d = \delta_v$
+Senza perdita di generalità posso assumere di studiare le derivazioni attorno allo $0$ (altrimenti agisco per traslazione).
+Segue che per studiare una derivazione posso limitarmi a vedere cosa succede se gli do in pasto funzioni $f$ tali che $f(0)=0$.
+Inoltre poiché $f$ è un germe si può restringere a piacere il dominio fino a renderlo convesso.
+Siamo adesso nelle ipotesi del $\autoref{th:lemprec}$: posso scrivere
+\begin{equation*} 
+	f=\sum_i x^i\cdot h_i(x)
+\end{equation*} 
+Per Leibniz e linearità vale 
 \begin{equation*}
-d(f) = d(h) = \sum_jg_j(x)d(y\mapsto y^j) 
+	d(f)=\sum_i d(x\mapsto x^i)\cdot h_i(0)+ 0\cdot d(h_i) \sum_i h_i(0)d(x\mapsto x^i)
 \end{equation*}
-e quindi $v$ è definito per componenti $v^j = d(y\mapsto y^j)$.
+Il vettore $v$ cercato è definito per componenti $v^j=d(x\mapsto x^j)$. La verifica che $\forall f\in \Sge_x$ vale $\delta_v(f)=d(f)$ è lasciata al lettore (è un banale conto).
+
 \qedhere
 \end{description}
 \end{proof}
