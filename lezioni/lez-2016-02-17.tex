@@ -1,19 +1,17 @@
 % trascrizione: Petrillo
 
-% questo lemma non lo ricordo ma mi serviva dopo ed è stato usato a lezione
+
 \begin{lemma}\label{th:apertointorni}
-	Un insieme è aperto se ogni punto ha un intorno contenuto nell'insieme:
+	Un insieme è aperto se e solo se ogni punto ha un intorno contenuto nell'insieme:
 	\[A\text{ aperto}\iff
 	\forall x\in A\,\exists U_x\subseteq A\]
 \end{lemma}
 
 \begin{proof}
-	L'implicazione verso destra è banale perché $A$ è un intorno dei suoi punti\footnote{Se è banale, perché l'abbiamo spiegata?}.
+	L'implicazione verso destra è verificata perché $A$ è un intorno dei suoi punti.
 	Mostriamo l'altra: per definizione di intorno possiamo prendere gli $U_x$ aperti. Sia $A'\is\union_{x\in A}U_x$. $A'$ è aperto perché unione di aperti ed è contenuto in $A$, però contiene tutti i punti di $A$ quindi $A=A'$.
 \end{proof}
 
-% anche questa parte sui sottospazi non la ricordo ma dopo è data per scontata
-% forse è perché quel giorno sono arrivato tardi a lezione
 \titlet{Sottospazi}
 
 Si può definire una topologia sui sottoinsiemi di uno spazio topologico:
@@ -47,7 +45,7 @@ Si può definire una topologia sui sottoinsiemi di uno spazio topologico:
 È interessante che la topologia dello spazio di partenza si colleghi direttamente alla topologia di sottospazio di ogni aperto:
 
 \begin{prop}
-	$A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio sono aperti
+	$A$ aperto $\iff$ tutti gli aperti in $A$ come sottospazio topologico sono aperti nella topologia dello spazio ambiente
 \end{prop}
 
 \begin{proof}
@@ -109,9 +107,13 @@ Definiamo ora alcune proprietà che collegano singoli punti di un insieme alle n
 	\[x\text{ interno a }Y\means x\in\inter Y\]
 \end{defn}
 
+Si dice invece \emph{esterno} un punto che non è interno.
+
+\marginpar{potremmo definire cos'è un punto aderente per snellire i passaggi successivi -AeB}
+
 \begin{defn}[Punto di accumulazione]
 	Un elemento $x$ (non necessariamente in $Y$) è \emph{punto di accumulazione per $Y$} se ogni intorno di $x$ contiene punti di $Y$ diversi da $x$:
-	\[x\text{ accumulazione per }Y\means\forall\,U_x:(U_x\setminus\set{x})\cap Y\neq\nullset\]
+	\[x\text{ di accumulazione per }Y\means\forall\,U_x:(U_x\setminus\set{x})\cap Y\neq\nullset\]
 \end{defn}
 
 \begin{defn}[Punto isolato]
@@ -119,21 +121,21 @@ Definiamo ora alcune proprietà che collegano singoli punti di un insieme alle n
 	\[x\text{ isolato in }Y\means
 	\begin{cases}
 		x\in Y\\
-		\neg(x\text{ accumulazione per }Y)
+		\neg(x\text{ di accumulazione per }Y)
 	\end{cases}\]
 \end{defn}
 
 \begin{lemma}
 	\label{th:chiusuraacc}
 	La chiusura di un insieme è l'insieme stesso unito ai suoi punti di accumulazione:
-	\[\clos Y=Y\cup\setdef{x\text{ accumulazione per }Y}\]
+	\[\clos Y=Y\cup\setdef{x\text{ di accumulazione per }Y}\]
 \end{lemma}
 
 \begin{proof}
 	Mostriamo le due inclusioni:
 	\begin{description}
 		\item[\proofsubseteq]
-		Ci basta verificare che $y\in\clos Y\setminus Y\implies y\text{ accumulazione per }Y$.
+		Ci basta verificare che $y\in\clos Y\setminus Y\implies y\text{ di accumulazione per }Y$.
 		Per assurdo:
 		\[y\text{ non di accumulazione}\so
 		\exists A\text{ aperto}:
@@ -147,7 +149,7 @@ Definiamo ora alcune proprietà che collegano singoli punti di un insieme alle n
 		\end{cases}\]
 		Ma $\comp A$ è chiuso, quindi avremmo $y\not\in\clos Y\absurd$.
 		\item[\proofsupseteq]
-		Ci basta verificare che $y\not\in Y\et\, y\text{ accumulazione per }Y\implies y\in\clos Y$.
+		Ci basta verificare che $y\not\in Y\et\, y\text{ di accumulazione per }Y\implies y\in\clos Y$.
 		Per assurdo, $y\not\in\clos Y\so y\in\comp{\clos Y}$. Ma $\comp{\clos Y}$ è aperto, quindi $\comp{\clos Y}$ sarebbe un intorno di $y$ disgiunto da $Y\absurd$. \qedhere
 	\end{description}
 \end{proof}
@@ -160,13 +162,13 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 \end{defn}
 
 \begin{prop}
-	La frontiera consta dei punti esterni isolati o di accumulazione:
-	\[\bound Y=(\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ accumulazione per }Y})\setminus\inter Y\]
+	La frontiera consta dei punti isolati o esterni di accumulazione:
+	\[\bound Y=(\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ di accumulazione esterni per }Y})\]
 \end{prop}
 
 \begin{proof}
 	Basta usare il \autoref{th:chiusuraacc} e osservare che:
-	\[Y\setminus\setdef{x\text{ accumulazione}}=\setdef{x\text{ isolato}} \qedhere\]
+	\[Y\setminus\setdef{x\text{ di accumulazione}}=\setdef{x\text{ isolato}} \qedhere\]
 \end{proof}
 
 \begin{prop}
@@ -185,17 +187,13 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 	\[\bound{\comp Y}=\clos{\comp Y}\setminus\inter{(\comp Y)}=\comp{\inter Y}\setminus\comp{\clos Y}=\clos Y\setminus\inter Y=\bound Y \qedhere\]
 \end{proof}
 
-% questa cosa l'aveva detta ma poi ha detto che è sbagliata il 24 febbraio
-% \begin{oss}
-% 	$x\text{ interno a }Y\implies x\text{ accumulazione per }Y$
-% \end{oss}
-% sposto qui la cosa del 24, con qualche modifica:
 \begin{oss}
 	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
 	Si ha che:
 	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
 	Ad esempio per $(X, \tau_D)$ preso $Y\is\set{x}$ allora $x$ è interno a $Y$, poiché quest'ultimo è aperto, ma $\set{x}\setminus\set{x} = \nullset$ quindi non è di accumulazione.
 	Tuttavia, basta supporre che i singoletti non siano aperti affinché invece l'implicazione sia valida.
+	\footnote{In realtà sono sufficienti ipotesi più deboli, cioè che il solo singoletto di $x$ non sia aperto perché l'essere interno implichi essere un punto di accumulazione. La dimostrazione è lasciata al lettore.}
 \end{oss}
 
 \titlet{Morfismi degli spazi topologici}
@@ -215,9 +213,9 @@ Vediamo ora che i naturali morfismi degli spazi topologici sono le funzioni \emp
 Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozione globale:
 
 \begin{defn}[Continuità locale]
-	$f$ è \emph{continua in $x\in X$} se ogni intorno di $f(x)$ contiene l'immagine di un intorno di $x$:
+	$f$ è \emph{continua in $x\in X$} se la controimmagine di un intorno di $f(x)$ è un intorno di $x$:
 	\[f\text{ continua in }x\means
-	\forall\, U_{f(x)}\,\exists\, U_x:f(U_x)\subseteq U_{f(x)}\]
+	\forall\, U_{f(x)}\, f^{-1}(U_{f(x)})\text{è un intorno di}x\]
 \end{defn}
 
 \begin{prop}
@@ -229,17 +227,16 @@ Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozio
 	\begin{description}
 		\item[\proofrightarrow]
 			$\forall x\in X\,\forall U_{f(x)}$ definiamo $U_x\is f^{-1}(U_{f(x)})$.
-			Poiché $f^{-1}$ manda aperti in aperti, $U_x$ è un intorno di $x$,
-			e ovviamente $f(U_x)=U_{f(x)}$.
+			Poiché $f^{-1}$ manda aperti in aperti, e quindi manda intorni in intorni.
 		\item[\proofleftarrow]
 			Sia  $A\subseteq Y$, $A$ aperto.
 			Poiché $A$ è un intorno dei suoi punti, abbiamo che
-			$\forall x\in f^{-1}(A)\,\exists U_x:f(U_x)\subseteq A$ cioè
-			$U_x\subseteq f^{-1}(A)$.
+			$\forall x\in f^{-1}(A)$ si ha che $f^{-1}(A)$ è un suo intorno, e dunque vi è un aperto in esso contenuto che contiene il punto.
 			Il \autoref{th:apertointorni} conclude.
 			\qedhere
 	\end{description}
 \end{proof}
+%magari con un disegno è veramente immediato, ma non ho voglia di farlo -AeB
 
 Definiamo gli isomorfismi topologici, che chiameremo \emph{omeomorfismi}:
 
@@ -294,7 +291,7 @@ Per adesso gli spazi topologici sono un concetto molto generale. Cominciamo a de
 
 Vediamo che non vale il viceversa:
 
-\begin{es}[Topologia di Zariski]
+\begin{es}[Topologia cofinita]
 	Sia $\tau_z$ una topologia su $\R$ i cui aperti sono i complementari di insiemi finiti:
 	\[\tau_z\is\Setdef[A\subseteq\R]{A=\nullset\vel(A=\comp F\et\card F\in\N)}\]
 	Gli aperti non vuoti non sono disgiunti, quindi $(\R,\tau_z)$ non è $T_2$.
@@ -356,6 +353,14 @@ Di solito con insieme numerabile si intende un insieme con la cardinalità dei n
 \begin{defn}[1-numerabilità]
 	Uno spazio topologico è \emph{1-numerabile} se ogni punto ha una base di intorni numerabile.
 \end{defn}
+
+\begin{es}
+Due topologie non \emph{1-numerabili} sono:
+\begin{itemize}
+\item la topologia cofinita;
+\item l'insieme $\R / \N$, dove la relazione di equivalenza indotta da $\N$ è: $x \sim y \iff x, y \in \N$\footnote{per la definizione di topologia quoziente si veda la fine del capitolo};
+\end{itemize}
+\end{es}
 
 \begin{prop}
 	metrizzabile $\implies$ 1-numerabile

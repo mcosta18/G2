@@ -96,7 +96,8 @@ Costruiamo ora una topologia che sia 1-numerabile ma non 2-numerabile:
 \end{prop}
 
 \begin{proof}
-	Segue dalla densità di $\Q$ secondo $\tau_E$.
+	Segue dalla densità di $\Q$ secondo $\tau_E$. \footnote{Non è ovvio, poiché $\tau_s$ è più fine di $\tau_E$. Lo sarebbe se valesse il viceversa, lo si dimostri per esercizio.}
+	Infatti per ogni aperto di $\tau_s$ abbiamo un intervallo aperto (quindi una palla di $\tau_E$) in esso contenuto. Poiché quest'ultimo interseca $\Q$ per densità rispetto a $\tau_E$ allora anche l'aperto di partenza fa altrettanto.
 \end{proof}
 
 \begin{prop}
@@ -185,7 +186,7 @@ Diamo ora una definizione che ci servirà per dimostrare la \autoref{th:1numaccs
 	Sia $\set{U_n}_{n\in\N}$ una base di intorni annidati di $x$.
 	Poiché $x$ è di accumulazione per $Y$,
 	$\forall n\,\exists a_n\in(U_n\setminus\set x)\cap Y$.
-	La successione $(a_n)$ converge a $x$ perché gli $U_n$ sono annidati.
+	La successione $(a_n)$ converge a $x$ perché gli $U_n$ sono una base annidata.
 \end{proof}
 
 \titlet{Connessione}
@@ -239,8 +240,8 @@ Con la proprietà di connessione vogliamo rendere l'idea intuitiva che uno spazi
 			In particolare $\exists x_1\in A_1,x_2\in A_2\wlg x_1<x_2$.
 			Poiché $Y$ è un intervallo, $[x_1;x_2]\subseteq Y$.
 			Poniamo:
-			\[\xi\is\sup(A_1\cap[x_1;x_2])=\min(x_2,\sup A_1)\]
-			$\xi$ è di accumulazione per $A_1$ e $A_2$, quindi
+			\[\xi\is\sup(A_1\cap[x_1;x_2])\]
+			$\xi$ è dunque di accumulazione per $A_1$ e $A_2$, poiché se per assurdo fosse isolato per quest'ultimo vi sarebbe una palla tutta contenuta nel complementare, cioè in $A_1$, e quindi non sarebbe il sup, quindi
 			$\xi\in\clos{A_1}\cap\clos{A_2}$.
 			Ma essendo gli $A_i$ complementari in $Y$, $A_i=\clos{A_i}\absurd$.
 			\qedhere

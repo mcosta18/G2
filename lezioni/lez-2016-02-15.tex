@@ -2,7 +2,7 @@
 
 %gnegne
 
-\titlet{Definizioni di base}
+\titlet{Definizioni generali}
 
 \begin{defn}[Topologia]
 	Sia dato un insieme $X$ e una famiglia $\tau$ di sottoinsiemi di $X$. $\tau$ è detta \emph{topologia} se soddisfa le seguenti proprietà:
@@ -60,11 +60,11 @@
 
 \begin{defn}[Spazio metrico]
 	Sia dato un insieme $X\neq\nullset$ e una funzione $\fundef[d]{X \times X}\R$ tale che:
-	\begin{itemize}
-		\item $\forall x,y \in X:  d(x,y)\ge0 \et (d(x,y)=0 \iff x=y)$
-		\item $d(x,y) = d(y,x)$
-		\item $d(x,z) \le d(x,y) + d(y,z)$
-	\end{itemize}
+	\begin{description}
+		\item[non degenere] $\forall x,y \in X:  d(x,y)\ge0 \et (d(x,y)=0 \iff x=y)$
+		\item[simmetrica] $d(x,y) = d(y,x)$
+		\item[triangolare] $d(x,z) \le d(x,y) + d(y,z)$
+	\end{description}
 	La funzione $d$ è detta \emph{distanza} e la coppia $(X,d)$ è detta \emph{spazio metrico}.
 \end{defn}
 
@@ -120,16 +120,17 @@
 	Esempi di topologie indotte sono:
 	\begin{itemize}
 		\item $(\R^n,d_E)$  induce $(\R^n,\tau_E)$.
-		\item Lo spazio topologico indotto da $(X,d_D)$ (dove $d_D$ è la distanza discreta dell'\autoref{es:spazimetrici}) è $\tau_D$ (la topologia discreta).
+		\item La topologia indotta da $(X,d_D)$ (dove $d_D$ è la distanza discreta dell'\autoref{es:spazimetrici}) è $\tau_D$ (la topologia discreta).
 		Infatti $\ball[1/2]x = \{x\}$, quindi ogni punto è un aperto.
 	\end{itemize}
 \end{es}
 
 \begin{prop}
+	\label{prop:apelle}
 	Sia $(X,d)$ uno spazio metrico e $(X,\tau_d)$ lo spazio topologico indotto.
 	Si verifica che:
 	\begin{itemize}
-		\item le apelle aperte sono aperti per la topologia indotta;
+		\item le palle aperte sono aperti per la topologia indotta;
 		\item ogni $A \in \tau_d$ è unione di palle aperte.
 	\end{itemize}
 \end{prop}
@@ -180,10 +181,15 @@
 	\[r'\le r\min\set{\lambda_i},\quad r''\max\set{\lambda_i}\le r \qedhere\]
 \end{proof}
 
-\begin{es}
-	\marginpar{Sugli appunti di Bordin non ho trovato qui un esempio, e io a questa lezione non c'ero, quindi qualcuno verifichi se esiste e lo texi/lo cancelli}
-	DA FARE
-\end{es}
+\marginpar{dimostrazione alternativa commentata nel tex, si suggerisce la sostituzione -Ale}
+
+%\begin{proof}
+%Se per uno spazio vettoriale sono date due forme quadratiche definite positive, il teorema spettrale garantisce l'esistenza di una base in cui una forma sia ortonormale e l'altra ortogonale.
+
+%Questo porta le palle che costituiscono la base della topologia indotta dalle due forme rispettivamente in sfere e ellissoidi.
+
+%Da ciò si può dedurre l'equivalenza delle due topologie, poiché dato un centro si avrà che per ogni ellissoide esiste una palla con lo stesso centro in esso contenuta (è sufficiente scegliere come raggio il semiasse minore), e viceversa (scegliendo per l'ellissoide il semiasse maggiore pari al raggio della sfera)
+%\end{proof}
 
 \begin{defn}[Intorno]
 	Dato $x \in (X,\tau)$,
@@ -203,5 +209,5 @@
 \end{defn}
 
 \begin{oss}
-	Le palle aperte sono una base di intorni per una topologia indotta.
+	Le palle aperte sono una base di intorni per una topologia indotta, e grazie al secondo punto della \autoref{prop:apelle} sono anche una base di aperti
 \end{oss}
