@@ -62,11 +62,16 @@ Sia $\fundef[f]{X}{Y}$, $f$ è una immersione se $\forall x \in X \fundef[Df_{x}
  Dico che $g$ così definita è un embedding, devo dunque dimostrare che è una immersione (cioè che il suo differenziale è iniettivo) e che la funzione stessa $g$ è omeomorfismo nella sua immagine cioè ha funzione inversa continua.
  
 \begin {itemize}
-  \item tutte le $g_{i}$ per come son state costruite sono immersioni ognuna nel suo $\phi^{-1}(B_1(0))$;
+  \item tutte le $g_{i}$ per come son state costruite sono immersioni continue. Infatti, fissato un qualunque $x;;\exists i: x\in \phi_i^{-1}(B_1(0))$. Mostriamo che $g_i$ (e quindi $g$) è una immersione. $g_i$ vista nelle carte locali e ristretta a $phi_i^{-1}(B_1(0))$ è una funzione che va da $\R^n$ a $\R^{n+1}$ e vale
+\begin{equation*}
+   g_i\circ \phi_i^{-1}(x_1,\dots, x_n)=(x_1,\dots, x_n, 1)
+\end{equation*}
+che è continua e differenziabile. Il differenziale è iniettivo: è una matrice $(n+1)\times n$ in cui il blocco $n\times n$ più in alto è l'identità e la cui ultima riga sono $0$;
 %dovrebbe esserlo ovunque! in particolare dovrebbe esserlo in phi^{-1}(B_2(0)), per il resto è nulla
   \item g è iniettiva: se ho $x \neq y$  ho due possibilità: $x, y \in C_{i}$ allora la $f_i$ coincide con la $\phi_i$ sull'aperto $C_{i}$, che è iniettiva su tali aperti, perchè contenuti nelle carte. 
   Oppure $x, y$ stanno in due $C_i$ diversi, in particolare $y \in C_{i}$ allora $\lambda_{i}(y) = 1$ e $\lambda_{i}(x) \neq 1$. Dunque ogni funzione $g_i$ è iniettiva e quindi lo è anche la funzione $g$;
-  \item dunque è invertibile sull'immagine, e l'inversa c'è da dimostrare che è continua.
+  \item $g$ è invertibile sull'immagine: è iniettiva per il punto sopra e, ovviamente, suriettiva.
+  \item $g^{-1}$ è continua. Per mostrarlo faremo vedere che $g$ manda chiusi in chiusi. Sia $C$ un chiuso in $X$. Essendo $X$ compatto, $C$ è anche compatto. Essendo $g$ continua manda compatti in compatti, da cui $g(C)$ è compatto. Ma essendo $X$ compatta e $T$ compatto in un chiuso implica essere anche chiuso, da cui $g(C)$ è chiuso.
 %in particolare \lambda_i manda aperti, i C_i, in chiuso, il singoletto {1}, quindi non so come faccia g a mandare aperti in aperti
   \qedhere
  \end {itemize}
