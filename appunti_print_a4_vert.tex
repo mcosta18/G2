@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[a4paper,twoside]{report}
-\usepackage[twoside,top=2.5cm,bottom=2cm,inner=2cm,outer=7cm,marginparwidth=6cm]{geometry}
+\documentclass[a4paper]{report}
+\usepackage[twoside,asymmetric,top=2.5cm,bottom=2cm,left=1cm,right=7cm,bindingoffset=1cm,marginparwidth=5.5cm]{geometry}
 
 \usepackage[font={sf}]{caption}
 \usepackage{etoolbox} % \patchcmd
@@ -15,10 +15,10 @@
 \patchcmd{\chapter}{plain}{fancy}{}{}
 
 \newenvironment{lesson}[4]{%
-\section{Lezione \DTMdisplaydate{#1}{#2}{#3}{-1} (#4)}}{%
+\marginpar{\Large\bfseries Lezione \DTMdisplaydate{#1}{#2}{#3}{-1}\\(#4)}}{%
 }
-\newcommand*\titlet[1]{\subsection{#1}}
-\newcommand*\subtitlet[1]{\subsubsection{#1}}
+\newcommand*\titlet[1]{\section{#1}}
+\newcommand*\subtitlet[1]{\subsection{#1}}
 \newcommand*\headcmacro{}
 
 \input{appunti_core.tex}
