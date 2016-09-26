@@ -162,8 +162,10 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 \end{defn}
 
 \begin{prop}
-	La frontiera consta dei punti isolati o esterni di accumulazione:
-	\[\bound Y=(\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ di accumulazione esterni per }Y})\]
+	La frontiera consta dei punti esterni isolati o di accumulazione:
+	\[\bound Y=\big(\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ di accumulazione per }Y}\big)\setminus\inter Y\]
+	che, nel caso che i punti interni siano di accumulazione (vedi l'\autoref{th:osspulciosa}), diventa:
+	\[\bound Y=\setdef{x\text{ isolato in }Y}\cup\setdef{x\text{ di accumulazione esterno per }Y}\]
 \end{prop}
 
 \begin{proof}
@@ -188,6 +190,7 @@ Vogliamo ora formalizzare il concetto di ``bordo'' di un insieme, cioè la famig
 \end{proof}
 
 \begin{oss}
+	\label{th:osspulciosa}
 	Sia $X$ l'insieme ambiente e $x\in Y\subseteq X$.
 	Si ha che:
 	\[\text{$x$ interno a $Y$} \notimplies \text{$x$ di accumulazione per $Y$}\]
@@ -215,7 +218,7 @@ Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozio
 \begin{defn}[Continuità locale]
 	$f$ è \emph{continua in $x\in X$} se la controimmagine di un intorno di $f(x)$ è un intorno di $x$:
 	\[f\text{ continua in }x\means
-	\forall\, U_{f(x)}\, f^{-1}(U_{f(x)})\text{è un intorno di}x\]
+	\forall\, U_{f(x)}:f^{-1}(U_{f(x)})\text{ è un intorno di }x\]
 \end{defn}
 
 \begin{prop}
@@ -227,7 +230,7 @@ Possiamo definire una forma \emph{locale} di continuità e collegarla alla nozio
 	\begin{description}
 		\item[\proofrightarrow]
 			$\forall x\in X\,\forall U_{f(x)}$ definiamo $U_x\is f^{-1}(U_{f(x)})$.
-			Poiché $f^{-1}$ manda aperti in aperti, e quindi manda intorni in intorni.
+			$f^{-1}$ manda aperti in aperti, quindi manda intorni in intorni.
 		\item[\proofleftarrow]
 			Sia  $A\subseteq Y$, $A$ aperto.
 			Poiché $A$ è un intorno dei suoi punti, abbiamo che
@@ -355,11 +358,14 @@ Di solito con insieme numerabile si intende un insieme con la cardinalità dei n
 \end{defn}
 
 \begin{es}
-Due topologie non \emph{1-numerabili} sono:
-\begin{itemize}
-\item la topologia cofinita;
-\item l'insieme $\R / \N$, dove la relazione di equivalenza indotta da $\N$ è: $x \sim y \iff x, y \in \N$\footnote{per la definizione di topologia quoziente si veda la fine del capitolo};
-\end{itemize}
+	Due topologie non \emph{1-numerabili} sono:
+	\begin{itemize}
+		\item la topologia cofinita;
+		\item $\quoset\R\N$,
+			dove la relazione di equivalenza\footnotemark{} indotta da $\N$ è:
+			$x \sim y \iff x, y \in \N$.
+		\footnotetext{Per la definizione di topologia quoziente si veda la fine del capitolo.}
+	\end{itemize}
 \end{es}
 
 \begin{prop}

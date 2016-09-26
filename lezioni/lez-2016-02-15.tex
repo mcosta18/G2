@@ -165,8 +165,12 @@
 
 \begin{proof}
 	Sia $\scp{}{}$ un prodotto scalare definito positivo.
-	Indichiamo con $\mathrm B^E_r(x)$ le palle della metrica euclidea e con $\mathrm B^{\scp{}{}}_r(x)$ quelle della metrica con distanza $d_{\scp{}{}}(x,y)\is\sqrt{\scp{x-y}{x-y}}$.
-	Poiché gli aperti di una topologia metrizzabile sono unione di palle aperte centrate su ogni punto, ci basta mostrare che:
+	Indichiamo con $\mathrm B^E_r(x)$ le palle della metrica euclidea
+	e con $\mathrm B^{\scp{}{}}_r(x)$ quelle della metrica con distanza
+	$d_{\scp{}{}}(x,y)\is\sqrt{\scp{x-y}{x-y}}$.
+	Poiché gli aperti di una topologia metrizzabile
+	sono unione di palle aperte centrate su ogni punto,
+	ci basta mostrare che:
 	\[\forall x\in\R^n\,\forall r>0:
 	\begin{cases}
 		\exists r':\mathrm B^E_{r'}(x)\subseteq\mathrm B^{\scp{}{}}_r(x) \\
@@ -174,14 +178,19 @@
 	\end{cases}
 	\]
 	Consideriamo le matrici del prodotto scalare canonico (che induce $d_E$) e di $\scp{}{}$.
-	Commutano e sono simmetriche, quindi sono diagonalizzabili simultaneamente, in particolare con una matrice ortogonale.
-	Nelle nuove coordinate, la palla $\mathrm B^{\scp{}{}}_r(0)$ è definita dalla condizione:
+	Commutano e sono simmetriche,
+	quindi sono diagonalizzabili simultaneamente,
+	in particolare con una matrice ortogonale.
+	Nelle nuove coordinate,
+	la palla $\mathrm B^{\scp{}{}}_r(0)$ è definita dalla condizione:
 	\[d_{\scp{}{}}(x,0)=\sqrt{\lambda_1x_1^2+\dots+\lambda_nx_n^2}<r\]
-	Quindi per trovare $r'$ e $r''$ basta considerare gli assi minore e maggiore dell'ellissoide:
+	Quindi per trovare $r'$ e $r''$
+	basta considerare gli assi minore e maggiore dell'ellissoide:
 	\[r'\le r\min\set{\lambda_i},\quad r''\max\set{\lambda_i}\le r \qedhere\]
 \end{proof}
 
-\marginpar{dimostrazione alternativa commentata nel tex, si suggerisce la sostituzione -Ale}
+\marginpar{dimostrazione alternativa commentata nel tex, si suggerisce la sostituzione -Ale\\
+La dimostrazione alternativa cita la base di aperti, nel caso spostare questo teorema dopo l'osservazione \emph{palle base di aperti}}
 
 %\begin{proof}
 %Se per uno spazio vettoriale sono date due forme quadratiche definite positive, il teorema spettrale garantisce l'esistenza di una base in cui una forma sia ortonormale e l'altra ortogonale.
@@ -209,5 +218,6 @@
 \end{defn}
 
 \begin{oss}
-	Le palle aperte sono una base di intorni per una topologia indotta, e grazie al secondo punto della \autoref{prop:apelle} sono anche una base di aperti
+	Le palle aperte sono una base di intorni per una topologia indotta,
+	e grazie al secondo punto della \autoref{prop:apelle} sono anche una base di aperti.
 \end{oss}

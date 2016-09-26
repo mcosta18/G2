@@ -175,20 +175,33 @@ Dunque vogliamo definire degli oggetti che siano ``più continui''.
 	per ogni coppia di carte $(U_i,\phi_i)$, $(U_k,\phi_k)$, si ha che la funzione
 	$\phi_k\circ\phi_i^{-1}|_{\phi(U_i\cap U_k)}$ è liscia.\footnotemark
 	\footnotetext{Per simmetria, è in effetti un diffeomorfismo.}
-\begin{oss}
-	La richiesta che i cambi di carta siano diffeomorfismi serve per garantire che la "liscezza" di una funzione (e della sua inversa per simmetria della definizione) sia indipendente dalle singole carte all'interno dello stesso atlante, in modo che abbia senso parlare di funzioni lisce (rispetto ad un atlante della varietà) senza far riferimento alle singole carte della varietà.
-	Infatti siano $\phi_1, \phi_2, \psi_1, \psi_2$ carte dello stesso atlante differenziabile di una varietà $M$. Sia $\fundef MM$ un diffeomorfismo se visto tramite le carte $\phi$, ossia $\phi_1\circ f\circ \phi_2^{-1}$. E' ancora vero che $\psi_1 \circ f \circ \psi_2^{-1}$ è un diffeomorfismo? Sì, perchè si ha che 
-\begin{equation*}
-	\psi_1 \circ f \circ \psi_2^{-1} = (\psi_1 \circ \phi_1^{-1})\circ (\phi_1\circ f\circ \phi_2^{-1})\circ (\phi_2 \circ \psi_2^{-1})
-\end{equation*} 
-	che è diffeomorfismo perchè composizione di diffeomorfismi (grazie alle ipotesi fatte).
-\end{oss}
 	\begin{figure}
     \centering
     \input{figura39.pdf_tex}
     \caption{Un atlante è differenziabile se il passaggio da una rappresentazione a un'altra è liscio.}
 	\end{figure}
 \end{defn}
+
+\begin{oss}
+	La richiesta che i cambi di carta siano diffeomorfismi
+	serve per garantire che la ``liscezza'' di una funzione
+	(e della sua inversa per simmetria della definizione)
+	sia indipendente dalle singole carte all'interno dello stesso atlante,
+	in modo che abbia senso parlare di funzioni lisce
+	(rispetto ad un atlante della varietà)
+	senza far riferimento alle singole carte della varietà.
+	Infatti siano $\phi_1, \phi_2, \psi_1, \psi_2$
+	carte dello stesso atlante differenziabile di una varietà $M$.
+	Sia $\fundef MM$ un diffeomorfismo,
+	che visto tramite le carte $\phi$ diventa $\phi_1\circ f\circ \phi_2^{-1}$.
+	È ancora vero che $\psi_1 \circ f \circ \psi_2^{-1}$ è un diffeomorfismo?
+	Sì, perché si ha che 
+	\begin{equation*}
+		\psi_1 \circ f \circ \psi_2^{-1} =
+		(\psi_1\circ\phi_1^{-1}) \circ (\phi_1\circ f\circ\phi_2^{-1}) \circ (\phi_2\circ\psi_2^{-1})
+	\end{equation*} 
+	che è diffeomorfismo perché composizione di diffeomorfismi (grazie alle ipotesi fatte).
+\end{oss}
 
 \begin{oss}
 	Se le carte non si intersecano l'atlante è differenziabile.
